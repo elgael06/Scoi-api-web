@@ -1,0 +1,39 @@
+﻿.modal_menu {
+    display: none;
+    position: fixed;
+    background: rgba(128, 128, 128, 0.44);
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index:999;
+}
+    .modal_menu>div {
+        height: 500px;
+        width: 350px;
+        background:rgb(255, 255, 255);
+        margin-top:-180px;
+        border-radius:10px
+    }
+.fa {
+    padding:5px;
+}
+a {
+    font-size:18px
+}
+strong {
+    font-size: 25px;
+}
+.panel-body {
+    height:85%;
+    overflow:auto;
+}
+@media only screen and (max-width:700px) {
+    .modal_menu>div {
+        height: 90%;
+        width: 90%;
+        margin-top: 0;
+    }
+}

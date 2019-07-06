@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+<assembly><name>Freya.Optics.Http</name></assembly>
+<members>
+<member name="P:Freya.Optics.Http.Request.query_">
+<summary>
+ A lens from State -&gt; Query, accessing the request query.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Request.scheme_">
+<summary>
+ A lens from State -&gt; Scheme, accessing the request scheme.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Request.httpVersion_">
+<summary>
+ A lens from State -&gt; HttpVersion, accessing the request version.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Request.pathBase_">
+<summary>
+ A lens from State -&gt; string, accessing the request path base as
+ defined by the OWIN specification.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Request.path_">
+<summary>
+ A lens from State -&gt; string, accessing the request path as defined
+ by the OWIN specification.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Request.method_">
+<summary>
+ A lens from State -&gt; Method, accessing the request method.
+</summary>
+</member>
+<member name="M:Freya.Optics.Http.Request.header_(System.String)">
+<summary>
+ A lens from State -&gt; string option, given a key, accessing a
+ possible request header value in raw form.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Request.headers_">
+<summary>
+ A lens from State -&gt; IDictionary&lt;string,string []&gt;, accessing the
+ complete set of request headers. This lens is generally not expected to
+ be used directly in user code, but as part of composed optics giving
+ safer usage.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Request.body_">
+<summary>
+ A lens from State -&gt; Stream, accessing the request body. Care should
+ be taken to ensure that the stream is managed appropriately when using
+ the stream outside of a higher level abstraction such as a machine.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Request.Headers.via_">
+<summary>
+ A lens from State -&gt; string option, accessing the optional Via
+ header in a weakly typed form.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Request.Headers.userAgent_">
+<summary>
+ A lens from State -&gt; string option, accessing the optional
+ User-Agent header in a weakly typed form.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Request.Headers.upgrade_">
+<summary>
+ A lens from State -&gt; string option, accessing the optional Upgrade
+ header in a weakly typed form.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Request.Headers.transferEncoding_">
+<summary>
+ A lens from State -&gt; string option, accessing the optional
+ Transfer-Encoding header in a weakly typed form.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Request.Headers.trailer_">
+<summary>
+ A lens from State -&gt; string option, accessing the optional Trailer
+ header in a weakly typed form.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Request.Headers.te_">
+<summary>
+ A lens from State -&gt; string option, accessing the optional TE
+ header in a weakly typed form.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Request.Headers.referer_">
+<summary>
+ A lens from State -&gt; string option, accessing the optional
+ Referrer header.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Request.Headers.range_">
+<summary>
+ A lens from State -&gt; string option, accessing the optional Range
+ header in a weakly typed form.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Request.Headers.proxyAuthorization_">
+<summary>
+ A lens from State -&gt; string option, accessing the optional
+ Proxy-Authorization header in a weakly typed form.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Request.Headers.pragma_">
+<summary>
+ A lens from State -&gt; string option, accessing the optional Pragma
+ header in a weakly typed form.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Request.Headers.maxForwards_">
+<summary>
+ A lens from State -&gt; MaxForwards option, accessing the optional
+ Max-Forwards header.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Request.Headers.ifUnmodifiedSince_">
+<summary>
+ A lens from State -&gt; IfUnmodifiedSince option, accessing the optional
+ If-Unmodified-Since header.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Request.Headers.ifRange_">
+<summary>
+ A lens from State -&gt; IfRange option, accessing the optional
+ If-Range header.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Request.Headers.ifNoneMatch_">
+<summary>
+ A lens from State -&gt; IfNoneMatch option, accessing the optional
+ If-None-Match header.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Request.Headers.ifModifiedSince_">
+<summary>
+ A lens from State -&gt; IfModifiedSince option, accessing the optional
+ If-Modified-Since header.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Request.Headers.ifMatch_">
+<summary>
+ A lens from State -&gt; IfMatch option, accessing the optional
+ If-Match header.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Request.Headers.host_">
+<summary>
+ A lens from State -&gt; Host option, accessing the optional Host
+ header.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Request.Headers.from_">
+<summary>
+ A lens from State -&gt; string option, accessing the optional From
+ header in a weakly typed form.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Request.Headers.expect_">
+<summary>
+ A lens from State -&gt; Expect option, accessing the optional Expect
+ header.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Request.Headers.date_">
+<summary>
+ A lens from State -&gt; Date option, accessing the optional Date
+ header.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Request.Headers.contentType_">
+<summary>
+ A lens from State -&gt; ContentType option, accessing the optional
+ Content-Type header.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Request.Headers.contentLocation_">
+<summary>
+ A lens from State -&gt; ContentLocation option, accessing the optional
+ Content-Location header.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Request.Headers.contentLength_">
+<summary>
+ A lens from State -&gt; ContentLength option, accessing the optional
+ Content-Length header.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Request.Headers.contentLanguage_">
+<summary>
+ A lens from State -&gt; ContentLanguage option, accessing the optional
+ Content-Language header.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Request.Headers.contentEncoding_">
+<summary>
+ A lens from State -&gt; ContentEncoding option, accessing the optional
+ Content-Encoding header.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Request.Headers.connection_">
+<summary>
+ A lens from State -&gt; Connection option, accessing the optional
+ Connection header.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Request.Headers.cacheControl_">
+<summary>
+ A lens from State -&gt; CacheControl option, accessing the optional
+ Cache-Control header.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Request.Headers.authorization_">
+<summary>
+ A lens from State -&gt; string option, accessing the optional
+ Authorization header in a weakly typed form.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Request.Headers.acceptLanguage_">
+<summary>
+ A lens from State -&gt; AcceptLanguage option, accessing the optional
+ Accept-Language header.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Request.Headers.acceptEncoding_">
+<summary>
+ A lens from State -&gt; AcceptEncoding option, accessing the optional
+ Accept-Encoding header.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Request.Headers.acceptCharset_">
+<summary>
+ A lens from State -&gt; AcceptCharset option, accessing the optional
+ Accept-Charset header.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Request.Headers.accept_">
+<summary>
+ A lens from State -&gt; Accept option, accessing the optional Accept
+ header.
+</summary>
+</member>
+<member name="T:Freya.Optics.Http.Request.Headers">
+<summary>
+ Optics for request headers, usually given as lenses from
+ State -&gt; &apos;a option, where &apos;a is a strongly typed representation of an
+ optional header. Headers may be added and removed by using the common
+ Freya optic functionality with Option values.
+</summary>
+</member>
+<member name="T:Freya.Optics.Http.Request">
+<summary>
+ Optics for working with individual elements of the request as part of the
+ Freya state, including access to typed data using the Freya Types libraries
+ where implemented.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Response.statusCode_">
+<summary>
+ A lens from State -&gt; int, accessing the response status code.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Response.reasonPhrase_">
+<summary>
+ A lens from State -&gt; string, accessing the response reason phrase.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Response.httpVersion_">
+<summary>
+ A lens from State -&gt; HttpVersion, accessing the response version.
+</summary>
+</member>
+<member name="M:Freya.Optics.Http.Response.header_(System.String)">
+<summary>
+ A lens from State -&gt; string option, given a key, accessing a
+ possible response header value in raw form.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Response.headers_">
+<summary>
+ A lens from State -&gt; IDictionary&lt;string,string []&gt;, accessing the
+ complete set of response headers. This lens is generally not expected
+ to be used directly in user code, but as part of composed optics giving
+ safer usage.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Response.body_">
+<summary>
+ A lens from State -&gt; Stream, accessing the response body. Care should
+ be taken to ensure that the stream is managed appropriately when using
+ the stream outside of a higher level abstraction such as a machine.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Response.Headers.wwwAuthenticate_">
+<summary>
+ A lens from State -&gt; string option, accessing the optional
+ WWW-Authenticate header in a weakly typed form.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Response.Headers.warning_">
+<summary>
+ A lens from State -&gt; string option, accessing the optional Warning
+ header in a weakly typed form.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Response.Headers.vary_">
+<summary>
+ A lens from State -&gt; string option, accessing the optional Vary
+ header in a weakly typed form.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Response.Headers.upgrade_">
+<summary>
+ A lens from State -&gt; string option, accessing the optional Upgrade
+ header in a weakly typed form.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Response.Headers.transferEncoding_">
+<summary>
+ A lens from State -&gt; string option, accessing the optional
+ Transfer-Encoding header in a weakly typed form.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Response.Headers.trailer_">
+<summary>
+ A lens from State -&gt; string option, accessing the optional Trailer
+ header in a weakly typed form.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Response.Headers.server_">
+<summary>
+ A lens from State -&gt; string option, accessing the optional
+ Server header in a weakly typed form.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Response.Headers.retryAfter_">
+<summary>
+ A lens from State -&gt; RetryAfter option, accessing the optional
+ Retry-After header.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Response.Headers.proxyAuthenticate_">
+<summary>
+ A lens from State -&gt; string option, accessing the optional
+ Proxy-Authenticate header in a weakly typed form.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Response.Headers.location_">
+<summary>
+ A lens from State -&gt; Location option, accessing the optional
+ Location header.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Response.Headers.lastModified_">
+<summary>
+ A lens from State -&gt; LastModified option, accessing the optional
+ Last-Modified header.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Response.Headers.expires_">
+<summary>
+ A lens from State -&gt; Expires option, accessing the optional Expires
+ header.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Response.Headers.eTag_">
+<summary>
+ A lens from State -&gt; ETag option, accessing the optional ETag
+ header.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Response.Headers.date_">
+<summary>
+ A lens from State -&gt; Date option, accessing the optional Date
+ header.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Response.Headers.contentType_">
+<summary>
+ A lens from State -&gt; ContentType option, accessing the optional
+ Content-Type header.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Response.Headers.contentRange_">
+<summary>
+ A lens from State -&gt; string option, accessing the optional
+ Content-Range header in a weakly typed form.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Response.Headers.contentLocation_">
+<summary>
+ A lens from State -&gt; ContentLocation option, accessing the optional
+ Content-Location header.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Response.Headers.contentLength_">
+<summary>
+ A lens from State -&gt; ContentLength option, accessing the optional
+ Content-Length header.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Response.Headers.contentLanguage_">
+<summary>
+ A lens from State -&gt; ContentLanguage option, accessing the optional
+ Content-Language header.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Response.Headers.contentEncoding_">
+<summary>
+ A lens from State -&gt; ContentEncoding option, accessing the optional
+ Content-Encoding header.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Response.Headers.connection_">
+<summary>
+ A lens from State -&gt; Connection option, accessing the optional
+ Connection header.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Response.Headers.cacheControl_">
+<summary>
+ A lens from State -&gt; CacheControl option, accessing the optional
+ Cache-Control header.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Response.Headers.allow_">
+<summary>
+ A lens from State -&gt; Allow option, accessing the optional Allow
+ header.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Response.Headers.age_">
+<summary>
+ A lens from State -&gt; Age option, accessing the optional Age
+ header.
+</summary>
+</member>
+<member name="P:Freya.Optics.Http.Response.Headers.acceptRanges_">
+<summary>
+ A lens from State -&gt; string option, accessing the optional
+ Accept-Ranges header in a weakly typed form.
+</summary>
+</member>
+<member name="T:Freya.Optics.Http.Response.Headers">
+<summary>
+ Optics for response headers, usually given as lenses from
+ State -&gt; &apos;a option, where &apos;a is a strongly typed representation of an
+ optional header. Headers may be added and removed by using the common
+ Freya optic functionality with Option values.
+</summary>
+</member>
+<member name="T:Freya.Optics.Http.Response">
+<summary>
+ Optics for working with individual elements of the response as part of the
+ Freya state, including access to typed data using the Freya Types libraries
+ where implemented.
+</summary>
+</member>
+</members>
+</doc>

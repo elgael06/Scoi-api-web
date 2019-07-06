@@ -1,0 +1,13 @@
+﻿
+.contenedor_parametros {
+    border: solid 2px #808080;
+    min-height: 206px;
+    min-width: 200px;
+    padding: 5px;
+    margin: 5px 5px 5px 5px;
+    border-radius: 5px;
+}
+
+#cuerpo_monitor {
+    height: 800px
+}

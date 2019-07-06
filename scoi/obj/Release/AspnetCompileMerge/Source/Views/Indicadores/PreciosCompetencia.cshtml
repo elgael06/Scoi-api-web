@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "Precios Competencia.";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="@Url.Content("~/Scripts/generales/componente_moneda_vue.js")"></script>
+@*<script src="@Url.Content("~/Scripts/Componentes/Estaticos/contraer_expandir.js")"></script>*@
+
+<div id="app">
+    Error en JavaScript
+</div>
+
+<style>
+.descripcion_tabla_ch {
+    text-align: right;
+            width: 110px;
+            padding: 15px;
+        }
+
+        .container_table {
+            height: 700px;
+            overflow: auto;
+        }
+
+        .btn_existencia {
+            background: #97b4e9;
+        }
+
+        .btn_no_existencia {
+            background: #ef8080;
+        }
+
+        #modal_mueble > div {
+            width: 90%;
+            max-width: 1300px;
+        }
+
+        .lista_productos {
+            max-height: 550px;
+            overflow: auto;
+        }
+
+        #body_modal_mueble {
+            background-color: #dde0e4;
+        }
+        .celda_oculta {
+            display:none;
+        }
+    </style>
+
+
+
+<script src="~/dist/indicadores/PreciosCompetencia/monitor.js?1.0.1"></script>

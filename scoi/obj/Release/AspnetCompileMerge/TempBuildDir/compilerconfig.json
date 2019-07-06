@@ -1,0 +1,62 @@
+﻿[
+  {
+    "outputFile": "Scripts/Inicio/main.js",
+    "inputFile": "Scripts/Inicio/main.jsx"
+  },
+  {
+    "outputFile": "Scripts/Usuarios/main.js",
+    "inputFile": "Scripts/Usuarios/"
+  },
+  {
+    "outputFile": "Scripts/Usuarios/main.js",
+    "inputFile": "Scripts/Usuarios/main.jsx"
+  },
+  {
+    "outputFile": "Scripts/Sesion/Accesos_urls.js",
+    "inputFile": "Scripts/Sesion/Accesos_urls.jsx"
+  },
+  {
+    "outputFile": "Scripts/SurtidoEmbarque/vista_embarque.js",
+    "inputFile": "Scripts/SurtidoEmbarque/vista_embarque.jsx"
+  },
+  {
+    "outputFile": "Scripts/Componentes/Estaticos/efecto_carga.js",
+    "inputFile": "Scripts/Componentes/Estaticos/efecto_carga.jsx"
+  },
+  {
+    "outputFile": "Scripts/Usuarios/Acceso.js",
+    "inputFile": "Scripts/Usuarios/Acceso.jsx"
+  },
+  {
+    "outputFile": "Scripts/Indicadores/indicadores_caja.js",
+    "inputFile": "Scripts/Indicadores/indicadores_caja.jsx"
+  },
+  {
+    "outputFile": "Scripts/Indicadores/comparativo_resultados/tabla_main.js",
+    "inputFile": "Scripts/Indicadores/comparativo_resultados/tabla_main.jsx"
+  },
+  {
+    "outputFile": "Scripts/Indicadores/Monitor_auditorio_ventas/Monitor.js",
+    "inputFile": "Scripts/Indicadores/Monitor_auditorio_ventas/Monitor.jsx"
+  },
+  {
+    "outputFile": "Scripts/Componentes/Estaticos/BotonToggle.js",
+    "inputFile": "Scripts/Componentes/Estaticos/BotonToggle.jsx"
+  },
+  {
+    "outputFile": "src/scripts/Indicadores/OrdenesDePagoEnEfectivo/Proveedores.js",
+    "inputFile": "src/scripts/Indicadores/OrdenesDePagoEnEfectivo/Proveedores.jsx"
+  },
+  {
+    "outputFile": "src/scripts/Indicadores/OrdenesDePagoEnEfectivo/Obtener_selectores.es5.js",
+    "inputFile": "Scripts/Componentes/Estaticos/efecto_carga.jsx"
+  },
+  {
+    "outputFile": "src/scripts/Indicadores/OrdenesDePagoEnEfectivo/OrdenesPago.js",
+    "inputFile": "src/scripts/Indicadores/OrdenesDePagoEnEfectivo/OrdenesPago.jsx"
+  },
+  {
+    "outputFile": "src/scripts/Indicadores/OrdenesDePagoEnEfectivo/Parametros_consulta.es5.js",
+    "inputFile": "src/scripts/Indicadores/OrdenesDePagoEnEfectivo/Parametros_consulta.js"
+  }
+]

@@ -1,0 +1,407 @@
+﻿
+.ventana {
+    display: flex;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    justify-content: center;
+    align-items: center;
+    background: rgba(131, 138, 144, 0.69);
+}
+/*Pantalla Uno*/
+#modal_seleccionSurte {
+    width: 98%;
+    max-width: 600px;
+    height: 99%;
+    max-height: 600px;
+    background: #dfe6e8;
+    margin-top: 30px;
+    border-radius: 10px;
+    border: solid 2px rgba(38, 34, 34, 0.50)
+}
+
+.selector_establecimiento {
+    margin-top: 25px;
+    padding: 25px;
+}
+
+#tabla_embarques {
+    margin-top: -10px;
+    max-height: 87%;
+    background: #ffffff;
+    overflow: auto;
+    z-index: 9999;
+}
+
+.btn_tabla {
+    position: sticky;
+    z-index: 99;
+    color: azure;
+    background: rgb(46, 111, 159);
+    right: -10px;
+}
+
+.btn_selector_pedido {
+    width: 39px;
+    font-size: 20px;
+    border-radius: 25px;
+}
+
+/*Segunda Pantalla*/
+.vista_datos_embarque {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+#contenedor_folio {
+    position: static;
+    margin-top: -60px;
+    left: -170px;
+}
+
+    #contenedor_folio > div {
+        margin-left: -25px
+    }
+
+#btn_recargar {
+    font-size: 15px;
+    border-radius: 5px;
+    background: #ff0000;
+    margin-left: -25px;
+    margin-top: 35px;
+    height: 37px
+}
+
+#btn_guardar {
+    position: absolute;
+    float: right;
+    font-size: 43px;
+    border-radius: 80px;
+    width: 60px;
+    height: 60px;
+    top: 60px;
+    right: 20px
+}
+
+.contenedor_botones_productos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background: #dededb;
+}
+
+    .contenedor_botones_productos i {
+        width: 20%;
+        border-radius: 5px;
+        margin: auto
+    }
+
+.vista_numero input {
+    width: 100px;
+    text-align: right;
+}
+
+.vista_numero div {
+    width: 150px;
+    text-align: right;
+}
+
+.alinear {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+#vista_descripcion {
+    position: absolute;
+    margin-top: 1px;
+    width: 500px;
+    overflow: auto;
+}
+
+#contenedor_teclado {
+    display: flex;
+    position: static;
+    height: 280px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    top: 10px;
+    background: #FFFFFF;
+}
+
+#teclado {
+    position: absolute;
+    margin-top: 5px;
+    height: 270px;
+    width: 280px;
+    border: solid 1px #d2d5d5;
+    border-radius: 5px;
+}
+
+    #teclado i {
+        height: 60px;
+        width: 60px;
+        font-size: 25px;
+        padding: 5px;
+        border: solid 1px rgb(46, 111, 159);
+        z-index: 990;
+    }
+
+    #teclado strong {
+        height: 60px;
+        width: 78px;
+        font-size: 25px;
+        padding: 5px;
+        border: solid 1px rgb(46, 111, 159);
+    }
+
+    #teclado .btn_salvar {
+        width: 124px;
+        background: rgb(127, 178, 216);
+    }
+
+#ventana_filtro {
+    display: none;
+}
+
+@media only screen and (max-width : 768px) {
+    .vista_datos_embarque {
+        display: inline-block;
+        margin-left: 10px;
+    }
+
+    .contenedor_botones_productos i {
+        width: 30%
+    }
+
+    .vista_numero input {
+        width: 80px;
+        text-align: right;
+    }
+
+    .vista_numero div {
+        width: 150px;
+        text-align: right;
+    }
+
+    .alinear {
+        display: inline-block;
+        margin-left: 10px;
+    }
+
+    #vista_descripcion {
+        width: 220px;
+        height: 100px;
+    }
+}
+
+#ventana_filtro > div {
+    height: 50%;
+    width: 95%;
+    min-height: 400px;
+    max-width: 550px;
+    background: azure;
+    z-index: 999;
+}
+
+#cavecera_tabla_filtro th {
+    background-color: rgb(127, 178, 216);
+    color: azure;
+}
+
+.filtro_productos .btn {
+    border-radius: 30px;
+    font-size: 15px
+}
+
+/***************************************************************************************************
+    NUEVA VISTA
+
+****************************************************************************************************/
+
+
+.caja_contenedora_items {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1px;
+}
+    .form_vista_texto > label {
+        font-size: 14px;
+    }
+
+#main {
+    margin-top: 50px;
+    padding: 10px;
+}
+/*texto*/
+.form_vista_texto {
+    width: 150px;
+    height: 55px;
+    color: #000000;
+    font-family: "Segoe UI";
+    font-size: 18px;
+    font-style: normal;
+    font-stretch: normal;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    text-transform: none;
+    text-decoration: none;
+    letter-spacing: 0px;
+    display: inline-block;
+    margin: auto;
+}
+
+.caja_entrada_texto {
+    width: 150px;
+    height: 28px;
+    border: 1px solid #d1caca;
+    border-radius: 5px;
+    background: #ffffff;
+    color: #878181;
+    font-family: "Segoe UI";
+    font-size: 15px;
+    font-style: normal;
+    font-stretch: normal;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: right;
+    text-transform: none;
+    text-decoration: none;
+    letter-spacing: 0px;
+    padding: 5px
+}
+
+#caja_descripcion_producto_seleccionado {
+    width: 295px;
+    height: 105px;
+    margin-bottom: 100px
+}
+/*botones*/
+.btn_seseccion {
+    width: 80px;
+    height: 40px;
+    border-radius: 5px;
+    color: #ffffff;
+    justify-content: center;
+    align-items: stretch;
+    font-family: "Segoe UI";
+    font-size: 13px;
+    font-style: normal;
+    font-stretch: normal;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: center;
+    text-transform: none;
+    text-decoration: none;
+    letter-spacing: 0px;
+    margin: auto;
+}
+
+#btn_cancelar_embarque_pedido {
+    border: 1px solid #646464;
+    background: #e61b1b;
+    color: #ffffff;
+    font-size: 18px;
+    font-style: normal;
+    font-stretch: normal;
+    float: right;
+    line-height: 24px;
+    text-align: center;
+    text-transform: none;
+    text-decoration: none;
+    letter-spacing: 0px;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+#btn_modal_productos_pendiente {
+    border: 1px solid #bf4205;
+    background: #e6881b;
+    display: inline-block;
+}
+
+#btn_modal_productos_embarque {
+    border: 1px solid #3788d1;
+    background: #1be6e6;
+    display: inline-block;
+}
+
+#btn_modal_productos_surtido {
+    border: 1px solid #2805bf;
+    background: #2682e0;
+    display: inline-block;
+}
+
+#entrada_codigo_producto {
+    border: solid 1px rgb(127, 178, 216);
+    border-radius: 5px
+}
+#entrada_codigo_producto:focus {
+    border: solid 2px #2682e0;
+    border-radius: 20px
+}
+#entrada_codigo_producto_vista {
+    border: solid 1px rgb(127, 178, 216);
+}
+#entrada_codigo_producto_vista:focus {
+    border: solid 2px #2682e0;
+    border-radius: 5px
+}
+#btn_guardar_embarque_pedido {
+    border: 1px solid #646464;
+    border-radius: 20px;
+    background: #5ac181;
+    bottom: 1px;
+    float: right;
+    margin-right: 120px;
+}
+/*Efecto Botones*/
+#btn_modal_productos_pendiente:hover {
+    border: 2px solid #e6881b;
+    background: #FFFFFF;
+    display: inline-block;
+    color: #bf4205;
+}
+
+#btn_modal_productos_embarque :hover {
+    border: 2px solid #59f2f2;
+    background: #FFFFFF;
+    color: #2682e0;
+}
+
+#btn_modal_productos_surtido :hover {
+    border: 2px solid #2682e0;
+    background: #FFFFFF;
+    color: #2805bf;
+}
+
+#btn_guardar_embarque_pedido :hover {
+    position: absolute;
+    border: 2px solid #5ac181;
+    border-radius: 20px;
+    background: #FFFFFF;
+    color: #646464;
+}
+/*Modal captura cantidad*/
+#captura_por_teclado {
+    display: none;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+    #captura_por_teclado > div {
+        height: 100%;
+        max-height:500px;
+        width: 100%;
+        max-width:750px;
+        background: #ffffff;
+        border-radius: 5px
+    }

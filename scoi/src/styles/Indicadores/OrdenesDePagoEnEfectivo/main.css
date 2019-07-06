@@ -1,0 +1,125 @@
+﻿
+
+.contenedor_parametros {
+    border: solid 2px #808080;
+    min-height: 206px;
+    min-width:200px;
+    padding: 5px;
+    margin: 5px 5px 5px 5px;
+    border-radius:5px;
+}
+    .contenedor_parametros:hover {
+        border: solid 2px #b0b1b2;
+    }
+/*Parametros Fecha*/
+#contenedor_fecha {
+    max-width: 210px
+}
+/*Parametros cuentas*/
+#contenedor_cuenta {
+    max-width: 190px
+}
+
+/*Parametros Beneficiarios*/
+#contenedor_beneficiario {
+    min-width: 510px
+}
+#nombre_beneficiario {
+    width: 90%;
+    margin-top: 26px;
+    min-width: 430px;
+}
+#btn_buscar_Beneficiario {
+    border-radius: 20px;
+    width: 35px;
+    margin-top: 26px;
+    margin-left: 3px
+}
+
+/*Modal Seleccion Beneficiarios*/
+.btn_seleccion {
+    float: right;
+    border-radius: 20px;
+}
+/*info*/
+.inforacion_seleccion {
+    float: right;
+    padding: 5px;
+    border: dotted 1px #808080;
+    border-radius: 30px;
+    width: 25px;
+    text-align: center;
+    cursor: help;
+}
+    .inforacion_seleccion[data-descr]:hover::after {
+        content: attr(data-descr);
+        position: absolute;
+        left: 100px;
+        top: 28px;
+        min-width: 200px;
+        border: 1px #aaaaaa solid;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 204, 0.80);
+        padding: 12px;
+        color: #000000;
+        font-size: 14px;
+        z-index: 1;
+        text-justify:auto;
+    }
+
+/*Tabla Datos*/
+.cavecera_tabla th {
+    border: 1px solid #008B8B;
+    background: rgb(0, 119, 179);
+    color: #FFF;
+    text-align: center;
+    justify-content: center;
+}
+.cavecera {
+    position:sticky;
+    left:0;
+    min-width:320px;
+}
+#titulo {
+    background: rgb(0, 119, 179);
+    color: #FFF;
+    z-index: 990;
+}
+.clasificador {
+    background: rgb(14, 88, 183);
+    color: #FFF;
+}
+.establecimimiento {
+    background: rgb(114, 159, 207);
+    color: #FFF;
+}
+.concepto_orden_de_pago {
+    background: #FFF;
+    color: #000;
+}
+tr[name="conceptos"] {
+    background: rgb(14, 88, 183);
+    color: #FFF;
+}
+tr[name="estalbelcimientos"] {
+    background: rgb(114, 159, 207);
+    color: #FFF;
+}
+tr[name="ordenes"] {
+    background: #FFF;
+    color: #000;
+}
+
+/*tabla_pago_por_semana*/
+#tabla_pago_por_semana > div {
+    width:90%;
+    height:90%
+}
+#tabla_pago_por_semana .panel-body {
+    height: 90%;
+
+}
+    #tabla_pago_por_semana .panel-body > div {
+        height: 100%;
+        overflow:auto;
+    }

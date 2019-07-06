@@ -1,0 +1,270 @@
+﻿#root {
+    min-height:700px;
+}
+#contenedor_fecha {
+    width: 180px;
+    display: inline-block;
+}
+    #contenedor_fecha label {
+        font-size:24px;
+        margin-right:5px;
+    }
+#contenedor_tabla {
+    display:flex;
+    align-content:center;
+    align-items:center;
+    overflow:auto;
+    height: 700px;
+}
+    #contenedor_tabla p {
+        padding: 200px;
+        font-size: 35px;
+        text-align: center;
+    }
+    #btn_cargar {
+        display: inline-block;
+        font-size: 18px;
+        border-radius: 25px;
+        margin-left: 30px
+    }
+.iconos {
+    width: 30px;
+}
+.pagos {
+    width: 50px;
+    text-align: right;
+    background: #00cc75;
+    color: #FFFFFF;
+}
+.totales {
+    width: 50px;
+    text-align: right;
+    background: #ff6a00;
+    color: #FFFFFF;
+}
+.table {
+    font-size:16px;
+}
+.caveceraclasificador td {
+    text-align: center;
+    background: #0099cc;
+    color:#FFFFFF;
+    font-size:19px;
+}
+.cavecera td {
+    text-align: center;
+    background: #bcd0a7;
+    font-size:17px;
+}
+.btn-mas {
+    text-align:center;
+    padding:10px;
+}
+table {
+    color:#7a7474;
+}
+
+/**Modal*/
+.container_modal {
+    display: none;
+    z-index: 994;
+    position: fixed;
+    background-color: rgba(128, 128, 128, 0.60);
+    align-content:center;
+    align-items:center;
+    justify-content:center;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+/*Modal de corte*/
+#detalles_corte > div {
+    width: 1110px;
+    height: 900px;
+    max-width: 100%;
+    max-height: 100%;
+    background: #FFFFFF;
+    border: solid 1px #808080;
+    /*Sombras*/
+    -webkit-box-shadow: -10px 0px 10px 0px rgba(128, 128, 128, 0.83);
+    -moz-box-shadow: -10px 0px -10px -10px rgba(128, 128, 128, 0.83);
+    box-shadow: -15px 15px 5px 0px rgba(128, 128, 128, 0.83);
+}
+#cuerpo_indicadores_corte {
+    border:solid 1px rgb(128, 128, 128);
+    height:800px;
+    padding:10px;
+    overflow:auto;
+}
+    #cuerpo_indicadores_corte > div {
+        display:inline-block;
+        background:#edf3f3;
+        border-radius:5px;
+    }
+        #cuerpo_indicadores_corte > div .titulo_container {
+            margin: 10px 10px 10px 10px;
+            padding:3px;
+            font-size: 18px;
+            border-bottom: solid 3px #808080;
+            color: black;
+        }
+        #cuerpo_indicadores_corte > div > div {
+            margin-top: 5px;
+            margin-left: 5px;
+            height: 445px;
+            margin-left: 10px;
+            margin-right: 10px;
+            border-radius: 5px;
+            border: solid 2px #7a7474;
+            background: #FFF;
+        }
+    #cuerpo_indicadores_corte #container_monitor_corte {
+        height: 530px;
+        width: 580px;
+        border: solid 2px #7ac9e4;
+        position:absolute;
+    }
+        #cuerpo_indicadores_corte #container_monitor_corte strong {
+            color:black;
+            float:right;
+        }
+/*componentes info coterte*/
+    #container_info_corte {
+       display:inline-block;
+       float:left;
+       padding:5px;
+       width:270px;
+       height:455px;
+    }
+        #container_info_corte > div {
+            padding: 1px;
+        }
+        #container_info_corte > strong {
+            font-size:10px;
+        }
+#comentario_auditoria {
+    color:black;
+}
+#comentario_auditoria > div {
+    background: #eef7fa;
+    border: solid 2px #0099cc;
+    height: 90px;
+    margin-left: 1px;
+    margin-right: 1px;
+    color: #000;
+    padding: 5px;
+    border-radius: 5px;
+    overflow-y: scroll;
+}
+/*componentes info totales*/
+#container_totales_info {
+    display: inline-block;
+    width: 280px;
+    height: 437px;
+    padding: 10px;
+    background: #f7f8f8;
+    overflow: auto;
+}
+        #container_totales_info > div {
+            padding: 1px;
+        }
+        #container_comentarios {
+            margin-right: 1px;
+            margin-left: 1px;
+            padding: 5px;
+            margin-top:-5px;
+            color: black;
+        }
+        #container_comentarios > div {
+            height: 75px;
+            border: solid 2px #7a7474;
+            background: #FFFFFF;
+            padding: 5px;
+            border-radius: 5px;
+            overflow-y: scroll;
+        }
+#diferencia_total_mal {
+    background:#ff6a00;
+    color:azure;
+    padding:7px;
+    border-radius:5px;
+}
+#diferencia_total_mal strong {
+    background: #ff6a00;
+    color: azure;
+}
+#diferencia_total_bien {
+    background: #00cc75;
+    color: azure;
+    padding: 7px;
+    border-radius: 5px;
+}
+    #diferencia_total_bien strong {
+        background: #00cc75;
+        color: azure;
+    }
+/*datos de empleados*/
+#cuerpo_indicadores_corte #container_datos_empleados {
+    height: 530px;
+    width: 440px;
+    margin-left: 600px;
+    border: solid 2px #ff6a00;
+}
+    #container_datos_empleados > div > div {
+        padding: 5px;
+        color:black;
+    }
+    #container_datos_empleados img {
+        float:right;
+        padding:5px;
+        margin-top:-60px;
+    }
+    #cuerpo_indicadores_corte #container_lista_tickets {
+        margin-top: 20px;
+        height: 225px;
+        width: 1040px;
+        border: solid 2px #00cc75;
+    }
+        #cuerpo_indicadores_corte #container_lista_tickets div {
+            margin-left:10px;
+            margin-right:10px;
+            margin-top:0px;
+            height:150px;
+            background:#FFF;
+            overflow:auto;
+            text-align:center;
+        }
+            #cuerpo_indicadores_corte #container_lista_tickets div th {
+                top: 0;
+                background: #00cc75;
+                color: azure;
+                text-align: center;
+            }
+#detalles_corte_Abonos_y_deudas_a_detalle .panel-body > #tabla_detalles_abono_deuda {
+    background: #FFFFFF;
+    height: 300px;
+    overflow: auto;
+}
+#detalles_corte_Abonos_y_deudas_a_detalle th {
+    background: #0099cc;
+    color: azure;
+}
+#detalles_corte_Abonos_y_deudas_a_detalle > #grafica_Detalle_abono_deuda {
+    height: 350px;
+}
+#detalles_corte_Abonos_y_deudas_a_detalle > #grafica_Detalle_abono_deuda > div {
+    background: #faf9f9;
+    height: 250px;
+    overflow: auto;
+}
+#detalles_corte_Abonos_y_deudas_a_detalle > #grafica_Detalle_abono_deuda >strong{
+    margin-top:10px;
+}
+#detalles_corte_Abonos_y_deudas_a_detalle #grafica_Detalle_abono_deuda_canvas {
+    height: 200px;
+    background: #FFFFFF;
+}
+.table_money {
+    text-align: right;
+}

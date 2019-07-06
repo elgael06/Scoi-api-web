@@ -1,0 +1,976 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CB6AEA7A-1F25-4B8A-B225-45028B77B9D4}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebApplication</RootNamespace>
+    <AssemblyName>WebApplication</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>3.3</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LegacyPublishPropertiesPageEnabled>true</LegacyPublishPropertiesPageEnabled>
+    <FilesToIncludeForPublish>AllFilesInTheProject</FilesToIncludeForPublish>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AdvancedStringBuilder, Version=0.1.0.0, Culture=neutral, PublicKeyToken=e818a2fc08933ddb, processorArchitecture=MSIL">
+      <HintPath>..\packages\AdvancedStringBuilder.0.1.0\lib\net45\AdvancedStringBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="Aether, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aether.8.2.0\lib\net45\Aether.dll</HintPath>
+    </Reference>
+    <Reference Include="Anat, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Anat.1.0.1\lib\net40\Anat.dll</HintPath>
+    </Reference>
+    <Reference Include="FParsec, Version=1.0.0.0, Culture=neutral, PublicKeyToken=40ccfc0a09edbb5d, processorArchitecture=MSIL">
+      <HintPath>..\packages\FParsec.1.0.3\lib\net40-client\FParsec.dll</HintPath>
+    </Reference>
+    <Reference Include="FParsecCS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=40ccfc0a09edbb5d, processorArchitecture=MSIL">
+      <HintPath>..\packages\FParsec.1.0.3\lib\net40-client\FParsecCS.dll</HintPath>
+    </Reference>
+    <Reference Include="Freya.Core, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Freya.Core.4.0.0\lib\net45\Freya.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Freya.Machines, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Freya.Machines.4.0.0\lib\net45\Freya.Machines.dll</HintPath>
+    </Reference>
+    <Reference Include="Freya.Machines.Http, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Freya.Machines.Http.4.0.0\lib\net45\Freya.Machines.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="Freya.Optics, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Freya.Optics.4.0.0\lib\net45\Freya.Optics.dll</HintPath>
+    </Reference>
+    <Reference Include="Freya.Optics.Http, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Freya.Optics.Http.4.0.0\lib\net45\Freya.Optics.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="Freya.Types, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Freya.Types.4.0.0\lib\net45\Freya.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Freya.Types.Http, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Freya.Types.Http.4.0.0\lib\net45\Freya.Types.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="Freya.Types.Language, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Freya.Types.Language.4.0.0\lib\net45\Freya.Types.Language.dll</HintPath>
+    </Reference>
+    <Reference Include="Freya.Types.Uri, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Freya.Types.Uri.4.0.0\lib\net45\Freya.Types.Uri.dll</HintPath>
+    </Reference>
+    <Reference Include="FSharp.Core, Version=4.4.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\FSharp.Core.4.3.4\lib\net45\FSharp.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Hekate, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Hekate.3.2.1\lib\net45\Hekate.dll</HintPath>
+    </Reference>
+    <Reference Include="Hephaestus, Version=5.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Hephaestus.5.1.1\lib\net45\Hephaestus.dll</HintPath>
+    </Reference>
+    <Reference Include="JavaScriptEngineSwitcher.Core, Version=3.0.0.0, Culture=neutral, PublicKeyToken=c608b2a8cc9e4472, processorArchitecture=MSIL">
+      <HintPath>..\packages\JavaScriptEngineSwitcher.Core.3.0.0\lib\net45\JavaScriptEngineSwitcher.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="JSPool, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2fc7775f73072640, processorArchitecture=MSIL">
+      <HintPath>..\packages\JSPool.4.0.0\lib\net45\JSPool.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="React.Core, Version=4.1.0.0, Culture=neutral, PublicKeyToken=9aed67b161f7db78, processorArchitecture=MSIL">
+      <HintPath>..\packages\React.Core.4.1.1\lib\net45\React.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="React.Web, Version=4.1.0.0, Culture=neutral, PublicKeyToken=9aed67b161f7db78, processorArchitecture=MSIL">
+      <HintPath>..\packages\React.Web.4.1.1\lib\net40\React.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.4.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Cors, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.7\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Cors, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.2.7\lib\net45\System.Web.Http.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.4\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Vse.Web.Serialization, Version=1.0.4.0, Culture=neutral, PublicKeyToken=fb838febb49f46b2, processorArchitecture=MSIL">
+      <HintPath>..\packages\Vse.Web.Serialization.ControlledSerializationJsonConverter.1.0.4\lib\net45\Vse.Web.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Webpack.NET, Version=0.0.2.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Webpack.NET.0.0.2.10\lib\net45\Webpack.NET.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Diagnostics.DiagnosticSource">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.4.1\lib\net45\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation">
+      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.0\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\ReactConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
+    <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
+    <Compile Include="Areas\HelpPage\Controllers\HelpController.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageAreaRegistration.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageConfigurationExtensions.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\CollectionModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ComplexTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\DictionaryModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumValueDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\IModelDocumentationProvider.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\KeyValuePairModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescriptionGenerator.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameAttribute.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameHelper.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterAnnotation.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\SimpleTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\Models\HelpPageApiModel.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleKey.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ImageSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\InvalidSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ObjectGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
+    <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\Accesos\Accesos_urlController.cs" />
+    <Compile Include="Controllers\Accesos\Usuarios_webController.cs" />
+    <Compile Include="Controllers\Establecimientos\obtener_establecimientosController.cs" />
+    <Compile Include="Controllers\Estado_de_resultados\Estado_de_resultadosController.cs" />
+    <Compile Include="Controllers\Monitor_auditoria_venta\monitor_auditoria_ventasController.cs" />
+    <Compile Include="Controllers\Monitor_auditoria_venta\Monitor_auditoria__venta_detalle_corteController.cs" />
+    <Compile Include="Controllers\Monitor_precio_competencia\CambioPreciosController.cs" />
+    <Compile Include="Controllers\Monitor_precio_competencia\monitor_precio_competenciaController.cs" />
+    <Compile Include="Manager\Globales\Manejos_fechas.cs" />
+    <Compile Include="Manager\Monitor_cuadrantes\Obtener_monitor_cuadrantes.cs" />
+    <Compile Include="Controllers\MovimientosBancoInterno\ObtenerMovimientoOrdenDePagoController.cs" />
+    <Compile Include="Controllers\Ordenes_de_pago_en_efectivo\Obtener_beneficiariosController.cs" />
+    <Compile Include="Controllers\Ordenes_de_pago_en_efectivo\Obtener_ordenes_pago_en_efectivoController.cs" />
+    <Compile Include="Controllers\Orden_de_compra_interna\GastosController.cs" />
+    <Compile Include="Controllers\web\ErrorController.cs" />
+    <Compile Include="Controllers\web\GlobalesController.cs" />
+    <Compile Include="Controllers\web\IndicadoresController.cs" />
+    <Compile Include="Controllers\web\InicioController.cs" />
+    <Compile Include="Controllers\Incidencias_apertura_tienda\IncidenciasObservacionesAperturaController.cs" />
+    <Compile Include="Controllers\Incidencias_personal\PersonalInsidenciasGuardarController.cs" />
+    <Compile Include="Controllers\Incidencias_personal\Pesonal_IncidenciaController.cs" />
+    <Compile Include="Controllers\loginController.cs" />
+    <Compile Include="Controllers\Manejo_fechasController.cs" />
+    <Compile Include="Controllers\matrices\Editar_conceptosController.cs" />
+    <Compile Include="Controllers\matrices\Evaluacion_matrizController.cs" />
+    <Compile Include="Controllers\matrices\Lista_asignacionesController.cs" />
+    <Compile Include="Controllers\matrices\Lista_matricesController.cs" />
+    <Compile Include="Controllers\matrices\Mostrar_conceptosController.cs" />
+    <Compile Include="Controllers\Orden_de_compra_interna\Autorizacion_OCIController.cs" />
+    <Compile Include="Controllers\Orden_de_compra_interna\Detalle_OCIController.cs" />
+    <Compile Include="Controllers\Orden_de_compra_interna\Obtener_OCIController.cs" />
+    <Compile Include="Controllers\Pedido_establecimiento\Obtener_establecimientosBMSController.cs" />
+    <Compile Include="Controllers\Pedido_establecimiento\Pedido_productos_embarqueController.cs" />
+    <Compile Include="Controllers\pedido_frutas_y_verduras\Alimentacio_pedido\Obtener_categoria_f_y_vController.cs" />
+    <Compile Include="Controllers\Productos_clasificador\Productos_clasificador_por_folioController.cs" />
+    <Compile Include="Controllers\revicion_servicios\cuestionarioController.cs" />
+    <Compile Include="Controllers\revicion_servicios\guardar_zonaController.cs" />
+    <Compile Include="Controllers\revicion_servicios\Monitor_servicios_resultadosController.cs" />
+    <Compile Include="Controllers\revicion_servicios\obtener_zonas_cklController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
+    <Compile Include="Controllers\Usuarios\Lista_usuariosController.cs" />
+    <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Controllers\web\LoginController.cs" />
+    <Compile Include="Controllers\web\SurtidoEmbarqueController.cs" />
+    <Compile Include="Controllers\web\UsuariosController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\Accesos\Accesos_Usuario.cs" />
+    <Compile Include="Manager\Estado_de_resultados\Comparativo.cs" />
+    <Compile Include="Manager\Estado_de_resultados\OrdenarMovimientos.cs" />
+    <Compile Include="Manager\Estado_de_resultados\SemanasAnio.cs" />
+    <Compile Include="Manager\Estado_de_resultados\Totales_y_truputs.cs" />
+    <Compile Include="Manager\Globales\Combos.cs" />
+    <Compile Include="Manager\Globales\conceptos_de_orden_de_pago.cs" />
+    <Compile Include="Manager\Globales\tipo_orden_compra_interna.cs" />
+    <Compile Include="Manager\Incidencias_apertura_tienda\Incidencias_obtener_observaciones.cs" />
+    <Compile Include="Manager\Incidencias_personal\Incidencias_personal_establecimiento.cs" />
+    <Compile Include="Manager\Incidencias_personal\Reporte_incidencias_por_fecha.cs" />
+    <Compile Include="Manager\Matrices\Obtener_conceptos.cs" />
+    <Compile Include="Manager\Monitor_auditoria_venta\Monitor_obtener_auditorioa-venta.cs" />
+    <Compile Include="Manager\monitor_orden_compra_interna\Manager_monitor_orden_compra_interna.cs" />
+    <Compile Include="Manager\Monitor_precio_competencia\Obtener_Monitor_precio_competencia.cs" />
+    <Compile Include="Manager\Monitor_precio_competencia\Obtener_precios_de_competencia_por_producto.cs" />
+    <Compile Include="Manager\Monitor_precio_competencia\Obtener_productos.cs" />
+    <Compile Include="Manager\MovimientosBancoInterno\Pagos_realizados_en_un_periodo_por_cuenta_consulta.cs" />
+    <Compile Include="Manager\Ordenes_de_pago_en_efectivo\Obtener_beneficiarios.cs" />
+    <Compile Include="Manager\Ordenes_de_pago_en_efectivo\Monitor_obtener_pagos_en_efectivo.cs" />
+    <Compile Include="Manager\Order_de_compra_interna\Autorizacion_Estatus_OCI.cs" />
+    <Compile Include="Manager\Order_de_compra_interna\Detalle_OCI.cs" />
+    <Compile Include="Manager\Order_de_compra_interna\Obtener_OCI.cs" />
+    <Compile Include="Manager\Pedido_establecimiento\Combo_establecimientosBMS.cs" />
+    <Compile Include="Manager\Pedido_establecimiento\Embarquer_obtener_usuario_autoriza.cs" />
+    <Compile Include="Manager\Pedido_establecimiento\Monitor_embarque_surtido.cs" />
+    <Compile Include="Manager\Pedido_establecimiento\Pedido_actualizar.cs" />
+    <Compile Include="Manager\Pedido_establecimiento\pedido_envarques_por_establecimiento.cs" />
+    <Compile Include="Manager\pedido_frutas_y_verduras\Obtener_pedido_f_y_v.cs" />
+    <Compile Include="Manager\Productos_clasificador\Clasificador_obtener_productos.cs" />
+    <Compile Include="Manager\PropuestaCombioPrecios\CambioDePrecios.cs" />
+    <Compile Include="Manager\PropuestaCombioPrecios\ObtenerAnalisis.cs" />
+    <Compile Include="Manager\Sesion\usuarios_acceso.cs" />
+    <Compile Include="Models\Accesos\Accesos_url_usuario.cs" />
+    <Compile Include="Models\Accesos\Accesos_menus_usuario.cs" />
+    <Compile Include="Models\Accesos\Accesos_sub_menus_usuario.cs" />
+    <Compile Include="Manager\Sesion\IncioSesion.cs" />
+    <Compile Include="Models\Accesos\urls_sql.cs" />
+    <Compile Include="Models\ConexionesSQL.cs" />
+    <Compile Include="Models\Estado_de_resultados\Comparativo\Clasificador.cs" />
+    <Compile Include="Models\Estado_de_resultados\Comparativo\Concepto.cs" />
+    <Compile Include="Models\Estado_de_resultados\Comparativo\Establecimiento_res.cs" />
+    <Compile Include="Models\Estado_de_resultados\Comparativo\Estado_de_resultados_total.cs" />
+    <Compile Include="Models\Estado_de_resultados\Comparativo\Resultado.cs" />
+    <Compile Include="Models\Estado_de_resultados\Comparativo\Subclacificador.cs" />
+    <Compile Include="Models\Estado_de_resultados\Movimientos\Movimiento.cs" />
+    <Compile Include="Models\Estado_de_resultados\Movimientos\MovimientoAnio.cs" />
+    <Compile Include="Models\Estado_de_resultados\Movimientos\MovimientoMes.cs" />
+    <Compile Include="Models\Estado_de_resultados\Movimientos\MovimientoSemana.cs" />
+    <Compile Include="Models\Estado_de_resultados\Periodo\PeriodoSemanaAnio.cs" />
+    <Compile Include="Models\Globales\Parametros_semana_actual.cs" />
+    <Compile Include="Models\Incidencias_apertura_tienda\incidencia.cs" />
+    <Compile Include="Models\Incidencias_apertura_tienda\Incidencias_crud_sql.cs" />
+    <Compile Include="Models\Incidencias_apertura_tienda\Incidencias_cuestionario.cs" />
+    <Compile Include="Models\Incidencias_apertura_tienda\Incidencias_observaciones.cs" />
+    <Compile Include="Models\Incidencias_personal\Colaborador_incidencia.cs" />
+    <Compile Include="Models\Incidencias_personal\Critterio_incidencia.cs" />
+    <Compile Include="Models\Incidencias_personal\Departamento_incidencia.cs" />
+    <Compile Include="Models\Incidencias_personal\Establecimiento_incidencias.cs" />
+    <Compile Include="Models\Incidencias_personal\Incidencias_checador_reporte_por_dia.cs" />
+    <Compile Include="Models\Manejador_usuarios\Manejador_usuarios.cs" />
+    <Compile Include="Models\Matrices\Matrices_conceptos.cs" />
+    <Compile Include="Models\Monitor_auditoria_venta\MonitorVenta.cs" />
+    <Compile Include="Models\Monitor_auditoria_venta\Monitor_asignacion_venta.cs" />
+    <Compile Include="Models\Monitor_auditoria_venta\monitor_auditoria_ventas_abonos_y_deuda_a_detalle.cs" />
+    <Compile Include="Models\Monitor_auditoria_venta\Monitor_auditoria_venta_tickuet.cs" />
+    <Compile Include="Models\Monitor_auditoria_venta\Monitor_clasificador_venta.cs" />
+    <Compile Include="Models\Monitor_auditoria_venta\Monitor_establecimiento_venta.cs" />
+    <Compile Include="Models\Monitor_auditoria_venta\Monitor_venta_corte_folio.cs" />
+    <Compile Include="Models\Monitor_auditoria_venta\Monitor_venta_detalle_corte.cs" />
+    <Compile Include="Models\Monitor_auditoria_venta\Monitor_venta_totales.cs" />
+    <Compile Include="Models\Monitor_cuadrantes\Modelo_monitor_cuadrantes.cs" />
+    <Compile Include="Models\monitor_orden_compra_interna\ModeloDescripcionCI.cs" />
+    <Compile Include="Models\monitor_orden_compra_interna\ModeloOrdenCI.cs" />
+    <Compile Include="Models\monitor_orden_compra_interna\ModeloProductoCI.cs" />
+    <Compile Include="Models\monitor_orden_compra_interna\Modelo_monitor_orden_compra_interna.cs" />
+    <Compile Include="Models\Monitor_precio_competencia\Interface_Analisis.cs" />
+    <Compile Include="Models\Monitor_precio_competencia\Modelo_pasillo_productos.cs" />
+    <Compile Include="Models\Monitor_precio_competencia\Modelo_precios_de_competencia_por_producto.cs" />
+    <Compile Include="Models\Monitor_precio_competencia\model_competencia.cs" />
+    <Compile Include="Models\Monitor_precio_competencia\Model_detalles.cs" />
+    <Compile Include="Models\Monitor_precio_competencia\Model_monitor_precio_competencia.cs" />
+    <Compile Include="Models\Monitor_precio_competencia\Model_mueble.cs" />
+    <Compile Include="Models\Monitor_precio_competencia\Model_pasillo.cs" />
+    <Compile Include="Models\Monitor_precio_competencia\Model_producto.cs" />
+    <Compile Include="Models\MovimientosBancoInterno\concepto_compra_gasto.cs" />
+    <Compile Include="Models\MovimientosBancoInterno\concepto_orden_de_pago.cs" />
+    <Compile Include="Models\MovimientosBancoInterno\concepto_pagos_realizados_en_un_periodo.cs" />
+    <Compile Include="Models\MovimientosBancoInterno\Pagos_realizados_en_un_periodo_por_cuenta.cs" />
+    <Compile Include="Models\MovimientosBancoInterno\subclasificacion_estado_de_resultados.cs" />
+    <Compile Include="Models\MovimientosBancoInterno\tipo_movimiento_estado_de_resultados.cs" />
+    <Compile Include="Models\objetos\Establecimiento.cs" />
+    <Compile Include="Models\objetos\Evaluacion_matriz.cs" />
+    <Compile Include="Models\objetos\Login.cs" />
+    <Compile Include="Models\objetos\Manejo_fechas.cs" />
+    <Compile Include="Models\objetos\Matriz.cs" />
+    <Compile Include="Models\objetos\Matriz_asignacion.cs" />
+    <Compile Include="Models\objetos\monitor_servicios_resultados_cuestionarios.cs" />
+    <Compile Include="Models\objetos\Servicios_Zona_ckl.cs" />
+    <Compile Include="Models\objetos\Usuario.cs" />
+    <Compile Include="Models\Ordenes_de_pago_en_efectivo\Beneficiario.cs" />
+    <Compile Include="Models\Ordenes_de_pago_en_efectivo\Filtro_pagos.cs" />
+    <Compile Include="Models\Ordenes_de_pago_en_efectivo\Modelo_ordenes_de_pago_en_efectivo.cs" />
+    <Compile Include="Models\Orden_de_compra_interna\Autirizacion_OCI.cs" />
+    <Compile Include="Models\Orden_de_compra_interna\Detalles_OCI.cs" />
+    <Compile Include="Models\Orden_de_compra_interna\Orden_OCI.cs" />
+    <Compile Include="Models\Orden_de_compra_interna\Producto_OCI.cs" />
+    <Compile Include="Models\Pedido_establecimiento\Monitor_embarques_surtidos.cs" />
+    <Compile Include="Models\Pedido_establecimiento\Pedido_embarque.cs" />
+    <Compile Include="Models\Pedido_establecimiento\Pedido_embarque_solicita.cs" />
+    <Compile Include="Models\Pedido_establecimiento\Pedido_Productos_en_embarque.cs" />
+    <Compile Include="Models\Pedido_establecimiento\Usuario_autiriza_embarque.cs" />
+    <Compile Include="Models\pedido_frutas_y_verduras\categoria_frutas_y_verduras.cs" />
+    <Compile Include="Models\Productos_clasificador\Clasificador_producto.cs" />
+    <Compile Include="Models\PropuestaCombioPrecios\ModeloCambioPrecio.cs" />
+    <Compile Include="Models\PropuestaCombioPrecios\ModeloCompetenciaCambioPrecios.cs" />
+    <Compile Include="Models\PropuestaCombioPrecios\ModeloFiltroFolioCambioPrecio.cs" />
+    <Compile Include="Models\PropuestaCombioPrecios\ModeloGuardadoCambioPrecio.cs" />
+    <Compile Include="Models\PropuestaCombioPrecios\ModeloProductoCambioPrecios.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".gitignore" />
+    <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\base.css" />
+    <Content Include="Content\css\Indicadores\Indicadores.css" />
+    <Content Include="Content\css\Indicadores\Monitor_auditorio_ventas\main.css" />
+    <Content Include="Content\css\Surtilr_pedido_embarque\main - Copia %282%29.css" />
+    <Content Include="Content\css\Surtilr_pedido_embarque\main.css" />
+    <Content Include="Content\css\Usuarios\Acccesos.css" />
+    <Content Include="Content\css\Usuarios\Perfil.css" />
+    <Content Include="DeploymentSettings.xml" />
+    <Content Include="Content\css\custom.css" />
+    <Content Include="Content\css\custom.min.css" />
+    <Content Include="Content\font-awesome\.gitignore" />
+    <Content Include="Content\font-awesome\css\font-awesome.css" />
+    <Content Include="Content\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Content\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\font-awesome\HELP-US-OUT.txt" />
+    <Content Include="dist\bundle.js" />
+    <Content Include="dist\index.html" />
+    <Content Include="dist\indicadores\AnalisisCambioPrecio\app.js" />
+    <Content Include="dist\indicadores\app.js" />
+    <Content Include="dist\indicadores\EstadosDeResultados\bundle.js" />
+    <Content Include="dist\indicadores\MonitorEmbarques\Monitor.js" />
+    <Content Include="dist\indicadores\PreciosCompetencia\Monitor.js" />
+    <Content Include="dist\indicadores\surtido_embarque\bundle.js" />
+    <Content Include="dist\indicadores\surtido_embarque\index.html" />
+    <Content Include="dist\surtido.js" />
+    <Content Include="dist\surtido_embarque\surtido.js" />
+    <Content Include="Scripts\Componentes\Estaticos\BotonToggle.js">
+      <DependentUpon>BotonToggle.jsx</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Componentes\Estaticos\BotonToggle.jsx" />
+    <Content Include="Scripts\Componentes\Estaticos\BotonToggle.min.js">
+      <DependentUpon>BotonToggle.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Componentes\Estaticos\contraer_expandir.js" />
+    <Content Include="Scripts\Componentes\Estaticos\efecto_carga.js">
+      <DependentUpon>efecto_carga.jsx</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Componentes\Estaticos\efecto_carga.jsx" />
+    <Content Include="Scripts\Componentes\Estaticos\efecto_carga.min.js">
+      <DependentUpon>efecto_carga.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\generales\alertas.js" />
+    <Content Include="Scripts\generales\componente_moneda_vue.js" />
+    <Content Include="Scripts\Indicadores\comparativo_resultados\tabla_main.js">
+      <DependentUpon>tabla_main.jsx</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Indicadores\comparativo_resultados\tabla_main.jsx" />
+    <Content Include="Scripts\Indicadores\comparativo_resultados\tabla_main.min.js">
+      <DependentUpon>tabla_main.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Indicadores\indicadores_caja.js">
+      <DependentUpon>indicadores_caja.jsx</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Indicadores\indicadores_caja.jsx" />
+    <Content Include="Scripts\Indicadores\indicadores_caja.min.js">
+      <DependentUpon>indicadores_caja.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Indicadores\Monitor_auditorio_ventas\Monitor.js">
+      <DependentUpon>Monitor.jsx</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Indicadores\Monitor_auditorio_ventas\Monitor.jsx" />
+    <Content Include="Scripts\Indicadores\Monitor_auditorio_ventas\Monitor.min.js">
+      <DependentUpon>Monitor.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\js\custom.js" />
+    <Content Include="Scripts\js\custom.min.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\HelpPage\Views\Web.config" />
+    <Content Include="Areas\HelpPage\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\ResourceModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Index.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\TextSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\SimpleTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Samples.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Parameters.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ModelDescriptionLink.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\KeyValuePairModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\InvalidSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ImageSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\HelpPageApiModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\EnumTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\DictionaryModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ComplexTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <Content Include="Scripts\lib\Chart\.gitignore" />
+    <Content Include="Scripts\lib\Chart\dist\Chart.bundle.js" />
+    <Content Include="Scripts\lib\Chart\dist\Chart.bundle.min.js" />
+    <Content Include="Scripts\lib\Chart\dist\Chart.js" />
+    <Content Include="Scripts\lib\Chart\dist\Chart.min.js" />
+    <Content Include="Scripts\lib\Chart\gulpfile.js" />
+    <Content Include="Scripts\lib\Chart\karma.conf.ci.js" />
+    <Content Include="Scripts\lib\Chart\karma.conf.js" />
+    <Content Include="Scripts\lib\Chart\karma.coverage.conf.js" />
+    <Content Include="Scripts\lib\Chart\samples\AnimationCallbacks\progress-bar.html" />
+    <Content Include="Scripts\lib\Chart\samples\bar-horizontal.html" />
+    <Content Include="Scripts\lib\Chart\samples\bar-multi-axis.html" />
+    <Content Include="Scripts\lib\Chart\samples\bar-stacked.html" />
+    <Content Include="Scripts\lib\Chart\samples\bar.html" />
+    <Content Include="Scripts\lib\Chart\samples\bubble.html" />
+    <Content Include="Scripts\lib\Chart\samples\combo-bar-line.html" />
+    <Content Include="Scripts\lib\Chart\samples\data_label_combo-bar-line.html" />
+    <Content Include="Scripts\lib\Chart\samples\different-point-sizes.html" />
+    <Content Include="Scripts\lib\Chart\samples\doughnut.html" />
+    <Content Include="Scripts\lib\Chart\samples\line-customTooltips.html" />
+    <Content Include="Scripts\lib\Chart\samples\line-legend.html" />
+    <Content Include="Scripts\lib\Chart\samples\line-logarithmic.html" />
+    <Content Include="Scripts\lib\Chart\samples\line-multi-axis.html" />
+    <Content Include="Scripts\lib\Chart\samples\line-skip-points.html" />
+    <Content Include="Scripts\lib\Chart\samples\line-stacked-area.html" />
+    <Content Include="Scripts\lib\Chart\samples\line-x-axis-filter.html" />
+    <Content Include="Scripts\lib\Chart\samples\line.html" />
+    <Content Include="Scripts\lib\Chart\samples\pie-customTooltips.html" />
+    <Content Include="Scripts\lib\Chart\samples\pie.html" />
+    <Content Include="Scripts\lib\Chart\samples\polar-area.html" />
+    <Content Include="Scripts\lib\Chart\samples\radar-skip-points.html" />
+    <Content Include="Scripts\lib\Chart\samples\radar.html" />
+    <Content Include="Scripts\lib\Chart\samples\scatter-logX.html" />
+    <Content Include="Scripts\lib\Chart\samples\scatter-multi-axis.html" />
+    <Content Include="Scripts\lib\Chart\samples\scatter.html" />
+    <Content Include="Scripts\lib\Chart\samples\timeScale\combo-time-scale.html" />
+    <Content Include="Scripts\lib\Chart\samples\timeScale\line-time-point-data.html" />
+    <Content Include="Scripts\lib\Chart\samples\timeScale\line-time-scale.html" />
+    <Content Include="Scripts\lib\Chart\samples\tooltip-hooks.html" />
+    <Content Include="Scripts\lib\Chart\src\chart.js" />
+    <Content Include="Scripts\lib\Chart\src\charts\Chart.Bar.js" />
+    <Content Include="Scripts\lib\Chart\src\charts\Chart.Bubble.js" />
+    <Content Include="Scripts\lib\Chart\src\charts\Chart.Doughnut.js" />
+    <Content Include="Scripts\lib\Chart\src\charts\Chart.Line.js" />
+    <Content Include="Scripts\lib\Chart\src\charts\Chart.PolarArea.js" />
+    <Content Include="Scripts\lib\Chart\src\charts\Chart.Radar.js" />
+    <Content Include="Scripts\lib\Chart\src\charts\Chart.Scatter.js" />
+    <Content Include="Scripts\lib\Chart\src\controllers\controller.bar.js" />
+    <Content Include="Scripts\lib\Chart\src\controllers\controller.bubble.js" />
+    <Content Include="Scripts\lib\Chart\src\controllers\controller.doughnut.js" />
+    <Content Include="Scripts\lib\Chart\src\controllers\controller.line.js" />
+    <Content Include="Scripts\lib\Chart\src\controllers\controller.polarArea.js" />
+    <Content Include="Scripts\lib\Chart\src\controllers\controller.radar.js" />
+    <Content Include="Scripts\lib\Chart\src\core\core.animation.js" />
+    <Content Include="Scripts\lib\Chart\src\core\core.controller.js" />
+    <Content Include="Scripts\lib\Chart\src\core\core.datasetController.js" />
+    <Content Include="Scripts\lib\Chart\src\core\core.element.js" />
+    <Content Include="Scripts\lib\Chart\src\core\core.helpers.js" />
+    <Content Include="Scripts\lib\Chart\src\core\core.js" />
+    <Content Include="Scripts\lib\Chart\src\core\core.layoutService.js" />
+    <Content Include="Scripts\lib\Chart\src\core\core.legend.js" />
+    <Content Include="Scripts\lib\Chart\src\core\core.plugin.js" />
+    <Content Include="Scripts\lib\Chart\src\core\core.scale.js" />
+    <Content Include="Scripts\lib\Chart\src\core\core.scaleService.js" />
+    <Content Include="Scripts\lib\Chart\src\core\core.title.js" />
+    <Content Include="Scripts\lib\Chart\src\core\core.tooltip.js" />
+    <Content Include="Scripts\lib\Chart\src\elements\element.arc.js" />
+    <Content Include="Scripts\lib\Chart\src\elements\element.line.js" />
+    <Content Include="Scripts\lib\Chart\src\elements\element.point.js" />
+    <Content Include="Scripts\lib\Chart\src\elements\element.rectangle.js" />
+    <Content Include="Scripts\lib\Chart\src\scales\scale.category.js" />
+    <Content Include="Scripts\lib\Chart\src\scales\scale.linear.js" />
+    <Content Include="Scripts\lib\Chart\src\scales\scale.logarithmic.js" />
+    <Content Include="Scripts\lib\Chart\src\scales\scale.radialLinear.js" />
+    <Content Include="Scripts\lib\Chart\src\scales\scale.time.js" />
+    <Content Include="Scripts\lib\Chart\test\controller.bar.tests.js" />
+    <Content Include="Scripts\lib\Chart\test\controller.bubble.tests.js" />
+    <Content Include="Scripts\lib\Chart\test\controller.doughnut.tests.js" />
+    <Content Include="Scripts\lib\Chart\test\controller.line.tests.js" />
+    <Content Include="Scripts\lib\Chart\test\controller.polarArea.tests.js" />
+    <Content Include="Scripts\lib\Chart\test\controller.radar.tests.js" />
+    <Content Include="Scripts\lib\Chart\test\core.element.tests.js" />
+    <Content Include="Scripts\lib\Chart\test\core.helpers.tests.js" />
+    <Content Include="Scripts\lib\Chart\test\core.layoutService.tests.js" />
+    <Content Include="Scripts\lib\Chart\test\core.legend.tests.js" />
+    <Content Include="Scripts\lib\Chart\test\core.plugin.tests.js" />
+    <Content Include="Scripts\lib\Chart\test\core.scaleService.tests.js" />
+    <Content Include="Scripts\lib\Chart\test\core.title.tests.js" />
+    <Content Include="Scripts\lib\Chart\test\defaultConfig.tests.js" />
+    <Content Include="Scripts\lib\Chart\test\element.arc.tests.js" />
+    <Content Include="Scripts\lib\Chart\test\element.line.tests.js" />
+    <Content Include="Scripts\lib\Chart\test\element.point.tests.js" />
+    <Content Include="Scripts\lib\Chart\test\element.rectangle.tests.js" />
+    <Content Include="Scripts\lib\Chart\test\mockContext.js" />
+    <Content Include="Scripts\lib\Chart\test\scale.category.tests.js" />
+    <Content Include="Scripts\lib\Chart\test\scale.linear.tests.js" />
+    <Content Include="Scripts\lib\Chart\test\scale.logarithmic.tests.js" />
+    <Content Include="Scripts\lib\Chart\test\scale.radialLinear.tests.js" />
+    <Content Include="Scripts\lib\Chart\test\scale.time.tests.js" />
+    <Content Include="Scripts\lib\html2Camvas\html2canvas.js" />
+    <Content Include="Scripts\lib\jsbarCode\JsBarcode.all.min.js" />
+    <Content Include="src\scripts\Globales\CodigosBarra\codigos_de_barras _g.es5.js" />
+    <Content Include="src\scripts\Globales\CodigosBarra\codigos_de_barras _g.es5.min.js" />
+    <Content Include="src\scripts\Globales\CodigosBarra\codigos_de_barras _g.js" />
+    <Content Include="src\scripts\Globales\CodigosBarra\codigos_de_barras.js" />
+    <Content Include="src\scripts\Globales\ExportarExcel.js" />
+    <Content Include="src\scripts\Indicadores\MovimientosBancoInterno\main.js" />
+    <Content Include="src\scripts\ReactJS\ComponentesGlobales\Moneda.jsx" />
+    <Content Include="src\scripts\ReactJS\indicadores\EstadosDeResultados\components\App.jsx" />
+    <Content Include="src\scripts\ReactJS\indicadores\EstadosDeResultados\components\Cavecera.jsx" />
+    <Content Include="src\scripts\ReactJS\indicadores\EstadosDeResultados\components\ModalConceptos.jsx" />
+    <Content Include="src\scripts\ReactJS\indicadores\EstadosDeResultados\components\ModalMivimientosPorEstablecimiento.jsx" />
+    <Content Include="src\scripts\ReactJS\indicadores\EstadosDeResultados\components\VistaTablaPrincipal - Copia.jsx" />
+    <Content Include="src\scripts\ReactJS\indicadores\EstadosDeResultados\components\VistaTablaPrincipal.jsx" />
+    <Content Include="src\scripts\ReactJS\indicadores\EstadosDeResultados\Index.jsx" />
+    <Content Include="src\scripts\ReactJS\indicadores\MonitorOrdenCompraInterna\components\App.jsx" />
+    <Content Include="src\scripts\ReactJS\indicadores\MonitorOrdenCompraInterna\components\Cavecera.jsx" />
+    <Content Include="src\scripts\ReactJS\indicadores\MonitorOrdenCompraInterna\components\CaveceraTabla.jsx" />
+    <Content Include="src\scripts\ReactJS\indicadores\MonitorOrdenCompraInterna\components\EstablecimientoTabla.jsx" />
+    <Content Include="src\scripts\ReactJS\indicadores\MonitorOrdenCompraInterna\components\SeleccionRecibe.jsx" />
+    <Content Include="src\scripts\ReactJS\indicadores\MonitorOrdenCompraInterna\components\TablaOrdenes.jsx" />
+    <Content Include="src\scripts\ReactJS\indicadores\MonitorOrdenCompraInterna\components\VistaDetalleOrden.jsx" />
+    <Content Include="src\scripts\ReactJS\indicadores\MonitorOrdenCompraInterna\index.jsx" />
+    <Content Include="src\scripts\ReactJS\indicadores\MonitorOrdenCompraInterna\metodos\manejoSemanas.js" />
+    <Content Include="src\scripts\VueJS\indicadores\AnalisisCambioPrecios\app.js" />
+    <Content Include="src\scripts\VueJS\indicadores\MonitorEmbarques\app.js" />
+    <Content Include="src\scripts\VueJS\indicadores\MonitorOrdenCompraInterna\app.js" />
+    <Content Include="src\scripts\VueJS\indicadores\PreciosCompetencia\App.js" />
+    <Content Include="src\scripts\VueJS\ComponentesGlobales\Moneda.vue" />
+    <Content Include="src\scripts\VueJS\indicadores\AnalisisCambioPrecios\Components\App.vue" />
+    <Content Include="src\scripts\VueJS\indicadores\AnalisisCambioPrecios\Components\FiltrosAnalisis.vue" />
+    <Content Include="src\scripts\VueJS\indicadores\AnalisisCambioPrecios\Components\Producto.vue" />
+    <Content Include="src\scripts\VueJS\indicadores\AnalisisCambioPrecios\Components\TablaProductos.vue" />
+    <Content Include="src\scripts\VueJS\indicadores\AnalisisCambioPrecios\Components\VistaGuardados.vue" />
+    <Content Include="src\scripts\VueJS\indicadores\AnalisisCambioPrecios\Components\ProductoGuardado.vue" />
+    <Content Include="src\scripts\Indicadores\MovimientosBancoInterno\main.js.map" />
+    <Content Include="src\scripts\VueJS\indicadores\MonitorOrdenCompraInterna\components\App.vue" />
+    <Content Include="src\scripts\VueJS\indicadores\MonitorOrdenCompraInterna\components\CaveceraParametros.vue" />
+    <Content Include="src\scripts\VueJS\indicadores\MonitorOrdenCompraInterna\components\TablaOrdenes.vue" />
+    <Content Include="src\scripts\VueJS\indicadores\MonitorOrdenCompraInterna\components\OrdenCompra.vue" />
+    <Content Include="src\scripts\VueJS\indicadores\MonitorOrdenCompraInterna\components\VistaDetalleOrden.vue" />
+    <Content Include="src\scripts\VueJS\indicadores\MonitorOrdenCompraInterna\components\CaveceraTabla.vue" />
+    <None Include="src\scripts\VueJS\indicadores\PreciosCompetencia\Components\DetallesProducto.vue" />
+    <Content Include="src\scripts\VueJS\indicadores\PreciosCompetencia\Components\PasillosTabla.vue" />
+    <Content Include="src\scripts\VueJS\indicadores\PreciosCompetencia\Components\MuebleTabla.vue" />
+    <Content Include="src\scripts\VueJS\indicadores\PreciosCompetencia\Components\PosicionMueble.vue" />
+    <Content Include="src\scripts\VueJS\indicadores\PreciosCompetencia\Components\ModalMueble.vue" />
+    <Content Include="src\scripts\VueJS\indicadores\PreciosCompetencia\Components\AreaFiltroMueble.vue" />
+    <Content Include="src\scripts\VueJS\indicadores\PreciosCompetencia\Components\ModaDetalleProducto.vue" />
+    <Content Include="src\scripts\VueJS\indicadores\PreciosCompetencia\Components\HistoricoProducto.vue" />
+    <None Include="src\scripts\VueJS\indicadores\PreciosCompetencia\Components\Productos8020.vue" />
+    <None Include="src\scripts\VueJS\indicadores\PreciosCompetencia\Components\TablaProducto.vue" />
+    <Content Include="src\scripts\VueJS\surtido_embarque\app.js" />
+    <Content Include="src\scripts\VueJS\surtido_embarque\components\App.vue" />
+    <Content Include="src\scripts\VueJS\surtido_embarque\components\BuscarProducto.vue" />
+    <Content Include="src\scripts\VueJS\surtido_embarque\components\CapturarSurtido.vue" />
+    <Content Include="src\scripts\VueJS\surtido_embarque\components\SeleccionModal.vue" />
+    <Content Include="src\scripts\VueJS\surtido_embarque\components\SeleccionSurtido.vue" />
+    <Content Include="src\scripts\VueJS\surtido_embarque\models\ModelEmbarque.js" />
+    <Content Include="Views\Globales\CodigoBarrasGrande.cshtml" />
+    <Content Include="Scripts\lib\Chart\.bower.json" />
+    <Content Include="Scripts\lib\Chart\.codeclimate.yml" />
+    <Content Include="Scripts\lib\Chart\.editorconfig" />
+    <Content Include="Scripts\lib\Chart\.eslintignore" />
+    <Content Include="Scripts\lib\Chart\.eslintrc" />
+    <Content Include="Scripts\lib\Chart\.github\ISSUE_TEMPLATE.md" />
+    <Content Include="Scripts\lib\Chart\.github\PULL_REQUEST_TEMPLATE.md" />
+    <Content Include="Scripts\lib\Chart\.travis.yml" />
+    <Content Include="Scripts\lib\Chart\bower.json" />
+    <Content Include="Scripts\lib\Chart\composer.json" />
+    <Content Include="Scripts\lib\Chart\config.jshintrc" />
+    <Content Include="Scripts\lib\Chart\CONTRIBUTING.md" />
+    <Content Include="Scripts\lib\Chart\docs\00-Getting-Started.md" />
+    <Content Include="Scripts\lib\Chart\docs\01-Chart-Configuration.md" />
+    <Content Include="Scripts\lib\Chart\docs\02-Scales.md" />
+    <Content Include="Scripts\lib\Chart\docs\03-Line-Chart.md" />
+    <Content Include="Scripts\lib\Chart\docs\04-Bar-Chart.md" />
+    <Content Include="Scripts\lib\Chart\docs\05-Radar-Chart.md" />
+    <Content Include="Scripts\lib\Chart\docs\06-Polar-Area-Chart.md" />
+    <Content Include="Scripts\lib\Chart\docs\07-Pie-Doughnut-Chart.md" />
+    <Content Include="Scripts\lib\Chart\docs\08-Bubble-Chart.md" />
+    <Content Include="Scripts\lib\Chart\docs\09-Advanced.md" />
+    <Content Include="Scripts\lib\Chart\docs\10-Notes.md" />
+    <Content Include="Scripts\lib\Chart\LICENSE.md" />
+    <Content Include="Scripts\lib\Chart\package.json" />
+    <Content Include="Scripts\lib\Chart\README.md" />
+    <Content Include="src\scripts\VueJS\surtido_embarque\components\ModalFiltroEmbarque.vue" />
+    <Content Include="src\scripts\VueJS\surtido_embarque\components\SeleccionarPedido.vue" />
+    <Content Include="src\scripts\VueJS\surtido_embarque\components\Guardar.vue" />
+    <Content Include="Views\Indicadores\MonitorEmbarques.cshtml" />
+    <Content Include="src\scripts\VueJS\indicadores\MonitorEmbarques\components\App.vue" />
+    <Content Include="src\scripts\VueJS\indicadores\MonitorEmbarques\components\TablaPedidos.vue" />
+    <Content Include="src\scripts\VueJS\indicadores\MonitorEmbarques\components\ModalDetalle.vue" />
+    <Content Include="Views\Indicadores\PreciosCompetencia _bk.cshtml" />
+    <Content Include="src\scripts\VueJS\indicadores\PreciosCompetencia\Components\App.vue" />
+    <Content Include="src\scripts\VueJS\indicadores\PreciosCompetencia\Components\Controles.vue" />
+    <Content Include="src\scripts\VueJS\indicadores\PreciosCompetencia\Components\TablaMonitor.vue" />
+    <Content Include="Views\Indicadores\AnalisisCamiboPrecios.cshtml" />
+    <Content Include="Views\Indicadores\MonitorOrdenCompraInterna - Copia.cshtml" />
+    <None Include="vue_src\components\BuscarProducto.vue" />
+    <Content Include="src\styles\CodigosBarra\main.css" />
+    <Content Include="src\styles\CodigosBarra\main_g.css" />
+    <Content Include="src\styles\login\main.css" />
+    <Content Include="vue_src\style\main.css" />
+    <Content Include="vue_src\index.html" />
+    <Content Include="vue_src\index.js" />
+    <Content Include="webpack.config_.js" />
+    <Content Include="webpack.config.js" />
+    <Content Include=".babelrc" />
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
+    <Content Include="Content\font-awesome\.bower.json" />
+    <Content Include="Content\font-awesome\.npmignore" />
+    <Content Include="Content\font-awesome\bower.json" />
+    <Content Include="Content\font-awesome\css\font-awesome.css.map" />
+    <Content Include="Content\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Content\font-awesome\less\animated.less" />
+    <Content Include="Content\font-awesome\less\bordered-pulled.less" />
+    <Content Include="Content\font-awesome\less\core.less" />
+    <Content Include="Content\font-awesome\less\fixed-width.less" />
+    <Content Include="Content\font-awesome\less\font-awesome.less" />
+    <Content Include="Content\font-awesome\less\icons.less" />
+    <Content Include="Content\font-awesome\less\larger.less" />
+    <Content Include="Content\font-awesome\less\list.less" />
+    <Content Include="Content\font-awesome\less\mixins.less" />
+    <Content Include="Content\font-awesome\less\path.less" />
+    <Content Include="Content\font-awesome\less\rotated-flipped.less" />
+    <Content Include="Content\font-awesome\less\screen-reader.less" />
+    <Content Include="Content\font-awesome\less\stacked.less" />
+    <Content Include="Content\font-awesome\less\variables.less" />
+    <Content Include="Content\font-awesome\scss\font-awesome.scss" />
+    <Content Include="Content\font-awesome\scss\_animated.scss" />
+    <Content Include="Content\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="Content\font-awesome\scss\_core.scss" />
+    <Content Include="Content\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="Content\font-awesome\scss\_icons.scss" />
+    <Content Include="Content\font-awesome\scss\_larger.scss" />
+    <Content Include="Content\font-awesome\scss\_list.scss" />
+    <Content Include="Content\font-awesome\scss\_mixins.scss" />
+    <Content Include="Content\font-awesome\scss\_path.scss" />
+    <Content Include="Content\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="Content\font-awesome\scss\_screen-reader.scss" />
+    <Content Include="Content\font-awesome\scss\_stacked.scss" />
+    <Content Include="Content\font-awesome\scss\_variables.scss" />
+    <Content Include="package-lock.json" />
+    <Content Include="package.json" />
+    <None Include="Properties\PublishProfiles\Produccion.pubxml" />
+    <Content Include="README.md" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\Inicio\main.js">
+      <DependentUpon>main.jsx</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Inicio\main.jsx" />
+    <Content Include="Scripts\Inicio\main.min.js">
+      <DependentUpon>main.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3_slim_min.js" />
+    <Content Include="Scripts\lib\React\JSXTransformer.js" />
+    <Content Include="Scripts\lib\React\react-dom.production.min.js" />
+    <Content Include="Scripts\lib\React\react.development-16.4.2.js" />
+    <Content Include="Scripts\lib\React\react.production.min-16.4.2.js" />
+    <Content Include="Scripts\lib\React\react.production.min.js" />
+    <Content Include="Scripts\lib\vue\vue.js" />
+    <Content Include="Scripts\lib\vue\vue_.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\Sesion\Accesos_urls.js">
+      <DependentUpon>Accesos_urls.jsx</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Sesion\Accesos_urls.min.js">
+      <DependentUpon>Accesos_urls.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Sesion\login.js" />
+    <Content Include="Scripts\Sesion\menu_accesos.js" />
+    <Content Include="Scripts\SurtidoEmbarque\Embarque_pedido.js" />
+    <Content Include="Scripts\SurtidoEmbarque\Seleccion_embarque.js" />
+    <Content Include="Scripts\SurtidoEmbarque\view_surtido.js" />
+    <Content Include="Scripts\SurtidoEmbarque\vista_embarque.js">
+      <DependentUpon>vista_embarque.jsx</DependentUpon>
+    </Content>
+    <Content Include="Scripts\SurtidoEmbarque\vista_embarque.jsx" />
+    <Content Include="Scripts\SurtidoEmbarque\vista_embarque.min.js">
+      <DependentUpon>vista_embarque.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Usuarios\Acceso.js">
+      <DependentUpon>Acceso.jsx</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Usuarios\Acceso.min.js">
+      <DependentUpon>Acceso.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Usuarios\main.js">
+      <DependentUpon>main.jsx</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Usuarios\main.jsx" />
+    <Content Include="Scripts\Usuarios\main.min.js">
+      <DependentUpon>main.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\vue.js" />
+    <Content Include="Scripts\vue.min.js" />
+    <Content Include="src\Globales\CodigosBarra\codigos_de_barras _g.es5.js" />
+    <Content Include="src\Globales\CodigosBarra\codigos_de_barras _g.es5.min.js" />
+    <Content Include="src\Globales\CodigosBarra\codigos_de_barras _g.js" />
+    <Content Include="src\Globales\CodigosBarra\codigos_de_barras.js" />
+    <Content Include="src\scripts\Indicadores\Cuadrantes\monitor - Copia.js" />
+    <Content Include="src\scripts\Indicadores\Cuadrantes\monitor.js" />
+    <Content Include="src\scripts\Indicadores\MonitorOrdenCompraInterna\MonitorOrdenCompraInterna.js" />
+    <Content Include="src\scripts\Indicadores\OrdenesDePagoEnEfectivo\Detallaes_pagos.js" />
+    <Content Include="src\scripts\Indicadores\OrdenesDePagoEnEfectivo\Obtener_beneficioarios.js" />
+    <Content Include="src\scripts\Indicadores\OrdenesDePagoEnEfectivo\Obtener_selectores.js" />
+    <Content Include="src\scripts\Indicadores\OrdenesDePagoEnEfectivo\OrdenesPago.js">
+      <DependentUpon>OrdenesPago.jsx</DependentUpon>
+    </Content>
+    <Content Include="src\scripts\Indicadores\OrdenesDePagoEnEfectivo\OrdenesPago.min.js">
+      <DependentUpon>OrdenesPago.js</DependentUpon>
+    </Content>
+    <Content Include="src\scripts\Indicadores\OrdenesDePagoEnEfectivo\Parametros_consulta.js" />
+    <Content Include="src\scripts\Indicadores\OrdenesDePagoEnEfectivo\Realizar_consulta.js" />
+    <Content Include="src\scripts\Indicadores\PreciosCompetencia\monitor.js" />
+    <Content Include="src\scripts\Indicadores\ReporteIncidenciasFecha\main.js" />
+    <Content Include="src\styles\Indicadores\Cuadrantes\main.css" />
+    <Content Include="src\styles\Indicadores\MonitorOrdenCompraInterna\main.css" />
+    <Content Include="src\styles\Indicadores\OrdenesDePagoEnEfectivo\main.css" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Usuarios\index.cshtml" />
+    <Content Include="Views\Login\index.cshtml" />
+    <Content Include="Views\Usuarios\Accesos.cshtml" />
+    <Content Include="Views\SurtidoEmbarque\index.cshtml" />
+    <Content Include="Views\Indicadores\Index.cshtml" />
+    <Content Include="Views\Indicadores\EstadosDeResultados.cshtml" />
+    <Content Include="Views\Indicadores\AuditoriaVenta.cshtml" />
+    <Content Include="Views\Indicadores\Matrices.cshtml" />
+    <Content Include="Views\Indicadores\CuestionariosApertura.cshtml" />
+    <Content Include="Views\Indicadores\CuestionariosServicios.cshtml" />
+    <Content Include="Views\Indicadores\PreciosCompetencia.cshtml" />
+    <Content Include="Views\Indicadores\Cuadrantes.cshtml" />
+    <Content Include="Views\Indicadores\CuadrantesPorEstablecimiento.cshtml" />
+    <Content Include="Views\Gastos\OrdenGastos.cshtml" />
+    <Content Include="Views\Gastos\OrdenCompraInterna.cshtml" />
+    <Content Include="Views\Indicadores\MovimientosBancoInterno.cshtml" />
+    <Content Include="Views\Error\_ErrorPage.cshtml" />
+    <Content Include="Views\Indicadores\OrdenesDePagoEnEfectivo.cshtml" />
+    <Content Include="Views\Indicadores\ReporteIncidenciasFecha.cshtml" />
+    <Content Include="Views\Indicadores\MonitorOrdenCompraInterna.cshtml" />
+    <Content Include="vue_src\components\App.vue" />
+    <Content Include="Views\SurtidoEmbarque\index_bk.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Controllers\Productos\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.min.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\Sesion\Accesos_urls.jsx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\Usuarios\Acceso.jsx" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\Usuarios\Perfil.ts" />
+    <Content Include="src\scripts\Indicadores\OrdenesDePagoEnEfectivo\OrdenesPago.jsx" />
+    <TypeScriptCompile Include="src\scripts\Indicadores\MovimientosBancoInterno\main.ts" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>56485</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:56485/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

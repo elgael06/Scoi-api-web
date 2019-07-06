@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+<assembly><name>Aether</name></assembly>
+<members>
+<member name="T:Aether.PIso`2">
+<summary>
+ Partial isomorphism of a &lt;&gt; b
+</summary>
+</member>
+<member name="T:Aether.Iso`2">
+<summary>
+ Total isomorphism of a &lt;&gt; b
+</summary>
+</member>
+<member name="T:Aether.PLens`2">
+<summary>
+ Partial lens from a -&gt; b
+</summary>
+</member>
+<member name="T:Aether.Epimorphism`2">
+<summary>
+ Epimorphism between &apos;a &lt;&gt; &apos;b.
+</summary>
+</member>
+<member name="T:Aether.Isomorphism`2">
+<summary>
+ Isomorphism between &apos;a &lt;&gt; &apos;b.
+</summary>
+</member>
+<member name="T:Aether.Prism`2">
+<summary>
+ Prism from &apos;a -&gt; &apos;b.
+</summary>
+</member>
+<member name="T:Aether.Lens`2">
+<summary>
+ Lens from &apos;a -&gt; &apos;b.
+</summary>
+</member>
+<member name="M:Aether.key_``2(``0)">
+<summary>
+ Key of a map giving a partial lens
+</summary>
+</member>
+<member name="M:Aether.tail_``1">
+<summary>
+ Tail of a list giving a partial lens
+</summary>
+</member>
+<member name="M:Aether.pos_``1(System.Int32)">
+<summary>
+ Position of a list giving a partial lens
+</summary>
+</member>
+<member name="M:Aether.head_``1">
+<summary>
+ Head of a list giving a partial lens
+</summary>
+</member>
+<member name="M:Aether.snd_``2">
+<summary>
+ Second item of a tuple giving a total lens
+</summary>
+</member>
+<member name="M:Aether.fst_``2">
+<summary>
+ First item of a tuple giving a total lens
+</summary>
+</member>
+<member name="M:Aether.id_``1">
+<summary>
+ Identity lens returning the original item regardless of modifiction
+</summary>
+</member>
+<member name="M:Aether.Operators.op_HatQmarkPercentEquals``3(``0,``1)">
+<summary>
+ Modify a value using a prism.
+</summary>
+</member>
+<member name="M:Aether.Operators.op_HatPercentEquals``2(Microsoft.FSharp.Core.FSharpFunc{``0,``0},Microsoft.FSharp.Core.FSharpFunc{``1,``0},Microsoft.FSharp.Core.FSharpFunc{``0,Microsoft.FSharp.Core.FSharpFunc{``1,``1}})">
+<summary>
+ Modify a value using a total lens
+</summary>
+</member>
+<member name="M:Aether.Operators.op_HatQmarkEquals``3(``0,``1)">
+<summary>
+ Set a value using a prism.
+</summary>
+</member>
+<member name="M:Aether.Operators.op_HatQmarkDot``3(``0,``1)">
+<summary>
+ Get a value using a prism.
+</summary>
+</member>
+<member name="M:Aether.Operators.op_LessQmarkQmarkGreater``3(``0,``1)">
+<summary>
+ Compose a prism with a partial isomorphism, giving a prism.
+</summary>
+</member>
+<member name="M:Aether.Operators.op_LessQmarkMinusGreater``3(``0,``1)">
+<summary>
+ Compose a prism with an isomorphism, giving a prism.
+</summary>
+</member>
+<member name="M:Aether.Operators.op_GreaterQmarkQmarkGreater``3(``0,``1)">
+<summary>
+ Compose a prism with a prism, giving a prism.
+</summary>
+</member>
+<member name="M:Aether.Operators.op_GreaterQmarkMinusGreater``3(``0,``1)">
+<summary>
+ Compose a prism and a lens, giving a prism.
+</summary>
+</member>
+<member name="M:Aether.Operators.op_LessMinusQmarkGreater``3(``0,``1)">
+<summary>
+ Compose a total lens with a partial isomorphism, giving a prism.
+</summary>
+</member>
+<member name="M:Aether.Operators.op_LessMinusMinusGreater``3(``0,``1)">
+<summary>
+ Compose a lens with an isomorphism, giving a lens.
+</summary>
+</member>
+<member name="M:Aether.Operators.op_GreaterMinusQmarkGreater``3(``0,``1)">
+<summary>
+ Compose a lens and a prism, giving a prism.
+</summary>
+</member>
+<member name="M:Aether.Operators.op_GreaterMinusMinusGreater``3(``0,``1)">
+<summary>
+ Compose a lens and a lens, giving a lens.
+</summary>
+</member>
+<member name="M:Aether.Operators.op_HatPercent``3(``0,``1)">
+<summary>
+ Modify a value using an optic.
+</summary>
+</member>
+<member name="M:Aether.Operators.op_HatEquals``3(``0,``1)">
+<summary>
+ Set a value using an optic.
+</summary>
+</member>
+<member name="M:Aether.Operators.op_HatDot``3(``0,``1)">
+<summary>
+ Get a value using an optic.
+</summary>
+</member>
+<member name="M:Aether.Operators.op_GreaterQmarkGreater``3(``0,``1)">
+<summary>
+ Compose a prism with an optic or morphism.
+</summary>
+</member>
+<member name="M:Aether.Operators.op_GreaterMinusGreater``3(``0,``1)">
+<summary>
+ Compose a lens with an optic or morphism.
+</summary>
+</member>
+<member name="T:Aether.Operators">
+<summary>
+ Optional custom operators for working with optics. Provides more concise
+ syntactic options for working with the functions in the `Compose` and
+ `Optic` modules.
+</summary>
+</member>
+<member name="M:Aether.Optics.snd_``2">
+<summary>
+ Lens to the second item of a tuple.
+</summary>
+</member>
+<member name="M:Aether.Optics.fst_``2">
+<summary>
+ Lens to the first item of a tuple.
+</summary>
+</member>
+<member name="M:Aether.Optics.box_``1">
+<summary>
+ Isomorphism between a boxed and unboxed type.
+</summary>
+</member>
+<member name="M:Aether.Optics.Option.value_``1">
+<summary>
+ Prism to the value in an Option.
+</summary>
+</member>
+<member name="M:Aether.Optics.Map.list_``2">
+<summary>
+ Weak Isomorphism to a list of key-value pairs.
+</summary>
+</member>
+<member name="M:Aether.Optics.Map.array_``2">
+<summary>
+ Weak Isomorphism to an array of key-value pairs.
+</summary>
+</member>
+<member name="M:Aether.Optics.Map.value_``2(``0)">
+<summary>
+ Lens to a value option associated with a key in a map.
+</summary>
+</member>
+<member name="M:Aether.Optics.Map.key_``2(``0)">
+<summary>
+ Prism to a value associated with a key in a map.
+</summary>
+</member>
+<member name="M:Aether.Optics.List.array_``1">
+<summary>
+ Isomorphism to an array.
+</summary>
+</member>
+<member name="M:Aether.Optics.List.tail_``1">
+<summary>
+ Prism to the tail of a list.
+</summary>
+</member>
+<member name="M:Aether.Optics.List.pos_``1(System.Int32)">
+<summary>
+ Prism to an indexed position in a list.
+</summary>
+</member>
+<member name="M:Aether.Optics.List.head_``1">
+<summary>
+ Prism to the head of a list.
+</summary>
+</member>
+<member name="M:Aether.Optics.Result.error_``2">
+<summary>
+ Prism to Error.
+</summary>
+</member>
+<member name="M:Aether.Optics.Result.ok_``2">
+<summary>
+ Prism to Ok.
+</summary>
+</member>
+<member name="M:Aether.Optics.Choice.choice2Of2_``2">
+<summary>
+ Prism to Choice2Of2.
+</summary>
+</member>
+<member name="M:Aether.Optics.Choice.choice1Of2_``2">
+<summary>
+ Prism to Choice1Of2.
+</summary>
+</member>
+<member name="M:Aether.Optics.Array.list_``1">
+<summary>
+ Isomorphism to an list.
+</summary>
+</member>
+<member name="T:Aether.Optics">
+<summary>
+ Various optics implemented for common types such as tuples,
+ lists and maps, along with an identity lens.
+</summary>
+</member>
+<member name="M:Aether.Prism.map``3(``0)">
+<summary>
+ Map a value using a prism.
+</summary>
+</member>
+<member name="M:Aether.Prism.set``3(``0)">
+<summary>
+ Set a value using a prism.
+</summary>
+</member>
+<member name="M:Aether.Prism.get``3(``0)">
+<summary>
+ Get a value using a prism.
+</summary>
+</member>
+<member name="M:Aether.Prism.ofEpimorphism``2(Microsoft.FSharp.Core.FSharpFunc{``0,Microsoft.FSharp.Core.FSharpOption{``1}},Microsoft.FSharp.Core.FSharpFunc{``1,``0})">
+<summary>
+ Converts an epimorphism into a prism.
+</summary>
+</member>
+<member name="T:Aether.Prism">
+<summary>
+ Functions for creating or using prisms.
+</summary>
+</member>
+<member name="M:Aether.Lens.mapPartial``2(Microsoft.FSharp.Core.FSharpFunc{``0,Microsoft.FSharp.Core.FSharpOption{``1}},Microsoft.FSharp.Core.FSharpFunc{``1,Microsoft.FSharp.Core.FSharpFunc{``0,``0}})">
+<summary>
+ Modify a value using a partial lens
+</summary>
+</member>
+<member name="M:Aether.Lens.map``3(``0)">
+<summary>
+ Map a value using a lens.
+</summary>
+</member>
+<member name="M:Aether.Lens.setPartial``2(Microsoft.FSharp.Core.FSharpFunc{``0,Microsoft.FSharp.Core.FSharpOption{``1}},Microsoft.FSharp.Core.FSharpFunc{``1,Microsoft.FSharp.Core.FSharpFunc{``0,``0}})">
+<summary>
+ Set a value using a partial lens
+</summary>
+</member>
+<member name="M:Aether.Lens.set``3(``0)">
+<summary>
+ Set a value using a lens.
+</summary>
+</member>
+<member name="M:Aether.Lens.getPartialOrElse``2(Microsoft.FSharp.Core.FSharpFunc{``0,Microsoft.FSharp.Core.FSharpOption{``1}},Microsoft.FSharp.Core.FSharpFunc{``1,Microsoft.FSharp.Core.FSharpFunc{``0,``0}},``1)">
+<summary>
+ Get a value or a default using a partial lens
+</summary>
+</member>
+<member name="M:Aether.Lens.getPartial``2(Microsoft.FSharp.Core.FSharpFunc{``0,Microsoft.FSharp.Core.FSharpOption{``1}},Microsoft.FSharp.Core.FSharpFunc{``1,Microsoft.FSharp.Core.FSharpFunc{``0,``0}})">
+<summary>
+ Get a value option using a partial lens
+</summary>
+</member>
+<member name="M:Aether.Lens.get``3(``0)">
+<summary>
+ Get a value using a lens.
+</summary>
+</member>
+<member name="M:Aether.Lens.ofIsomorphism``2(Microsoft.FSharp.Core.FSharpFunc{``0,``1},Microsoft.FSharp.Core.FSharpFunc{``1,``0})">
+<summary>
+ Converts an isomorphism into a lens.
+</summary>
+</member>
+<member name="T:Aether.Lens">
+<summary>
+ Functions for creating or using lenses.
+</summary>
+</member>
+<member name="T:Aether.Optic.Map">
+<summary>
+ Static overloads of the optic map function (%=). These functions do not generally
+ need to be called directly, but will be used when calling Optic.map.
+</summary>
+</member>
+<member name="T:Aether.Optic.Set">
+<summary>
+ Static overloads of the optic set function (^=). These functions do
+ not generally need to be called directly, but will be used when calling
+ Optic.set.
+</summary>
+</member>
+<member name="T:Aether.Optic.Get">
+<summary>
+ Static overloads of the optic get function (^.). These functions do not generally
+ need to be called directly, but will be used when calling Optic.get.
+</summary>
+</member>
+<member name="M:Aether.Optic.map``3(``0,``1)">
+<summary>
+ Modify a value using an optic.
+</summary>
+</member>
+<member name="M:Aether.Optic.set``3(``0,``1)">
+<summary>
+ Set a value using an optic.
+</summary>
+</member>
+<member name="M:Aether.Optic.get``3(``0,``1)">
+<summary>
+ Get a value using an optic.
+</summary>
+</member>
+<member name="T:Aether.Optic">
+<summary>
+ Functions for using optics to operate on data structures, using the basic optic
+ operations of get, set and map. The functions are overloaded to take either lenses or
+ prisms, with the return type being inferred.
+</summary>
+</member>
+<member name="T:Aether.Compose.Prism">
+<summary>
+ Static overloads of the composition function for prisms (&gt;?&gt;).
+ These functions do not generally need to be called directly, but will
+ be used when calling Compose.optic.
+</summary>
+</member>
+<member name="T:Aether.Compose.Lens">
+<summary>
+ Static overloads of the composition function for lenses (&gt;-&gt;).
+ These functions do not generally need to be called directly, but will
+ be used when calling Compose.optic.
+</summary>
+</member>
+<member name="M:Aether.Compose.partialLensPartialIsomorphism``3(Microsoft.FSharp.Core.FSharpFunc{``0,Microsoft.FSharp.Core.FSharpOption{``1}},Microsoft.FSharp.Core.FSharpFunc{``1,Microsoft.FSharp.Core.FSharpFunc{``0,``0}},Microsoft.FSharp.Core.FSharpFunc{``1,Microsoft.FSharp.Core.FSharpOption{``2}},Microsoft.FSharp.Core.FSharpFunc{``2,``1})">
+<summary>
+ Compose a partial lens with a partial isomorphism, giving a partial lens
+</summary>
+</member>
+<member name="M:Aether.Compose.partialLensTotalIsomorphism``3(Microsoft.FSharp.Core.FSharpFunc{``0,Microsoft.FSharp.Core.FSharpOption{``1}},Microsoft.FSharp.Core.FSharpFunc{``1,Microsoft.FSharp.Core.FSharpFunc{``0,``0}},Microsoft.FSharp.Core.FSharpFunc{``1,``2},Microsoft.FSharp.Core.FSharpFunc{``2,``1})">
+<summary>
+ Compose a partial lens with a total isomorphism, giving a partial lens
+</summary>
+</member>
+<member name="M:Aether.Compose.totalLensPartialIsomorphism``3(Microsoft.FSharp.Core.FSharpFunc{``0,``1},Microsoft.FSharp.Core.FSharpFunc{``1,Microsoft.FSharp.Core.FSharpFunc{``0,``0}},Microsoft.FSharp.Core.FSharpFunc{``1,Microsoft.FSharp.Core.FSharpOption{``2}},Microsoft.FSharp.Core.FSharpFunc{``2,``1})">
+<summary>
+ Compose a total lens with a partial isomorphism, giving a partial lens
+</summary>
+</member>
+<member name="M:Aether.Compose.totalLensTotalIsomorphism``3(Microsoft.FSharp.Core.FSharpFunc{``0,``1},Microsoft.FSharp.Core.FSharpFunc{``1,Microsoft.FSharp.Core.FSharpFunc{``0,``0}},Microsoft.FSharp.Core.FSharpFunc{``1,``2},Microsoft.FSharp.Core.FSharpFunc{``2,``1})">
+<summary>
+ Compose a total lens with a total isomorphism, giving a total lens
+</summary>
+</member>
+<member name="M:Aether.Compose.partialLensPartialLens``3(Microsoft.FSharp.Core.FSharpFunc{``0,Microsoft.FSharp.Core.FSharpOption{``1}},Microsoft.FSharp.Core.FSharpFunc{``1,Microsoft.FSharp.Core.FSharpFunc{``0,``0}},Microsoft.FSharp.Core.FSharpFunc{``1,Microsoft.FSharp.Core.FSharpOption{``2}},Microsoft.FSharp.Core.FSharpFunc{``2,Microsoft.FSharp.Core.FSharpFunc{``1,``1}})">
+<summary>
+ Compose two partial lenses, giving a partial lens
+</summary>
+</member>
+<member name="M:Aether.Compose.partialLensTotalLens``3(Microsoft.FSharp.Core.FSharpFunc{``0,Microsoft.FSharp.Core.FSharpOption{``1}},Microsoft.FSharp.Core.FSharpFunc{``1,Microsoft.FSharp.Core.FSharpFunc{``0,``0}},Microsoft.FSharp.Core.FSharpFunc{``1,``2},Microsoft.FSharp.Core.FSharpFunc{``2,Microsoft.FSharp.Core.FSharpFunc{``1,``1}})">
+<summary>
+ Compose a partial lens and a total lens, giving a partial lens
+</summary>
+</member>
+<member name="M:Aether.Compose.totalLensPartialLens``3(Microsoft.FSharp.Core.FSharpFunc{``0,``1},Microsoft.FSharp.Core.FSharpFunc{``1,Microsoft.FSharp.Core.FSharpFunc{``0,``0}},Microsoft.FSharp.Core.FSharpFunc{``1,Microsoft.FSharp.Core.FSharpOption{``2}},Microsoft.FSharp.Core.FSharpFunc{``2,Microsoft.FSharp.Core.FSharpFunc{``1,``1}})">
+<summary>
+ Compose a total lens and a partial lens, giving a partial lens
+</summary>
+</member>
+<member name="M:Aether.Compose.totalLensTotalLens``3(Microsoft.FSharp.Core.FSharpFunc{``0,``1},Microsoft.FSharp.Core.FSharpFunc{``1,Microsoft.FSharp.Core.FSharpFunc{``0,``0}},Microsoft.FSharp.Core.FSharpFunc{``1,``2},Microsoft.FSharp.Core.FSharpFunc{``2,Microsoft.FSharp.Core.FSharpFunc{``1,``1}})">
+<summary>
+ Compose a total lens and a total lens, giving a total lens
+</summary>
+</member>
+<member name="M:Aether.Compose.prismWithPartialIsomorphism``3(``0,``1)">
+<summary>
+ Compose a prism with a partial isomorphism, giving a prism.
+</summary>
+</member>
+<member name="M:Aether.Compose.prismWithIsomorphism``3(``0,``1)">
+<summary>
+ Compose a prism with an isomorphism, giving a prism.
+</summary>
+</member>
+<member name="M:Aether.Compose.prismWithPrism``3(``0,``1)">
+<summary>
+ Compose a prism with a prism, giving a prism.
+</summary>
+</member>
+<member name="M:Aether.Compose.prismWithLens``3(``0,``1)">
+<summary>
+ Compose a prism and a lens, giving a prism.
+</summary>
+</member>
+<member name="M:Aether.Compose.lensWithPartialIsomorphism``3(``0,``1)">
+<summary>
+ Compose a lens with a partial isomorphism, giving a prism.
+</summary>
+</member>
+<member name="M:Aether.Compose.lensWithIsomorphism``3(``0,``1)">
+<summary>
+ Compose a lens with an isomorphism, giving a lens.
+</summary>
+</member>
+<member name="M:Aether.Compose.lensWithPrism``3(``0,``1)">
+<summary>
+ Compose a lens with a prism, giving a prism.
+</summary>
+</member>
+<member name="M:Aether.Compose.lensWithLens``3(``0,``1)">
+<summary>
+ Compose a lens with a lens, giving a lens.
+</summary>
+</member>
+<member name="M:Aether.Compose.prism``3(``0,``1)">
+<summary>
+ Compose a prism with an optic or morphism.
+</summary>
+</member>
+<member name="M:Aether.Compose.lens``3(``0,``1)">
+<summary>
+ Compose a lens with an optic or morphism.
+</summary>
+</member>
+<member name="T:Aether.Compose">
+<summary>
+ Functions for composing lenses and prisms with other optics, which
+ returns a new lens or prism based on the optic composed. Open `Aether.Operators`
+ to use the infix operator forms of these compositions, which is significantly
+ less verbose.
+</summary>
+</member>
+</members>
+</doc>

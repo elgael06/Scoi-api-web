@@ -1,0 +1,21 @@
+﻿
+#modal_perfil_usuario > div {
+    min-height:200px;
+    min-width:300px;
+}
+#modal_perfil_usuario .panel-heading {
+    background:#0094ff;
+    color:azure;
+    font-size:18px;
+    height:45px;
+}
+#modal_perfil_usuario #cerrar_modal_perfil_usuario {
+    float:right;
+    color:#000000;
+}
+#pie_modal_password_usuario i {
+    border-radius:20px;
+}
+#btn_salir_password_usuario {
+    float: right;
+}

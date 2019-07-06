@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "Reporte Incidencias Fecha";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Reporte Incidencias Fecha</h2>
+<main id="main" class="panel panel-default">
+    <div class="panel-heading">
+        <div style="width:170px;display:inline-block;padding:5px">
+            <label>Fecha Inicio</label>
+            <input class="form-control" type="date" v-model="inicio" />
+        </div>
+        <div style="width:170px;display:inline-block;padding:5px">
+            <label>Fecha Termino</label>
+            <input class="form-control" type="date" v-model="fin" />
+        </div>
+        <i class="btn btn-primary fa fa-refresh btn-round" v-if="!verificar_fechas" v-on:click="ObtenerReporteIncidenciasFecha"> Cargar Reporte</i>
+    </div>
+    <div class="panel-body" style="height:600px">
+        <label>Resultados :{{reporte.length}}</label>
+        
+        <div  v-if="!verificar_fechas">
+            <strong>Filtro:</strong>
+            <input class="form-control" type="text" placeholder="Filtro..." v-model="filtro" />
+        </div>
+        <div  v-if="!verificar_fechas" style="overflow:auto;height:500px">
+            <table class="table">
+                <thead>
+                    <tr class="bg-blue">
+                        <th class="bg-blue">Folio</th>
+                        <th class="bg-blue" >Nombre</th>
+                        <th class="bg-blue">Hora</th>
+                        <th class="bg-blue">Movimiento</th>
+                        <th class="bg-blue">Fecha</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="empleado in reporte" :key="empleado.Folio-empleado.Fecha-empleado.Hora" v-if="filtrado_resultados(empleado)">
+                        <th>{{empleado.Folio}}</th>
+                        <th>{{empleado.Nombre}}</th>
+                        <th>{{empleado.Hora}}</th>
+                        <th>{{empleado.Movimiento}}</th>
+                        <th>{{empleado.Fecha}}</th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div  v-if="verificar_fechas">
+            <h3>Seleccione Parametros De Fecha Y Carge.</h3>
+        </div>
+    </div>
+</main>
+
+<script type="text/javascript" src="@Url.Content("~/src/scripts/Indicadores/ReporteIncidenciasFecha/main.js")"></script>

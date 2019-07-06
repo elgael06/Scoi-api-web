@@ -1,0 +1,146 @@
+﻿
+@{
+    ViewBag.Title = "Monitor Orden De Compra Interna";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="@Url.Content("~/src/styles/Indicadores/MonitorOrdenCompraInterna/main.css")" rel="stylesheet" />
+<div class="panel panel-default">
+    <div id="cavecera_monitor" class="panel-heading">
+        <h2>Monitor Orden Compra Interna</h2>
+        <div class="row">
+            @* fechas *@
+            <div class="form-group col-lg-2 contenedor_parametros">
+                <h4>Fechas</h4>
+                <div class="form-group">
+                    <label>Inicio: </label>
+                    <input type="date" class="form-control" v-model="parametros.fi" />
+                </div>
+                <div class="form-group">
+                    <label>Termino: </label>
+                    <input type="date" class="form-control" v-model="parametros.ff" />
+                </div>
+            </div>
+            @* Orden *@
+            <div class="form-group col-lg-2 contenedor_parametros">
+                <h4>Orden</h4>
+                <div class="form-group">
+                    <i class="fa fa-spinner rotate" name="tipo" v-if="ListaTipoOrden.length==0"> </i>
+                    <label> Tipo:</label>
+                    <select class="form-control" v-model="parametros.tipo_orden">
+                        <option v-for="tipo in ListaTipoOrden" :key="tipo">{{tipo}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Estatus:</label>
+                    <select class="form-control" v-model="parametros.estatus">
+                        <option>SURTIDO</option>
+                        <option>AUTORIZADO</option>
+                        <option>CANCELADO</option>
+                        <option>EN VALIDACION</option>
+                    </select>
+                </div>
+            </div>
+            @* Recibo *@
+            <div class="form-group col-lg-2 contenedor_parametros">
+                <h4>Recibe</h4>
+                <div class="form-group">
+                    <i class="fa fa-spinner rotate" name="tipo" v-if="ListaEstablecimientos.length==0"> </i>
+                    <label> Establecimiento:</label>
+                    <select class="form-control" v-model="parametros.establecimiento">
+                        <option value="0">Todos</option>
+                        <option v-for="estab in ListaEstablecimientos" :key="estab.folio" :value="estab.folio" v-if="estab.estatus==1">{{estab.nombre}}</option>
+                    </select>
+                </div> <div class="form-group">
+                    <label>Tipo:</label>
+                    <select class="form-control" v-model="parametros.tipo_recibe" v-on:change="on_cambio_tipo_recibe">
+                        <option>Todos</option>
+                        <option>Empleado</option>
+                        <option>Proveedor</option>
+                    </select>
+                </div>
+            </div>
+            @* Otros Parametros *@
+            <div class="form-group col-lg-5 contenedor_parametros">
+                <h4>Parametros Adicionales</h4>
+                <div class="form-group" v-if="!recibe || parametros.recibe>0 ">
+                    <label>{{this.parametros.tipo_recibe}} Recibe :</label>
+                    <i class="form-control" >{{parametros.nombre_recibe}}</i>
+                    <i class="btn btn-default fa fa-search" v-on:click="obtener_beneficiarios"> Seleccionar.</i>
+                </div>
+                <div class="form-inline">
+                    <label>Folio Activo :</label>
+                    <input type="number" class="form-control" v-model="parametros.cod_prod" />
+                </div>
+            </div>
+            <hr />
+            @* Boton *@
+            <div id="btn_cavecera" class="form-group col-lg-12">
+                <i :class="btn_parametros.estado" v-on:click="on_consultar">{{btn_parametros.descripcion}} <i :class="btn_parametros.icono"></i></i>
+            </div>
+        </div>
+    </div>
+    <div class="panel-body" id="cuerpo_monitor">
+        <label>resultados :</label>
+        <strong>{{lista_ordenes.length}}</strong>
+        <div style="overflow:auto;height:90%;">
+            <table class="table" >
+                <thead>
+                   <tr><td>Compra Interna</td></tr>
+                </thead>
+                <tbody>
+                    <tabla_ordenes_de_compra v-for="item in lista_ordenes" :key="item.folio_scoi_oci + item.cod_prod" v-bind:compra_interna="item"></tabla_ordenes_de_compra>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    @* Modal Beneficiarios *@
+    <div class="modal" id="modal_seleccion_beneficiarios">
+        <div class="panel panel-default animate">
+            <div class="panel-heading">
+                <i class="fa fa-close" id="btn_cerrar_modal_beneficiarios" v-on:click="cancelar_seleccion" style="float:right"></i>
+                <strong>Seleccion Beneficiarios.</strong>
+            </div>
+            <div class="panel-body">
+                <div id="container_beneficiarios" style="width:500px;">
+                    <div class="panel panel-info">
+                        <div class="form-group panel-heading">
+                            <label>Filtro:</label>
+                            <input class="form-control" type="text" placeholder="Filtro..." v-model="filtro" id="caja_filtro_beneficiario" />
+                        </div>
+                        <div style="height:500px;overflow:auto">
+                            @*  <tabla_beneficiarios :beneficiarios="beneficiarios" :activo="seleccion.folio" />*@
+                            <table class="table">
+                                <thead>
+                                    <tr class="info">
+                                        <th>Folio</th>
+                                        <th>Nombre</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="listado_beneficiarios">
+                                    <tr v-for="item in beneficiarios" v-on:click="seleccionar(item)" v-if="checar_filtro(item)" class="datos_lista_beneficiario">
+                                        <td>{{item.Folio}}</td>
+                                        <td>
+                                            {{item.Nombre}}
+                                            <i :class="classSeleccionado(item.Folio)"></i>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-footer">
+                <i class="btn btn-success fa fa-download btn-round" v-on:click="agregar_seleccion" id="btn_seleccionar_modal_beneficiarios_pie"> Seleccionar.</i>
+                <i class="btn btn-danger fa fa-close btn-round" id="btn_cerrar_modal_beneficiarios_pie" v-on:click="cancelar_seleccion" style="float:right"> Cerrar.</i>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script id="tabla_compra">
+
+</script>
+
+<script src="@Url.Content("~/src/scripts/Indicadores/MonitorOrdenCompraInterna/MonitorOrdenCompraInterna.js")"></script>

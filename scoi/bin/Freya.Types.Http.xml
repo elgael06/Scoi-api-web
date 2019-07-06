@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+<assembly><name>Freya.Types.Http</name></assembly>
+<members>
+<member name="P:Freya.Types.Http.Charset.Utf8">
+<summary>
+ Convenience definition for &quot;utf-8&quot;
+</summary>
+</member>
+<member name="P:Freya.Types.Http.Charset.Unicode">
+<summary>
+ Convenience definition for &quot;unicode-1-1&quot;
+</summary>
+</member>
+<member name="P:Freya.Types.Http.Charset.Iso88591">
+<summary>
+ Convenience definition for &quot;iso-8859-1&quot;
+</summary>
+</member>
+<member name="P:Freya.Types.Http.ContentCoding.GZip">
+<summary>
+ Convenience definition for &quot;gzip&quot;
+</summary>
+</member>
+<member name="P:Freya.Types.Http.ContentCoding.Deflate">
+<summary>
+ Convenience definition for &quot;deflate&quot;
+</summary>
+</member>
+<member name="P:Freya.Types.Http.ContentCoding.Compress">
+<summary>
+ Convenience definition for &quot;compress&quot;
+</summary>
+</member>
+<member name="P:Freya.Types.Http.MediaType.Xml">
+<summary>
+ Convenience definition for &quot;application/xml&quot; without extra parameters
+</summary>
+</member>
+<member name="P:Freya.Types.Http.MediaType.Text">
+<summary>
+ Convenience definition for &quot;text/plain&quot; without extra parameters
+</summary>
+</member>
+</members>
+</doc>

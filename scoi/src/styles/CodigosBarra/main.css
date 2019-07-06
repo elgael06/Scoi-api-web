@@ -1,0 +1,132 @@
+﻿
+
+#contenedor_barcode {
+    width:170px;
+    display:inline-block;
+}
+#codigo_producto {
+    text-align:right;
+}
+#btn_buscar_barcode {
+    margin-left:5px;
+    font-size:18px;
+    width:50px;
+}
+#btn_imprimir {
+    float:right;
+    font-size:25px;
+    margin-top:10px
+}
+.panel-body {
+    color:black;
+}
+#btn_imprimir span {
+    margin-left: 5px
+}
+/*Etiqueta*/
+#contenedor_vista_barcode {
+    display: flex;
+    height: 480px;
+    color: black;
+    border: solid 1px #ddd;
+    background: #e6e8eb;
+    border-radius: 5px;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    overflow:auto;
+}
+#etiqueta {
+    position:absolute;
+    background: #FFFFFF;
+    height: 180px;
+    width: 375px;
+}
+#contenedor_barras {
+    position: absolute;
+    padding: 2px;
+    margin-left: 86px;
+    width: 520px;
+    height: 50px;
+    float: left;
+    align-content: center;
+    align-items: center;
+    text-align: justify;
+}
+#contenedor_texto_etiquet {
+    margin-top: 22px;
+    margin-left:10px;
+    align-content: center;
+    align-items: center;
+    text-align: justify;
+    padding: 14px;
+}
+#descripcion_producto {
+    font-size: 15px;
+    margin-left: 76px;
+    width: 270px;
+}
+#costo_producto {
+    width: 100%;
+}
+#contenedor_precio {
+    font-size: 45px;
+    text-align: right;
+    bottom: 20px;
+    right: 20px
+}
+#fecha {
+    display:flex;
+    margin-top:-28px;
+    margin-left:5px;
+    font-size:15px;
+    float:left;
+}
+
+
+/**Evectos*/
+/*Add Rotation Animation*/
+@keyframes rotate {
+    from {
+        transform: rotate(0deg)
+    }
+
+    to {
+        transform: rotate(900deg)
+    }
+}
+
+@-webkit-keyframes rotate {
+    from {
+        -webkit-transform: rotate(0deg)
+    }
+
+    to {
+        -webkit-transform: rotate(900deg)
+    }
+}
+
+.rotate {
+    -webkit-animation: 2s rotate linear infinite;
+    animation: 2s rotate linear infinite;
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    margin-right: 10px;
+}
+
+#modal_load {
+    display: flex;
+    position: fixed;
+    background: rgba(214, 217, 225, 0.59);
+    text-align: center;
+    align-items:center;
+    justify-content:center;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    font-size:25px;
+}
+    #modal_load i {
+    font-size:40px
+    }

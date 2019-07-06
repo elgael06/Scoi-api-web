@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+<assembly><name>Freya.Machines.Http</name></assembly>
+<members>
+<member name="T:Freya.Machines.Http.Description">
+<summary>
+ A description of how the data is represented. Often this information is
+ relayed to the client through headers attached to the response.
+</summary>
+</member>
+<member name="P:Freya.Machines.Http.Representation.empty">
+<summary>
+ An empty representation, with no data and no description.
+</summary>
+</member>
+<member name="T:Freya.Machines.Http.Representation">
+<summary>
+ A binding of data to be sent to the client with a description of how then
+ data has been represented.
+</summary>
+</member>
+<member name="T:Freya.Machines.Http.Acceptance`1.Free">
+<summary>
+ The consumer did not specify any criteria for an acceptable
+ representation. The server is free to represent the response in any
+ available format.
+</summary>
+</member>
+<member name="T:Freya.Machines.Http.Acceptance`1.Acceptable">
+<summary>
+ The list of values that are acceptable to the consumer as a result of
+ negotiation. The server should represent the response in one of the
+ acceptable formats.
+</summary>
+</member>
+<member name="T:Freya.Machines.Http.Acceptance`1">
+<summary>
+ The list of values that are acceptable to the consumer. Where no criteria
+ are specified, the acceptance is set to `Free`.
+</summary>
+</member>
+<member name="T:Freya.Machines.Http.Acceptable">
+<summary>
+ The charsets, encodings, media types, and languages that are acceptable to
+ the consumer. Generally used to indicate the subset of available
+ representations that are acceptable to the consumer as a result of
+ negitiation.
+</summary>
+</member>
+<member name="T:Freya.Machines.Http.Available">
+<summary>
+ The set charsets, encodings, media types, and languages that are available
+ from a particular resource.
+</summary>
+</member>
+<member name="M:Freya.Machines.Http.Represent.text(System.String)">
+<summary>
+ Builds a representation from a string with media type `text/plain` and
+ character set UTF-8.
+</summary>
+</member>
+<member name="T:Freya.Machines.Http.Represent">
+<summary>
+ Helper functions for creating representations of basic data types.
+</summary>
+</member>
+<member name="M:Freya.Machines.Http.Syntax.HttpMachineBuilder.HandleOptions``1(Freya.Machines.Http.HttpMachineBuilder,Freya.Machines.Http.HttpMachine,``0)">
+<summary>
+ Handles requests with the OPTIONS method.
+</summary>
+</member>
+<member name="M:Freya.Machines.Http.Syntax.HttpMachineBuilder.HandleTemporaryRedirect``1(Freya.Machines.Http.HttpMachineBuilder,Freya.Machines.Http.HttpMachine,``0)">
+<summary>
+ Handles requests where the requested resource has been moved
+ temporarily. See `movedTemporarily`.
+</summary>
+</member>
+<member name="M:Freya.Machines.Http.Syntax.HttpMachineBuilder.HandleMovedPermanently``1(Freya.Machines.Http.HttpMachineBuilder,Freya.Machines.Http.HttpMachine,``0)">
+<summary>
+ Handles requests where the requested resource has been moved
+ permanently. See `movedPermanently`.
+</summary>
+</member>
+<member name="M:Freya.Machines.Http.Syntax.HttpMachineBuilder.HandleGone``1(Freya.Machines.Http.HttpMachineBuilder,Freya.Machines.Http.HttpMachine,``0)">
+<summary>
+ Handles requests where the requested resource previously existed,
+ but is now permanently missing. See `gone`.
+</summary>
+</member>
+<member name="M:Freya.Machines.Http.Syntax.HttpMachineBuilder.MovedTemporarily``1(Freya.Machines.Http.HttpMachineBuilder,Freya.Machines.Http.HttpMachine,``0)">
+<summary>
+ Determines whether the requested resource is missing because it
+ has been permanently moved. Resources that have been permanently
+ moved are handled by `handleMovedTemporarily`.
+</summary>
+</member>
+<member name="M:Freya.Machines.Http.Syntax.HttpMachineBuilder.MovedPermanently``1(Freya.Machines.Http.HttpMachineBuilder,Freya.Machines.Http.HttpMachine,``0)">
+<summary>
+ Determines whether the requested resource is missing because it
+ has been permanently moved. Resources that have been permanently
+ moved are handled by `handleMovedPermanently`.
+</summary>
+</member>
+<member name="M:Freya.Machines.Http.Syntax.HttpMachineBuilder.Gone``1(Freya.Machines.Http.HttpMachineBuilder,Freya.Machines.Http.HttpMachine,``0)">
+<summary>
+ Determines whether the requested resource once existed but is now
+ permanently missing. Resources which are permanently missing are
+ handled by `handleGone`.
+</summary>
+</member>
+<member name="M:Freya.Machines.Http.Syntax.HttpMachineBuilder.HandleNotFound``1(Freya.Machines.Http.HttpMachineBuilder,Freya.Machines.Http.HttpMachine,``0)">
+<summary>
+ Handles requests where the requested resource is missing.
+ See `exists`.
+</summary>
+</member>
+<member name="M:Freya.Machines.Http.Syntax.HttpMachineBuilder.HandleCreated``1(Freya.Machines.Http.HttpMachineBuilder,Freya.Machines.Http.HttpMachine,``0)">
+<summary>
+ Handles requests where the server has created an entity.
+ See `created`.
+</summary>
+</member>
+<member name="M:Freya.Machines.Http.Syntax.HttpMachineBuilder.Created``1(Freya.Machines.Http.HttpMachineBuilder,Freya.Machines.Http.HttpMachine,``0)">
+<summary>
+ Determines whether or not the request has resulted in the creation
+ of an entity. Requests which result in the creation of an entity
+ are handled by `handleCreated`.
+</summary>
+</member>
+<member name="M:Freya.Machines.Http.Syntax.HttpMachineBuilder.HandleOk``1(Freya.Machines.Http.HttpMachineBuilder,Freya.Machines.Http.HttpMachine,``0)">
+<summary>
+ Handles common requests where the response has content.
+</summary>
+</member>
+<member name="M:Freya.Machines.Http.Syntax.HttpMachineBuilder.HandleNoContent``1(Freya.Machines.Http.HttpMachineBuilder,Freya.Machines.Http.HttpMachine,``0)">
+<summary>
+ Handles common requests where the response has no content.
+ See `noContent`.
+</summary>
+</member>
+<member name="M:Freya.Machines.Http.Syntax.HttpMachineBuilder.NoContent``1(Freya.Machines.Http.HttpMachineBuilder,Freya.Machines.Http.HttpMachine,``0)">
+<summary>
+ Determines whether or not the body of the response contains any
+ content. Requests which result in no returned content are handled
+ by `handleNoContent`.
+</summary>
+</member>
+<member name="M:Freya.Machines.Http.Syntax.HttpMachineBuilder.HandlePreconditionFailed``1(Freya.Machines.Http.HttpMachineBuilder,Freya.Machines.Http.HttpMachine,``0)">
+<summary>
+ Handles requests where a header condition provided by the client
+ evaluates to false. See `entityTag` and `lastModified`.
+</summary>
+</member>
+<member name="M:Freya.Machines.Http.Syntax.HttpMachineBuilder.HandleForbidden``1(Freya.Machines.Http.HttpMachineBuilder,Freya.Machines.Http.HttpMachine,``0)">
+<summary>
+ Handles requests where the client has
+ been refused access. See `allowed`.
+</summary>
+</member>
+<member name="M:Freya.Machines.Http.Syntax.HttpMachineBuilder.HandleUnauthorized``1(Freya.Machines.Http.HttpMachineBuilder,Freya.Machines.Http.HttpMachine,``0)">
+<summary>
+ Handles requests where no valid
+ authentication credentials were presented to the server.
+ See `Authorized`.
+</summary>
+</member>
+<member name="M:Freya.Machines.Http.Syntax.HttpMachineBuilder.Allowed``1(Freya.Machines.Http.HttpMachineBuilder,Freya.Machines.Http.HttpMachine,``0)">
+<summary>
+ Determines whether the server understood the
+ request, but is refusing access to the requested resource. Requests
+ which are not allowed are handled by `handleForbidden`.
+</summary>
+</member>
+<member name="M:Freya.Machines.Http.Syntax.HttpMachineBuilder.Authorized``1(Freya.Machines.Http.HttpMachineBuilder,Freya.Machines.Http.HttpMachine,``0)">
+<summary>
+ Determines whether the request has valid
+ authentication credentials for the target. Requests which do not
+ include valid authentication credentials are handled by
+ `handleUnauthorized`.
+</summary>
+</member>
+<member name="M:Freya.Machines.Http.Syntax.HttpMachineBuilder.HandleInternalServerError``1(Freya.Machines.Http.HttpMachineBuilder,Freya.Machines.Http.HttpMachine,``0)">
+<summary>
+ Handles requests where there has been
+ an internal server error.
+</summary>
+</member>
+<member name="M:Freya.Machines.Http.Syntax.HttpMachineBuilder.HandleAccepted``1(Freya.Machines.Http.HttpMachineBuilder,Freya.Machines.Http.HttpMachine,``0)">
+<summary>
+ Handles requests that have been
+ accepted for asynchronous processing. See `completed`.
+</summary>
+</member>
+<member name="M:Freya.Machines.Http.Syntax.HttpMachineBuilder.DoPut``1(Freya.Machines.Http.HttpMachineBuilder,Freya.Machines.Http.HttpMachine,``0)">
+<summary>
+ Handles requests with the PUT method.
+</summary>
+</member>
+<member name="M:Freya.Machines.Http.Syntax.HttpMachineBuilder.DoPost``1(Freya.Machines.Http.HttpMachineBuilder,Freya.Machines.Http.HttpMachine,``0)">
+<summary>
+ Handles requests with the POST method.
+</summary>
+</member>
+<member name="M:Freya.Machines.Http.Syntax.HttpMachineBuilder.DoDelete``1(Freya.Machines.Http.HttpMachineBuilder,Freya.Machines.Http.HttpMachine,``0)">
+<summary>
+ Handles requests with the DELETE method.
+</summary>
+</member>
+<member name="M:Freya.Machines.Http.Syntax.HttpMachineBuilder.Completed``1(Freya.Machines.Http.HttpMachineBuilder,Freya.Machines.Http.HttpMachine,``0)">
+<summary>
+ Determines whether the server has completed
+ action on the request. If not completed, the request may be handled
+ later, but is not guaranteed to succeed. A request that has not
+ been completed is handled by `handleAccepted`.
+</summary>
+</member>
+<member name="M:Freya.Machines.Http.Syntax.HttpMachineBuilder.HandleNotAcceptable``1(Freya.Machines.Http.HttpMachineBuilder,Freya.Machines.Http.HttpMachine,``0)">
+<summary>
+ Defines a handler which reponds to requests where content
+ negotiation has been unable to find a representation which would be
+ acceptable to the client. See `availableCharsets`,
+ `availableContentCodings`, `availableMediaTypes`,
+ and `availableLanguages`.
+</summary>
+</member>
+<member name="M:Freya.Machines.Http.Syntax.HttpMachineBuilder.HandleFallback``1(Freya.Machines.Http.HttpMachineBuilder,Freya.Machines.Http.HttpMachine,``0)">
+<summary>
+ Handles all requests where the server
+ has allowed the method on the request, but for which the server has
+ not defined a handler.
+</summary>
+</member>
+<member name="M:Freya.Machines.Http.Syntax.HttpMachineBuilder.Exists``1(Freya.Machines.Http.HttpMachineBuilder,Freya.Machines.Http.HttpMachine,``0)">
+<summary>
+ Determines if a resource exists. A resource that
+ does not exist may have moved, be missing, or be gone.
+ See `gone`, `permanentlyMoved`, `temporarilyMoved`. Requests which
+ are missing but have not been moved are handled by `handleNotFound`.
+</summary>
+</member>
+<member name="M:Freya.Machines.Http.Syntax.HttpMachineBuilder.HandleLengthRequired``1(Freya.Machines.Http.HttpMachineBuilder,Freya.Machines.Http.HttpMachine,``0)">
+<summary>
+ Handles requests with a body where no
+ content length has been declared.
+</summary>
+</member>
+<member name="M:Freya.Machines.Http.Syntax.HttpMachineBuilder.HandleConflict``1(Freya.Machines.Http.HttpMachineBuilder,Freya.Machines.Http.HttpMachine,``0)">
+<summary>
+ Handles requests when there has been a
+ conflict. See `conflict`.
+</summary>
+</member>
+<member name="M:Freya.Machines.Http.Syntax.HttpMachineBuilder.Conflict``1(Freya.Machines.Http.HttpMachineBuilder,Freya.Machines.Http.HttpMachine,``0)">
+<summary>
+ Determines if there has been conflict in the
+ current state of a resource. If there has been a conflict, the
+ request is handled by `handleConflict`.
+</summary>
+</member>
+<member name="M:Freya.Machines.Http.Syntax.HttpMachineBuilder.HandleHttpVersionNotSupported``1(Freya.Machines.Http.HttpMachineBuilder,Freya.Machines.Http.HttpMachine,``0)">
+<summary>
+ Handles requests where the HTTP version
+ specified cannot be handled by the server.
+ See `httpVersionSupported`.
+</summary>
+</member>
+<member name="M:Freya.Machines.Http.Syntax.HttpMachineBuilder.HandleNotImplemented``1(Freya.Machines.Http.HttpMachineBuilder,Freya.Machines.Http.HttpMachine,``0)">
+<summary>
+ Handles requests where the method is a
+ non-core HTTP method which the server does not know how to handle.
+ See `methods`.
+</summary>
+</member>
+<member name="M:Freya.Machines.Http.Syntax.HttpMachineBuilder.HandleServiceUnavailable``1(Freya.Machines.Http.HttpMachineBuilder,Freya.Machines.Http.HttpMachine,``0)">
+<summary>
+ Handles requests where the service has
+ been determined to be unavailable. See `serviceAvailable`.
+</summary>
+</member>
+<member name="M:Freya.Machines.Http.Syntax.HttpMachineBuilder.HttpVersion``1(Freya.Machines.Http.HttpMachineBuilder,Freya.Machines.Http.HttpMachine,``0)">
+<summary>
+ Determines if the HTTP version of the request is
+ acceptable to the server. When the HTTP version is not supported,
+ the request is handled by `handleHttpVersionNotSupported`.
+</summary>
+</member>
+<member name="M:Freya.Machines.Http.Syntax.HttpMachineBuilder.ServiceAvailable``1(Freya.Machines.Http.HttpMachineBuilder,Freya.Machines.Http.HttpMachine,``0)">
+<summary>
+ Determines if the service is available and able
+ to accept requests. When this decision evaluates to false, the
+ request is handled by `handleServiceUnavailable`.
+</summary>
+</member>
+<member name="M:Freya.Machines.Http.Syntax.HttpMachineBuilder.LastModified``1(Freya.Machines.Http.HttpMachineBuilder,Freya.Machines.Http.HttpMachine,``0)">
+<summary>
+ Defines a last modified timestamp for the resource. Enables
+ decisions which deal with comparing the last modified timestamp to
+ determine if a resource has been modified since the last known
+ modification timestamp.
+</summary>
+</member>
+<member name="M:Freya.Machines.Http.Syntax.HttpMachineBuilder.EntityTag``1(Freya.Machines.Http.HttpMachineBuilder,Freya.Machines.Http.HttpMachine,``0)">
+<summary>
+ Defines an entity tag (ETag) for the resource. Enables decisions
+ which deal with comparing entity tags to determine if a resource
+ has changed since it was last received.
+</summary>
+</member>
+<member name="M:Freya.Machines.Http.Syntax.HttpMachineBuilder.AvailableMediaTypes``1(Freya.Machines.Http.HttpMachineBuilder,Freya.Machines.Http.HttpMachine,``0)">
+<summary>
+ Defines the (list of) media types available. Used for content
+ negotiation. Requests where negotiation fails to find an available
+ representation will be handled by `handleNotAcceptable`.
+</summary>
+</member>
+<member name="M:Freya.Machines.Http.Syntax.HttpMachineBuilder.AvailableLanguages``1(Freya.Machines.Http.HttpMachineBuilder,Freya.Machines.Http.HttpMachine,``0)">
+<summary>
+ Defines the (list of) languages available. Used for content
+ negotiation. Requests where negotiation fails to find an available
+ representation will be handled by `handleNotAcceptable`.
+</summary>
+</member>
+<member name="M:Freya.Machines.Http.Syntax.HttpMachineBuilder.AvailableContentCodings``1(Freya.Machines.Http.HttpMachineBuilder,Freya.Machines.Http.HttpMachine,``0)">
+<summary>
+ Defines the (list of) content codings available. Used for content
+ negotiation. Requests where negotiation fails to find an available
+ representation will be handled by `handleNotAcceptable`.
+</summary>
+</member>
+<member name="M:Freya.Machines.Http.Syntax.HttpMachineBuilder.AvailableCharsets``1(Freya.Machines.Http.HttpMachineBuilder,Freya.Machines.Http.HttpMachine,``0)">
+<summary>
+ Defines the (list of) character sets available. Used for content
+ negotiation. Requests where negotiation fails to find an available
+ representation will be handled by `handleNotAcceptable`.
+</summary>
+</member>
+<member name="M:Freya.Machines.Http.Syntax.HttpMachineBuilder.Methods``1(Freya.Machines.Http.HttpMachineBuilder,Freya.Machines.Http.HttpMachine,``0)">
+<summary>
+ Defines the (list of) HTTP methods this endpoint responds to.
+ Requests with custom methods not included here will be handled by
+ `handleMethodNotImplemented`. Requests with core HTTP methods not
+ included here will be handled by `handleMethodNotAllowed`.
+</summary>
+</member>
+<member name="M:Freya.Machines.Http.Syntax.HttpMachineBuilder.AcceptableMediaTypes``1(Freya.Machines.Http.HttpMachineBuilder,Freya.Machines.Http.HttpMachine,``0)">
+<summary>
+ Defines the (list of) media types which are acceptable to this
+ endpoint when receiving content. Received content which is not
+ acceptable will be handled by `handleUnsupportedMediaType`.
+</summary>
+</member>
+<member name="M:Freya.Machines.Http.Syntax.HttpMachineBuilder.Using``1(Freya.Machines.Http.HttpMachineBuilder,Freya.Machines.Http.HttpMachine,``0)">
+<summary>
+ Defines an extension point for attaching extension components onto
+ the machine.
+</summary>
+</member>
+</members>
+</doc>

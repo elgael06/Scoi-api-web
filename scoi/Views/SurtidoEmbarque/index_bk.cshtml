@@ -1,0 +1,105 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@* Componente ReactJS *@
+    <main id="main">
+        <div className="container" v-if="existe_pedido">
+            @* vista Folio Embarque Y Btn Cancelar *@
+            <div class="">
+                <i class="btn btn-danger glyphicon glyphicon-trash btn-round" id="btn_cancelar_embarque_pedido" v-on:click="eliminar_embarque_localStorange"></i>
+                @*<div class="form_vista_texto" style="float:left;margin-left:-10px">*@
+                <div class="form-inline" style="margin-left:-10px;width:120px;display:inline-block">
+                    <label>Folio :</label>
+                    <strong style="color:black">{{Pedido.Folio}}</strong>
+                </div>
+            </div>
+            @* vista de movimiento *@
+            <div class="" style="">
+                <div class="form-group" style="width:95px;display:inline-block">
+                    <label>Del:</label>
+                    <div class="form-control" style="text-align: left">{{Pedido.Alterno}}</div>
+                </div>
+                <div class="form-group" style="width:95px;display:inline-block">
+                    <label>Al:</label>
+                    <div class="form-control" style="text-align: left">{{Pedido.Establecimiento}}</div>
+                </div>
+            </div>
+            @* Vista de Busque de Producto *@
+            <buscar-productos v-bind:establecimiento="Pedido.Alterno"></buscar-productos>
+            @* vista Botones Modal *@
+            <br />
+            <seleccion-modal
+                v-bind:total_pendiente="total_pendiente" 
+                v-bind:total_surtido="total_surtido" 
+                v-bind:total_embarque="total_embarque" 
+            ></seleccion-modal>
+            <br />
+        </div>
+        <seleccion-pedido v-bind:existe_pedido="existe_pedido"></seleccion-pedido>
+        @* Guardado *@
+        <strong class="btn btn-success btn-block"
+                style="font-size:14px;"
+                id=""
+                v-on:click="guardar_embarque">
+            Guardar  <i class="glyphicon glyphicon-saved"></i>
+        </strong>
+    </main>
+
+@* Componentes VueJS *@
+<div id="captura_surtido_view" style="display:none">
+    <h4>Surtido Producto:</h4>
+    <div style="width:80px;display:inline-block;">
+        <label>folio:</label>
+        <i style="text-align:right" class="form-control">{{seleccion.folio}}</i>
+    </div>
+    <div style="width:80px;display:inline-block;">
+        <label>Existencia:</label>
+        <i style="text-align:right" class="form-control">{{seleccion.existencia}}</i>
+    </div>
+    <div style="width:70px;display:inline-block;">
+        <label>Requiere:</label>
+        <i style="text-align:right" class="form-control">{{seleccion.pedido}}</i>
+    </div>
+    <div>
+        <label>Descripcion:</label>
+        <textarea style="resize:none;" disabled rows="3" class="form-control">{{seleccion.descripcion}}</textarea>
+    </div>
+    <form v-on:submit.prevent="on_guardad_cambios">
+        <div style="width:70px;display:inline-block">
+            <label>Capturado:</label>
+            <input class="form-control"style="text-align:right" disabled type="text" v-model="seleccion.cantidad" />
+        </div>
+        <i v-bind:class="icono_operador"></i>
+        <div style="width:70px;display:inline-block">
+            <label>Surtir:</label>
+            <input class="form-control"
+                   id="entrada_codigo_producto_vista"
+                   type="text"
+                   style="text-align:right"
+                   v-on:keyup="handle_cambio_surtir"
+                   max="999"
+                   autocomplete="off"
+                   v-model.number="seleccion.surtido" />
+        </div>
+        <strong style="font-size:18px">=</strong>
+        <div style="width:70px;display:inline-block">
+            <label>Total:</label>
+            <input class="form-control" style="text-align:right" disabled type="text" v-model="seleccion.total" />
+        </div>
+        <div style="margin-top:10px;" v-if="seleccion.cantidad>0">
+            <i class="btn btn-info fa fa-plus" style="float:left;" v-on:click="cambio_operador('+')"></i>
+            <i class="btn btn-info fa fa-minus" style="float:right;" v-on:click="cambio_operador('-')"></i>
+        </div>
+        <button type="submit"
+                style="top:10px"
+                class="btn btn-block btn-primary glyphicon glyphicon-download-alt btn-round">
+            Agregar
+        </button>
+    </form>
+</div>
+<link href="@Url.Content("~/Content/css/Surtilr_pedido_embarque/main.css")?1.2.0" rel="stylesheet" />
+@*<script src="@Url.Content("~/Scripts/Componentes/Estaticos/efecto_carga.min.js")"></script>*@
+@*<script src="@Url.Content("~/Scripts/SurtidoEmbarque/vista_embarque.min.js")?1.2.4"></script>*@
+<script src="~/Scripts/SurtidoEmbarque/Seleccion_embarque.js?1.0.1"></script>
+<script src="~/Scripts/SurtidoEmbarque/Embarque_pedido.js?1.0.2"></script>
+<script src="@Url.Content("~/Scripts/SurtidoEmbarque/view_surtido.js")?1.1.2"></script>

@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DeploymentSettings>
+	<Files>
+		<!-- Define local items to be deployed by using a combination of File and Folder elements. -->
+		
+		<!-- 
+			localPath:		Required. Local path of the file to deploy. Relative to the current project. Value should not start with '\'.
+							
+							"Compilable" files such as TypeScript, LESS or SASS are supported. The tool will look for the compiled output file in the 
+							same folder as the source file, and will infer its name base on the item type. 
+							
+							For TypeScript files, Visual Studio's options to combine output files into one single file, or to redirect output files to
+							a particular location are NOT supported.
+		-->
+		<File localPath="Script1.ts">
+			<!-- Multiple destinations per local file are supported. -->
+			<Destinations>
+				<!--
+					targetWeb:			Optional. Relative to the deployment URL setting specified for the current project. If not specified, then the web at the URL setting will
+										be used. Value should not start with '/'. 			
+										
+					targetFolder:		Required. Relative to targetWeb. Value should not start with '/'. Use this to target a library, or a folder/sub-folder within a library.
+										All folders on the target path (except for the root list/library) are automatically created if they do not exist at the target location. 
+										
+										Here are some examples: 
+										
+											_catalogs/masterpage/display templates/content web parts
+											Style Library/MyPortal/CSS/Mobile
+											
+					targetFileName:		Optional. The file name that will be used at the target location. If not specified, the local file name will be used.
+				-->
+				<Destination targetWeb="" targetFolder="Style Library" targetFileName="script1.js"/>
+			</Destinations>
+			
+			<!-- Optional. -->
+			<Metadata>
+				<!--
+					name:				Required. Internal name of the field to set. 
+					value:				Required. Value for the field to set. 
+					
+					Multiple fields are supported.
+				-->
+				<Field name="Title" value="Script 1"/>
+
+				<!-- Use this to associate your file with a content type. -->
+				<Field name="ContentTypeId" value="0x01010007FF3E057FA8AB4AA42FCB67B453FFC100E214EEE741181F4E9F7ACC43278EE811"/>
+				
+				<!-- Use this to associate your page layout with a publishing page content type. -->
+				<Field name="PublishingAssociatedContentType" value=";#Article Page;#0x010100C568DB52D9D0A14D9B2FDCC96666E9F2007948130EC3DB064584E219954237AF3900242457EFB8B24247815D688C526CD44D;#"/>
+			</Metadata>
+		</File>
+
+		<!--
+			localPath:		Required. Local path of the folder to deploy. Relative to the current project. Value should not start with '\'. Files within this folder and
+							all of its sub-folders will be processed.
+							
+							The folder may contain "compilable" files such as TypeScript, LESS or SASS.			
+		-->
+		<Folder localPath="Scripts">
+			<Destinations>
+				<!-- Same usage as Destination element for File. targetFileName is not supported when this element is being used for Folder. All files in the local folder will be deployed
+				to the target location using the local file name. The local sub-folder structure will be automatically re-created at the target location. -->
+				<Destination targetWeb="" targetFolder="Style Library"/>
+			</Destinations>
+			
+			<!-- Same usage as Metadata element for File. The same metadata will be applied to all files within this folder. -->
+			<Metadata>
+				<Field name="ContentTypeId" value="0x01010007FF3057"/>
+			</Metadata>
+		</Folder>
+	</Files>
+</DeploymentSettings>

@@ -1,0 +1,325 @@
+﻿body {
+}
+
+/*modal*/
+#modal_contenedora {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(121, 123, 125, 0.90);
+    z-index: 99999;
+    opacity: 1;
+    -webkit-transition: opacity 100ms ease-in;
+    -moz-transition: opacity 200ms ease-in;
+    transition: opacity 100ms ease-in;
+}
+
+    #modal_contenedora > div {
+        width: 95%;
+        height: 95%;
+        position: relative;
+        margin: 1% auto;
+        border: none;
+        padding: 5px 20px 13px 20px;
+        border-radius: 10px;
+        background-color: rgb(220, 223, 229);
+        -webkit-transition: opacity 100ms ease-in;
+        -moz-transition: opacity 10ms ease-in;
+        transition: opacity 10ms ease-in;
+        /**sombra*/
+        -webkit-box-shadow: 0px 0px 23px 10px rgb(128, 128, 128);
+        -moz-box-shadow: 0px 0px 23px 10px rgb(128, 128, 128);
+        box-shadow: 0px 0px 23px 10px rgb(128, 128, 128);
+    }
+
+#modal_empleado {
+    display: none;
+    position: fixed;
+    top: -15px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(121, 123, 125, 0.60);
+    z-index: 99999;
+    opacity: 1;
+    -webkit-transition: opacity 100ms ease-in;
+    -moz-transition: opacity 200ms ease-in;
+    transition: opacity 100ms ease-in;
+}
+
+    #modal_empleado > div {
+        width: 75%;
+        min-height: 450px;
+        position: relative;
+        margin: 1% auto;
+        border: none;
+        padding: 5px 20px 13px 20px;
+        border-radius: 0 0 5px 5px;
+        background-color: rgb(220, 223, 229);
+        -webkit-transition: opacity 100ms ease-in;
+        -moz-transition: opacity 10ms ease-in;
+        transition: opacity 10ms ease-in;
+        /**sombra*/
+        -webkit-box-shadow: 0px 0px 23px 10px rgb(128, 128, 128);
+        -moz-box-shadow: 0px 0px 23px 10px rgb(128, 128, 128);
+        box-shadow: 0px 0px 23px 10px rgb(128, 128, 128);
+    }
+
+#cerrar {
+    background: none;
+    color: #73767e;
+    line-height: 32px;
+    position: absolute;
+    right: 2px;
+    text-align: center;
+    top: 0px;
+    width: 28px;
+    height: 28px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    border: none;
+}
+
+    #cerrar:hover {
+        color: #f80808;
+    }
+
+#nombre_empleado {
+    background: #0094ff;
+    color: azure;
+    width: 80%;
+    margin-top: 25px;
+    border-radius: 5px;
+}
+
+/*controles*/
+.fecha {
+    display: inline-block;
+    margin: 10px 10px 0 20px;
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+    .fecha:hover {
+        background: #ced4d7;
+        border-radius: 5px;
+    }
+
+p > input {
+    border-style: none;
+    border-bottom: solid 1px #0094ff;
+}
+
+    p > input:hover {
+        border-style: none;
+        border-bottom: solid 2px #0094ff;
+    }
+
+    p > input:focus {
+        border-style: none;
+        border-bottom: solid 3px #0094ff;
+    }
+
+.fa {
+    font-size: 24px
+}
+
+    .fa:hover {
+        color: #adb4ba;
+    }
+
+#titulo {
+    display: inline-block;
+}
+
+#contenedor {
+    height: 80%;
+    width: 100%;
+    overflow: auto;
+    top: 35px;
+    border: solid 1px #0094ff;
+    border-radius: 5px;
+}
+
+/*tabla*/
+table {
+    width: 100%;
+}
+
+.cavecera {
+    font-size: 18px;
+    position: sticky;
+    top: 0;
+    width: 100%;
+}
+
+.cavecera_si_no_na {
+    position: sticky;
+    width: 100%;
+    background: rgba(93, 170, 246, 0.89);
+    color: rgb(212, 228, 237)
+}
+
+td {
+    border: 1px solid #0094ff;
+}
+
+.establecimiento {
+    background-color: rgb(152, 201, 226);
+    color: rgb(229, 231, 232);
+}
+
+.area {
+    background-color: rgb(229, 231, 232);
+}
+
+    .area:hover {
+        background-color: rgb(215, 219, 220);
+    }
+
+.puestos {
+    background-color: rgb(251, 251, 251);
+}
+
+    .puestos:hover {
+        background-color: rgb(184, 212, 248);
+    }
+
+.empleados {
+    background-color: rgb(255, 255, 255);
+}
+
+    .empleados:hover {
+        background-color: rgb(208, 233, 252);
+    }
+
+#contenido_datos {
+    max-height: 450px;
+    width: 100%;
+    overflow: auto;
+    border: solid 1px #0094ff;
+    margin-top: 1px;
+    min-height: 350px;
+}
+
+/*modal de carga */
+#dialog {
+    opacity: .9;
+    z-index: 99999;
+    position: fixed;
+    margin-top: -1%;
+    margin-left: -3%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 0%;
+    color: azure;
+    text-align: center;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+#cargando {
+    width: 250px;
+    height: 220px;
+    margin-left: 0%;
+    margin-top: -1%;
+    border-radius: 45%;
+}
+
+#selector_est {
+    opacity: 1;
+    z-index: 99999;
+    position: fixed;
+    background-color: #ffffff;
+    border-radius: 5px;
+    color: rgb(128, 128, 128);
+    text-align: center;
+    top: 81px;
+    right: 35px;
+    bottom: 30px;
+    left: 35px;
+}
+
+content {
+    position: absolute;
+    top: 50px;
+    left: 0px;
+    right: 50px;
+}
+
+#empleado_id {
+    border: none;
+    border-bottom: solid 1px rgb(128, 128, 128);
+    width: 180px;
+    height: 50px;
+    font-size: 18px;
+    text-align: center;
+}
+
+    #empleado_id:focus {
+        border-bottom: solid 2px #0094ff;
+    }
+
+#empleado_cont {
+    border: none;
+    border-bottom: solid 1px rgb(128, 128, 128);
+    width: 180px;
+    height: 50px;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+    #empleado_cont:focus {
+        border-bottom: solid 2px #0094ff;
+    }
+
+#selec_est {
+    border: none;
+    background: rgb(10, 128, 245);
+    color: white;
+    border-radius: 5px;
+    width: 80px;
+    height: 50px;
+}
+
+    #selec_est:hover {
+        background: rgb(93, 170, 246);
+    }
+
+#selec_est_limp {
+    border: none;
+    background: #f80808;
+    color: white;
+    border-radius: 5px;
+    width: 80px;
+    height: 50px;
+}
+
+    #selec_est_limp:hover {
+        background: #ea7063;
+    }
+
+#gdr_tabla_semana {
+    font-size: 40px;
+    position: absolute;
+    right: 20px;
+    top: 30px;
+    background: #0094ff;
+    color: #ffffff;
+}
+
+.material-icons {
+    font-size: 40px;
+    position: absolute;
+    right: 20px;
+    top: 30px;
+    background: #0094ff;
+    color: #ffffff;
+}

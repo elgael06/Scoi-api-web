@@ -1,0 +1,153 @@
+﻿
+@{
+    ViewBag.Title = "Monitor Ordenes De Pago En Efectivo.";
+}
+    <div class="panel panel-default">
+        <div class="panel-heading" id="cavecera_parametros">
+            <h3>Monitor Ordenes De Pago En Efectivo.</h3>
+            <div class="row" v-if="!estatus">
+                <!--Periodos De Fecha-->
+                <div class="form-group col-lg-2 contenedor_parametros" id="contenedor_fecha">
+                    <span class="fa fa-question inforacion_seleccion" data-descr="Seleccion De Intervalos De Fechas A partir De La Cual Se Realizara El Monitorear."></span>
+                    <h4>Fechas:</h4>
+                    <!--Inicio De Fecha-->
+                    <div class="form-group col-lg-12">
+                        <label>Inicio:</label>
+                        <input type="date" id="f1" class="form-control" v-model="filtro.f1" />
+                    </div>
+                    <!--Fin De Fecha-->
+                    <div class="form-group col-lg-12">
+                        <label>Fin:</label>
+                        <input type="date" id="f2" class="form-control" v-model="filtro.f2" />
+                    </div>
+                </div>
+                <!--Cuenta-->
+                <div class="form-group col-lg-2 contenedor_parametros" id="contenedor_cuenta">
+                    <span class="fa fa-question inforacion_seleccion" data-descr="Cuenta : Indica el Filtro De Movimientos A Ser Monitoreada. Concepto: Tipo De Tranzaccion De Cuenta  ."></span>
+                    <h4>Cuentas:</h4>
+                    <!--Tipo Cuenta-->
+                    <div class="form-group col-lg-12">
+                        <label><i class="fa fa-spinner rotate" name="tipo" v-if="cuentas.length==0"></i>Cuenta:</label>
+                        <select id="lista_cuentas" class="form-control btn btn-default" v-model="filtro.cuenta">
+                            <option v-for="cuenta in cuentas" :value="cuenta" :key="cuenta">{{cuenta}}</option>
+                        </select>
+                    </div>
+                    <!--Conceptos Cuenta-->
+                    <div class="form-group col-lg-12">
+                        <label> Conceptos:</label>
+                        <select id="lista_conceptos" class="form-control btn btn-default" v-model="filtro.concepto_compra_o_gasto">
+                            <option value="Todos">Todos</option>
+                            <option value="Compras">Compras</option>
+                            <option value="Gastos">Gastos</option>
+                        </select>
+                    </div>
+                </div>
+                <!--Nombre Beneficiario-->
+                <div class="form-group col-lg-6 contenedor_parametros" id="contenedor_beneficiario">
+                    <span class="fa fa-question inforacion_seleccion" data-descr="Persona O Entidad A La Cual Se Le Atribuye La Orden De Pago En Efectivo Ya Sea Un Empleado O Proveedor."></span>
+                    <h4>Beneficiario:</h4>
+                    <!--Tipo De Beneficiario-->
+                    <div class="form-group col-lg-4">
+                        <label>Tipo:</label>
+                        <select id="tipo_beneficiario" class="form-control" v-on:click="canbio_tipo_beneficiario" v-model="filtro.tipo_beneficiario">
+                            <option value="Todos">Todos</option>
+                            <option value="Empleado">Empleado.</option>
+                            <option value="Proveedor">Proveedor.</option>
+                        </select>
+                    </div>
+                    <!--Orden De Pago Beneficiario-->
+                    <div class="form-group col-lg-8">
+                        <label><i class="fa fa-spinner rotate" name="orden" v-if="ordenes_pago.length==0"></i>Orden De Pago:</label>
+                        <select id="orden_pago" class="form-control" v-model="filtro.concepto_orden_pago">
+                            <option v-for="pago in ordenes_pago" :value="pago" :key="pago">{{pago}}</option>
+                        </select>
+                    </div>
+                    <!--Nombre Beneficiario-->
+                    <div class="form-group col-lg-12" v-if="filtro.tipo_beneficiario!='Todos'">
+                        <input type="text" id="nombre_beneficiario" class="form-control col-lg-11" v-model="filtro.nombre_beneficiario" placeholder="Beneficiario..." />
+                        <i class="btn btn-default glyphicon glyphicon-search col-lg-1" id="btn_buscar_Beneficiario" v-on:click="obtener_beneficiarios()"> </i>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <i :class="btn_consultar.tipo"  v-if="!estatus" id="btn_consultar" v-on:click="consultar_orden_de_gasto">
+                    {{btn_consultar.mensaje }}
+                    <i :class="btn_consultar.icono"></i>
+                </i>
+                <i class="btn btn-default glyphicon glyphicon-trash" v-if="estatus" v-on:click="remover_parametro"> Remover Registros De Consultar.</i>
+            </div>
+        </div>
+        @* Aqui se Renderizara el contenido De La Tabla. *@
+        <div class="panel-body" style="height:780px">
+            <main id="resultados_tabla">
+
+            </main>
+        </div>
+        @* Aqui Se Muestran La Modal De Los Datos De Pago Por Servicio Seleccionado *@
+        <div id="tabla_pago_por_semana" class="modal">
+            <div class="panel panel-default animate" v-if="verificar_detalles">
+                <div class="panel-heading">
+                    <i class="close fa fa-close" v-on:click="eliminar_todo"></i>
+                    <label><strong>Establecimiento :</strong>  {{establecimimiento}}</label>
+                    <br />
+                    <label><strong>Concepto De Pago :</strong>  {{concepto_pago}}</label>
+                    <label style="margin-left:30px"><strong>Cantidad De Pago :</strong>  {{catidad_pago}}</label>
+                    <label style="margin-left:30px"><strong>Cantidad De Pagos :</strong>  {{listaDetalles.length}}.</label>
+                </div>
+                <div class="panel-body">
+                    <div>
+                        <tabla_detalles :detalles="listaDetalles"></tabla_detalles>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @* Modal Beneficiarios *@
+        <div class="modal" id="modal_seleccion_beneficiarios">
+            <div class="panel panel-default animate">
+                <div class="panel-heading">
+                    <i class="fa fa-close" id="btn_cerrar_modal_beneficiarios" v-on:click="cancelar_seleccion" style="float:right"></i>
+                    <strong>Seleccion Beneficiarios.</strong>
+                </div>
+                <div class="panel-body">
+                    <div id="container_beneficiarios" style="width:500px;">
+                        <div class="panel panel-info">
+                            <div class="form-group panel-heading">
+                                <label>Filtro:</label>
+                                <input class="form-control" type="text" placeholder="Filtro..." v-model="filtro" id="caja_filtro_beneficiario" />
+                            </div>
+                            <div style="height:500px;overflow:auto">
+                                @*  <tabla_beneficiarios :beneficiarios="beneficiarios" :activo="seleccion.folio" />*@
+                                <table class="table">
+                                    <thead>
+                                        <tr class="info">
+                                            <th>Folio</th>
+                                            <th>Nombre</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="listado_beneficiarios">
+                                        <tr v-for="item in beneficiarios" v-on:click="seleccionar(item)" v-if="checar_filtro(item)" class="datos_lista_beneficiario">
+                                            <td>{{item.Folio}}</td>
+                                            <td>
+                                                {{item.Nombre}}
+                                                <i :class="classSeleccionado(item.Folio)"></i>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <i class="btn btn-success fa fa-download btn-round" v-on:click="agregar_seleccion" id="btn_seleccionar_modal_beneficiarios_pie"> Seleccionar.</i>
+                    <i class="btn btn-danger fa fa-close btn-round" id="btn_cerrar_modal_beneficiarios_pie" v-on:click="cancelar_seleccion" style="float:right"> Cerrar.</i>
+                </div>
+            </div>
+        </div>
+    </div>
+<link href="@Url.Content("~/src/styles/Indicadores/OrdenesDePagoEnEfectivo/main.css")?1.0.3" rel="stylesheet" />
+
+<script src="@Url.Content("~/src/scripts/Indicadores/OrdenesDePagoEnEfectivo/Parametros_consulta.js")?1.0.1"></script>
+<script src="@Url.Content("~/Scripts/Componentes/Estaticos/BotonToggle.js")?1.0.1"></script>
+<script src="@Url.Content("~/src/scripts/Indicadores/OrdenesDePagoEnEfectivo/OrdenesPago.js")?1.0.5"></script>
+<script src="@Url.Content("~/src/scripts/Indicadores/OrdenesDePagoEnEfectivo/Detallaes_pagos.js")?1.0.5"></script>

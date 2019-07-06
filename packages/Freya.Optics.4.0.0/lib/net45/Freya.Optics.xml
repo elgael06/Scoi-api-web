@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+<assembly><name>Freya.Optics</name></assembly>
+<members>
+<member name="M:Freya.Optics.Option.unsafe_``1">
+<summary>
+ A degenerate isomorphism from an &apos;a option to an &apos;a, where a non-Some
+ value will result in a runtime error. This should only be used as part
+ of optics where the form of the data can&apos;t be proven at compile time
+ through a change in type, but can be known.
+</summary>
+</member>
+<member name="M:Freya.Optics.Option.ofResult``2(Microsoft.FSharp.Core.FSharpResult{``0,``1})">
+<summary>
+ Returns the result if successful, otherwise None.
+</summary>
+</member>
+<member name="M:Freya.Optics.Option.ofChoice``2(Microsoft.FSharp.Core.FSharpChoice{``0,``1})">
+<summary>
+ A function Choice -&gt; Option, effectively discarding the second state.
+</summary>
+</member>
+</members>
+</doc>

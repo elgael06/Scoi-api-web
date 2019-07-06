@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "Cuadrantes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title> Monitor De Cumplimiento De Cuadrantes. </title>
+<meta charset="utf-8" />
+
+<link href="@Url.Content("~/src/styles/Indicadores/Cuadrantes/main.css")" rel="stylesheet" />
+
+<div id="modal_contenedora">
+    <div id="modal_principal">
+        <a class="fa fa-pencil-square-o" style="font-size:50px"></a>
+        <p id="fecha_1" class="fecha">Fecha Inicio<br />
+        <input type="date" v-on:change="on_fecha" v-model="fechas.Lunes" /></p>
+        <p id="fecha_2" class="fecha">Fecha Fin<br />
+        <input type="date" disabled v-model="fechas.Domingo" /></p>
+        <h2 id="titulo">Monitor De Cumplimiento De Cuadrantes.</h2>
+        <i class="fa fa-refresh" style="font-size:30px" v-if="comprobar_fechas" v-on:click="on_cargar_cuadrantes" ></i>
+
+        <p class="fecha">Semana:<input type="number" id="selector_semana" disabled step="1" min=0 max=52 v-model="fechas.Semana" style="width:35px" /></p>
+        <p class="fecha">Año:<input type="number" id="selector_anio" disabled style="width:50px" v-model="fechas.Anio" /></p>
+
+        <div id="contenedor">
+            <Establecimientos v-bind:lista="obtener_establecimientos" />
+        </div>
+    </div>
+</div>
+<div id="modal_empleado">
+    <div>
+        <section id="cerrar" class="fa fa-remove"></section>
+        <h3 id="nombre_empleado" style="display:inline-block">Nombre Empleado</h3>
+        <i id="gdr_tabla_semana" class="material-icons" title="Guardar">file_download</i>
+        <div id="contenido_datos">
+
+        </div>
+    </div>
+</div>
+<div id="dialog" title="cuadro de carga de datos" style="display:none">
+    <br />
+    <br />
+    <br />
+    <img id="cargando" src="../Data/loadin_izagar.gif" />
+</div>
+<script type="text/javascript" src="../res/js/tableToExcel.js"></script>
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+
+
+<script type="text/javascript" src="@Url.Content("~/src/scripts/Indicadores/Cuadrantes/monitor.js")"></script>

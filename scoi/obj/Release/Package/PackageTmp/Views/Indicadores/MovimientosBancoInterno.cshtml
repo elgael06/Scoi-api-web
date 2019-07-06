@@ -1,0 +1,69 @@
+﻿
+@{
+    ViewBag.Title = "Movimientos De Banco Interno";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Reportes Movimientos De Banco Interno</h2>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div id="seleccion_reporte" class="form-group">
+            <label>Seleccion Tipo De Reporte.</label>
+            <select id="seleccion_tipo_reporte" class="form-control">
+                <optgroup label="Seleccion">
+                    <option value="1">Pagos Realizados En Un Periodo.</option>
+                    <option value="2">Pagos Realizados En Un Periodo Por Cuenta.</option>
+                </optgroup>
+            </select>
+        </div>
+        <strong>Parametros</strong>
+        <div id="parametros_indicadores" class="form-inline">
+            <div class="form-group">
+                <label>Inicio : </label>
+                <input id="parametros_fecha_i" type="date" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Termino : </label>
+                <input id="parametros_fecha_f" type="date" class="form-control" />
+            </div>
+            <div id="parametros_cuenta" class="form-group">
+                <label>Cuenta : </label>
+                <select class="form-control">
+                    <optgroup label="CUENTA">
+                        <option>Total Efectivo</option>
+                        <option>Supermercados</option>
+                        <option>Ferreautomotriz</option>
+                        <option>Vales</option>
+                        <option>Dolares</option>
+                        <option>Piorico</option>
+                        <option>Cheques Juan</option>
+                        <option>Cheques Luis</option>
+                        <option>Cheques Carlos</option>
+                    </optgroup>
+                </select>
+            </div>
+            <div id="parametro_concepto" class="form-group">
+                <label>Concepto : </label>
+                <select class="form-control">
+                    <optgroup label="Concepto">
+                        <option>Todos.</option>
+                        <option>Gastos.</option>
+                        <option>Compra.</option>
+                    </optgroup>
+                </select>
+            </div>
+        </div>
+        <hr />
+        <span id="btn_generar_reporte" class="btn btn-success btn-round fa fa-bar-chart" style="font-size:20px"> Generar reporte <i class="glyphicon glyphicon-arrow-down"></i></span>
+    </div>
+    <div class="panel-body">
+
+    </div>
+
+</div>
+<main id="root">
+
+</main>
+<script src="@Url.Content("~/Scripts/Indicadores/MovimientosBancoInterno/main.js")"></script>
+
+

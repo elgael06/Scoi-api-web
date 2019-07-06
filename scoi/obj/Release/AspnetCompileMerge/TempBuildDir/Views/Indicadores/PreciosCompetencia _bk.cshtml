@@ -1,0 +1,328 @@
+﻿
+@{
+    ViewBag.Title = "Precios Competencia.";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="@Url.Content("~/Scripts/generales/componente_moneda_vue.js")"></script>
+@*<script src="@Url.Content("~/Scripts/Componentes/Estaticos/contraer_expandir.js")"></script>*@
+<div style="padding:10px;margin-top:50px">
+    <div class="panel panel-default" id="root">
+        <div class="panel-heading">
+            <h3>Monitor Precio Competencia</h3>
+            <control-monitor v-bind:parametros="parametros"
+                             v-bind:estatus="this_Vigencia"
+                             v-bind:cambio_vigencia="cambio_vigencia"
+                             v-bind:consultar_pasillos="consultar_pasillos" />
+        </div>
+        <div class="panel-body" style="height:800px">
+            <strong>Total Productos = {{total_productos}}</strong>
+            <div class="container_table" v-if="total_productos>0">
+                <tabla-monitor v-bind:pasillo_8020="pasillo_8020"
+                               v-bind:pasillos="pasillos"
+                               v-bind:acumulado="acumulado"
+                               v-bind:on_mueble="on_mueble"
+                               v-bind:on_producto="on_producto" />
+            </div>
+            <div v-else class="flex bg-danger" style="justify-content:center;padding:40px;height:120px;border-radius:10px" >
+                <h1 class="fa fa-info-circle"> Sin Productos a Mostrar...</h1>
+            </div>
+        </div>
+
+        <modal-mueble v-bind:mueble="seleccion" v-bind:pasillo="pasillo" v-bind:acumulado="acumulado" ></modal-mueble>
+        <modal-detalle-producto v-bind:producto="seleccion_producto" ></modal-detalle-producto>
+    </div>
+    <style>
+        .descripcion_tabla_ch {
+            text-align: right;
+            width: 110px;
+            padding: 15px;
+        }
+
+        .container_table {
+            height: 700px;
+            overflow: auto;
+        }
+
+        .btn_existencia {
+            background: #97b4e9;
+        }
+
+        .btn_no_existencia {
+            background: #ef8080;
+        }
+
+        #modal_mueble > div {
+            width: 90%;
+            max-width: 1300px;
+        }
+
+        .lista_productos {
+            max-height: 550px;
+            overflow: auto;
+        }
+
+        #body_modal_mueble {
+            background-color: #dde0e4;
+        }
+        .celda_oculta {
+            display:none;
+        }
+    </style>
+</div>
+@* template control monitor *@
+<template id="control_monitor">
+    <div class="form-group">
+        <div class="form-group" style="display:inline-block">
+            <h4>Critero Productos:</h4>
+            <a :class="btn_existencia" v-on:click="cambio_vigencia('S')">
+                <i class="fa fa-check-circle-o" v-if="estatus"></i>  Existencia
+            </a>
+            <a :class="btn_no_existencia" v-on:click="cambio_vigencia('N')">
+                <i class="fa fa-check-circle-o" v-if="!estatus"></i> Sin Existencia
+            </a>
+        </div>
+        <div class="form-group" style="display:inline-block">
+            <h4>Mes:</h4>
+            <select type="month" class="btn btn-default" v-model="parametros.fecha">
+                <option value="">Todos</option>
+                <option>Enero</option>
+                <option>Febrero</option>
+                <option>Marzo</option>
+                <option>Abril</option>
+                <option>Mayo</option>
+                <option>Junio</option>
+                <option>Julio</option>
+                <option>Agosto</option>
+                <option>Septiembre</option>
+                <option>Octubre</option>
+                <option>Noviembre</option>
+                <option>Diciembre</option>
+            </select>
+        </div>
+        <div class="form-group" style="display:inline-block">
+            <h4>Año:</h4>
+            <select class="btn btn-default" v-model="parametros.anio">
+                <option>2023</option>
+                <option>2022</option>
+                <option>2021</option>
+                <option>2020</option>
+                <option>2019</option>
+                <option>2018</option>
+                <option>2017</option>
+                <option>2016</option>
+                <option>2015</option>
+                <option>2014</option>
+                <option>2013</option>
+            </select>
+        </div>
+        <i class="fa fa-download btn btn-success btn-round" v-on:click="consultar_pasillos" style="font-size:18px;"> Obtener.</i>
+        </div>
+</template>
+@* template tabla de productos *@
+<template id="tabla_producto">
+    <table class="table" style="width:100%;float:left">
+        <tbody>
+            <tr class="active">
+                <td>Folio</td>
+                <td>Producto</td>
+                <td>Estatus</td>
+            </tr>
+            <tr v-for="producto in mueble.Productos" :key="producto.Codigo">
+                <td class="descripcion_tabla_ch">{{producto.Codigo}}</td>
+                <td>{{producto.Descripcion}}</td>
+                <td class="descripcion_tabla_ch">
+                    <i :class="producto.Estado?'btn btn-success glyphicon glyphicon-ok-circle':'btn btn-warning glyphicon glyphicon-ban-circle'"
+                       style="float:right" v-on:click="on_producto(producto)">
+                        {{comprobar(producto.Estado)}}.
+                    </i>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</template>
+@* template detalles productos *@
+<template id="detalles_productos">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <label> Folio : {{producto.Codigo}}</label>
+            <label>Descripcion : {{producto.Descripcion}}</label>
+        </div>
+        <div class="panel-body">
+            <table class="table table-condensed">
+                <tbody>
+                    <tr class="bg-green">
+                        <th>Clase</th>
+                        <th>Categoria</th>
+                        <th>Familia</th>
+                        <th>Talla</th>
+                        <th>Color</th>
+                        <th>Costo(Promedio)</th>
+                        <th>Costo(Ultimo)</th>
+                        <th>Margen</th>
+                        <th>Margen(Familia)</th>
+                        <th>Venta(90 Dias)</th>
+                    </tr>
+                    <tr>
+                        <th>{{producto.Detalles.Clase}}</th>
+                        <th>{{producto.Detalles.Categoria}}</th>
+                        <th>{{producto.Detalles.Familia}}</th>
+                        <th>{{producto.Detalles.Talla}}</th>
+                        <th>{{producto.Detalles.Color}}</th>
+                        <th><moneda v-bind:cantidad="producto.Detalles.Costo_promedio" /></th>
+                        <th><moneda v-bind:cantidad="producto.Detalles.Ultimo_costo" /></th>
+                        <th>{{producto.Detalles.Margen}}</th>
+                        <th>{{producto.Detalles.Margen_familia}}</th>
+                        <th>{{producto.Detalles.Venta_90_dias}}</th>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-condensed">
+                <tbody>
+                    <tr class="bg-warning">
+                        <th rowspan="3">
+                            <label style="margin-top:30px;margin-left:10px">
+                                Comparativo
+                                <p>{{producto.Fecha}}</p>
+                            </label>
+                        </th>
+                        <th>Precio</th>
+                        <th>Izagar</th>
+                        <th>Ley</th>
+                        <th>Lopez</th>
+                        <th>Mezquitillo</th>
+                        <th>Bodart</th>
+                        <th>Teresita</th>
+                        <th>Soriana</th>
+                    </tr>
+                    <tr>
+                        <td>Normal</td>
+                        <td><moneda v-bind:cantidad="producto.Precio.Izagar.Normal" /></td>
+                        <td><moneda v-bind:cantidad="producto.Precio.Ley.Normal" /></td>
+                        <td><moneda v-bind:cantidad="producto.Precio.Lopez.Normal" /></td>
+                        <td><moneda v-bind:cantidad="producto.Precio.Mesquitillo.Normal" /></td>
+                        <td><moneda v-bind:cantidad="producto.Precio.Bodart.Normal" /></td>
+                        <td><moneda v-bind:cantidad="producto.Precio.Teresita.Normal" /></td>
+                        <td><moneda v-bind:cantidad="producto.Precio.Soriana.Normal" /></td>
+                    </tr>
+                    <tr>
+                        <td>Oferta</td>
+                        <td><moneda v-bind:cantidad="producto.Precio.Izagar.Oferta" /></td>
+                        <td><moneda v-bind:cantidad="producto.Precio.Ley.Oferta" /></td>
+                        <td><moneda v-bind:cantidad="producto.Precio.Lopez.Oferta" /></td>
+                        <td><moneda v-bind:cantidad="producto.Precio.Mesquitillo.Oferta" /></td>
+                        <td><moneda v-bind:cantidad="producto.Precio.Bodart.Oferta" /></td>
+                        <td><moneda v-bind:cantidad="producto.Precio.Teresita.Oferta" /></td>
+                        <td><moneda v-bind:cantidad="producto.Precio.Soriana.Oferta" /></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</template>
+@*template modal detalle producto*@
+<template id="modal_detalle_producto">
+    <div class="modal" id="modal_producto">
+        <div class="panel panel-primary" style="max-height:100%">
+            <div class="panel-heading">
+                <i class="fa fa-close" v-on:click="cerrar" style="float:right"></i>
+                <label>Detalles Producto.</label>
+            </div>
+            <div class="panel-body" style="max-height:90%">
+                <div class="panel-group" style="overflow:auto;max-height:600px">
+                    <detalles-productos v-bind:producto="producto" />
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+@*template area filtro productos mueble *@
+<template id="area_filtro_productos_mueble">
+    <div class="col-sm-8 bg-blue">
+        <div class="col-sm-4">
+            <label>Clase</label>
+            <select class="form-control" v-model="seleccion.Clases">
+                <option value="">Todos</option>
+                <option v-for="item in Mueble.Clases" :key="item">{{item}}</option>
+            </select>
+        </div>
+        <div class="col-sm-4">
+            <label>Categoria</label>
+            <select class="form-control" v-model="seleccion.Categorias">
+                <option value="">Todos</option>
+                <option v-for="item in Mueble.Categorias" :key="item">{{item}}</option>
+            </select>
+        </div>
+        <div class="col-sm-4">
+            <label>Familia</label>
+            <select class="form-control" v-model="seleccion.Familia">
+                <option value="">Todos</option>
+                <option v-for="item in Mueble.Familia" :key="item">{{item}}</option>
+            </select>
+        </div>
+        <div class="col-sm-4">
+            <label>Talla</label>
+            <select class="form-control" v-model="seleccion.Talla">
+                <option value="">Todos</option>
+                <option v-for="item in Mueble.Talla" :key="item">{{item}}</option>
+            </select>
+        </div>
+        <div class="col-sm-4">
+            <label>Color</label>
+            <select class="form-control" v-model="seleccion.Color">
+                <option value="">Todos</option>
+                <option v-for="item in Mueble.Color" :key="item">{{item}}</option>
+            </select>
+        </div>
+    </div>
+</template>
+@*template modal mueble *@
+<template id="modal_mueble">
+    <div class="modal" id="modal_mueble">
+        <div class="animate panel panel-primary">
+            <div class="panel-heading">
+                <i class="fa fa-close" style="float:right" v-on:click="cerrar"></i>
+                <label>Detalles Pasillo {{pasillo}}</label>
+            </div>
+            <div class="panel-body" id="body_modal_mueble">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr class="bg-blue">
+                                    <th rowspan="2"><label>Mueble</label></th>
+                                    <th colspan="4" style="text-align:center">Productos</th>
+                                </tr>
+                                <tr class="bg-blue">
+                                    <th>Cantidad</th>
+                                    <th>Avance</th>
+                                    <th>Diferencia</th>
+                                    <th>Acumulado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="bg-with" style="background:#FFF">
+                                    <td class="descripcion_tabla">{{mueble.Mueble}}</td>
+                                    <td class="descripcion_tabla_ch">{{mueble.Cantidad}}</td>
+                                    <td class="descripcion_tabla_ch">{{mueble.Avance}}</td>
+                                    <td class="descripcion_tabla_ch">{{mueble.Diferencia}}</td>
+                                    <td class="descripcion_tabla_ch">{{acumulado(mueble.Acumulado)}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <area-filtro-productos-mueble v-bind:Mueble="mueble"
+                                                  v-bind:seleccion="seleccion"></area-filtro-productos-mueble>
+                    <h5 class="col-sm-12">Productos :</h5>
+                    <div class="panel-group lista_productos col-sm-12">
+                        <detalles-productos v-for="producto in mueble.Productos" :key="producto.Codigo" v-bind:producto="producto" v-if="filtrar(producto.Detalles)" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+
+
+<script src="~/src/scripts/Indicadores/PreciosCompetencia/monitor.js?1.0.1"></script>

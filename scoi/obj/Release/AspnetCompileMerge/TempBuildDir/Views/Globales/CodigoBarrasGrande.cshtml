@@ -1,0 +1,78 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Crear Codigo De Barras</title>
+    <script src="~/Scripts/lib/jsbarCode/JsBarcode.all.min.js"></script>
+    <link href="~/src/styles/CodigosBarra/main_g.css?1.0.1" rel="stylesheet" />
+    <!-- Bootstrap -->
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link href="~/Content/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <!-- jQuery -->
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+</head>
+<body class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading" style="font-size:15px">
+            <form action="on_pedir_codigo_de_producto()">
+                <div class="form-group" id="contenedor_barcode">
+                    <label>Codigo</label>
+                    <input type="text" id="codigo_producto" class="form-control" />
+                </div>
+                <button class="btn btn-primary fa fa-download" id="btn_buscar_barcode"></button>
+            </form>
+            <i class="btn btn-success " id="btn_imprimir">
+                Imprimir
+                <span class="fa fa-print"></span>
+            </i>
+        </div>
+        <div class="panel-body">
+            <strong>Vista Previa</strong>
+            <i class="btn btn-default fa fa-refresh" id="rotar_etiqueta"></i>
+            <div id="contenedor_vista_barcode">
+                <div id="etiqueta">
+                    <div id="contenedor_barras">
+                        <svg id="barcode">
+
+                        </svg>
+                    </div>
+                    <div id="contenedor_texto_etiquet">
+                        <div>
+                            <h3 id="descripcion_producto">
+                                esta es la descripcion del producto
+                            </h3>
+                        </div>
+                        <div id="contenedor_precio">
+                            <strong id="costo_producto">
+                                $0.00
+                            </strong>
+                        </div>
+                        <strong id="fecha">
+                            19/03/2019
+                        </strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="modal_load">
+        <div>
+            <i class="rotate fa fa-refresh"></i>
+            <strong>Cargando</strong>
+        </div>
+
+    </div>
+    <script src="~/Scripts/lib/html2Camvas/html2canvas.js"></script>
+    <script src="~/src/scripts/Globales/CodigosBarra/codigos_de_barras _g.js"></script>
+</body>
+</html>

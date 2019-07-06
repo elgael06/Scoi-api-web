@@ -1,0 +1,243 @@
+﻿html {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}  
+
+  .btnf {
+    margin-top:10px;
+    display: inline-block;
+    margin-left:2%;
+    margin-bottom: 10px;
+
+}
+.btncabeza {
+    width:90px;
+    height:50px;
+    border-radius:10px;
+    border:none;
+}
+.btncabeza:disabled {
+    background-color:#dddddd;
+    color:azure;
+}
+.btncabeza:hover:enabled {
+    position:static;
+    animation:normal;
+    background: rgba(38, 80, 242, 0.69);
+    border:solid;
+    border-color:white;
+
+}
+.btncabeza:enabled {
+    background-color:#0080FF;
+    color:azure;
+   
+}
+.mmenu_lateral {
+overflow-y: auto;
+height:515px;
+}
+::-webkit-scrollbar {
+      width: 15px;
+}
+::-webkit-scrollbar-track {
+      background-color: #969a99;
+} 
+::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.2);
+} 
+::-webkit-scrollbar-button {
+      background-color: #dddddd;
+}
+::-webkit-scrollbar-corner {
+      background-color: gray;
+}
+.jspTrack{
+    background:#969a99;
+    position: relative;
+}
+.jspDrag{
+    background: rgba(0,0,0,0.2);
+    position: relative;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
+body {
+height:100%;
+right:10px;    
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+#checar_navegador{
+      display:none;
+      position:fixed;
+      margin-top:-10px;
+      right:1%;
+      z-index: 99999;
+      opacity:.95;
+      width:98%;
+      height:22px;
+      color:white;
+      background-color:rgba(75, 76, 82, 0.90);
+      border-bottom-left-radius:10px;
+      border-bottom-right-radius:10px;
+      text-align:center;
+      font-size:12px;
+      font-family:'Comic Sans MS';
+      -webkit-box-shadow: 0px 0px 23px 6px #0080FF;
+      -moz-box-shadow:0px 0px 6px 3px #0080FF;
+      box-shadow: 0px 0px 6px 3px #0080FF;
+
+/**tono*/
+}
+/*modal de carga */
+.modal {
+    display: none;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    align-content:center;
+    align-items:center;
+    justify-content:center;
+    background:rgba(143, 139, 139, 0.50);
+}
+#dialog {
+    display: none;
+    z-index: 99999;
+    position: fixed;
+    margin-top: -1%;
+    margin-left: -3%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 0%;
+    color: azure;
+    text-align: center;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+#cargando {
+    width:250px;
+    height:220px;
+    margin-left:0%;
+    margin-top:-1%;
+    border-radius:45%;
+}
+.cavecera_tabla {
+            position:sticky;
+            min-width:100%;
+            max-width:200px;
+            top:-1px;
+}
+.tabla_matriz {
+            height:380px;
+            width:100%;
+            overflow-x:auto;
+            overflow-y:auto;
+            z-index:1;
+            background:#f1f5fc;
+            border:solid 1px rgba(153, 153, 157, 0.90);
+            border-radius:5px;
+}
+.modal-content {
+    position:absolute;
+    border:solid 2px none;
+    border-radius:0;
+    top:10px;
+    bottom:10px;
+    left:10px;
+    right:10px;    
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.modal-dialog {
+    position:fixed;
+    border:solid 2px none;
+    border-radius:0;
+    top:10px;
+    bottom:10px;
+    left:10px;
+    right:10px;    
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.modal-header {
+    height:70px;
+    color:azure;
+    background-color:#0080FF;
+}
+.modal-footer {
+    position:absolute;
+    bottom:1px;
+    left:1px;
+    right:1px; 
+    height:20px;
+    color:azure;
+    background-color:#dddddd;
+}
+.btn-group {
+    margin-bottom:10px;
+}
+thead {
+    display: normal;
+    position: sticky;
+    width: 100%;
+    top: 0px;
+    z-index: 990;
+}
+thead th {
+    position: sticky;
+    top: 0;
+    z-index: 990;
+}
+/*Add Rotation Animation*/
+@keyframes rotate {
+    from {
+        transform: rotate(0deg)
+    }
+
+    to {
+        transform: rotate(900deg)
+    }
+}
+
+@-webkit-keyframes rotate {
+    from {
+        -webkit-transform: rotate(0deg)
+    }
+
+    to {
+        -webkit-transform: rotate(900deg)
+    }
+}
+
+.rotate {
+    -webkit-animation: 2s rotate linear infinite;
+    animation: 2s rotate linear infinite;
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    margin-right: 10px;
+}
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {
+        -webkit-transform: scale(.2)
+    }
+
+    to {
+        -webkit-transform: scale(1)
+    }
+}
+
+@keyframes animatezoom {
+    from {
+        transform: scale(.2)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}

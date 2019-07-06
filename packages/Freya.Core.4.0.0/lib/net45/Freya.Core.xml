@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+<assembly><name>Freya.Core</name></assembly>
+<members>
+<member name="P:Freya.Core.Meta.Memos">
+<summary>
+ Memoized value storage.
+</summary>
+</member>
+<member name="T:Freya.Core.Meta">
+<summary>
+ The Freya metadata data type containing data which should be passed through
+ a Freya computation but which is not relevant to non-Freya functions and so
+ is not considered part of the OWIN data model.
+</summary>
+</member>
+<member name="T:Freya.Core.Environment">
+<summary>
+ An alias for the commonly used OWIN data type of an
+ IDictionary&lt;string,obj&gt;.
+</summary>
+</member>
+<member name="P:Freya.Core.State.Meta">
+<summary>
+ Metadata associated with and bound to the lifetime of the request.
+</summary>
+</member>
+<member name="P:Freya.Core.State.Environment">
+<summary>
+ The underlying request environment.
+</summary>
+</member>
+<member name="T:Freya.Core.State">
+<summary>
+ The core Freya state type, containing the OWIN environment and other
+ metadata data structures which should be passed through a Freya
+ computation.
+</summary>
+</member>
+<member name="T:Freya.Core.Freya`1">
+<summary>
+ The core Freya type, representing a computation which is effectively a
+ State monad, with a concurrent return (the concurrency abstraction varies
+ based on the variant of Freya in use).
+</summary>
+</member>
+<member name="T:Freya.Core.PipelineChoice">
+<summary>
+ The return type for the Pipeline function, indicating whether the function
+ should continue with the next function in a chain of Pipelines or halt.
+</summary>
+</member>
+<member name="T:Freya.Core.Pipeline">
+<summary>
+ The basic Pipeline type, a secondary abstraction for composing Freya
+ functions of more specific type (using a short-circuiting approach to
+ ending computation early based on return value).
+</summary>
+</member>
+<member name="M:Freya.Core.ConfigurationBuilder`1.Including(`0,`0)">
+<summary>
+ Include another computation expression of the same type within this
+ computation expression, combing the two expressions (using Bind on the
+ unit return value).
+</summary>
+</member>
+<member name="T:Freya.Core.FreyaBuilder">
+<summary>
+ The FreyaBuilder type, implementing the basic underlying computation
+ expression builder required to supply Freya with computation expression
+ syntax for the core Freya&lt;_&gt; function type.
+</summary>
+</member>
+<member name="T:Freya.Core.OwinMidFunc">
+<summary>
+ An alias for the basic OwinMidFunc type of a Func&lt;OwinAppFunc,OwinAppFunc&gt;,
+ implying the compositional nature of OWIN middleware functions.
+</summary>
+</member>
+<member name="T:Freya.Core.OwinAppFunc">
+<summary>
+ An alias for the basic OwinAppFunc type of a Func&lt;OwinEnvironment,Task&gt;.
+</summary>
+</member>
+<member name="T:Freya.Core.OwinEnvironment">
+<summary>
+ An alias for the commonly used OWIN data type of an IDictionary&lt;string,obj&gt;.
+</summary>
+</member>
+<member name="T:Freya.Core.Constants">
+<summary>
+ Literal constants for the values of keys within the OWIN environment,
+ provided here as being generically useful to any code needing to work
+ within the OWIN environment dictionary.
+</summary>
+</member>
+<member name="T:Freya.Core.Option">
+<summary>
+ Extensions and functions for working with Option types, significantly
+ through optics, providing functions for mapping existing optics to the value
+ where possible.
+</summary>
+</member>
+<member name="M:Freya.Core.Dict.value_``2(``0)">
+<summary>
+ When working with this lens as an optic, the Some and None cases of
+ optic carry semantic meaning, where Some indicates that the value is or
+ should be present within the dictionary, and None indicates that the
+ value is not, or should not be present within the dictionary.
+</summary>
+</member>
+<member name="M:Freya.Core.Dict.key_``2(``0)">
+<summary>
+ A prism to a possible value within a dictionary given a key which may
+ be present within the dictionary.
+</summary>
+</member>
+<member name="T:Freya.Core.Dict">
+<summary>
+ Extensions and functions for working with generic dictionaries,
+ significantly through optics (providing a degenerate but useful lens which
+ mutates state).
+</summary>
+</member>
+<member name="M:Freya.Core.Common.tuple``2(``0,``1)">
+<summary>
+ Simple tuple, creating a new tuple given two arguments.
+</summary>
+</member>
+<member name="M:Freya.Core.Common.flip``3(Microsoft.FSharp.Core.FSharpFunc{``0,Microsoft.FSharp.Core.FSharpFunc{``1,``2}},``1,``0)">
+<summary>
+ Simple functional flip, reversing the argument order of a function
+ taking two arguments.
+</summary>
+</member>
+<member name="M:Freya.Core.Common.equalsOn``2(Microsoft.FSharp.Core.FSharpFunc{``0,``1},``0,System.Object)">
+<summary>
+ A general equality function to simplify implementing equatable
+ interfaces.
+</summary>
+</member>
+<member name="M:Freya.Core.Common.compareOn``2(Microsoft.FSharp.Core.FSharpFunc{``0,``1},``0,System.Object)">
+<summary>
+ A general comparison function to simplify implementing comparable
+ interfaces.
+</summary>
+</member>
+<member name="T:Freya.Core.Common">
+<summary>
+ Generically useful functions and types for working with Freya relevant data
+ structures and approaches, particularly around the prevalent use of optics
+ throughout the Freya codebase.
+</summary>
+</member>
+<member name="M:Freya.Core.Freya.memo``1(Microsoft.FSharp.Core.FSharpFunc{Freya.Core.State,Microsoft.FSharp.Control.FSharpAsync{System.Tuple{``0,Freya.Core.State}}})">
+<summary>
+ A function supporting memoisation of parameterless Freya functions
+ (effectively a fully applied Freya expression) which will cache the
+ result of the function in the Environment instance. This ensures that
+ the function will be evaluated once per request/response on any given
+ thread.
+</summary>
+</member>
+<member name="M:Freya.Core.Freya.bindAsync``2(Microsoft.FSharp.Core.FSharpFunc{``0,Microsoft.FSharp.Core.FSharpFunc{Freya.Core.State,Microsoft.FSharp.Control.FSharpAsync{System.Tuple{``1,Freya.Core.State}}}},Microsoft.FSharp.Control.FSharpAsync{``0},Freya.Core.State)">
+<summary>
+ Binds an Async to a function generating a Freya
+</summary>
+</member>
+<member name="M:Freya.Core.Freya.liftAsync``2(Microsoft.FSharp.Core.FSharpFunc{``0,Microsoft.FSharp.Control.FSharpAsync{``1}},``0,Freya.Core.State)">
+<summary>
+ Lifts a function generating an Async to one creating a Freya
+</summary>
+</member>
+<member name="M:Freya.Core.Freya.fromAsync``1(Microsoft.FSharp.Control.FSharpAsync{``0},Freya.Core.State)">
+<summary>
+ Converts an Async to a Freya
+</summary>
+</member>
+<member name="M:Freya.Core.Freya.zero">
+<summary>
+ The zero function, used to initialize a new function of Freya&lt;unit&gt;,
+ effectively lifting the unit value to a Freya&lt;unit&gt; function.
+</summary>
+</member>
+<member name="P:Freya.Core.Freya.empty">
+<summary>
+ A simple convenience instance of an empty Freya function, returning
+ the unit type. This can be required for various forms of branching logic
+ etc. and is a convenience to save writing Freya.init () repeatedly.
+</summary>
+</member>
+<member name="M:Freya.Core.Freya.identity``1(Microsoft.FSharp.Core.FSharpFunc{Freya.Core.State,Microsoft.FSharp.Control.FSharpAsync{System.Tuple{``0,Freya.Core.State}}})">
+<summary>
+ The identity function for Freya type functions.
+</summary>
+</member>
+<member name="M:Freya.Core.Freya.delay``1(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,Microsoft.FSharp.Core.FSharpFunc{Freya.Core.State,Microsoft.FSharp.Control.FSharpAsync{System.Tuple{``0,Freya.Core.State}}}},Freya.Core.State)">
+<summary>
+ The Freya delay function, used to delay execution of a freya function
+ by consuming a unit function to return the underlying Freya function.
+</summary>
+</member>
+<member name="M:Freya.Core.Freya.combine``2(Microsoft.FSharp.Core.FSharpFunc{Freya.Core.State,Microsoft.FSharp.Control.FSharpAsync{System.Tuple{``0,Freya.Core.State}}},Microsoft.FSharp.Core.FSharpFunc{Freya.Core.State,Microsoft.FSharp.Control.FSharpAsync{System.Tuple{``1,Freya.Core.State}}},Freya.Core.State)">
+<summary>
+ The Left Combine function for Freya, taking two Freya&lt;_&gt; functions,
+ composing their execution and returning the result of the first
+ function.
+</summary>
+</member>
+<member name="M:Freya.Core.Freya.apply``2(Microsoft.FSharp.Core.FSharpFunc{Freya.Core.State,Microsoft.FSharp.Control.FSharpAsync{System.Tuple{``0,Freya.Core.State}}},Microsoft.FSharp.Core.FSharpFunc{Freya.Core.State,Microsoft.FSharp.Control.FSharpAsync{System.Tuple{Microsoft.FSharp.Core.FSharpFunc{``0,``1},Freya.Core.State}}},Freya.Core.State)">
+<summary>
+ The apply function for Freya function types, taking a function
+ Freya&lt;&apos;a -&gt; &apos;b&gt; and a Freya&lt;&apos;a&gt; and returning a Freya&lt;&apos;b&gt;.
+</summary>
+</member>
+<member name="M:Freya.Core.Freya.bind``2(Microsoft.FSharp.Core.FSharpFunc{``0,Microsoft.FSharp.Core.FSharpFunc{Freya.Core.State,Microsoft.FSharp.Control.FSharpAsync{System.Tuple{``1,Freya.Core.State}}}},Microsoft.FSharp.Core.FSharpFunc{Freya.Core.State,Microsoft.FSharp.Control.FSharpAsync{System.Tuple{``0,Freya.Core.State}}},Freya.Core.State)">
+<summary>
+ The Bind function for Freya, taking a Freya&lt;&apos;a&gt; and a function
+ &apos;a -&gt; Freya&lt;&apos;b&gt; and returning a Freya&lt;&apos;b&gt;.
+</summary>
+</member>
+<member name="M:Freya.Core.Freya.map3``4(Microsoft.FSharp.Core.FSharpFunc{``0,Microsoft.FSharp.Core.FSharpFunc{``1,Microsoft.FSharp.Core.FSharpFunc{``2,``3}}},Microsoft.FSharp.Core.FSharpFunc{Freya.Core.State,Microsoft.FSharp.Control.FSharpAsync{System.Tuple{``0,Freya.Core.State}}},Microsoft.FSharp.Core.FSharpFunc{Freya.Core.State,Microsoft.FSharp.Control.FSharpAsync{System.Tuple{``1,Freya.Core.State}}},Microsoft.FSharp.Core.FSharpFunc{Freya.Core.State,Microsoft.FSharp.Control.FSharpAsync{System.Tuple{``2,Freya.Core.State}}},Freya.Core.State)">
+<summary>
+ Takes two Freya values and maps them into a function
+</summary>
+</member>
+<member name="M:Freya.Core.Freya.map2``3(Microsoft.FSharp.Core.FSharpFunc{``0,Microsoft.FSharp.Core.FSharpFunc{``1,``2}},Microsoft.FSharp.Core.FSharpFunc{Freya.Core.State,Microsoft.FSharp.Control.FSharpAsync{System.Tuple{``0,Freya.Core.State}}},Microsoft.FSharp.Core.FSharpFunc{Freya.Core.State,Microsoft.FSharp.Control.FSharpAsync{System.Tuple{``1,Freya.Core.State}}},Freya.Core.State)">
+<summary>
+ Takes two Freya values and maps them into a function
+</summary>
+</member>
+<member name="M:Freya.Core.Freya.map``2(Microsoft.FSharp.Core.FSharpFunc{``0,``1},Microsoft.FSharp.Core.FSharpFunc{Freya.Core.State,Microsoft.FSharp.Control.FSharpAsync{System.Tuple{``0,Freya.Core.State}}},Freya.Core.State)">
+<summary>
+ The map function, used to map a value of type Freya&lt;&apos;a&gt; to Freya&lt;&apos;b&gt;,
+ given a function &apos;a -&gt; &apos;b.
+</summary>
+</member>
+<member name="M:Freya.Core.Freya.init``1(``0)">
+<summary>
+ The init (or pure) function, used to raise a value of type &apos;a to a
+ value of type Freya&lt;&apos;a&gt;.
+</summary>
+</member>
+<member name="M:Freya.Core.Freya.Optic.map``2(``0,``1,Freya.Core.State)">
+<summary>
+ A function to map a value within the current computation State
+ given an optic from the State the required value and a function
+ from the current value to the new value (a homomorphism).
+</summary>
+</member>
+<member name="M:Freya.Core.Freya.Optic.set``2(``0,``1,Freya.Core.State)">
+<summary>
+ A function to set a value within the current computation State
+ given an optic from State to the required value and an instance of
+ the required value.
+</summary>
+</member>
+<member name="M:Freya.Core.Freya.Optic.get``2(``0,Freya.Core.State)">
+<summary>
+ A function to get a value within the current computation State
+ given an optic from State to the required value.
+</summary>
+</member>
+<member name="T:Freya.Core.Freya.Optic">
+<summary>
+ Optic based access to the Freya computation state, analogous to the
+ Optic.* functions exposed by Aether, but working within a Freya function
+ and therefore part of the Freya ecosystem.
+</summary>
+</member>
+<member name="T:Freya.Core.Freya">
+<summary>
+ Functions and type tools for working with Freya abstractions, particularly
+ data contained within the Freya state abstraction. Commonly defined
+ functions for treating the Freya functions as a monad, etc. are also
+ included, along with basic support for static inference.
+</summary>
+</member>
+<member name="M:Freya.Core.StateModule.memo_``1(System.Guid)">
+<summary>
+ When working with this lens as an optic, the Some and None cases of
+ optic carry semantic meaning, where Some indicates that the value is or
+ should be present within the State, and None indicates that the value
+ is not, or should not be present within the State.
+</summary>
+</member>
+<member name="M:Freya.Core.StateModule.value_``1(System.String)">
+<summary>
+ When working with this lens as an optic, the Some and None cases of
+ optic carry semantic meaning, where Some indicates that the value is or
+ should be present within the State, and None indicates that the value
+ is not, or should not be present within the State.
+</summary>
+</member>
+<member name="M:Freya.Core.StateModule.key_``1(System.String)">
+<summary>
+ A prism from the Freya State to a value of type &apos;a at a given string
+ key.
+</summary>
+</member>
+<member name="P:Freya.Core.StateModule.create">
+<summary>
+ Creates a new `State` from a given `Environment`
+ with no metadata.
+</summary>
+</member>
+<member name="P:Freya.Core.StateModule.meta_">
+<summary>
+ A Lens from a `State` to associated metadata.
+</summary>
+</member>
+<member name="P:Freya.Core.StateModule.environment_">
+<summary>
+ A Lens from a `State` to its `Environment`.
+</summary>
+</member>
+<member name="T:Freya.Core.StateModule">
+<summary>
+ Basic optics for accessing elements of the State instance within the
+ current Freya function. The value_ lens is provided for keyed access
+ to the OWIN dictionary, and the memo_ lens for keyed access to the
+ memo storage in the Meta instance.
+</summary>
+</member>
+<member name="M:Freya.Core.FreyaResult.state_``1">
+<summary>
+ A Lens from a `FreyaResult` to its associated state.
+</summary>
+</member>
+<member name="M:Freya.Core.FreyaResult.value_``1">
+<summary>
+ A Lens from a `FreyaResult` to its value.
+</summary>
+</member>
+<member name="M:Freya.Core.FreyaResult.createWithState``1(Freya.Core.State,``0)">
+<summary>
+ Constructs a `FreyaResult` from a value and some associated state.
+
+ Equivalent to `create` with the arguments flipped.
+</summary>
+</member>
+<member name="M:Freya.Core.FreyaResult.create``1(``0,Freya.Core.State)">
+<summary>
+ Constructs a `FreyaResult` from a value and some associated state.
+</summary>
+</member>
+<member name="M:Freya.Core.FreyaResult.|Value|``1(``0,Freya.Core.State)">
+<summary>
+ Destructures a `FreyaResult`, selecting the value.
+</summary>
+</member>
+<member name="M:Freya.Core.FreyaResult.|State|``1(``0,Freya.Core.State)">
+<summary>
+ Destructures a `FreyaResult`, selecting the associated state.
+</summary>
+</member>
+<member name="T:Freya.Core.FreyaResult">
+<summary>
+ The result of a Freya operation, combining a value with the associated
+ request state.
+</summary>
+</member>
+<member name="M:Freya.Core.Patterns.|FreyaResult|``1(``0,Freya.Core.State)">
+<summary>
+ Destructures a `FreyaResult` into a value and the associated state.
+</summary>
+</member>
+<member name="T:Freya.Core.Patterns">
+<summary>
+ Patterns which allow destructuring Freya types.
+</summary>
+</member>
+<member name="P:Freya.Core.MetaModule.empty">
+<summary>
+ Provides an empty metadata object
+</summary>
+</member>
+<member name="P:Freya.Core.MetaModule.memos_">
+<summary>
+ A Lens to memoized values contained in request metadata.
+</summary>
+</member>
+<member name="T:Freya.Core.MetaModule">
+<summary>
+ The Freya metadata data type containing data which should be passed through
+ a Freya computation but which is not relevant to non-Freya functions and so
+ is not considered part of the OWIN data model.
+</summary>
+</member>
+<member name="M:Freya.Core.PipelineModule.compose``2(``0,``1)">
+<summary>
+ In this case, the first function will always be executed, and if the
+ result is Next, the second pipeline will be executed and the result of
+ the second pipeline returned. Where the result of the first Pipeline is
+ Halt, the second pipeline will never be executed, and the Halt result
+ will be returned.
+</summary>
+</member>
+<member name="M:Freya.Core.PipelineModule.infer``1(``0)">
+<summary>
+ A function to return a Pipeline function given an instance of a type
+ which either has a suitable static Pipeline method, or which is of type
+ Pipeline, PipelineChoice, or Freya&lt;_&gt; (the Freya&lt;_&gt; function will be
+ returned as a Pipeline which will always return Next).
+</summary>
+</member>
+<member name="P:Freya.Core.PipelineModule.halt">
+<summary>
+ An instance of a Pipleine which will always return Halt.
+</summary>
+</member>
+<member name="P:Freya.Core.PipelineModule.next">
+<summary>
+ An instance of a Pipeline which will always return Next.
+</summary>
+</member>
+<member name="T:Freya.Core.PipelineModule.Inference">
+<summary>
+ Inference for a Pipeline type, where a Pipeline is returned with no
+ modification, PipelineChoice is lifted to Pipeline, and a Freya&lt;&apos;a&gt;
+ function becomes a Pipeline, discarding the original result,
+ effectively implemented as monadic combine.
+</summary>
+</member>
+<member name="T:Freya.Core.PipelineModule">
+<summary>
+ Basic functions and shorthand for working with Pipelines, including simple
+ next and halt literals, and a type inferring compose method for any two
+ things which may be inferred as pipelines.
+</summary>
+</member>
+<member name="M:Freya.Core.Inference.Freya.infer``2(``0)">
+<summary>
+ A function to return a Freya function given an instance of a type
+ which has a suitable static Freya method. An existing Freya
+ function will be returned as-is.
+</summary>
+</member>
+<member name="T:Freya.Core.Inference.Freya">
+<summary>
+ Functions for inferring Freya types from suitable types which possess
+ appropriate type signatures.
+</summary>
+</member>
+<member name="P:Freya.Core.Builder.freya">
+<summary>
+ A computation expression for creating and working with Freya&lt;_&gt;
+ function types using the various Freya functions defined for working
+ with state, composition, etc.
+</summary>
+</member>
+<member name="M:Freya.Core.OwinMidFuncModule.FromFreya``1(``0)">
+<summary>
+ A function to return an OwinMidFunc from any type which may be - or
+ may be inferred to be (see Freya.infer) - a Freya function type.
+</summary>
+</member>
+<member name="T:Freya.Core.OwinMidFuncModule">
+<summary>
+ Functions for working with OWIN types, in this case OwinMidFunc, allowing
+ the conversion of a Freya&lt;_&gt; function to an OwinMidFunc.
+</summary>
+</member>
+<member name="M:Freya.Core.OwinAppFuncModule.FromFreya``2(``0)">
+<summary>
+ A function to return an OwinAppFunc from any type which may be - or
+ may be inferred to be (see Freya.infer) - a Freya function type.
+</summary>
+</member>
+<member name="T:Freya.Core.OwinAppFuncModule">
+<summary>
+ Functions for working with OWIN types, in this case OwinAppFunc, allowing
+ the conversion of a Freya&lt;_&gt; function to an OwinAppFunc.
+</summary>
+</member>
+<member name="M:Freya.Core.Operators.op_GreaterQmarkEquals``2(``0,``1)">
+<summary>
+ In this case, the first function will always be executed, and if the
+ result is Next, the second pipeline will be executed and the result of
+ the second pipeline returned. Where the result of the first Pipeline is
+ Halt, the second pipeline will never be executed, and the Halt result
+ will be returned.
+</summary>
+</member>
+<member name="M:Freya.Core.Operators.op_PercentEquals``2(``0,``1)">
+<summary>
+ The optical map function (Freya.Optic.map), used to map a value within
+ the current computation State given an optic from the State the required
+ value and a function from the current value to the new value (a
+ homomorphism).
+</summary>
+</member>
+<member name="M:Freya.Core.Operators.op_DotEquals``2(``0,``1)">
+<summary>
+ The optical set function (Freya.Optic.set), used to set a value within
+ the current computation State given an optic from State to the required
+ value and an instance of the required value.
+</summary>
+</member>
+<member name="M:Freya.Core.Operators.op_BangDot``2(``0)">
+<summary>
+ The optical get function (Freya.Optic.get), used to get a value within
+ the current computation State given an optic from State to the required
+ value.
+</summary>
+</member>
+<member name="M:Freya.Core.Operators.op_LessBangGreater``2(Microsoft.FSharp.Core.FSharpFunc{``0,``1},Microsoft.FSharp.Core.FSharpFunc{Freya.Core.State,Microsoft.FSharp.Control.FSharpAsync{System.Tuple{``0,Freya.Core.State}}})">
+<summary>
+ The Map (Freya.map) function for Freya, taking a function &apos;a -&gt; b&apos; and
+ a function Freya&lt;&apos;a&gt; and returning a Freya&lt;&apos;b&gt;.
+</summary>
+</member>
+<member name="M:Freya.Core.Operators.op_LessMultiply``2(Microsoft.FSharp.Core.FSharpFunc{Freya.Core.State,Microsoft.FSharp.Control.FSharpAsync{System.Tuple{``0,Freya.Core.State}}},Microsoft.FSharp.Core.FSharpFunc{Freya.Core.State,Microsoft.FSharp.Control.FSharpAsync{System.Tuple{``1,Freya.Core.State}}})">
+<summary>
+ The Right Combine (Freya.combine) function for Freya, taking two
+ Freya&lt;_&gt; functions, composing their execution and returning the result
+ of the second function.
+</summary>
+</member>
+<member name="M:Freya.Core.Operators.op_MultiplyGreater``2(Microsoft.FSharp.Core.FSharpFunc{Freya.Core.State,Microsoft.FSharp.Control.FSharpAsync{System.Tuple{``0,Freya.Core.State}}},Microsoft.FSharp.Core.FSharpFunc{Freya.Core.State,Microsoft.FSharp.Control.FSharpAsync{System.Tuple{``1,Freya.Core.State}}})">
+<summary>
+ The Left Combine (Freya.combine) function for Freya, taking two
+ Freya&lt;_&gt; functions, composing their execution and returning the result
+ of the first function.
+</summary>
+</member>
+<member name="M:Freya.Core.Operators.op_LessEqualsLess``3(Microsoft.FSharp.Core.FSharpFunc{``0,Microsoft.FSharp.Core.FSharpFunc{Freya.Core.State,Microsoft.FSharp.Control.FSharpAsync{System.Tuple{``1,Freya.Core.State}}}},Microsoft.FSharp.Core.FSharpFunc{``2,Microsoft.FSharp.Core.FSharpFunc{Freya.Core.State,Microsoft.FSharp.Control.FSharpAsync{System.Tuple{``0,Freya.Core.State}}}})">
+<summary>
+ The reversed Kleisli composition function for Freya.
+</summary>
+</member>
+<member name="M:Freya.Core.Operators.op_GreaterEqualsGreater``3(Microsoft.FSharp.Core.FSharpFunc{``0,Microsoft.FSharp.Core.FSharpFunc{Freya.Core.State,Microsoft.FSharp.Control.FSharpAsync{System.Tuple{``1,Freya.Core.State}}}},Microsoft.FSharp.Core.FSharpFunc{``1,Microsoft.FSharp.Core.FSharpFunc{Freya.Core.State,Microsoft.FSharp.Control.FSharpAsync{System.Tuple{``2,Freya.Core.State}}}})">
+<summary>
+ The Kleisli composition function for Freya, taking a function
+ &apos;a -&gt; Freya&lt;&apos;b&gt; and a function &apos;b -&gt; Freya&lt;&apos;c&gt; and returning a function
+ &apos;a -&gt; Freya&lt;&apos;c&gt;.
+</summary>
+</member>
+<member name="M:Freya.Core.Operators.op_EqualsLessLess``2(Microsoft.FSharp.Core.FSharpFunc{``0,Microsoft.FSharp.Core.FSharpFunc{Freya.Core.State,Microsoft.FSharp.Control.FSharpAsync{System.Tuple{``1,Freya.Core.State}}}},Microsoft.FSharp.Core.FSharpFunc{Freya.Core.State,Microsoft.FSharp.Control.FSharpAsync{System.Tuple{``0,Freya.Core.State}}})">
+<summary>
+ The reversed Bind function for Freya.
+</summary>
+</member>
+<member name="M:Freya.Core.Operators.op_GreaterGreaterEquals``2(Microsoft.FSharp.Core.FSharpFunc{Freya.Core.State,Microsoft.FSharp.Control.FSharpAsync{System.Tuple{``0,Freya.Core.State}}},Microsoft.FSharp.Core.FSharpFunc{``0,Microsoft.FSharp.Core.FSharpFunc{Freya.Core.State,Microsoft.FSharp.Control.FSharpAsync{System.Tuple{``1,Freya.Core.State}}}})">
+<summary>
+ The Bind (Freya.bind) function for Freya, taking a Freya&lt;&apos;a&gt; and a
+ function &apos;a -&gt; Freya&lt;&apos;b&gt; and returning a Freya&lt;&apos;b&gt;.
+</summary>
+</member>
+<member name="M:Freya.Core.Operators.op_LessMultiplyGreater``2(Microsoft.FSharp.Core.FSharpFunc{Freya.Core.State,Microsoft.FSharp.Control.FSharpAsync{System.Tuple{Microsoft.FSharp.Core.FSharpFunc{``0,``1},Freya.Core.State}}},Microsoft.FSharp.Core.FSharpFunc{Freya.Core.State,Microsoft.FSharp.Control.FSharpAsync{System.Tuple{``0,Freya.Core.State}}})">
+<summary>
+ The Apply (Freya.apply) function for Freya function types, taking a
+ function Freya&lt;&apos;a -&gt; &apos;b&gt; and a Freya&lt;&apos;a&gt; and returning a Freya&lt;&apos;b&gt;.
+</summary>
+</member>
+<member name="T:Freya.Core.Operators">
+<summary>
+ Symbolic operators for commonly used functions around core Freya
+ functionality, particularly monadic operations, including monadic optic
+ operations.
+</summary>
+</member>
+</members>
+</doc>

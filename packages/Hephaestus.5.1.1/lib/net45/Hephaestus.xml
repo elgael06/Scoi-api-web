@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+<assembly><name>Hephaestus</name></assembly>
+<members>
+<member name="M:Hephaestus.Specifications.Specification.Decision.right``3(Hephaestus.Key,Hephaestus.Specifications.Specification{``0,``1,``2})">
+<summary>
+ Create a new named right decision, which will always evaluate to
+ Right, and where the specification of the left tree will be an
+ effective no-operation terminal.
+</summary>
+</member>
+<member name="M:Hephaestus.Specifications.Specification.Decision.left``3(Hephaestus.Key,Hephaestus.Specifications.Specification{``0,``1,``2})">
+<summary>
+ Create a new named left decision, which will always evaluate to
+ Left, and where the specification of the right tree will be an
+ effective no-operation terminal.
+</summary>
+</member>
+<member name="M:Hephaestus.Specifications.Specification.Decision.create``3(Hephaestus.Key,Microsoft.FSharp.Core.FSharpFunc{``0,Hephaestus.DecisionValue{``2}},Hephaestus.Specifications.Specification{``0,``1,``2},Hephaestus.Specifications.Specification{``0,``1,``2})">
+<summary>
+ Create a new named decision, given a suitable configuration
+ function and specifications for the subsequent left and right
+ trees.
+</summary>
+</member>
+<member name="M:Hephaestus.Specifications.Specification.Terminal.empty``3">
+<summary>
+ Create a new unnamed terminal with a no-op Hephaestus function.
+</summary>
+</member>
+<member name="M:Hephaestus.Specifications.Specification.Terminal.create``3(Hephaestus.Key,Microsoft.FSharp.Core.FSharpFunc{``0,Microsoft.FSharp.Core.FSharpFunc{``2,Microsoft.FSharp.Control.FSharpAsync{System.Tuple{``1,``2}}}})">
+<summary>
+ Create a new named terminal, given a Hephaestus function returning
+ unit, and with the appropriate state type.
+</summary>
+</member>
+</members>
+</doc>
