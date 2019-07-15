@@ -109,10 +109,10 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>09/10/2013 17:29:20</publishTime>
     </File>
     <File Include="bin/App_global.asax.compiled">
-      <publishTime>07/05/2019 19:17:18</publishTime>
+      <publishTime>07/15/2019 11:36:18</publishTime>
     </File>
     <File Include="bin/App_global.asax.dll">
-      <publishTime>07/05/2019 19:17:18</publishTime>
+      <publishTime>07/15/2019 11:36:18</publishTime>
     </File>
     <File Include="bin/cs/FSharp.Core.resources.dll">
       <publishTime>02/09/2018 01:34:56</publishTime>
@@ -409,10 +409,10 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>10/05/2016 13:11:52</publishTime>
     </File>
     <File Include="bin/WebApplication.dll">
-      <publishTime>07/05/2019 19:17:09</publishTime>
+      <publishTime>07/15/2019 11:36:11</publishTime>
     </File>
     <File Include="bin/WebApplication.pdb">
-      <publishTime>07/05/2019 19:17:09</publishTime>
+      <publishTime>07/15/2019 11:36:11</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>01/23/2014 13:57:34</publishTime>
@@ -616,13 +616,13 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>04/10/2019 11:08:54</publishTime>
     </File>
     <File Include="dist/bundle.js">
-      <publishTime>07/05/2019 09:15:30</publishTime>
+      <publishTime>07/15/2019 10:16:12</publishTime>
     </File>
     <File Include="dist/index.html">
       <publishTime>06/07/2019 10:18:50</publishTime>
     </File>
     <File Include="dist/indicadores/AnalisisCambioPrecio/app.js">
-      <publishTime>07/05/2019 09:15:30</publishTime>
+      <publishTime>07/15/2019 10:16:13</publishTime>
     </File>
     <File Include="dist/indicadores/AnanlisisCambioPrecios/app.js">
       <publishTime>06/11/2019 09:15:52</publishTime>
@@ -631,16 +631,16 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>06/10/2019 11:00:03</publishTime>
     </File>
     <File Include="dist/indicadores/EstadosDeResultados/bundle.js">
-      <publishTime>07/05/2019 19:15:11</publishTime>
+      <publishTime>07/15/2019 11:26:24</publishTime>
     </File>
     <File Include="dist/indicadores/MonitorEmbarques/Monitor.js">
-      <publishTime>07/05/2019 09:15:30</publishTime>
+      <publishTime>07/15/2019 10:16:11</publishTime>
     </File>
     <File Include="dist/indicadores/PreciosCompetencia/Monitor.js">
-      <publishTime>07/05/2019 09:15:30</publishTime>
+      <publishTime>07/15/2019 10:16:13</publishTime>
     </File>
     <File Include="dist/indicadores/surtido_embarque/bundle.js">
-      <publishTime>07/05/2019 09:15:30</publishTime>
+      <publishTime>07/15/2019 10:16:12</publishTime>
     </File>
     <File Include="dist/indicadores/surtido_embarque/index.html">
       <publishTime>06/07/2019 10:18:50</publishTime>
@@ -649,7 +649,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>05/29/2019 09:38:21</publishTime>
     </File>
     <File Include="dist/surtido_embarque/surtido.js">
-      <publishTime>07/05/2019 09:15:30</publishTime>
+      <publishTime>07/15/2019 10:16:13</publishTime>
     </File>
     <File Include="favicon.ico">
       <publishTime>03/20/2019 18:25:41</publishTime>
@@ -51934,16 +51934,16 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="package-lock.json">
-      <publishTime>06/24/2019 09:19:12</publishTime>
+      <publishTime>07/08/2019 15:43:08</publishTime>
     </File>
     <File Include="package.json">
-      <publishTime>06/24/2019 09:20:34</publishTime>
+      <publishTime>07/15/2019 10:15:50</publishTime>
     </File>
     <File Include="packages.config">
       <publishTime>05/29/2019 14:35:49</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>07/05/2019 19:17:13</publishTime>
+      <publishTime>07/15/2019 11:36:13</publishTime>
     </File>
     <File Include="Properties/PublishProfiles/Produccion.pubxml">
       <publishTime>06/03/2019 09:20:23</publishTime>
@@ -53269,10 +53269,10 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>03/30/2019 10:34:26</publishTime>
     </File>
     <File Include="Scripts/Usuarios/Perfil.js">
-      <publishTime>07/05/2019 19:17:08</publishTime>
+      <publishTime>07/09/2019 10:38:16</publishTime>
     </File>
     <File Include="Scripts/Usuarios/Perfil.js.map">
-      <publishTime>07/05/2019 19:17:08</publishTime>
+      <publishTime>07/09/2019 10:38:16</publishTime>
     </File>
     <File Include="Scripts/Usuarios/Perfil.ts">
       <publishTime>11/05/2019 15:00:16</publishTime>
@@ -53308,7 +53308,13 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>05/30/2019 16:55:33</publishTime>
     </File>
     <File Include="src/scripts/Globales/ExportarExcel.js">
-      <publishTime>06/20/2019 11:00:29</publishTime>
+      <publishTime>07/09/2019 10:31:37</publishTime>
+    </File>
+    <File Include="src/scripts/Globales/fechas.js">
+      <publishTime>07/10/2019 08:19:40</publishTime>
+    </File>
+    <File Include="src/scripts/Globales/moneda.js">
+      <publishTime>07/08/2019 08:48:23</publishTime>
     </File>
     <File Include="src/scripts/Indicadores/Cuadrantes/monitor - Copia.js">
       <publishTime>04/30/2019 17:43:25</publishTime>
@@ -53320,10 +53326,10 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>05/02/2019 14:39:47</publishTime>
     </File>
     <File Include="src/scripts/Indicadores/MovimientosBancoInterno/main.js">
-      <publishTime>07/05/2019 19:17:08</publishTime>
+      <publishTime>07/09/2019 10:38:16</publishTime>
     </File>
     <File Include="src/scripts/Indicadores/MovimientosBancoInterno/main.js.map">
-      <publishTime>07/05/2019 19:17:08</publishTime>
+      <publishTime>07/09/2019 10:38:16</publishTime>
     </File>
     <File Include="src/scripts/Indicadores/OrdenesDePagoEnEfectivo/Detallaes_pagos.js">
       <publishTime>05/11/2019 10:37:25</publishTime>
@@ -53368,25 +53374,46 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>06/28/2019 17:24:51</publishTime>
     </File>
     <File Include="src/scripts/ReactJS/indicadores/EstadosDeResultados/components/App.jsx">
-      <publishTime>07/04/2019 19:58:09</publishTime>
+      <publishTime>07/10/2019 09:53:23</publishTime>
     </File>
     <File Include="src/scripts/ReactJS/indicadores/EstadosDeResultados/components/Cavecera.jsx">
-      <publishTime>07/05/2019 17:58:59</publishTime>
+      <publishTime>07/10/2019 08:16:00</publishTime>
+    </File>
+    <File Include="src/scripts/ReactJS/indicadores/EstadosDeResultados/components/ModalConceptos - Copia.jsx">
+      <publishTime>07/08/2019 11:15:05</publishTime>
     </File>
     <File Include="src/scripts/ReactJS/indicadores/EstadosDeResultados/components/ModalConceptos.jsx">
-      <publishTime>07/04/2019 12:24:07</publishTime>
+      <publishTime>07/13/2019 09:03:30</publishTime>
+    </File>
+    <File Include="src/scripts/ReactJS/indicadores/EstadosDeResultados/components/ModalMivimientosPorEstablecimiento - Copia.jsx">
+      <publishTime>07/09/2019 15:55:23</publishTime>
     </File>
     <File Include="src/scripts/ReactJS/indicadores/EstadosDeResultados/components/ModalMivimientosPorEstablecimiento.jsx">
-      <publishTime>07/04/2019 12:11:39</publishTime>
+      <publishTime>07/15/2019 11:26:20</publishTime>
     </File>
     <File Include="src/scripts/ReactJS/indicadores/EstadosDeResultados/components/VistaTablaPrincipal - Copia.jsx">
       <publishTime>07/05/2019 18:38:37</publishTime>
     </File>
     <File Include="src/scripts/ReactJS/indicadores/EstadosDeResultados/components/VistaTablaPrincipal.jsx">
-      <publishTime>07/05/2019 19:15:07</publishTime>
+      <publishTime>07/11/2019 17:42:03</publishTime>
     </File>
     <File Include="src/scripts/ReactJS/indicadores/EstadosDeResultados/Index.jsx">
       <publishTime>07/04/2019 10:14:08</publishTime>
+    </File>
+    <File Include="src/scripts/ReactJS/indicadores/EstadosDeResultados/manager/graficaConceptos.js">
+      <publishTime>07/08/2019 09:55:14</publishTime>
+    </File>
+    <File Include="src/scripts/ReactJS/indicadores/EstadosDeResultados/manager/lista_conceptos.js">
+      <publishTime>07/12/2019 12:41:11</publishTime>
+    </File>
+    <File Include="src/scripts/ReactJS/indicadores/EstadosDeResultados/manager/OrdenDatosTabla.js">
+      <publishTime>07/12/2019 12:40:35</publishTime>
+    </File>
+    <File Include="src/scripts/ReactJS/indicadores/EstadosDeResultados/manager/PeriodosFecha.js">
+      <publishTime>07/09/2019 16:01:16</publishTime>
+    </File>
+    <File Include="src/scripts/ReactJS/indicadores/EstadosDeResultados/models/mConcepto.js">
+      <publishTime>07/08/2019 08:33:33</publishTime>
     </File>
     <File Include="src/scripts/ReactJS/indicadores/MonitorOrdenCompraInterna/components/App.jsx">
       <publishTime>07/04/2019 09:03:38</publishTime>
@@ -53414,6 +53441,9 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
     </File>
     <File Include="src/scripts/ReactJS/indicadores/MonitorOrdenCompraInterna/metodos/manejoSemanas.js">
       <publishTime>07/02/2019 16:04:27</publishTime>
+    </File>
+    <File Include="src/scripts/ReactJS/models/mEstiloModal.js">
+      <publishTime>07/09/2019 17:12:06</publishTime>
     </File>
     <File Include="src/scripts/VueJS/ComponentesGlobales/Moneda.vue">
       <publishTime>06/04/2019 10:38:19</publishTime>
@@ -53599,7 +53629,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>04/02/2019 10:36:05</publishTime>
     </File>
     <File Include="Views/Indicadores/EstadosDeResultados.cshtml">
-      <publishTime>07/04/2019 11:28:47</publishTime>
+      <publishTime>07/09/2019 12:44:32</publishTime>
     </File>
     <File Include="Views/Indicadores/Index.cshtml">
       <publishTime>04/08/2019 11:13:26</publishTime>
@@ -53689,7 +53719,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>05/29/2019 10:27:45</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>07/05/2019 19:17:12</publishTime>
+      <publishTime>07/09/2019 10:38:20</publishTime>
     </File>
     <File Include="Web.Debug.config">
       <publishTime>03/20/2019 15:57:07</publishTime>
@@ -53698,10 +53728,10 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>03/20/2019 15:57:07</publishTime>
     </File>
     <File Include="WebApplication.csproj">
-      <publishTime>07/04/2019 19:58:11</publishTime>
+      <publishTime>07/10/2019 09:39:50</publishTime>
     </File>
     <File Include="WebApplication.csproj.user">
-      <publishTime>07/05/2019 19:17:06</publishTime>
+      <publishTime>07/15/2019 11:36:08</publishTime>
     </File>
     <File Include="webpack.config.js">
       <publishTime>07/04/2019 10:46:07</publishTime>

@@ -1,30 +1,15 @@
 ﻿import React from 'react';
-import Moneda from '../../../ComponentesGlobales/Moneda';
-
-const lista_conceptos = [
-    { concepto: "VENTAS NETAS",          bg: "#FFF",     attr:"VENTAS_NETAS" },
-    { concepto: "COSTO DE VENTAS",       bg: "#FFF",     attr:"COSTO_DE_VENTAS" },
-    { concepto: "UTILIDAD BRUTA",        bg: "#7EAFEE",  attr:"UTILIDAD_EN_OPERACIONES" },
-    { concepto: "MARGEN BRUTO",          bg: "#D3AA80",  attr:"TRUPUT_DE_OPERACION" },
-    { concepto: "GASTOS DE OPERACION",   bg: "#FFF",     attr:"GASTOS_DE_OPERACION" },
-    { concepto: "UTILIDAD OPERACIONAL",  bg: "#f37021",  attr:"UTILIDAD_NETA_OPERACIONES" },
-    { concepto: "MARGEN OPERACIONAL",    bg: "#D3AA80",  attr:"TRUPUT_NETA_OPERACIONAL" },
-    { concepto: "IMPUESTOS PTU 10%",     bg: "#86A477",  attr:"IMPUESTOS_PTU" },
-    { concepto: "UTILIDAD NETA",         bg: "#f37021",  attr:"Total_Costo" },
-    { concepto: "MARGEN NETO",           bg: "#D3AA80",  attr:"TRUPUT_NETA" },
-    { concepto: "RETIROS UTILIDAD",      bg: "#FFF",     attr:"GASTOS_FAMILIA_IZABAL" },
-    { concepto: "UTILIDAD NETA DESPUES DE RETIRO", bg: "rgb(131, 117, 109)", attr: "TOTAL" }
-];
+import { redondeo, moneyFormat } from '../../../../Globales/moneda';
+import lista_conceptos from '../manager/lista_conceptos'
 
 let lista_establecimientos = [];
 
 const VistaTablaPrincipal = ({ lista, evento, Totales, eventoEstablecimiento }) => {
 
-    console.log("Lista => ", lista);
     const existencia_datos = estatus => estatus ? "" :"none" ;
 
     return (<div className="panel-body">
-        <div style={{ height: "690px", overflowX: "auto", display: existencia_datos(lista.length > 0)}}>
+        <div style={{ height: "590px", overflowX: "auto", display: existencia_datos(lista.length > 0)}}>
             <table class="table table-bordered table-condensed " id="estado_de_resultados">
                 <CaveceraTabla lista={lista} evEstablecimiento={eventoEstablecimiento} />
                 <CuerpoTabla lista={lista} evConcepto={evento} Totales={Totales} />
@@ -49,12 +34,12 @@ const CaveceraTabla = ({ lista, evEstablecimiento}) => {
                     {" "} CONCEPTOS
                  </i>
             </th>
-            <Establecimiento lista={lista} evEstablecimiento={evEstablecimiento} />
             <th style={{ background: "#1aa3ff", zIndex: "990", position: "sticky", top: "0" }}>
                 <p style={{ background: "#1aa3ff", border: "none" }} className="btn btn-info">
                     TOTAL
                </p>
             </th>
+            <Establecimiento lista={lista} evEstablecimiento={evEstablecimiento} />
         </tr>
     </thead>);
 }
@@ -65,18 +50,19 @@ const CuerpoTabla = ({ lista, evConcepto, Totales }) => {
         {lista_conceptos.map(e => {
             const colorBG = total => e.concepto === "UTILIDAD NETA" ? total > 0 ? "green" : "red" : e.bg;
             const un_t = e.concepto === "UTILIDAD NETA" ? Totales.Total_Costo : 0;
-
-            return (<tr>
+            //Mover Totales Conceptos Junto A Establecimiento
+            return (<tr style={{ height: "30px", fontSize: "12px" }}>
                 <Concepto concepto={e} evConcepto={() => evConcepto(e.concepto)} />
-                <ConceptoEstablecimientos
-                    concepto={e}
-                    lista={lista}
-                    colorBG={colorBG}
-                />
+
                 <TotalesConceptos
                     Totales={Totales}
                     concepto={e}
                     colorBG={colorBG(un_t)}
+                />
+                <ConceptoEstablecimientos 
+                    concepto={e}
+                    lista={lista}
+                    colorBG={colorBG}
                 />
             </tr>);
         })}
@@ -86,10 +72,10 @@ const CuerpoTabla = ({ lista, evConcepto, Totales }) => {
 const Concepto = ({ concepto, evConcepto }) => {
     const ev = concepto.bg == "#FFF" ? evConcepto : () => { };
     const Icono = concepto.bg == "#FFF" ? (<i class="glyphicon glyphicon-info-sign" style={{ float: "right", fontSize: "18px", color: "#8c8c8c" }}></i>) : <p></p>;
-    return (<th key={concepto.concepto} style={{ width: "300px", background: concepto.bg,position:"sticky", left: 0, zIndex:998 }} onClick={ev} >
-        <label style={{ color: concepto.bg != "#FFF" ? "azure" :"#000" }}>
+    return (<th key={concepto.concepto} style={{ width: "300px", background: concepto.bg, position: "sticky", left: 0, zIndex: 998, height:"30px",fontSize:"12px" }} onClick={ev} >
+        <span style={{ color: concepto.bg != "#FFF" ? "azure" :"#000" }}>
             {concepto.concepto}
-        </label>
+        </span>
         {Icono}
     </th>);
 }
@@ -101,8 +87,7 @@ const Establecimiento = ({ lista, evEstablecimiento }) => {
         if (elemento.establecimiento != "GASTOS ESPECIALES") {
             res.push(
                 <th key={elemento.folio_establecimiento} style={{ background: "#0066ff", position: "sticky", top: "0" }} onClick={() => evEstablecimiento(elemento)}>
-                    <p style={{ background: "#0066ff", border: "none" }}
-                        class="btn btn-info ">
+                    <p style={{ background: "#0066ff", border: "none" }} class="btn btn-info ">
                         {elemento.establecimiento}
                     </p>
                 </th>);
@@ -115,48 +100,37 @@ const Establecimiento = ({ lista, evEstablecimiento }) => {
 const ConceptoEstablecimientos = ({ concepto, lista, colorBG}) => {
           
     return lista_establecimientos.map(e => {
-
         const establecimiento = lista[lista.findIndex(l => l.establecimiento === e)];
         const un_t = concepto.concepto === "UTILIDAD NETA" ? establecimiento.Total_Costo : 0;
 
         return <td style={{ background: colorBG(un_t), color: colorBG(un_t) != "#FFF" ? "azure" : "#000", textAlign: "right" }} >
-            <ComprobarConcepto
-                establecimiento={establecimiento}
-                concepto={concepto}
-           />
+            <ComprobarConcepto establecimiento={establecimiento} concepto={concepto} />
        </td>
     })
 }
 
 const TotalesConceptos = ({ Totales, concepto, colorBG }) => {
     if (concepto.attr === "TOTAL") {
-        console.table("TOTALES :", Totales)
         let total = Totales.Total_Costo + Totales.GASTOS_FAMILIA_IZABAL.Total_Costo || Totales.Total_Costo;
 
         return <td style={{ background: total > 0 ? "green" : "red" , color: "#FFF", textAlign: "right" }}>
-            <Moneda cantidad={total} />
+            { moneyFormat (redondeo( total))}
         </td>
     }
     return (<td style={{ background: colorBG, color: colorBG != "#FFF" ? "azure" : "#000", textAlign: "right" }}>
-        <ComprobarConcepto
-            establecimiento={Totales}
-            concepto={concepto}
-        />
+        <ComprobarConcepto establecimiento={Totales} concepto={concepto} />
     </td>);
 }
 
 const ComprobarConcepto = ({ establecimiento, concepto}) => {
     let valor = 0;
-    if (concepto.attr === "TOTAL") {
-        return <p> --</p>
-    } else if (concepto.concepto.search("MARGEN") > -1) {
-        return <label>{establecimiento[concepto.attr].Total_Costo} %</label>
-    } else if (concepto.concepto === "UTILIDAD NETA") {
-        valor = establecimiento[concepto.attr];
-    } else {
-        valor = establecimiento[concepto.attr].Total_Costo;
+    if (concepto.attr === "TOTAL") return <p> --</p>
+    else if (concepto.concepto.search("MARGEN") > -1 || concepto.attr == "PORCENTAJE_DE_GASTO") {
+        return <strong>{establecimiento[concepto.attr].Total_Costo} %</strong>
     }
-    return valor != 0 ? <Moneda cantidad={valor} /> : <p> --</p>
+    else if (concepto.concepto === "UTILIDAD NETA")  valor = establecimiento[concepto.attr];
+     else  valor = establecimiento[concepto.attr].Total_Costo;
+    return valor != 0 ? moneyFormat(redondeo(valor)) : <p> --</p>
 }
 
 export default VistaTablaPrincipal;

@@ -1,6 +1,4 @@
 ﻿
-
-
 function ExportToExcel(id,nombre) {
     let htmlExport = jQuery(`#${id}`).prop("outerHTML");
     let ua = window.navigator.userAgent;
