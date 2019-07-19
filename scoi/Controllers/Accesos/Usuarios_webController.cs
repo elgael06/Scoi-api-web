@@ -37,7 +37,7 @@ namespace WebApplication.Manager.Accesos
 
         [HttpPost]
         public Usuario_autiriza_embarque AutorizarEmbarque([FromUri]string folio_usuario, [FromBody] body_autorizacion parametros) => new Embarquer_obtener_usuario_autoriza()
-            .Consultar(folio_usuario: folio_usuario, pedido: parametros.pedido, embarque:parametros.embarque);
+            .Consultar(folio_usuario: folio_usuario, pedido: parametros.pedido, embarque:parametros.embarque , Embarque: parametros.Embarque);
 
     }
 
@@ -45,5 +45,6 @@ namespace WebApplication.Manager.Accesos
     {
         public string pedido = "";
         public string embarque = "";
+        public ModelEmbarquePedidoSolicitud Embarque { get; set; }
     }
 }

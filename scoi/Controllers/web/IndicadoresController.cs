@@ -14,6 +14,7 @@ namespace WebApplication.Manager.web
         // GET: Indicadores
         public ActionResult Index() => Accesos(16);
         public ActionResult EstadosDeResultados() => Accesos(17);
+        public ActionResult EstadosDeResultados_sin_alimentos() => Accesos(17);
         public ActionResult AuditoriaVenta() => Accesos(46);
         public ActionResult Matrices() => Accesos(18);
         public ActionResult CuestionariosApertura() => Accesos(19);

@@ -14,7 +14,7 @@ const Cavecera = ({ evReload, lista, restaurar}) => {
     }
     console.log("date:", date)
     return (<div className="panel-heading">
-        <h3>Estado De Resultados De Operaciones.</h3>
+        <h3>{TITULO}.</h3>
         {lista.length == 0 ?
          <div>
              <span style={{ display: "inline-block", width: "150px" }} >

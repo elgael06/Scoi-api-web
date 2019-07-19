@@ -52,6 +52,7 @@
                 let parametros = {
                     'pedido': localStorage["Pedido"].toString(),
                     'embarque': localStorage["Embarque"].toString().split("'").join(" "),
+                    'Embarque':new Embarque()
                 };
                 document.querySelector("#ventana_entrada_autorizacion").style.display = "flex";
                 document.querySelector("#entrada_gafete").select();
@@ -68,12 +69,13 @@
                     }).then(res => {
                         res.json().then(r => {
                             console.log(r);
-                            if (r.Folio > 0)
-                                this.guardar_embarque();
-                            else {
-                                this.usuario = "";
-                                alert("Sin Autorizacion !!!")
+                            if (r.Folio > 0 && r.Respuesta=="Listo") {
+                               localStorage.removeItem('Embarque');
+                            localStorage.removeItem('Pedido');
+                            this.terminar();
                             }
+                            alert(r.Respuesta);
+                            this.usuario = '';
                         });
                     }) : '';
             },
@@ -82,7 +84,7 @@
                 document.querySelector("#ventana_entrada_autorizacion").style.display = "none";
                 let e = new Embarque();
                 console.log("Guardar...", e);
-                if (e.productos.length > 0) {
+                if (e.productos.length > 0 ) {
                         this.conexion(e);
                 }
                 else {

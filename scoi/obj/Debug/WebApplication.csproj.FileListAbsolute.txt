@@ -454,3 +454,9 @@ C:\www\asp.net\Scoi\new\Scoi-api-web\scoi\obj\Debug\WebApplication.csproj.CoreCo
 C:\www\asp.net\Scoi\new\Scoi-api-web\scoi\obj\Debug\WebApplication.csproj.CopyComplete
 C:\www\asp.net\Scoi\new\Scoi-api-web\scoi\obj\Debug\WebApplication.dll
 C:\www\asp.net\Scoi\new\Scoi-api-web\scoi\obj\Debug\WebApplication.pdb
+C:\www\asp.net\Scoi\new\Scoi-api-web\scoi\bin\EntityFramework.dll
+C:\www\asp.net\Scoi\new\Scoi-api-web\scoi\bin\EntityFramework.SqlServer.dll
+C:\www\asp.net\Scoi\new\Scoi-api-web\scoi\bin\EntityFramework.xml
+C:\www\asp.net\Scoi\new\Scoi-api-web\scoi\bin\EntityFramework.SqlServer.xml
+C:\www\asp.net\Scoi\new\Scoi-api-web\scoi\bin\Z.EntityFramework.Extensions.dll
+C:\www\asp.net\Scoi\new\Scoi-api-web\scoi\bin\Z.EntityFramework.Extensions.xml

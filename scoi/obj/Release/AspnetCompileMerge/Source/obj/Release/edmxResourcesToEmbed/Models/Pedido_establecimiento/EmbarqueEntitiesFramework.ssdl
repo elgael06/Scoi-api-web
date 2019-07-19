@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BMSIZAGARModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="mpedestab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="folio" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="transaccion" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="fecha" Type="smalldatetime" Nullable="false" />
+    <Property Name="cod_prod" Type="char" MaxLength="13" Nullable="false" />
+    <Property Name="unidad" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="cantidad_pedida" Type="decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="cantidad_autorizada" Type="decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="cantidad_surtida" Type="decimal" Precision="19" Scale="3" Nullable="false" />
+    <Property Name="Precio_lista" Type="money" Nullable="false" />
+    <Property Name="importe" Type="money" Nullable="false" />
+    <Property Name="iva" Type="money" Nullable="false" />
+    <Property Name="ieps" Type="money" Nullable="false" />
+    <Property Name="costo" Type="money" Nullable="false" />
+    <Property Name="utilidad_bruta" Type="money" StoreGeneratedPattern="Computed" />
+    <Property Name="peso" Type="decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="volumen" Type="decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="back_order" Type="bit" Nullable="false" />
+    <Property Name="cod_estab" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="cod_estab_alterno" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="status" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="abreviatura_unidad" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="cantidad_adicional" Type="decimal" Precision="19" Scale="3" Nullable="false" />
+    <Property Name="partida" Type="smallint" Nullable="false" />
+    <Property Name="total" Type="money" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="pedestab">
+    <Key>
+      <PropertyRef Name="folio" />
+    </Key>
+    <Property Name="folio" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="transaccion" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="fecha" Type="smalldatetime" Nullable="false" />
+    <Property Name="importe" Type="money" Nullable="false" />
+    <Property Name="iva" Type="money" Nullable="false" />
+    <Property Name="ieps" Type="money" Nullable="false" />
+    <Property Name="costo" Type="money" Nullable="false" />
+    <Property Name="utilidad_bruta" Type="money" StoreGeneratedPattern="Computed" />
+    <Property Name="unidades" Type="decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="piezas" Type="decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="peso" Type="decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="volumen" Type="decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="fecha_elaboracion" Type="smalldatetime" Nullable="false" />
+    <Property Name="fecha_entrega" Type="smalldatetime" Nullable="false" />
+    <Property Name="fecha_autorizacion" Type="smalldatetime" />
+    <Property Name="fecha_cancelacion" Type="smalldatetime" />
+    <Property Name="fecha_expiracion" Type="smalldatetime" Nullable="false" />
+    <Property Name="usuario_captura" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="usuario_autorizacion" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="usuario_cancelacion" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="back_order" Type="bit" Nullable="false" />
+    <Property Name="recoge_mercancia" Type="bit" Nullable="false" />
+    <Property Name="pedido_establecimiento" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="cod_estab" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="cod_estab_alterno" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="paquete_mercancia" Type="char" MaxLength="10" />
+    <Property Name="notas" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="status_surtido" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="status" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="ultima_modificacion" Type="smalldatetime" Nullable="false" />
+    <Property Name="recepcion_transferencia_automatica" Type="bit" Nullable="false" />
+    <Property Name="embarque" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="orden_embarque" Type="smallint" Nullable="false" />
+    <Property Name="razon_transferencia" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="solicita" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="recibe" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="total" Type="money" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="productos">
+    <Key>
+      <PropertyRef Name="cod_prod" />
+    </Key>
+    <Property Name="cod_prod" Type="char" MaxLength="13" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="marca" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="color" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="modelo" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="talla" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="aroma" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="sabor" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="unidad_compra" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="contenido" Type="decimal" Precision="19" Scale="8" Nullable="false" />
+    <Property Name="presentacion" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="contenido_presentacion" Type="decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="unidad_presentacion" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="descripcion_completa" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="descripcion_corta" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="contenido_lineal" Type="decimal" Precision="19" Scale="8" Nullable="false" />
+    <Property Name="unidad_lineal" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="contenido_area" Type="decimal" Precision="19" Scale="8" Nullable="false" />
+    <Property Name="unidad_area" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="contenido_peso" Type="decimal" Precision="19" Scale="8" Nullable="false" />
+    <Property Name="contenido_volumen" Type="decimal" Precision="19" Scale="8" Nullable="false" />
+    <Property Name="unidad_peso" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="unidad_volumen" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="peso_total" Type="decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="ancho" Type="real" Nullable="false" />
+    <Property Name="largo" Type="real" Nullable="false" />
+    <Property Name="alto" Type="real" Nullable="false" />
+    <Property Name="volumen" Type="real" Nullable="false" />
+    <Property Name="ancho_pieza" Type="real" Nullable="false" />
+    <Property Name="largo_pieza" Type="real" Nullable="false" />
+    <Property Name="alto_pieza" Type="real" Nullable="false" />
+    <Property Name="estiba_maxima" Type="smallint" Nullable="false" />
+    <Property Name="criterio_precio_venta" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="iva_interior" Type="numeric" Precision="5" Scale="1" Nullable="false" />
+    <Property Name="iva_fronterizo" Type="numeric" Precision="5" Scale="1" Nullable="false" />
+    <Property Name="ieps_compra" Type="decimal" Precision="9" Scale="4" Nullable="false" />
+    <Property Name="tipo_ieps_compra" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="ieps" Type="decimal" Precision="9" Scale="4" Nullable="false" />
+    <Property Name="modo_surtido" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="clave_secofi" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="clave_ssa" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="fragilidad" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="temperatura" Type="tinyint" Nullable="false" />
+    <Property Name="importado" Type="bit" Nullable="false" />
+    <Property Name="codigo_analogo" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="codigo_barras_unidad" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="codigo_barras_pieza" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="garantia_compra" Type="tinyint" Nullable="false" />
+    <Property Name="garantia_fabricacion" Type="tinyint" Nullable="false" />
+    <Property Name="fecha_alta" Type="datetime" Nullable="false" />
+    <Property Name="caducidad_recepcion" Type="smallint" Nullable="false" />
+    <Property Name="caducidad_venta" Type="smallint" Nullable="false" />
+    <Property Name="caducidad_fabricacion" Type="smallint" Nullable="false" />
+    <Property Name="prioridad_fabricacion" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="categoria" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="linea_producto" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="familia" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="tipo_producto" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="clasificacion_productos" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="grupo_facturacion" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="clasificacion_carga" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="comprador" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="fracciones_por" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="decimales" Type="tinyint" Nullable="false" />
+    <Property Name="fracciones_por_compras" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="decimales_compras" Type="tinyint" Nullable="false" />
+    <Property Name="status_producto" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="ultima_modificacion" Type="smalldatetime" Nullable="false" />
+    <Property Name="ofertable" Type="bit" Nullable="false" />
+    <Property Name="forma_expresar_inventario" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="minimo_venta" Type="decimal" Precision="9" Scale="4" Nullable="false" />
+    <Property Name="multiplo_venta" Type="decimal" Precision="9" Scale="4" Nullable="false" />
+    <Property Name="cantidad_precio_promedio" Type="decimal" Precision="9" Scale="4" Nullable="false" />
+    <Property Name="cuenta_contable" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="contenido_por" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="sistema_equipos" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="uso_producto" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="factor_adicional_volumen_carga" Type="decimal" Precision="9" Scale="4" Nullable="false" />
+    <Property Name="tasa_iva_interior" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="tasa_iva_fronterizo" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="precio_venta_automatico" Type="bit" Nullable="false" />
+    <Property Name="producto_dependiente" Type="bit" Nullable="false" />
+    <Property Name="minimo_venta_pos" Type="decimal" Precision="9" Scale="4" Nullable="false" />
+    <Property Name="multiplo_venta_pos" Type="decimal" Precision="9" Scale="4" Nullable="false" />
+    <Property Name="forma_resurtido_inventario" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="rango_producto" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="tabla_comision" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="cantidad_precio_mayoreo" Type="decimal" Precision="9" Scale="4" Nullable="false" />
+    <Property Name="clase_producto" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="precio_especifico" Type="bit" Nullable="false" />
+    <Property Name="bascula" Type="bit" Nullable="false" />
+    <Property Name="factor_merma" Type="decimal" Precision="9" Scale="3" Nullable="false" />
+    <Property Name="pedaceria" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="cantidad_adicional" Type="bit" Nullable="false" />
+    <Property Name="control_etiqueta" Type="bit" Nullable="false" />
+    <Property Name="factor_merma_natural" Type="decimal" Precision="9" Scale="3" Nullable="false" />
+    <Property Name="control_caducidad" Type="bit" Nullable="false" />
+    <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="inventario_identificado" Type="bit" Nullable="false" />
+    <Property Name="retornable" Type="bit" Nullable="false" />
+    <Property Name="envase" Type="char" MaxLength="13" Nullable="false" />
+    <Property Name="notas" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="area" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="cruzado" Type="bit" />
+    <Property Name="item" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="tipo_lubricante" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="viscosidad" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="norma_oficial_mexicana" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="usuario_ultima_modificacion" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="peso_ua" Type="decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="grupo_medicamentos" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="subgrupo_medicamentos" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="temperatura2" Type="tinyint" Nullable="false" />
+    <Property Name="humedad" Type="tinyint" Nullable="false" />
+    <Property Name="humedad2" Type="tinyint" Nullable="false" />
+    <Property Name="rango_temperatura" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="moneda" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="tasa_ieps" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="fabricante" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="pais_origen" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="descripcion_adicional" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="clave_fiscal" Type="varchar" MaxLength="15" />
+    <Property Name="ieps_cuota_UC" Type="money" />
+  </EntityType>
+  <Association Name="FK_mpedestab_productos">
+    <End Role="productos" Type="Self.productos" Multiplicity="1" />
+    <End Role="mpedestab" Type="Self.mpedestab" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="productos">
+        <PropertyRef Name="cod_prod" />
+      </Principal>
+      <Dependent Role="mpedestab">
+        <PropertyRef Name="cod_prod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BMSIZAGARModelStoreContainer">
+    <EntitySet Name="mpedestab" EntityType="Self.mpedestab" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="pedestab" EntityType="Self.pedestab" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="productos" EntityType="Self.productos" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_mpedestab_productos" Association="Self.FK_mpedestab_productos">
+      <End Role="productos" EntitySet="productos" />
+      <End Role="mpedestab" EntitySet="mpedestab" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

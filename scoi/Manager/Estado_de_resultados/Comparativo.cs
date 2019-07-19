@@ -42,10 +42,11 @@ namespace api_seguimiento.Manager.comparativo_resultados
 
             return null;
         }
-        public List<Resultado> Consulta_sql_estado_de_resultados(string fecha ,int meses) {
+        public List<Resultado> Consulta_sql_estado_de_resultados(string fecha ,int meses,int tipo) {
             List<Resultado> lista = new List<Resultado>();
 
-            string query =  string.Format("exec monitor_estado_de_resultados '{0}',{1} ;",fecha, meses);
+            string dato = tipo==1 ? "exec monitor_estado_de_resultados '{0}',{1} ;" : "exec monitor_estado_de_resultados_sin_alimentos '{0}',{1} ;";
+            string query =  string.Format(dato,fecha, meses);
 
             SqlCommand comando = new SqlCommand(query, conexion_scoi) {
                 CommandTimeout=50000

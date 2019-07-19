@@ -2,9 +2,7 @@
 
 import Moneda from '../../../ComponentesGlobales/Moneda'
 
-import {
-    obtener_semanas_ocupadas_por_anio
-} from '../metodos/manejoSemanas';
+import { obtener_semanas_ocupadas_por_anio } from '../metodos/manejoSemanas';
 
 const Ordenes = ({ lista, optenerDetale }) => {
     let resultados = [];
@@ -13,13 +11,9 @@ const Ordenes = ({ lista, optenerDetale }) => {
     let anios = obtener_semanas_ocupadas_por_anio(lista);
 
     for (let tipo of lista) {
-        if (
-            ordenes.findIndex(
-                e => tipo.Establecimiento_surte == e.Establecimiento_surte
-            ) === -1
-        ) {
+        if (ordenes.findIndex(e => tipo.Establecimiento_solicita == e.Establecimiento_solicita) === -1) {
             let filtro = lista.filter(
-                e => e.Establecimiento_surte == tipo.Establecimiento_surte
+                e => e.Establecimiento_solicita == tipo.Establecimiento_solicita
             ).map(e => {
                 for (let i of e.Productos) {
                     total += i.Total
@@ -28,16 +22,13 @@ const Ordenes = ({ lista, optenerDetale }) => {
                 return e
             });
             ordenes.push({
-                Establecimiento_surte: tipo.Establecimiento_surte,
+                Establecimiento_solicita: tipo.Establecimiento_solicita,
                 filtro: obtener_semanas_ocupadas_por_anio(filtro),
                 Total: total
             });
         }
     }
-    ordenes.sort((e1, e2) => e1.Establecimiento_surte > e2.Establecimiento_surte ? 1 : -1)
-    console.log("ordenes=>", ordenes);
-    console.log("anios=>", anios);
-
+    ordenes.sort((e1, e2) => e1.Establecimiento_solicita > e2.Establecimiento_solicita ? 1 : -1)
     resultados = ordenes.map(e => <Establecimiento e={e} anios={anios} lista={lista} optenerDetale={optenerDetale} />)
 
 
@@ -49,14 +40,14 @@ const Ordenes = ({ lista, optenerDetale }) => {
 const Establecimiento = ({ e, anios, lista, optenerDetale }) => {
     const [mostrar, setMostrar] = useState(false);
     const listaOrdenes = [];
-    const filtroEst = lista.filter(f => e.Establecimiento_surte == f.Establecimiento_surte);
+    const filtroEst = lista.filter(f => e.Establecimiento_solicita == f.Establecimiento_solicita);
     const comprobarEstado = () => setMostrar(!mostrar);
 
     const claseBoton = () => mostrar ? "btn btn-sm fa fa-minus" : "btn btn-sm fa fa-plus";
 
     listaOrdenes.push(<tr class="bg-warning">
         <td style={{width:"35px"}}><i class={claseBoton()} onClick={comprobarEstado}></i></td>
-        <td style={{color: "#000" }}>{e.Establecimiento_surte}</td>
+        <td style={{color: "#000" }}>{e.Establecimiento_solicita}</td>
         <SemanaEstablecimiento anios={anios} filtro={filtroEst} />
         <ItemTabla item={obtenerTotalSemanas(anios, filtroEst).reduce((b, c) => b + c)} />
     </tr>)

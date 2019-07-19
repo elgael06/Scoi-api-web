@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BMSIZAGARModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="mpedestab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="folio" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="transaccion" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="fecha" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="cod_prod" Type="String" MaxLength="13" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="unidad" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="cantidad_pedida" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="cantidad_autorizada" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="cantidad_surtida" Type="Decimal" Precision="19" Scale="3" Nullable="false" />
+    <Property Name="Precio_lista" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="importe" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="iva" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="ieps" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="costo" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="utilidad_bruta" Type="Decimal" Precision="19" Scale="4" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="peso" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="volumen" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="back_order" Type="Boolean" Nullable="false" />
+    <Property Name="cod_estab" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="cod_estab_alterno" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="status" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="abreviatura_unidad" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="rowguid" Type="Guid" Nullable="false" />
+    <Property Name="cantidad_adicional" Type="Decimal" Precision="19" Scale="3" Nullable="false" />
+    <Property Name="partida" Type="Int16" Nullable="false" />
+    <Property Name="total" Type="Decimal" Precision="19" Scale="4" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="productos" Relationship="Self.FK_mpedestab_productos" FromRole="mpedestab" ToRole="productos" />
+  </EntityType>
+  <EntityType Name="pedestab">
+    <Key>
+      <PropertyRef Name="folio" />
+    </Key>
+    <Property Name="folio" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="transaccion" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="fecha" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="importe" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="iva" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="ieps" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="costo" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="utilidad_bruta" Type="Decimal" Precision="19" Scale="4" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="unidades" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="piezas" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="peso" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="volumen" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="fecha_elaboracion" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="fecha_entrega" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="fecha_autorizacion" Type="DateTime" Precision="0" />
+    <Property Name="fecha_cancelacion" Type="DateTime" Precision="0" />
+    <Property Name="fecha_expiracion" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="usuario_captura" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="usuario_autorizacion" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="usuario_cancelacion" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="back_order" Type="Boolean" Nullable="false" />
+    <Property Name="recoge_mercancia" Type="Boolean" Nullable="false" />
+    <Property Name="pedido_establecimiento" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="cod_estab" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="cod_estab_alterno" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="paquete_mercancia" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="notas" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="status_surtido" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="status" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ultima_modificacion" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="recepcion_transferencia_automatica" Type="Boolean" Nullable="false" />
+    <Property Name="embarque" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="orden_embarque" Type="Int16" Nullable="false" />
+    <Property Name="razon_transferencia" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="rowguid" Type="Guid" Nullable="false" />
+    <Property Name="solicita" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="recibe" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="total" Type="Decimal" Precision="19" Scale="4" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="productos">
+    <Key>
+      <PropertyRef Name="cod_prod" />
+    </Key>
+    <Property Name="cod_prod" Type="String" MaxLength="13" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="descripcion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="marca" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="color" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="modelo" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="talla" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="aroma" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="sabor" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="unidad_compra" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="contenido" Type="Decimal" Precision="19" Scale="8" Nullable="false" />
+    <Property Name="presentacion" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="contenido_presentacion" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="unidad_presentacion" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="descripcion_completa" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="descripcion_corta" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="contenido_lineal" Type="Decimal" Precision="19" Scale="8" Nullable="false" />
+    <Property Name="unidad_lineal" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="contenido_area" Type="Decimal" Precision="19" Scale="8" Nullable="false" />
+    <Property Name="unidad_area" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="contenido_peso" Type="Decimal" Precision="19" Scale="8" Nullable="false" />
+    <Property Name="contenido_volumen" Type="Decimal" Precision="19" Scale="8" Nullable="false" />
+    <Property Name="unidad_peso" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="unidad_volumen" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="peso_total" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="ancho" Type="Single" Nullable="false" />
+    <Property Name="largo" Type="Single" Nullable="false" />
+    <Property Name="alto" Type="Single" Nullable="false" />
+    <Property Name="volumen" Type="Single" Nullable="false" />
+    <Property Name="ancho_pieza" Type="Single" Nullable="false" />
+    <Property Name="largo_pieza" Type="Single" Nullable="false" />
+    <Property Name="alto_pieza" Type="Single" Nullable="false" />
+    <Property Name="estiba_maxima" Type="Int16" Nullable="false" />
+    <Property Name="criterio_precio_venta" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="iva_interior" Type="Decimal" Precision="5" Scale="1" Nullable="false" />
+    <Property Name="iva_fronterizo" Type="Decimal" Precision="5" Scale="1" Nullable="false" />
+    <Property Name="ieps_compra" Type="Decimal" Precision="9" Scale="4" Nullable="false" />
+    <Property Name="tipo_ieps_compra" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ieps" Type="Decimal" Precision="9" Scale="4" Nullable="false" />
+    <Property Name="modo_surtido" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="clave_secofi" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="clave_ssa" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="fragilidad" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="temperatura" Type="Byte" Nullable="false" />
+    <Property Name="importado" Type="Boolean" Nullable="false" />
+    <Property Name="codigo_analogo" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="codigo_barras_unidad" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="codigo_barras_pieza" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="garantia_compra" Type="Byte" Nullable="false" />
+    <Property Name="garantia_fabricacion" Type="Byte" Nullable="false" />
+    <Property Name="fecha_alta" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="caducidad_recepcion" Type="Int16" Nullable="false" />
+    <Property Name="caducidad_venta" Type="Int16" Nullable="false" />
+    <Property Name="caducidad_fabricacion" Type="Int16" Nullable="false" />
+    <Property Name="prioridad_fabricacion" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="categoria" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="linea_producto" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="familia" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="tipo_producto" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="clasificacion_productos" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="grupo_facturacion" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="clasificacion_carga" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="comprador" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="fracciones_por" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="decimales" Type="Byte" Nullable="false" />
+    <Property Name="fracciones_por_compras" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="decimales_compras" Type="Byte" Nullable="false" />
+    <Property Name="status_producto" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ultima_modificacion" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ofertable" Type="Boolean" Nullable="false" />
+    <Property Name="forma_expresar_inventario" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="minimo_venta" Type="Decimal" Precision="9" Scale="4" Nullable="false" />
+    <Property Name="multiplo_venta" Type="Decimal" Precision="9" Scale="4" Nullable="false" />
+    <Property Name="cantidad_precio_promedio" Type="Decimal" Precision="9" Scale="4" Nullable="false" />
+    <Property Name="cuenta_contable" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="contenido_por" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="sistema_equipos" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="uso_producto" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="factor_adicional_volumen_carga" Type="Decimal" Precision="9" Scale="4" Nullable="false" />
+    <Property Name="tasa_iva_interior" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="tasa_iva_fronterizo" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="precio_venta_automatico" Type="Boolean" Nullable="false" />
+    <Property Name="producto_dependiente" Type="Boolean" Nullable="false" />
+    <Property Name="minimo_venta_pos" Type="Decimal" Precision="9" Scale="4" Nullable="false" />
+    <Property Name="multiplo_venta_pos" Type="Decimal" Precision="9" Scale="4" Nullable="false" />
+    <Property Name="forma_resurtido_inventario" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="rango_producto" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="tabla_comision" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="cantidad_precio_mayoreo" Type="Decimal" Precision="9" Scale="4" Nullable="false" />
+    <Property Name="clase_producto" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="precio_especifico" Type="Boolean" Nullable="false" />
+    <Property Name="bascula" Type="Boolean" Nullable="false" />
+    <Property Name="factor_merma" Type="Decimal" Precision="9" Scale="3" Nullable="false" />
+    <Property Name="pedaceria" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="cantidad_adicional" Type="Boolean" Nullable="false" />
+    <Property Name="control_etiqueta" Type="Boolean" Nullable="false" />
+    <Property Name="factor_merma_natural" Type="Decimal" Precision="9" Scale="3" Nullable="false" />
+    <Property Name="control_caducidad" Type="Boolean" Nullable="false" />
+    <Property Name="rowguid" Type="Guid" Nullable="false" />
+    <Property Name="inventario_identificado" Type="Boolean" Nullable="false" />
+    <Property Name="retornable" Type="Boolean" Nullable="false" />
+    <Property Name="envase" Type="String" MaxLength="13" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="notas" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="area" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="cruzado" Type="Boolean" />
+    <Property Name="item" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="tipo_lubricante" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="viscosidad" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="norma_oficial_mexicana" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="usuario_ultima_modificacion" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="peso_ua" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="grupo_medicamentos" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="subgrupo_medicamentos" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="temperatura2" Type="Byte" Nullable="false" />
+    <Property Name="humedad" Type="Byte" Nullable="false" />
+    <Property Name="humedad2" Type="Byte" Nullable="false" />
+    <Property Name="rango_temperatura" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="moneda" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="tasa_ieps" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="fabricante" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="pais_origen" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="descripcion_adicional" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="clave_fiscal" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="ieps_cuota_UC" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="mpedestab" Relationship="Self.FK_mpedestab_productos" FromRole="productos" ToRole="mpedestab" />
+  </EntityType>
+  <Association Name="FK_mpedestab_productos">
+    <End Role="productos" Type="Self.productos" Multiplicity="1" />
+    <End Role="mpedestab" Type="Self.mpedestab" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="productos">
+        <PropertyRef Name="cod_prod" />
+      </Principal>
+      <Dependent Role="mpedestab">
+        <PropertyRef Name="cod_prod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BMSIZAGAREntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="mpedestab" EntityType="Self.mpedestab" />
+    <EntitySet Name="pedestab" EntityType="Self.pedestab" />
+    <EntitySet Name="productos" EntityType="Self.productos" />
+    <AssociationSet Name="FK_mpedestab_productos" Association="Self.FK_mpedestab_productos">
+      <End Role="productos" EntitySet="productos" />
+      <End Role="mpedestab" EntitySet="mpedestab" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,6 +1,7 @@
 ﻿import React, { useState, useEffect  } from 'react';
 import SeleccionRecibe from './SeleccionRecibe';
-
+import { fecha_hoy_yyyy_mm_dd, parseo_fecha} from '../../../../Globales/fechas';
+import { list } from 'postcss';
 let $MI_URL = `${window.location.protocol}//${window.location.hostname}`,
     $URL_MVC = "/Globales/",
     $URL_API = "/api/";
@@ -8,7 +9,7 @@ let $MI_URL = `${window.location.protocol}//${window.location.hostname}`,
 
 setTimeout(() => document.querySelector("#contenedor_recibe").style.display = "none", 500)
 
-export default function Cavecera({ asignarOrdenes }) {
+export default function Cavecera({ asignarOrdenes, ordenes }) {
 
     let [comprobar, setComprobar] = useState(false);
     let [folio_producto, setFolioProducto] = useState(0);
@@ -17,8 +18,8 @@ export default function Cavecera({ asignarOrdenes }) {
     let [ListaVeneficiarios, setListaVeneficiarios] = useState([]);
 
     let [parametros,setParametros] = useState({
-        inicio: '',
-        fin: '',
+        inicio: fecha_hoy_yyyy_mm_dd(),
+        fin: fecha_hoy_yyyy_mm_dd(),
         tipo_orden: '',
         estatus: 'SURTIDO',
         establecimiento: 0,
@@ -29,9 +30,6 @@ export default function Cavecera({ asignarOrdenes }) {
 
     const cambio = (dato,parametro) => {
         let datos = parametros;
-        console.log(parametro, dato);
-
-        console.log("comprobar => ",comprobar )
         datos[parametro] = dato
         if (parametro == "tipo_recibe") {
             datos.recibe = 0;
@@ -49,9 +47,7 @@ export default function Cavecera({ asignarOrdenes }) {
     }
     const consultar = () => {
         const { inicio, fin, tipo_orden, estatus, establecimiento, tipo_recibe, recibe } = parametros;
-        console.log("Consultar...")
-        let url = `ObtenerMonitorOrdenCompraInterna?f1=${pase_fecha(inicio)}&f2=${pase_fecha(fin)}&tipo_orden=${tipo_orden}&estatus=${estatus}&tipo_recibe=${tipo_recibe}&recibe=${recibe}&establecimiento=${establecimiento}&cod_prod=${folio_producto}`;
-        console.log("url=> ",url)
+        let url = `ObtenerMonitorOrdenCompraInterna?f1=${parseo_fecha(inicio)}&f2=${parseo_fecha(fin)}&tipo_orden=${tipo_orden}&estatus=${estatus}&tipo_recibe=${tipo_recibe}&recibe=${recibe}&establecimiento=${establecimiento}&cod_prod=${folio_producto}`;
         document.querySelector("#modal_de_efecto_carga").style.display = "flex";
         fetch(url, {
             method: 'post',
@@ -90,7 +86,6 @@ export default function Cavecera({ asignarOrdenes }) {
     }
 
     const abirirModal = () => {
-        console.log(`Abrir Modal ${parametros.tipo_recibe} ...`)
         setTipoSeleccion(parametros.tipo_recibe)
 
         document.querySelector("#modal_de_efecto_carga").style.display = "flex";
@@ -111,8 +106,7 @@ export default function Cavecera({ asignarOrdenes }) {
             }))
     }
 
-    return (
-        <div class="panel-heading">
+    return ordenes.length==0 ? (<div class="panel-heading">
             <div class="row">
                 <h3 class="col-sm-12">Monitor Ordenes De Compra Interna.</h3>
                 <Fechas
@@ -155,12 +149,37 @@ export default function Cavecera({ asignarOrdenes }) {
                 evSeleccion={cambio}
                 evNombre={setNombreRecibe}
             />
-        </div>
-        );
+    </div>) :
+        <div class="panel-heading">
+            <i class="fa fa-close" style={{ float: "right" }} onClick={() => asignarOrdenes([])}> [ Regresar ]</i>
+            <h3 style={{color:"#000"}}> Ordenes De Compra Interna.</h3>
+            <div class="row">
+                <div class="col-sm-2">
+                    <label>Inicio</label>
+                    <i class="form-control">{parseo_fecha(parametros.inicio)}</i>
+                </div>
+                <div class="col-sm-2">
+                    <label>Fin</label>
+                    <i class="form-control">{parseo_fecha(parametros.fin)}</i>
+                </div>
+                <div class="col-sm-2">
+                    <label>Tipo</label>
+                    <i class="form-control">{parametros.tipo_orden}</i>
+                </div>
+                <div class="col-sm-2">
+                    <label>Estatus</label>
+                    <i class="form-control">{parametros.estatus}</i>
+                </div>
+                <div class="col-sm-2">
+                    <label>Tipo Recibe</label>
+                    <i class="form-control">{parametros.tipo_recibe}</i>
+                </div>
+            </div>
+        </div>;
 }
 
 const Fechas = ({evFecha}) => {
-    let [inicio, setInicio] = useState(""),[fin, setFin] = useState("")
+    let [inicio, setInicio] = useState(fecha_hoy_yyyy_mm_dd()), [fin, setFin] = useState(fecha_hoy_yyyy_mm_dd())
 
     const cambioInicio = (seleccion) => {
         setInicio(seleccion),evFecha(seleccion, "inicio")
@@ -236,7 +255,7 @@ const Orden = ({ evOrden }) => {
 const Recibo = ({ evRecibo}) => {
     const [estableciminto, setEstablecimiento] = useState(0), [tipo, setTipo] = useState("Todos"), [ListaEstablecimientos, setLista] = useState([])
 
-    ListaEstablecimientos.length > 0 || fetch(`${$URL_API}obtener_establecimientos`, {
+    ListaEstablecimientos.length > 0 || fetch(`${$URL_API}Obtener_establecimientos_BMS`, {
         method: 'post',
         credentials: 'same-origin',
         headers: {
@@ -244,9 +263,7 @@ const Recibo = ({ evRecibo}) => {
         }
     })
     .catch(err => console.error("Error=>", err))
-    .then(res => res.json().then(lista => {
-        setLista(lista);
-    }))
+        .then(res => res.json().then(setLista))
 
     useEffect(() => {
         document.querySelector("#rotacionEstablecimientos").style.display = ListaEstablecimientos.length > 0 ? "none" : "";
@@ -254,7 +271,7 @@ const Recibo = ({ evRecibo}) => {
     })
 
     const cambioEstablecimiento = seleccion => {
-        let index = ListaEstablecimientos.findIndex(e => e.nombre == seleccion)
+        let index = ListaEstablecimientos.findIndex(e => e.folio == seleccion);
         setEstablecimiento(seleccion), evRecibo(index > -1 ? ListaEstablecimientos[index].folio : 0, "establecimiento")
     }
     const cambioTipo = seleccion => {
@@ -270,7 +287,7 @@ const Recibo = ({ evRecibo}) => {
                 <option value="0">Todos</option>
                 {
                     ListaEstablecimientos.map(e => {
-                        return <option >{e.nombre}</option>
+                        return <option value={e.folio}>{e.nombre}</option>
                     })
                 }
             </select>
@@ -284,9 +301,4 @@ const Recibo = ({ evRecibo}) => {
             </select>
         </div >
     </div >);
-}
-
-const pase_fecha = fecha => {
-    let f = fecha.split("-");
-    return `${f[2]}-${f[1]}-${f[0]}`
 }

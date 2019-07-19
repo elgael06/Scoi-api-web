@@ -90,7 +90,7 @@ export default class App extends Component {
             document.getElementById("modal_de_efecto_carga").style.display = "flex";
             this.setState({ lista: [] });
         }
-        fetch(`${$URL_API}Estado_de_resultados?fecha=${fecha}&meses=${periodo}`, {
+        fetch(`${$URL_API}Estado_de_resultados?fecha=${fecha}&meses=${periodo}&tipo=${TIPO}`, {
             method: 'get',
             credentials: 'same-origin',
             headers: {

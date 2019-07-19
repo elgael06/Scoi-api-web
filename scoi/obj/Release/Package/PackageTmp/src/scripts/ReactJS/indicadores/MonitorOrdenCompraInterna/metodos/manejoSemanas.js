@@ -16,19 +16,14 @@ const obtener_semanas_ocupadas_por_anio = lista => {
     ];
 
     lista.sort((a, b) => (a.Anio > b.Anio ? 1 : -1));
-
+    lista.sort((a, b) => (a.Semana_anio > b.Semana_anio ? 1 : -1));
     let lista_anios = [];
     lista.forEach(anio => {
         if (lista_anios.findIndex(e => e.anio === anio.Anio) === -1) {
             let num_semana = semanas_obtenidas(
                 lista.filter(e => e.Anio === anio.Anio)
             );
-            num_semana.sort((a, b) =>
-                lista_meses.findIndex(e => e == a.mes_pago) >
-                    lista_meses.findIndex(e => e == b.mes_pago)
-                    ? 1
-                    : -1
-            );
+            num_semana.sort((a, b) => lista_meses.findIndex(e => e == a.Mes) > lista_meses.findIndex(e => e == b.Mes)? 1: -1);
             lista_anios.push({
                 anio: anio.Anio,
                 meses: obtener_semanas_por_mes(num_semana),
