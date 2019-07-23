@@ -30,12 +30,12 @@ namespace WebApplication.Manager.Pedido_establecimiento
                     usuario.Id_puesto = int.Parse(lector["id_puesto"].ToString());
                     usuario.Puesto = lector["puesto"].ToString();
                 }
-                conexion_scoi.Close();
             }
             catch (Exception e)
             {
                 usuario.Respuesta = e.ToString();
             }
+            conexion_scoi.Close();
             if (usuario.Folio > 0)
             {
                 usuario.Respuesta = Guardar_registro(usuario, pedido, embarque, Embarque);
@@ -68,6 +68,7 @@ namespace WebApplication.Manager.Pedido_establecimiento
                 }
                 catch (Exception e)
                 {
+                    conexion_scoi.Close();
                     return respuesta + e.ToString();
                 }
                 var actualizar_pedido = ActualizarPedido(Embarque);
@@ -147,6 +148,7 @@ namespace WebApplication.Manager.Pedido_establecimiento
             }
             catch (Exception e) {
                 Console.WriteLine(e);
+                conexion_scoi.Close();
             }
         }
 

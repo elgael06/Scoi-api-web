@@ -5,9 +5,9 @@
             Guardar  <i class="glyphicon glyphicon-saved"></i>
         </strong>
         <div class="ventana" id="ventana_entrada_autorizacion" style="display:none">
-            <div class="panel panel-danger">
+            <div class="panel panel-success">
                 <div class="panel-heading">
-                    <i class="fa fa-close close" @click="cerrar"></i>
+                    <i class="fa fa-close close" @click="cerrar"> Cerrar</i>
                     <label>Autorizacion Guardado</label>
                 </div>
                 <div class="panel-body">

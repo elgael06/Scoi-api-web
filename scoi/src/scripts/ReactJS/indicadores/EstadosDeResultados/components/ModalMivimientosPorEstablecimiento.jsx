@@ -215,7 +215,7 @@ const TotalSemanaMovimientos = ({ filtro, semanas }) => {
         TotalMov += total != " " ? filtro.find(e => e.Semana == semana.Semana).Precio_venta : 0;
         return (<td style={{ background: "#FFF", color: "#000", textAlign: "right" }}>{total}</td>);
     });
-    lista.push(<td style={{ background: "#FFF", color: "#000", textAlign: "right" }}>{moneyFormat(redondeo(TotalMov))}</td>);
+    lista.unshift(<td style={{ background: "#FFF", color: "#000", textAlign: "right" }}>{moneyFormat(redondeo(TotalMov))}</td>);
 
     return lista;
 }

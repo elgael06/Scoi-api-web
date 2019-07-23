@@ -30,12 +30,12 @@ namespace WebApplication.Manager.Pedido_establecimiento
                     usuario.Id_puesto = int.Parse(lector["id_puesto"].ToString());
                     usuario.Puesto = lector["puesto"].ToString();
                 }
-                conexion_scoi.Close();
             }
             catch (Exception e)
             {
                 usuario.Respuesta = e.ToString();
             }
+            conexion_scoi.Close();
             if (usuario.Folio > 0)
             {
                 usuario.Respuesta = Guardar_registro(usuario, pedido, embarque, Embarque);
@@ -63,19 +63,24 @@ namespace WebApplication.Manager.Pedido_establecimiento
                     conexion_scoi.Open();
                     commando.ExecuteNonQuery();
                     conexion_scoi.Close();
-                    respuesta += " Respaldado ";
+                    respuesta = " Respaldado Aplicado...";
 
                 }
                 catch (Exception e)
                 {
+                    conexion_scoi.Close();
                     return respuesta + e.ToString();
                 }
                 var actualizar_pedido = ActualizarPedido(Embarque);
                 if (actualizar_pedido)
                 {
-                    ActualizarPedidoBms(Embarque);
+                    respuesta = "Actualizado en SCOI...";
+                    actualizar_pedido = ActualizarPedidoBms(Embarque);
                 }
-                return actualizar_pedido ? "Listo" : respuesta + " Error a Actualizar.";
+                else {
+                    respuesta = "Error al Actualizar En SCOI...";
+                }
+                return actualizar_pedido ? "Listo" : respuesta + " Error a Actualizar BMS.";
             }
             return "Sin Productos A Guardar";
         }
@@ -86,19 +91,20 @@ namespace WebApplication.Manager.Pedido_establecimiento
         {
             short pedido_consecutivo = ConcecutivoPedido(folio: pedido.folio_pedido);
             short i = 1;
-
+            pedido_consecutivo += 1;
             foreach (ModelEmbarquePedidoItem producto in pedido.productos)
             {
-                string folio_concecutivo = Convert.ToString(pedido_consecutivo + 1);
+                string folio_concecutivo = pedido_consecutivo.ToString();
                 try
                 {
                     Actualizar_producto_tabla_Pedido(value: producto, concecutivo: folio_concecutivo, partida: i, usuario: Convert.ToString(pedido.usuario));
                     i++;
                     Actualizar_inventario_de_gestion_de_pedidos(id_inventario: Convert.ToString(producto.id_inventario), surtido: (producto.surtido - producto.embarque));
                 }
-                catch (Exception e) { }
+                catch (Exception e) {
+                    Console.WriteLine("Errror=>",e.ToString());
+                }
             }
-
             return i > 1;
         }
 
@@ -118,28 +124,32 @@ namespace WebApplication.Manager.Pedido_establecimiento
                 lector = comando.ExecuteReader();
                 if (lector.Read())
                 {
-                    consecutivo = lector.GetInt16(0);
+                    consecutivo = short.Parse(lector["orden"].ToString());
                 }
             }
             catch (Exception e)
             {
                 consecutivo = 0;
             }
+            conexion_scoi.Close();
             return consecutivo;
         }
 
         private void Actualizar_producto_tabla_Pedido(ModelEmbarquePedidoItem value, string concecutivo, short partida, string usuario)
         {
-            string query = string.Format("sp_mobile_actualizar_producto_tabla_Pedido '{0}','{1}','{2}','{3}','{4}','{5}','{6}'",
+            string query = string.Format("sp_mobile_actualizar_producto_tabla_Pedido '{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}'",
                 concecutivo, value.disponible, value.embarque, value.pendiente, value.ajuste, usuario, partida, value.id_pedido);
-
-            SqlCommand comando = new SqlCommand(query, conexion_scoi)
+            try
             {
-                CommandTimeout = 50000
-            };
-            conexion_scoi.Open();
-            comando.ExecuteNonQuery();
-            conexion_scoi.Close();
+                SqlCommand comando = new SqlCommand(query, conexion_scoi);
+                conexion_scoi.Open();
+                comando.ExecuteNonQuery();
+                conexion_scoi.Close();
+            }
+            catch (Exception e) {
+                Console.WriteLine(e);
+                conexion_scoi.Close();
+            }
         }
 
         private void Actualizar_inventario_de_gestion_de_pedidos(string id_inventario, double surtido)
@@ -152,7 +162,6 @@ namespace WebApplication.Manager.Pedido_establecimiento
             {
                 CommandTimeout = 50000
             };
-
             conexion_scoi.Open();
             comando.ExecuteNonQuery();
             conexion_scoi.Close();
@@ -165,69 +174,78 @@ namespace WebApplication.Manager.Pedido_establecimiento
             string query = string.Format("select existencia_actual from tb_inventario_de_gestion_de_pedidos where id ={0};", id_inventario);
             SqlCommand comando = new SqlCommand(query, conexion_scoi);
             conexion_scoi.Open();
-            lector = comando.ExecuteReader();
-            lector.Read();
-            res = (double)lector["existencia_actual"];
+            try
+            {
+                lector = comando.ExecuteReader();
+                lector.Read();
+                res = (double)lector["existencia_actual"];
+            }
+            catch(Exception e){ }
             conexion_scoi.Close();
             return res;
         }
-
         /*
             ACTUALIZAR PEDIDOS DE ESTABLECIMIENTOS BMS
         */
-        public async void ActualizarPedidoBms(ModelEmbarquePedidoSolicitud pedido)
+        public bool ActualizarPedidoBms(ModelEmbarquePedidoSolicitud pedido)
         {
             short pedido_consecutivo = ConcecutivoPedido(pedido.folio_pedido);
+
+            List<mpedestab> pedido_insertado = new List<mpedestab>();
             using (var context = new BMSIZAGAREntities1())
             {
+                var resultadoUpdate = 0;
                 short partida = 1;
-                context.Configuration.AutoDetectChangesEnabled = false;
-                List<mpedestab> pedido_insertar = new List<mpedestab>();
-                foreach (var prod in pedido.productos)
-                {
-                    var productosBmsBD = context.mpedestab.Where(x => x.id == prod.id_ped_estab_BMS).SingleOrDefault();
-                    mpedestab productosBMS = new mpedestab {
-                        //Agregar parametros 
-                    };
-                    if (prod.embarque == 0 && productosBmsBD.cantidad_surtida == 0)
+                //context.Configuration.AutoDetectChangesEnabled = false;
+                //context.Configuration.ValidateOnSaveEnabled = false;
+                try
+                {                   
+                    foreach (var prod in pedido.productos)
                     {
-                        productosBmsBD.cantidad_surtida = productosBmsBD.cantidad_pedida;
-                    }
-                    //Checar si existe el empleado
-                    if (productosBmsBD != null)
-                    {
-                        if (prod.embarque > 0)
+                        var productosBmsBD = context.mpedestab.Where(x => x.id == prod.id_ped_estab_BMS).SingleOrDefault();
+
+                        if (prod.embarque == 0 && productosBmsBD.cantidad_surtida == 0)
                         {
-                            float importe = (float)productosBmsBD.cantidad_pedida > 0 ? ((float)productosBmsBD.importe / (float)productosBmsBD.cantidad_pedida) : 0;
-                            float iva = (float)productosBmsBD.cantidad_pedida > 0 ? ((float)productosBmsBD.iva / (float)productosBmsBD.cantidad_pedida) : 0;
-                            float ieps = (float)productosBmsBD.cantidad_pedida > 0 ? ((float)productosBmsBD.ieps / (float)productosBmsBD.cantidad_pedida) : 0;
-                            float costo = (float)productosBmsBD.cantidad_pedida > 0 ? ((float)productosBmsBD.costo / (float)productosBmsBD.cantidad_pedida) : 0;
-                            float volumen = (float)productosBmsBD.volumen > 0 ? ((float)productosBmsBD.volumen / (float)productosBmsBD.cantidad_pedida) : 0;
+                            productosBmsBD.cantidad_surtida = productosBmsBD.cantidad_pedida;
+                        }
+                        //Checar si existe el empleado
+                        if (productosBmsBD != null)
+                        {
+                            if (prod.embarque > 0)
+                            {
+                                var importe = (float)productosBmsBD.cantidad_pedida > 0 ? ((float)productosBmsBD.importe / (float)productosBmsBD.cantidad_pedida) : 0;
+                                var iva = (float)productosBmsBD.cantidad_pedida > 0 ? ((float)productosBmsBD.iva / (float)productosBmsBD.cantidad_pedida) : 0;
+                                var ieps = (float)productosBmsBD.cantidad_pedida > 0 ? ((float)productosBmsBD.ieps / (float)productosBmsBD.cantidad_pedida) : 0;
+                                var costo = (float)productosBmsBD.cantidad_pedida > 0 ? ((float)productosBmsBD.costo / (float)productosBmsBD.cantidad_pedida) : 0;
+                                var volumen = (float)productosBmsBD.volumen > 0 ? ((float)productosBmsBD.volumen / (float)productosBmsBD.cantidad_pedida) : 0;
 
-                            //update
-                            productosBmsBD.folio = Convert.ToString(pedido_consecutivo + 1) + pedido.folio_pedido;
+                                //update
+                                productosBmsBD.folio = Convert.ToString(pedido_consecutivo + 1) + pedido.folio_pedido;
 
-                            productosBmsBD.cantidad_pedida = (decimal)prod.embarque;
-                            productosBmsBD.cantidad_autorizada = (decimal)prod.embarque;
-                            productosBmsBD.importe = (decimal)importe;
-                            productosBmsBD.iva = (decimal)iva;
-                            productosBmsBD.ieps = (decimal)ieps;
-                            productosBmsBD.costo = (decimal)costo;
-                            productosBmsBD.partida = partida;
-                            productosBmsBD.cantidad_surtida = 0;
-                            productosBmsBD.volumen = (decimal)volumen;
-                            partida++;
-                            //pedido_insertar.Add(productosBmsBD);
+                                productosBmsBD.cantidad_pedida = (decimal)prod.embarque;
+                                productosBmsBD.cantidad_autorizada = (decimal)prod.embarque;
+                                productosBmsBD.importe = (decimal)importe;
+                                productosBmsBD.iva = (decimal)iva;
+                                productosBmsBD.ieps = (decimal)ieps;
+                                productosBmsBD.costo = (decimal)costo;
+                                productosBmsBD.partida = partida;
+                                productosBmsBD.cantidad_surtida = 0;
+                                productosBmsBD.volumen = (decimal)volumen;
+                                partida++;
+                            }
+                            pedido_insertado.Add(productosBmsBD);
                         }
                     }
+                    resultadoUpdate = context.SaveChanges();
+                }
+                finally {
+                    context.Configuration.AutoDetectChangesEnabled = true;
+                    context.Configuration.ValidateOnSaveEnabled = true;
                 }
                 //context.BulkUpdate(pedido_insertar);
                 //context.BulkSaveChangesAsync();
                 //resultadoUpdate = await context.SaveChangesAsync();
-                if (await context.SaveChangesAsync() > 0)
-                {
-                    agregarPedido(pedido_consecutivo, pedido.folio_pedido);
-                }
+                return resultadoUpdate > 0 ? agregarPedido(pedido_consecutivo, pedido.folio_pedido) : false;                
             }
         }
 
@@ -244,10 +262,11 @@ namespace WebApplication.Manager.Pedido_establecimiento
                 var pedEstabOrigen = context.pedestab.Where(x => x.folio == folioPedido).SingleOrDefault();
 
                 //SELECT DE LOS PRODUCTOS DEL PEDIDO  ORIGINAL (SE ARA EL CALCULO DE LOS IMPORTES A PARTIR DE ESTA INFO)
-                List<mpedestab> prodEnPedidoOrigen = context.mpedestab.Where(x => x.folio == folioPedido).ToList();
+                var prodEnPedidoOrigen = context.mpedestab.Where(x => x.folio == folioPedido).ToList();
 
+                //var pedEstabNuevo = context.pedestab.Where(x => x.folio == folioPedido).SingleOrDefault(); ;
                 //SELECT DE LOS PRODUCTOS DEL PEDIDO  NUEVO (SE ARA EL CALCULO A PARTIR DE ESTA INFO)
-                List<mpedestab> productosEnPedidoNuevoBmsBD = context.mpedestab.Where(x => x.folio == folioPedidoNuevo).ToList();
+                var productosEnPedidoNuevoBmsBD = context.mpedestab.Where(x => x.folio == folioPedidoNuevo).ToList();
 
                 //RECALCULAR LOS IMPORTES PARA EL PEDIDO ORIGEN
                 var importeOrigen = (from x in prodEnPedidoOrigen select x.importe).Sum();
@@ -279,6 +298,7 @@ namespace WebApplication.Manager.Pedido_establecimiento
 
                 pedEstabNuevo.unidades = pedEstabOrigen.unidades;
                 pedEstabNuevo.peso = pedEstabOrigen.peso;
+                //pedEstabNuevo.volumen = pedEstabOrigen.volumen;
                 pedEstabNuevo.fecha_elaboracion = pedEstabOrigen.fecha_elaboracion;
                 pedEstabNuevo.fecha_entrega = pedEstabOrigen.fecha_entrega;
                 pedEstabNuevo.fecha_autorizacion = pedEstabOrigen.fecha_autorizacion;
@@ -311,7 +331,6 @@ namespace WebApplication.Manager.Pedido_establecimiento
                 context.pedestab.Add(pedEstabNuevo);
 
                 return context.SaveChanges() > 0;
-
             }
         }
 
