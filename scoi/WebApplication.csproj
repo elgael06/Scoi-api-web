@@ -121,6 +121,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
@@ -266,6 +267,7 @@
     <Compile Include="Controllers\Estado_de_resultados\Estado_de_resultadosController.cs" />
     <Compile Include="Controllers\Monitor_auditoria_venta\monitor_auditoria_ventasController.cs" />
     <Compile Include="Controllers\Monitor_auditoria_venta\Monitor_auditoria__venta_detalle_corteController.cs" />
+    <Compile Include="Controllers\Monitor_flujo_de_inventario\MonitorFlujoInventarioController.cs" />
     <Compile Include="Controllers\Monitor_precio_competencia\CambioPreciosController.cs" />
     <Compile Include="Controllers\Monitor_precio_competencia\monitor_precio_competenciaController.cs" />
     <Compile Include="Manager\Accesos\usuarios.cs" />
@@ -386,7 +388,30 @@
     <Compile Include="Models\Monitor_auditoria_venta\Monitor_venta_corte_folio.cs" />
     <Compile Include="Models\Monitor_auditoria_venta\Monitor_venta_detalle_corte.cs" />
     <Compile Include="Models\Monitor_auditoria_venta\Monitor_venta_totales.cs" />
-    <Compile Include="Models\Monitor_cuadrantes\Modelo_monitor_cuadrantes.cs" />
+    <Compile Include="Models\Monitor_flujo_de_inventario\ModelMonitorCategoria.cs" />
+    <Compile Include="Models\Monitor_flujo_de_inventario\ModelMonitorClase.cs" />
+    <Compile Include="Models\Monitor_flujo_de_inventario\ModelMonitorEstablecimiento.cs" />
+    <Compile Include="Models\Monitor_flujo_de_inventario\ModelMonitorFamilia.cs" />
+    <Compile Include="Models\Monitor_flujo_de_inventario\Modelo_monitor_cuadrantes.cs" />
+    <Compile Include="Models\Monitor_flujo_de_inventario\ModelConceptosInventario.cs" />
+    <Compile Include="Models\Monitor_flujo_de_inventario\ModelFlujoDato.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelFlujoDato.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Monitor_flujo_de_inventario\ModelFlujoDato.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelFlujoDato.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Monitor_flujo_de_inventario\ModelFlujoDato.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelFlujoDato.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Monitor_flujo_de_inventario\monitor_flujo_de_inventario_Result.cs">
+      <DependentUpon>ModelFlujoDato.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\monitor_orden_compra_interna\ModeloDescripcionCI.cs" />
     <Compile Include="Models\monitor_orden_compra_interna\ModeloOrdenCI.cs" />
     <Compile Include="Models\monitor_orden_compra_interna\ModeloProductoCI.cs" />
@@ -497,6 +522,16 @@
     <Content Include="dist\indicadores\surtido_embarque\index.html" />
     <Content Include="dist\surtido.js" />
     <Content Include="dist\surtido_embarque\surtido.js" />
+    <Content Include="Models\Monitor_flujo_de_inventario\ModelFlujoDato.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelFlujoDato.edmx</DependentUpon>
+      <LastGenOutput>ModelFlujoDato.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Monitor_flujo_de_inventario\ModelFlujoDato.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelFlujoDato.edmx</DependentUpon>
+      <LastGenOutput>ModelFlujoDato.cs</LastGenOutput>
+    </Content>
     <Content Include="Models\Pedido_establecimiento\EmbarqueEntitiesFramework.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>EmbarqueEntitiesFramework.edmx</DependentUpon>
@@ -730,6 +765,13 @@
     <Content Include="Models\Pedido_establecimiento\EmbarqueEntitiesFramework.edmx.diagram">
       <DependentUpon>EmbarqueEntitiesFramework.edmx</DependentUpon>
     </Content>
+    <EntityDeploy Include="Models\Monitor_flujo_de_inventario\ModelFlujoDato.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelFlujoDato.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Monitor_flujo_de_inventario\ModelFlujoDato.edmx.diagram">
+      <DependentUpon>ModelFlujoDato.edmx</DependentUpon>
+    </Content>
     <None Include="src\scripts\VueJS\indicadores\PreciosCompetencia\Components\DetallesProducto.vue" />
     <Content Include="src\scripts\VueJS\indicadores\PreciosCompetencia\Components\PasillosTabla.vue" />
     <Content Include="src\scripts\VueJS\indicadores\PreciosCompetencia\Components\MuebleTabla.vue" />
@@ -958,6 +1000,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\Productos\" />
+    <Folder Include="Models\Monitor_cuadrantes\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

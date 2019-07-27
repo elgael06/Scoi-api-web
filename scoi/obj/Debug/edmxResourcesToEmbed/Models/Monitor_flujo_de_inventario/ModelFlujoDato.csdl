@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FlujoDeInventario" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="monitor_flujo_de_inventario" ReturnType="Collection(FlujoDeInventario.monitor_flujo_de_inventario_Result)">
+      <Parameter Name="fi" Mode="In" Type="DateTime" />
+      <Parameter Name="meses" Mode="In" Type="Byte" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="monitor_flujo_de_inventario_Result">
+    <Property Type="Int32" Name="cod_estab" Nullable="true" />
+    <Property Type="String" Name="establecimimiento" Nullable="true" MaxLength="101" />
+    <Property Type="String" Name="concepto" Nullable="true" MaxLength="60" />
+    <Property Type="String" Name="clasificacion" Nullable="true" MaxLength="90" />
+    <Property Type="String" Name="categoria" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="familia" Nullable="true" MaxLength="322" />
+    <Property Type="Decimal" Name="costo" Nullable="true" Precision="19" Scale="4" />
+    <Property Type="Decimal" Name="precio_venta" Nullable="true" Precision="19" Scale="4" />
+  </ComplexType>
+</Schema>

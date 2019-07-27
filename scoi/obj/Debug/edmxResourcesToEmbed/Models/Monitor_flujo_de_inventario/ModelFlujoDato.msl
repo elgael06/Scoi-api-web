@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FlujoDeInventarioStoreContainer" CdmEntityContainer="Entities">
+    <FunctionImportMapping FunctionImportName="monitor_flujo_de_inventario" FunctionName="FlujoDeInventario.Store.monitor_flujo_de_inventario">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FlujoDeInventario.monitor_flujo_de_inventario_Result">
+          <ScalarProperty Name="cod_estab" ColumnName="cod_estab" />
+          <ScalarProperty Name="establecimimiento" ColumnName="establecimimiento" />
+          <ScalarProperty Name="concepto" ColumnName="concepto" />
+          <ScalarProperty Name="clasificacion" ColumnName="clasificacion" />
+          <ScalarProperty Name="categoria" ColumnName="categoria" />
+          <ScalarProperty Name="familia" ColumnName="familia" />
+          <ScalarProperty Name="costo" ColumnName="costo" />
+          <ScalarProperty Name="precio_venta" ColumnName="precio_venta" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>
