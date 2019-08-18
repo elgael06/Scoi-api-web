@@ -28,7 +28,8 @@ namespace WebApplication.Manager.web
         public ActionResult MonitorOrdenCompraInterna() => Accesos(54);
         public ActionResult MonitorEmbarques() => Accesos(56);
         public ActionResult AnalisisCamiboPrecios() => Accesos(57);
-
+        public ActionResult MonitorFlujoInventario() => Accesos(16);
+        public ActionResult MonitorTDCSucursales() => Accesos(16);
 
         //httpRequest
         public JsonResult concepto_orden_de_pago()=>Json(new Pagos_realizados_en_un_periodo_por_cuenta_consulta().comando_concepto_orden_de_pago_sql("", "", "", ""), JsonRequestBehavior.AllowGet);

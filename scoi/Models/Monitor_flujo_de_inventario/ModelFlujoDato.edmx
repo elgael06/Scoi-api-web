@@ -4,14 +4,163 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="FlujoDeInventario.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="FlujoDeInventario.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Grupo_Izagar.dbo.monitor_de_ventas' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="monitor_de_ventas">
+          <Key>
+            <PropertyRef Name="ticket" />
+            <PropertyRef Name="cod_estab" />
+            <PropertyRef Name="establecimiento" />
+            <PropertyRef Name="cod_prod" />
+            <PropertyRef Name="descripcion" />
+            <PropertyRef Name="venta_piezas_actual" />
+            <PropertyRef Name="importe_actual" />
+            <PropertyRef Name="importe_sin_IVA_actual" />
+            <PropertyRef Name="costo_actual" />
+            <PropertyRef Name="utilidad_bruta_actual" />
+            <PropertyRef Name="margen_actual" />
+            <PropertyRef Name="importe_descuento_actual" />
+            <PropertyRef Name="semana_actual" />
+            <PropertyRef Name="dia_semana_actual" />
+            <PropertyRef Name="asignacion_actual" />
+            <PropertyRef Name="venta_piezas_anio_pasado" />
+            <PropertyRef Name="importe_anio_pasado" />
+            <PropertyRef Name="importe_sin_IVA_anio_pasado" />
+            <PropertyRef Name="costo_anio_pasado" />
+            <PropertyRef Name="utilidad_bruta_anio_pasado" />
+            <PropertyRef Name="margen_anio_pasado" />
+            <PropertyRef Name="importe_descuento_anio_pasado" />
+            <PropertyRef Name="semana_anio_pasado" />
+            <PropertyRef Name="dia_semana_anio_pasado" />
+            <PropertyRef Name="asignacion_anio_pasado" />
+            <PropertyRef Name="tipo_de_venta" />
+            <PropertyRef Name="cliente" />
+            <PropertyRef Name="clase" />
+            <PropertyRef Name="categoria" />
+            <PropertyRef Name="familia" />
+            <PropertyRef Name="linea" />
+            <PropertyRef Name="marca" />
+            <PropertyRef Name="modelo" />
+            <PropertyRef Name="talla" />
+            <PropertyRef Name="color" />
+            <PropertyRef Name="tipo_movimiento" />
+          </Key>
+          <Property Name="ticket" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="cod_estab" Type="int" Nullable="false" />
+          <Property Name="establecimiento" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="cod_prod" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="venta_piezas_actual" Type="numeric" Precision="12" Scale="2" Nullable="false" />
+          <Property Name="importe_actual" Type="numeric" Precision="12" Scale="2" Nullable="false" />
+          <Property Name="importe_sin_IVA_actual" Type="numeric" Precision="12" Scale="2" Nullable="false" />
+          <Property Name="costo_actual" Type="numeric" Precision="12" Scale="2" Nullable="false" />
+          <Property Name="utilidad_bruta_actual" Type="numeric" Precision="12" Scale="2" Nullable="false" />
+          <Property Name="margen_actual" Type="numeric" Precision="12" Scale="2" Nullable="false" />
+          <Property Name="importe_descuento_actual" Type="numeric" Precision="12" Scale="2" Nullable="false" />
+          <Property Name="fecha_de_venta_actual" Type="datetime" />
+          <Property Name="semana_actual" Type="smallint" Nullable="false" />
+          <Property Name="dia_semana_actual" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="asignacion_actual" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="venta_piezas_anio_pasado" Type="numeric" Precision="12" Scale="2" Nullable="false" />
+          <Property Name="importe_anio_pasado" Type="numeric" Precision="12" Scale="2" Nullable="false" />
+          <Property Name="importe_sin_IVA_anio_pasado" Type="numeric" Precision="12" Scale="2" Nullable="false" />
+          <Property Name="costo_anio_pasado" Type="numeric" Precision="12" Scale="2" Nullable="false" />
+          <Property Name="utilidad_bruta_anio_pasado" Type="numeric" Precision="12" Scale="2" Nullable="false" />
+          <Property Name="margen_anio_pasado" Type="numeric" Precision="12" Scale="2" Nullable="false" />
+          <Property Name="importe_descuento_anio_pasado" Type="numeric" Precision="12" Scale="2" Nullable="false" />
+          <Property Name="fecha_de_venta_anio_pasado" Type="datetime" />
+          <Property Name="semana_anio_pasado" Type="smallint" Nullable="false" />
+          <Property Name="dia_semana_anio_pasado" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="asignacion_anio_pasado" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="tipo_de_venta" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="cliente" Type="varchar" MaxLength="125" Nullable="false" />
+          <Property Name="clase" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="categoria" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="familia" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="linea" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="marca" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="modelo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="talla" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="color" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="tipo_movimiento" Type="char" MaxLength="1" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Grupo_Izagar.dbo.monitor_indicadores' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="monitor_indicadores">
+          <Key>
+            <PropertyRef Name="Indicador" />
+            <PropertyRef Name="valor_optimo_indicador" />
+            <PropertyRef Name="operador" />
+          </Key>
+          <Property Name="Indicador" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="valor_optimo_indicador" Type="numeric" Precision="15" Scale="2" Nullable="false" />
+          <Property Name="operador" Type="char" MaxLength="1" Nullable="false" />
+        </EntityType>
+        <Function Name="monitor_de_ventas_consulta_sumarizada" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="monitor_de_ventas_detalle_producto_por_establecimiento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="cod_prod" Type="varchar" Mode="In" />
+          <Parameter Name="cod_estab" Type="int" Mode="In" />
+        </Function>
         <Function Name="monitor_flujo_de_inventario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="fi" Type="datetime" Mode="In" />
           <Parameter Name="meses" Type="tinyint" Mode="In" />
         </Function>
-        <EntityContainer Name="FlujoDeInventarioStoreContainer" />
-      </Schema>
-    </edmx:StorageModels>
+        <Function Name="monitor_indicadores_cajeros" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Fecha_Incial" Type="datetime" Mode="In" />
+        </Function>
+        <EntityContainer Name="FlujoDeInventarioStoreContainer">
+          <EntitySet Name="monitor_de_ventas" EntityType="Self.monitor_de_ventas" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [monitor_de_ventas].[ticket] AS [ticket], 
+    [monitor_de_ventas].[cod_estab] AS [cod_estab], 
+    [monitor_de_ventas].[establecimiento] AS [establecimiento], 
+    [monitor_de_ventas].[cod_prod] AS [cod_prod], 
+    [monitor_de_ventas].[descripcion] AS [descripcion], 
+    [monitor_de_ventas].[venta_piezas_actual] AS [venta_piezas_actual], 
+    [monitor_de_ventas].[importe_actual] AS [importe_actual], 
+    [monitor_de_ventas].[importe_sin_IVA_actual] AS [importe_sin_IVA_actual], 
+    [monitor_de_ventas].[costo_actual] AS [costo_actual], 
+    [monitor_de_ventas].[utilidad_bruta_actual] AS [utilidad_bruta_actual], 
+    [monitor_de_ventas].[margen_actual] AS [margen_actual], 
+    [monitor_de_ventas].[importe_descuento_actual] AS [importe_descuento_actual], 
+    [monitor_de_ventas].[fecha_de_venta_actual] AS [fecha_de_venta_actual], 
+    [monitor_de_ventas].[semana_actual] AS [semana_actual], 
+    [monitor_de_ventas].[dia_semana_actual] AS [dia_semana_actual], 
+    [monitor_de_ventas].[asignacion_actual] AS [asignacion_actual], 
+    [monitor_de_ventas].[venta_piezas_anio_pasado] AS [venta_piezas_anio_pasado], 
+    [monitor_de_ventas].[importe_anio_pasado] AS [importe_anio_pasado], 
+    [monitor_de_ventas].[importe_sin_IVA_anio_pasado] AS [importe_sin_IVA_anio_pasado], 
+    [monitor_de_ventas].[costo_anio_pasado] AS [costo_anio_pasado], 
+    [monitor_de_ventas].[utilidad_bruta_anio_pasado] AS [utilidad_bruta_anio_pasado], 
+    [monitor_de_ventas].[margen_anio_pasado] AS [margen_anio_pasado], 
+    [monitor_de_ventas].[importe_descuento_anio_pasado] AS [importe_descuento_anio_pasado], 
+    [monitor_de_ventas].[fecha_de_venta_anio_pasado] AS [fecha_de_venta_anio_pasado], 
+    [monitor_de_ventas].[semana_anio_pasado] AS [semana_anio_pasado], 
+    [monitor_de_ventas].[dia_semana_anio_pasado] AS [dia_semana_anio_pasado], 
+    [monitor_de_ventas].[asignacion_anio_pasado] AS [asignacion_anio_pasado], 
+    [monitor_de_ventas].[tipo_de_venta] AS [tipo_de_venta], 
+    [monitor_de_ventas].[cliente] AS [cliente], 
+    [monitor_de_ventas].[clase] AS [clase], 
+    [monitor_de_ventas].[categoria] AS [categoria], 
+    [monitor_de_ventas].[familia] AS [familia], 
+    [monitor_de_ventas].[linea] AS [linea], 
+    [monitor_de_ventas].[marca] AS [marca], 
+    [monitor_de_ventas].[modelo] AS [modelo], 
+    [monitor_de_ventas].[talla] AS [talla], 
+    [monitor_de_ventas].[color] AS [color], 
+    [monitor_de_ventas].[tipo_movimiento] AS [tipo_movimiento]
+    FROM [dbo].[monitor_de_ventas] AS [monitor_de_ventas]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="monitor_indicadores" EntityType="Self.monitor_indicadores" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [monitor_indicadores].[Indicador] AS [Indicador], 
+    [monitor_indicadores].[valor_optimo_indicador] AS [valor_optimo_indicador], 
+    [monitor_indicadores].[operador] AS [operador]
+    FROM [dbo].[monitor_indicadores] AS [monitor_indicadores]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="FlujoDeInventario" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -20,9 +169,18 @@
             <Parameter Name="fi" Mode="In" Type="DateTime" />
             <Parameter Name="meses" Mode="In" Type="Byte" />
           </FunctionImport>
+          <EntitySet Name="monitor_de_ventas" EntityType="FlujoDeInventario.monitor_de_ventas" />
+          <FunctionImport Name="monitor_de_ventas_consulta_sumarizada" ReturnType="Collection(FlujoDeInventario.monitor_de_ventas_consulta_sumarizada_Result)" />
+          <EntitySet Name="monitor_indicadores" EntityType="FlujoDeInventario.monitor_indicadores" />
+          <FunctionImport Name="monitor_indicadores_cajeros" ReturnType="Collection(FlujoDeInventario.monitor_indicadores_cajeros_Result)">
+          <Parameter Name="Fecha_Incial" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="monitor_de_ventas_detalle_producto_por_establecimiento" ReturnType="Collection(FlujoDeInventario.monitor_de_ventas_detalle_producto_por_establecimiento_Result)">
+            <Parameter Name="cod_prod" Mode="In" Type="String" />
+            <Parameter Name="cod_estab" Mode="In" Type="Int32" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="monitor_flujo_de_inventario_Result">
-          <Property Type="Int32" Name="cod_estab" Nullable="true" />
           <Property Type="String" Name="establecimimiento" Nullable="true" MaxLength="101" />
           <Property Type="String" Name="concepto" Nullable="true" MaxLength="60" />
           <Property Type="String" Name="clasificacion" Nullable="true" MaxLength="90" />
@@ -30,6 +188,176 @@
           <Property Type="String" Name="familia" Nullable="true" MaxLength="322" />
           <Property Type="Decimal" Name="costo" Nullable="true" Precision="19" Scale="4" />
           <Property Type="Decimal" Name="precio_venta" Nullable="true" Precision="19" Scale="4" />
+        </ComplexType>
+        <EntityType Name="monitor_de_ventas">
+          <Key>
+            <PropertyRef Name="ticket" />
+            <PropertyRef Name="cod_estab" />
+            <PropertyRef Name="establecimiento" />
+            <PropertyRef Name="cod_prod" />
+            <PropertyRef Name="descripcion" />
+            <PropertyRef Name="venta_piezas_actual" />
+            <PropertyRef Name="importe_actual" />
+            <PropertyRef Name="importe_sin_IVA_actual" />
+            <PropertyRef Name="costo_actual" />
+            <PropertyRef Name="utilidad_bruta_actual" />
+            <PropertyRef Name="margen_actual" />
+            <PropertyRef Name="importe_descuento_actual" />
+            <PropertyRef Name="semana_actual" />
+            <PropertyRef Name="dia_semana_actual" />
+            <PropertyRef Name="asignacion_actual" />
+            <PropertyRef Name="venta_piezas_anio_pasado" />
+            <PropertyRef Name="importe_anio_pasado" />
+            <PropertyRef Name="importe_sin_IVA_anio_pasado" />
+            <PropertyRef Name="costo_anio_pasado" />
+            <PropertyRef Name="utilidad_bruta_anio_pasado" />
+            <PropertyRef Name="margen_anio_pasado" />
+            <PropertyRef Name="importe_descuento_anio_pasado" />
+            <PropertyRef Name="semana_anio_pasado" />
+            <PropertyRef Name="dia_semana_anio_pasado" />
+            <PropertyRef Name="asignacion_anio_pasado" />
+            <PropertyRef Name="tipo_de_venta" />
+            <PropertyRef Name="cliente" />
+            <PropertyRef Name="clase" />
+            <PropertyRef Name="categoria" />
+            <PropertyRef Name="familia" />
+            <PropertyRef Name="linea" />
+            <PropertyRef Name="marca" />
+            <PropertyRef Name="modelo" />
+            <PropertyRef Name="talla" />
+            <PropertyRef Name="color" />
+            <PropertyRef Name="tipo_movimiento" />
+          </Key>
+          <Property Name="ticket" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="cod_estab" Type="Int32" Nullable="false" />
+          <Property Name="establecimiento" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="cod_prod" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="descripcion" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="venta_piezas_actual" Type="Decimal" Nullable="false" Precision="12" Scale="2" />
+          <Property Name="importe_actual" Type="Decimal" Nullable="false" Precision="12" Scale="2" />
+          <Property Name="importe_sin_IVA_actual" Type="Decimal" Nullable="false" Precision="12" Scale="2" />
+          <Property Name="costo_actual" Type="Decimal" Nullable="false" Precision="12" Scale="2" />
+          <Property Name="utilidad_bruta_actual" Type="Decimal" Nullable="false" Precision="12" Scale="2" />
+          <Property Name="margen_actual" Type="Decimal" Nullable="false" Precision="12" Scale="2" />
+          <Property Name="importe_descuento_actual" Type="Decimal" Nullable="false" Precision="12" Scale="2" />
+          <Property Name="fecha_de_venta_actual" Type="DateTime" Precision="3" />
+          <Property Name="semana_actual" Type="Int16" Nullable="false" />
+          <Property Name="dia_semana_actual" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="asignacion_actual" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="venta_piezas_anio_pasado" Type="Decimal" Nullable="false" Precision="12" Scale="2" />
+          <Property Name="importe_anio_pasado" Type="Decimal" Nullable="false" Precision="12" Scale="2" />
+          <Property Name="importe_sin_IVA_anio_pasado" Type="Decimal" Nullable="false" Precision="12" Scale="2" />
+          <Property Name="costo_anio_pasado" Type="Decimal" Nullable="false" Precision="12" Scale="2" />
+          <Property Name="utilidad_bruta_anio_pasado" Type="Decimal" Nullable="false" Precision="12" Scale="2" />
+          <Property Name="margen_anio_pasado" Type="Decimal" Nullable="false" Precision="12" Scale="2" />
+          <Property Name="importe_descuento_anio_pasado" Type="Decimal" Nullable="false" Precision="12" Scale="2" />
+          <Property Name="fecha_de_venta_anio_pasado" Type="DateTime" Precision="3" />
+          <Property Name="semana_anio_pasado" Type="Int16" Nullable="false" />
+          <Property Name="dia_semana_anio_pasado" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="asignacion_anio_pasado" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="tipo_de_venta" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="cliente" Type="String" Nullable="false" MaxLength="125" FixedLength="false" Unicode="false" />
+          <Property Name="clase" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="categoria" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="familia" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="linea" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="marca" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="modelo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="talla" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="color" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="tipo_movimiento" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <ComplexType Name="monitor_de_ventas_consulta_sumarizada_Result">
+          <Property Type="String" Name="ticket" Nullable="false" MaxLength="1" />
+          <Property Type="Int32" Name="cod_estab" Nullable="false" />
+          <Property Type="String" Name="establecimiento" Nullable="false" MaxLength="40" />
+          <Property Type="String" Name="cod_prod" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="descripcion" Nullable="false" MaxLength="500" />
+          <Property Type="Decimal" Name="venta_piezas_actual" Nullable="true" Precision="38" Scale="2" />
+          <Property Type="Decimal" Name="importe_actual" Nullable="true" Precision="38" Scale="2" />
+          <Property Type="Decimal" Name="importe_sin_IVA_actual" Nullable="true" Precision="38" Scale="2" />
+          <Property Type="Decimal" Name="costo_actual" Nullable="true" Precision="38" Scale="2" />
+          <Property Type="Decimal" Name="utilidad_bruta_actual" Nullable="true" Precision="38" Scale="2" />
+          <Property Type="Decimal" Name="margen_actual" Nullable="true" Precision="38" Scale="6" />
+          <Property Type="Decimal" Name="importe_descuento_actual" Nullable="true" Precision="38" Scale="2" />
+          <Property Type="String" Name="fecha_de_venta_actual" Nullable="true" MaxLength="10" />
+          <Property Type="Int16" Name="semana_actual" Nullable="false" />
+          <Property Type="String" Name="dia_semana_actual" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="asignacion_actual" Nullable="false" MaxLength="1" />
+          <Property Type="Decimal" Name="venta_piezas_anio_pasado" Nullable="true" Precision="38" Scale="2" />
+          <Property Type="Decimal" Name="importe_anio_pasado" Nullable="true" Precision="38" Scale="2" />
+          <Property Type="Decimal" Name="importe_sin_IVA_anio_pasado" Nullable="true" Precision="38" Scale="2" />
+          <Property Type="Decimal" Name="costo_anio_pasado" Nullable="true" Precision="38" Scale="2" />
+          <Property Type="Decimal" Name="utilidad_bruta_anio_pasado" Nullable="true" Precision="38" Scale="2" />
+          <Property Type="Decimal" Name="margen_anio_pasado" Nullable="true" Precision="38" Scale="6" />
+          <Property Type="Decimal" Name="importe_descuento_anio_pasado" Nullable="true" Precision="38" Scale="2" />
+          <Property Type="String" Name="fecha_de_venta_anio_pasado" Nullable="true" MaxLength="10" />
+          <Property Type="Int16" Name="semana_anio_pasado" Nullable="false" />
+          <Property Type="String" Name="dia_semana_anio_pasado" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="asignacion_anio_pasado" Nullable="false" MaxLength="1" />
+          <Property Type="String" Name="tipo_de_venta" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="cliente" Nullable="false" MaxLength="125" />
+          <Property Type="String" Name="clase" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="categoria" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="familia" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="linea" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="marca" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="modelo" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="talla" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="color" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="tipo_movimiento" Nullable="false" MaxLength="1" />
+        </ComplexType>
+        <EntityType Name="monitor_indicadores">
+          <Key>
+            <PropertyRef Name="Indicador" />
+            <PropertyRef Name="valor_optimo_indicador" />
+            <PropertyRef Name="operador" />
+          </Key>
+          <Property Name="Indicador" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="valor_optimo_indicador" Type="Decimal" Nullable="false" Precision="15" Scale="2" />
+          <Property Name="operador" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <ComplexType Name="monitor_indicadores_cajeros_Result">
+          <Property Type="Byte" Name="cod_estab_venta" Nullable="true" />
+          <Property Type="String" Name="establecimiento" Nullable="true" MaxLength="40" />
+          <Property Type="Int32" Name="folio_empleado" Nullable="true" />
+          <Property Type="String" Name="nombre_colaborador" Nullable="true" MaxLength="302" />
+          <Property Type="String" Name="establecimiento_cajero_scoi" Nullable="true" MaxLength="40" />
+          <Property Type="String" Name="departamento" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="puesto" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="estatus_colaborador" Nullable="true" MaxLength="20" />
+          <Property Type="DateTime" Name="fecha_ingreso" Nullable="true" Precision="16" />
+          <Property Type="String" Name="antiguedad" Nullable="true" MaxLength="11" />
+          <Property Type="String" Name="foto" Nullable="false" MaxLength="1" />
+          <Property Type="Decimal" Name="Indicador_Venta_x100" Nullable="true" Precision="10" Scale="2" />
+          <Property Type="Decimal" Name="Indicador_Diferencias_x1000" Nullable="true" Precision="10" Scale="2" />
+          <Property Type="Decimal" Name="indicador_de_cancelaciones_x100" Nullable="true" Precision="10" Scale="2" />
+          <Property Type="Decimal" Name="total_diferiencia_de_corte" Nullable="true" Precision="12" Scale="2" />
+          <Property Type="Decimal" Name="venta_por_semana_cajero" Nullable="true" Precision="12" Scale="2" />
+          <Property Type="Decimal" Name="venta_por_semana_estab" Nullable="true" Precision="12" Scale="2" />
+          <Property Type="Byte" Name="semana_anio" Nullable="true" />
+          <Property Type="String" Name="mes" Nullable="true" MaxLength="15" />
+          <Property Type="Decimal" Name="cantidad_autorizaciones_por_supervisor" Nullable="true" Precision="12" Scale="2" />
+          <Property Type="Decimal" Name="cantidad_de_tickets" Nullable="true" Precision="12" Scale="2" />
+          <Property Type="Decimal" Name="indicador_de_tiempo_promedio_de_atencion_por_cliente" Nullable="false" Precision="1" Scale="1" />
+        </ComplexType>
+        <ComplexType Name="monitor_de_ventas_detalle_producto_por_establecimiento_Result">
+          <Property Type="String" Name="establecimiento" Nullable="false" MaxLength="40" />
+          <Property Type="String" Name="cod_prod" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="descripcion" Nullable="false" MaxLength="500" />
+          <Property Type="String" Name="asignacion_actual" Nullable="false" MaxLength="20" />
+          <Property Type="Int32" Name="folio" Nullable="true" />
+          <Property Type="String" Name="nombre_cajero" Nullable="true" MaxLength="302" />
+          <Property Type="String" Name="ticket" Nullable="false" MaxLength="12" />
+          <Property Type="Decimal" Name="venta_piezas_actual" Nullable="false" Precision="12" Scale="2" />
+          <Property Type="Decimal" Name="costo_actual" Nullable="false" Precision="12" Scale="2" />
+          <Property Type="Decimal" Name="importe_sin_IVA_actual" Nullable="false" Precision="12" Scale="2" />
+          <Property Type="Decimal" Name="utilidad_bruta_actual" Nullable="false" Precision="12" Scale="2" />
+          <Property Type="Decimal" Name="margen_actual" Nullable="false" Precision="12" Scale="2" />
+          <Property Type="String" Name="tipo_de_venta" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="cliente" Nullable="false" MaxLength="125" />
+          <Property Type="DateTime" Name="fecha_de_venta_actual" Nullable="true" Precision="23" />
+          <Property Type="String" Name="dia_semana_actual" Nullable="false" MaxLength="15" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -40,7 +368,6 @@
           <FunctionImportMapping FunctionImportName="monitor_flujo_de_inventario" FunctionName="FlujoDeInventario.Store.monitor_flujo_de_inventario">
             <ResultMapping>
               <ComplexTypeMapping TypeName="FlujoDeInventario.monitor_flujo_de_inventario_Result">
-                <ScalarProperty Name="cod_estab" ColumnName="cod_estab" />
                 <ScalarProperty Name="establecimimiento" ColumnName="establecimimiento" />
                 <ScalarProperty Name="concepto" ColumnName="concepto" />
                 <ScalarProperty Name="clasificacion" ColumnName="clasificacion" />
@@ -48,6 +375,153 @@
                 <ScalarProperty Name="familia" ColumnName="familia" />
                 <ScalarProperty Name="costo" ColumnName="costo" />
                 <ScalarProperty Name="precio_venta" ColumnName="precio_venta" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="monitor_de_ventas">
+            <EntityTypeMapping TypeName="FlujoDeInventario.monitor_de_ventas">
+              <MappingFragment StoreEntitySet="monitor_de_ventas">
+                <ScalarProperty Name="tipo_movimiento" ColumnName="tipo_movimiento" />
+                <ScalarProperty Name="color" ColumnName="color" />
+                <ScalarProperty Name="talla" ColumnName="talla" />
+                <ScalarProperty Name="modelo" ColumnName="modelo" />
+                <ScalarProperty Name="marca" ColumnName="marca" />
+                <ScalarProperty Name="linea" ColumnName="linea" />
+                <ScalarProperty Name="familia" ColumnName="familia" />
+                <ScalarProperty Name="categoria" ColumnName="categoria" />
+                <ScalarProperty Name="clase" ColumnName="clase" />
+                <ScalarProperty Name="cliente" ColumnName="cliente" />
+                <ScalarProperty Name="tipo_de_venta" ColumnName="tipo_de_venta" />
+                <ScalarProperty Name="asignacion_anio_pasado" ColumnName="asignacion_anio_pasado" />
+                <ScalarProperty Name="dia_semana_anio_pasado" ColumnName="dia_semana_anio_pasado" />
+                <ScalarProperty Name="semana_anio_pasado" ColumnName="semana_anio_pasado" />
+                <ScalarProperty Name="fecha_de_venta_anio_pasado" ColumnName="fecha_de_venta_anio_pasado" />
+                <ScalarProperty Name="importe_descuento_anio_pasado" ColumnName="importe_descuento_anio_pasado" />
+                <ScalarProperty Name="margen_anio_pasado" ColumnName="margen_anio_pasado" />
+                <ScalarProperty Name="utilidad_bruta_anio_pasado" ColumnName="utilidad_bruta_anio_pasado" />
+                <ScalarProperty Name="costo_anio_pasado" ColumnName="costo_anio_pasado" />
+                <ScalarProperty Name="importe_sin_IVA_anio_pasado" ColumnName="importe_sin_IVA_anio_pasado" />
+                <ScalarProperty Name="importe_anio_pasado" ColumnName="importe_anio_pasado" />
+                <ScalarProperty Name="venta_piezas_anio_pasado" ColumnName="venta_piezas_anio_pasado" />
+                <ScalarProperty Name="asignacion_actual" ColumnName="asignacion_actual" />
+                <ScalarProperty Name="dia_semana_actual" ColumnName="dia_semana_actual" />
+                <ScalarProperty Name="semana_actual" ColumnName="semana_actual" />
+                <ScalarProperty Name="fecha_de_venta_actual" ColumnName="fecha_de_venta_actual" />
+                <ScalarProperty Name="importe_descuento_actual" ColumnName="importe_descuento_actual" />
+                <ScalarProperty Name="margen_actual" ColumnName="margen_actual" />
+                <ScalarProperty Name="utilidad_bruta_actual" ColumnName="utilidad_bruta_actual" />
+                <ScalarProperty Name="costo_actual" ColumnName="costo_actual" />
+                <ScalarProperty Name="importe_sin_IVA_actual" ColumnName="importe_sin_IVA_actual" />
+                <ScalarProperty Name="importe_actual" ColumnName="importe_actual" />
+                <ScalarProperty Name="venta_piezas_actual" ColumnName="venta_piezas_actual" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="cod_prod" ColumnName="cod_prod" />
+                <ScalarProperty Name="establecimiento" ColumnName="establecimiento" />
+                <ScalarProperty Name="cod_estab" ColumnName="cod_estab" />
+                <ScalarProperty Name="ticket" ColumnName="ticket" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="monitor_de_ventas_consulta_sumarizada" FunctionName="FlujoDeInventario.Store.monitor_de_ventas_consulta_sumarizada">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FlujoDeInventario.monitor_de_ventas_consulta_sumarizada_Result">
+                <ScalarProperty Name="ticket" ColumnName="ticket" />
+                <ScalarProperty Name="cod_estab" ColumnName="cod_estab" />
+                <ScalarProperty Name="establecimiento" ColumnName="establecimiento" />
+                <ScalarProperty Name="cod_prod" ColumnName="cod_prod" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="venta_piezas_actual" ColumnName="venta_piezas_actual" />
+                <ScalarProperty Name="importe_actual" ColumnName="importe_actual" />
+                <ScalarProperty Name="importe_sin_IVA_actual" ColumnName="importe_sin_IVA_actual" />
+                <ScalarProperty Name="costo_actual" ColumnName="costo_actual" />
+                <ScalarProperty Name="utilidad_bruta_actual" ColumnName="utilidad_bruta_actual" />
+                <ScalarProperty Name="margen_actual" ColumnName="margen_actual" />
+                <ScalarProperty Name="importe_descuento_actual" ColumnName="importe_descuento_actual" />
+                <ScalarProperty Name="fecha_de_venta_actual" ColumnName="fecha_de_venta_actual" />
+                <ScalarProperty Name="semana_actual" ColumnName="semana_actual" />
+                <ScalarProperty Name="dia_semana_actual" ColumnName="dia_semana_actual" />
+                <ScalarProperty Name="asignacion_actual" ColumnName="asignacion_actual" />
+                <ScalarProperty Name="venta_piezas_anio_pasado" ColumnName="venta_piezas_anio_pasado" />
+                <ScalarProperty Name="importe_anio_pasado" ColumnName="importe_anio_pasado" />
+                <ScalarProperty Name="importe_sin_IVA_anio_pasado" ColumnName="importe_sin_IVA_anio_pasado" />
+                <ScalarProperty Name="costo_anio_pasado" ColumnName="costo_anio_pasado" />
+                <ScalarProperty Name="utilidad_bruta_anio_pasado" ColumnName="utilidad_bruta_anio_pasado" />
+                <ScalarProperty Name="margen_anio_pasado" ColumnName="margen_anio_pasado" />
+                <ScalarProperty Name="importe_descuento_anio_pasado" ColumnName="importe_descuento_anio_pasado" />
+                <ScalarProperty Name="fecha_de_venta_anio_pasado" ColumnName="fecha_de_venta_anio_pasado" />
+                <ScalarProperty Name="semana_anio_pasado" ColumnName="semana_anio_pasado" />
+                <ScalarProperty Name="dia_semana_anio_pasado" ColumnName="dia_semana_anio_pasado" />
+                <ScalarProperty Name="asignacion_anio_pasado" ColumnName="asignacion_anio_pasado" />
+                <ScalarProperty Name="tipo_de_venta" ColumnName="tipo_de_venta" />
+                <ScalarProperty Name="cliente" ColumnName="cliente" />
+                <ScalarProperty Name="clase" ColumnName="clase" />
+                <ScalarProperty Name="categoria" ColumnName="categoria" />
+                <ScalarProperty Name="familia" ColumnName="familia" />
+                <ScalarProperty Name="linea" ColumnName="linea" />
+                <ScalarProperty Name="marca" ColumnName="marca" />
+                <ScalarProperty Name="modelo" ColumnName="modelo" />
+                <ScalarProperty Name="talla" ColumnName="talla" />
+                <ScalarProperty Name="color" ColumnName="color" />
+                <ScalarProperty Name="tipo_movimiento" ColumnName="tipo_movimiento" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="monitor_indicadores">
+            <EntityTypeMapping TypeName="FlujoDeInventario.monitor_indicadores">
+              <MappingFragment StoreEntitySet="monitor_indicadores">
+                <ScalarProperty Name="operador" ColumnName="operador" />
+                <ScalarProperty Name="valor_optimo_indicador" ColumnName="valor_optimo_indicador" />
+                <ScalarProperty Name="Indicador" ColumnName="Indicador" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="monitor_indicadores_cajeros" FunctionName="FlujoDeInventario.Store.monitor_indicadores_cajeros">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FlujoDeInventario.monitor_indicadores_cajeros_Result">
+                <ScalarProperty Name="cod_estab_venta" ColumnName="cod_estab_venta" />
+                <ScalarProperty Name="establecimiento" ColumnName="establecimiento" />
+                <ScalarProperty Name="folio_empleado" ColumnName="folio_empleado" />
+                <ScalarProperty Name="nombre_colaborador" ColumnName="nombre_colaborador" />
+                <ScalarProperty Name="establecimiento_cajero_scoi" ColumnName="establecimiento_cajero_scoi" />
+                <ScalarProperty Name="departamento" ColumnName="departamento" />
+                <ScalarProperty Name="puesto" ColumnName="puesto" />
+                <ScalarProperty Name="estatus_colaborador" ColumnName="estatus_colaborador" />
+                <ScalarProperty Name="fecha_ingreso" ColumnName="fecha_ingreso" />
+                <ScalarProperty Name="antiguedad" ColumnName="antiguedad" />
+                <ScalarProperty Name="foto" ColumnName="foto" />
+                <ScalarProperty Name="Indicador_Venta_x100" ColumnName="Indicador_Venta_x100" />
+                <ScalarProperty Name="Indicador_Diferencias_x1000" ColumnName="Indicador_Diferencias_x1000" />
+                <ScalarProperty Name="indicador_de_cancelaciones_x100" ColumnName="indicador_de_cancelaciones_x100" />
+                <ScalarProperty Name="total_diferiencia_de_corte" ColumnName="total_diferiencia_de_corte" />
+                <ScalarProperty Name="venta_por_semana_cajero" ColumnName="venta_por_semana_cajero" />
+                <ScalarProperty Name="venta_por_semana_estab" ColumnName="venta_por_semana_estab" />
+                <ScalarProperty Name="semana_anio" ColumnName="semana_anio" />
+                <ScalarProperty Name="mes" ColumnName="mes" />
+                <ScalarProperty Name="cantidad_autorizaciones_por_supervisor" ColumnName="cantidad_autorizaciones_por_supervisor" />
+                <ScalarProperty Name="cantidad_de_tickets" ColumnName="cantidad_de_tickets" />
+                <ScalarProperty Name="indicador_de_tiempo_promedio_de_atencion_por_cliente" ColumnName="indicador_de_tiempo_promedio_de_atencion_por_cliente" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="monitor_de_ventas_detalle_producto_por_establecimiento" FunctionName="FlujoDeInventario.Store.monitor_de_ventas_detalle_producto_por_establecimiento">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FlujoDeInventario.monitor_de_ventas_detalle_producto_por_establecimiento_Result">
+                <ScalarProperty Name="establecimiento" ColumnName="establecimiento" />
+                <ScalarProperty Name="cod_prod" ColumnName="cod_prod" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="asignacion_actual" ColumnName="asignacion_actual" />
+                <ScalarProperty Name="folio" ColumnName="folio" />
+                <ScalarProperty Name="nombre_cajero" ColumnName="nombre_cajero" />
+                <ScalarProperty Name="ticket" ColumnName="ticket" />
+                <ScalarProperty Name="venta_piezas_actual" ColumnName="venta_piezas_actual" />
+                <ScalarProperty Name="costo_actual" ColumnName="costo_actual" />
+                <ScalarProperty Name="importe_sin_IVA_actual" ColumnName="importe_sin_IVA_actual" />
+                <ScalarProperty Name="utilidad_bruta_actual" ColumnName="utilidad_bruta_actual" />
+                <ScalarProperty Name="margen_actual" ColumnName="margen_actual" />
+                <ScalarProperty Name="tipo_de_venta" ColumnName="tipo_de_venta" />
+                <ScalarProperty Name="cliente" ColumnName="cliente" />
+                <ScalarProperty Name="fecha_de_venta_actual" ColumnName="fecha_de_venta_actual" />
+                <ScalarProperty Name="dia_semana_actual" ColumnName="dia_semana_actual" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

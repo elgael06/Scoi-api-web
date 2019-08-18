@@ -35,6 +35,7 @@ namespace WebApplication.Models.PropuestaCombioPrecios
         public string Color         { get; set; }
         public string Marca         { get; set; }
         public string Clasificacion8020 { get; set; }
+        public string zona { get; set; }
 
         public bool Estatus = false;
     }

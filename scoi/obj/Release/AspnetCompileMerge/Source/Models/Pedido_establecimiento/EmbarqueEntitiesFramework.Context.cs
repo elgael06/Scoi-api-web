@@ -18,8 +18,13 @@ namespace WebApplication.Models.Pedido_establecimiento
         public BMSIZAGAREntities1()
             : base("name=BMSIZAGAREntities1")
         {
+            SetCommandTimeOut(6000);
         }
-    
+        public void SetCommandTimeOut(int Timeout)
+        {
+            var objectContext = (this as IObjectContextAdapter).ObjectContext;
+            objectContext.CommandTimeout = Timeout;
+        }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();

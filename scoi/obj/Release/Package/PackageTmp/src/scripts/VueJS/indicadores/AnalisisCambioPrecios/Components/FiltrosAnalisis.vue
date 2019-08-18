@@ -13,9 +13,9 @@
                 </select>
             </div>
             <div class="col-sm-3">
-                <label>Localizacion</label>
-                <select class="form-control" v-model="parametros.Localizacion">
-                    <option v-for="item in Analisis.Localizacion">{{item}}</option>
+                <label>Zona</label>
+                <select class="form-control" v-model="parametros.zona">
+                    <option v-for="item in Analisis.zona">{{item}}</option>
                 </select>
             </div>
             <div class="col-sm-3">
@@ -72,6 +72,7 @@
                 Color: "Todos",
                 Marca: "Todos",
                 Clasificacion8020: "Todos",
+                zona:"Todos"
             },
             Analisis: {
                 Localizacion: [],
@@ -83,6 +84,7 @@
                 Color: [],
                 Marca: [],
                 Clasificacion8020: [],
+                zona:[],
                 Productos:[]
             },
             regresar: () => {console.log("regresar") }

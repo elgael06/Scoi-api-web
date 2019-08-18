@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FlujoDeInventarioStoreContainer" CdmEntityContainer="Entities">
+    <FunctionImportMapping FunctionImportName="monitor_flujo_de_inventario" FunctionName="FlujoDeInventario.Store.monitor_flujo_de_inventario">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FlujoDeInventario.monitor_flujo_de_inventario_Result">
+          <ScalarProperty Name="establecimimiento" ColumnName="establecimimiento" />
+          <ScalarProperty Name="concepto" ColumnName="concepto" />
+          <ScalarProperty Name="clasificacion" ColumnName="clasificacion" />
+          <ScalarProperty Name="categoria" ColumnName="categoria" />
+          <ScalarProperty Name="familia" ColumnName="familia" />
+          <ScalarProperty Name="costo" ColumnName="costo" />
+          <ScalarProperty Name="precio_venta" ColumnName="precio_venta" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="monitor_de_ventas">
+      <EntityTypeMapping TypeName="FlujoDeInventario.monitor_de_ventas">
+        <MappingFragment StoreEntitySet="monitor_de_ventas">
+          <ScalarProperty Name="tipo_movimiento" ColumnName="tipo_movimiento" />
+          <ScalarProperty Name="color" ColumnName="color" />
+          <ScalarProperty Name="talla" ColumnName="talla" />
+          <ScalarProperty Name="modelo" ColumnName="modelo" />
+          <ScalarProperty Name="marca" ColumnName="marca" />
+          <ScalarProperty Name="linea" ColumnName="linea" />
+          <ScalarProperty Name="familia" ColumnName="familia" />
+          <ScalarProperty Name="categoria" ColumnName="categoria" />
+          <ScalarProperty Name="clase" ColumnName="clase" />
+          <ScalarProperty Name="cliente" ColumnName="cliente" />
+          <ScalarProperty Name="tipo_de_venta" ColumnName="tipo_de_venta" />
+          <ScalarProperty Name="asignacion_anio_pasado" ColumnName="asignacion_anio_pasado" />
+          <ScalarProperty Name="dia_semana_anio_pasado" ColumnName="dia_semana_anio_pasado" />
+          <ScalarProperty Name="semana_anio_pasado" ColumnName="semana_anio_pasado" />
+          <ScalarProperty Name="fecha_de_venta_anio_pasado" ColumnName="fecha_de_venta_anio_pasado" />
+          <ScalarProperty Name="importe_descuento_anio_pasado" ColumnName="importe_descuento_anio_pasado" />
+          <ScalarProperty Name="margen_anio_pasado" ColumnName="margen_anio_pasado" />
+          <ScalarProperty Name="utilidad_bruta_anio_pasado" ColumnName="utilidad_bruta_anio_pasado" />
+          <ScalarProperty Name="costo_anio_pasado" ColumnName="costo_anio_pasado" />
+          <ScalarProperty Name="importe_sin_IVA_anio_pasado" ColumnName="importe_sin_IVA_anio_pasado" />
+          <ScalarProperty Name="importe_anio_pasado" ColumnName="importe_anio_pasado" />
+          <ScalarProperty Name="venta_piezas_anio_pasado" ColumnName="venta_piezas_anio_pasado" />
+          <ScalarProperty Name="asignacion_actual" ColumnName="asignacion_actual" />
+          <ScalarProperty Name="dia_semana_actual" ColumnName="dia_semana_actual" />
+          <ScalarProperty Name="semana_actual" ColumnName="semana_actual" />
+          <ScalarProperty Name="fecha_de_venta_actual" ColumnName="fecha_de_venta_actual" />
+          <ScalarProperty Name="importe_descuento_actual" ColumnName="importe_descuento_actual" />
+          <ScalarProperty Name="margen_actual" ColumnName="margen_actual" />
+          <ScalarProperty Name="utilidad_bruta_actual" ColumnName="utilidad_bruta_actual" />
+          <ScalarProperty Name="costo_actual" ColumnName="costo_actual" />
+          <ScalarProperty Name="importe_sin_IVA_actual" ColumnName="importe_sin_IVA_actual" />
+          <ScalarProperty Name="importe_actual" ColumnName="importe_actual" />
+          <ScalarProperty Name="venta_piezas_actual" ColumnName="venta_piezas_actual" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="cod_prod" ColumnName="cod_prod" />
+          <ScalarProperty Name="establecimiento" ColumnName="establecimiento" />
+          <ScalarProperty Name="cod_estab" ColumnName="cod_estab" />
+          <ScalarProperty Name="ticket" ColumnName="ticket" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="monitor_de_ventas_consulta_sumarizada" FunctionName="FlujoDeInventario.Store.monitor_de_ventas_consulta_sumarizada">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FlujoDeInventario.monitor_de_ventas_consulta_sumarizada_Result">
+          <ScalarProperty Name="ticket" ColumnName="ticket" />
+          <ScalarProperty Name="cod_estab" ColumnName="cod_estab" />
+          <ScalarProperty Name="establecimiento" ColumnName="establecimiento" />
+          <ScalarProperty Name="cod_prod" ColumnName="cod_prod" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="venta_piezas_actual" ColumnName="venta_piezas_actual" />
+          <ScalarProperty Name="importe_actual" ColumnName="importe_actual" />
+          <ScalarProperty Name="importe_sin_IVA_actual" ColumnName="importe_sin_IVA_actual" />
+          <ScalarProperty Name="costo_actual" ColumnName="costo_actual" />
+          <ScalarProperty Name="utilidad_bruta_actual" ColumnName="utilidad_bruta_actual" />
+          <ScalarProperty Name="margen_actual" ColumnName="margen_actual" />
+          <ScalarProperty Name="importe_descuento_actual" ColumnName="importe_descuento_actual" />
+          <ScalarProperty Name="fecha_de_venta_actual" ColumnName="fecha_de_venta_actual" />
+          <ScalarProperty Name="semana_actual" ColumnName="semana_actual" />
+          <ScalarProperty Name="dia_semana_actual" ColumnName="dia_semana_actual" />
+          <ScalarProperty Name="asignacion_actual" ColumnName="asignacion_actual" />
+          <ScalarProperty Name="venta_piezas_anio_pasado" ColumnName="venta_piezas_anio_pasado" />
+          <ScalarProperty Name="importe_anio_pasado" ColumnName="importe_anio_pasado" />
+          <ScalarProperty Name="importe_sin_IVA_anio_pasado" ColumnName="importe_sin_IVA_anio_pasado" />
+          <ScalarProperty Name="costo_anio_pasado" ColumnName="costo_anio_pasado" />
+          <ScalarProperty Name="utilidad_bruta_anio_pasado" ColumnName="utilidad_bruta_anio_pasado" />
+          <ScalarProperty Name="margen_anio_pasado" ColumnName="margen_anio_pasado" />
+          <ScalarProperty Name="importe_descuento_anio_pasado" ColumnName="importe_descuento_anio_pasado" />
+          <ScalarProperty Name="fecha_de_venta_anio_pasado" ColumnName="fecha_de_venta_anio_pasado" />
+          <ScalarProperty Name="semana_anio_pasado" ColumnName="semana_anio_pasado" />
+          <ScalarProperty Name="dia_semana_anio_pasado" ColumnName="dia_semana_anio_pasado" />
+          <ScalarProperty Name="asignacion_anio_pasado" ColumnName="asignacion_anio_pasado" />
+          <ScalarProperty Name="tipo_de_venta" ColumnName="tipo_de_venta" />
+          <ScalarProperty Name="cliente" ColumnName="cliente" />
+          <ScalarProperty Name="clase" ColumnName="clase" />
+          <ScalarProperty Name="categoria" ColumnName="categoria" />
+          <ScalarProperty Name="familia" ColumnName="familia" />
+          <ScalarProperty Name="linea" ColumnName="linea" />
+          <ScalarProperty Name="marca" ColumnName="marca" />
+          <ScalarProperty Name="modelo" ColumnName="modelo" />
+          <ScalarProperty Name="talla" ColumnName="talla" />
+          <ScalarProperty Name="color" ColumnName="color" />
+          <ScalarProperty Name="tipo_movimiento" ColumnName="tipo_movimiento" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

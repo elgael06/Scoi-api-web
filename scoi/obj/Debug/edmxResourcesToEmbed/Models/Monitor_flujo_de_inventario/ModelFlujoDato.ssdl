@@ -1,8 +1,158 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="FlujoDeInventario.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="FlujoDeInventario.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Grupo_Izagar.dbo.monitor_de_ventas' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="monitor_de_ventas">
+    <Key>
+      <PropertyRef Name="ticket" />
+      <PropertyRef Name="cod_estab" />
+      <PropertyRef Name="establecimiento" />
+      <PropertyRef Name="cod_prod" />
+      <PropertyRef Name="descripcion" />
+      <PropertyRef Name="venta_piezas_actual" />
+      <PropertyRef Name="importe_actual" />
+      <PropertyRef Name="importe_sin_IVA_actual" />
+      <PropertyRef Name="costo_actual" />
+      <PropertyRef Name="utilidad_bruta_actual" />
+      <PropertyRef Name="margen_actual" />
+      <PropertyRef Name="importe_descuento_actual" />
+      <PropertyRef Name="semana_actual" />
+      <PropertyRef Name="dia_semana_actual" />
+      <PropertyRef Name="asignacion_actual" />
+      <PropertyRef Name="venta_piezas_anio_pasado" />
+      <PropertyRef Name="importe_anio_pasado" />
+      <PropertyRef Name="importe_sin_IVA_anio_pasado" />
+      <PropertyRef Name="costo_anio_pasado" />
+      <PropertyRef Name="utilidad_bruta_anio_pasado" />
+      <PropertyRef Name="margen_anio_pasado" />
+      <PropertyRef Name="importe_descuento_anio_pasado" />
+      <PropertyRef Name="semana_anio_pasado" />
+      <PropertyRef Name="dia_semana_anio_pasado" />
+      <PropertyRef Name="asignacion_anio_pasado" />
+      <PropertyRef Name="tipo_de_venta" />
+      <PropertyRef Name="cliente" />
+      <PropertyRef Name="clase" />
+      <PropertyRef Name="categoria" />
+      <PropertyRef Name="familia" />
+      <PropertyRef Name="linea" />
+      <PropertyRef Name="marca" />
+      <PropertyRef Name="modelo" />
+      <PropertyRef Name="talla" />
+      <PropertyRef Name="color" />
+      <PropertyRef Name="tipo_movimiento" />
+    </Key>
+    <Property Name="ticket" Type="varchar" MaxLength="12" Nullable="false" />
+    <Property Name="cod_estab" Type="int" Nullable="false" />
+    <Property Name="establecimiento" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="cod_prod" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="venta_piezas_actual" Type="numeric" Precision="12" Scale="2" Nullable="false" />
+    <Property Name="importe_actual" Type="numeric" Precision="12" Scale="2" Nullable="false" />
+    <Property Name="importe_sin_IVA_actual" Type="numeric" Precision="12" Scale="2" Nullable="false" />
+    <Property Name="costo_actual" Type="numeric" Precision="12" Scale="2" Nullable="false" />
+    <Property Name="utilidad_bruta_actual" Type="numeric" Precision="12" Scale="2" Nullable="false" />
+    <Property Name="margen_actual" Type="numeric" Precision="12" Scale="2" Nullable="false" />
+    <Property Name="importe_descuento_actual" Type="numeric" Precision="12" Scale="2" Nullable="false" />
+    <Property Name="fecha_de_venta_actual" Type="datetime" />
+    <Property Name="semana_actual" Type="smallint" Nullable="false" />
+    <Property Name="dia_semana_actual" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="asignacion_actual" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="venta_piezas_anio_pasado" Type="numeric" Precision="12" Scale="2" Nullable="false" />
+    <Property Name="importe_anio_pasado" Type="numeric" Precision="12" Scale="2" Nullable="false" />
+    <Property Name="importe_sin_IVA_anio_pasado" Type="numeric" Precision="12" Scale="2" Nullable="false" />
+    <Property Name="costo_anio_pasado" Type="numeric" Precision="12" Scale="2" Nullable="false" />
+    <Property Name="utilidad_bruta_anio_pasado" Type="numeric" Precision="12" Scale="2" Nullable="false" />
+    <Property Name="margen_anio_pasado" Type="numeric" Precision="12" Scale="2" Nullable="false" />
+    <Property Name="importe_descuento_anio_pasado" Type="numeric" Precision="12" Scale="2" Nullable="false" />
+    <Property Name="fecha_de_venta_anio_pasado" Type="datetime" />
+    <Property Name="semana_anio_pasado" Type="smallint" Nullable="false" />
+    <Property Name="dia_semana_anio_pasado" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="asignacion_anio_pasado" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="tipo_de_venta" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="cliente" Type="varchar" MaxLength="125" Nullable="false" />
+    <Property Name="clase" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="categoria" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="familia" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="linea" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="marca" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="modelo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="talla" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="color" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="tipo_movimiento" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Grupo_Izagar.dbo.monitor_indicadores' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="monitor_indicadores">
+    <Key>
+      <PropertyRef Name="Indicador" />
+      <PropertyRef Name="valor_optimo_indicador" />
+      <PropertyRef Name="operador" />
+    </Key>
+    <Property Name="Indicador" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="valor_optimo_indicador" Type="numeric" Precision="15" Scale="2" Nullable="false" />
+    <Property Name="operador" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <Function Name="monitor_de_ventas_consulta_sumarizada" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="monitor_de_ventas_detalle_producto_por_establecimiento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="cod_prod" Type="varchar" Mode="In" />
+    <Parameter Name="cod_estab" Type="int" Mode="In" />
+  </Function>
   <Function Name="monitor_flujo_de_inventario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="fi" Type="datetime" Mode="In" />
     <Parameter Name="meses" Type="tinyint" Mode="In" />
   </Function>
-  <EntityContainer Name="FlujoDeInventarioStoreContainer" />
+  <Function Name="monitor_indicadores_cajeros" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Fecha_Incial" Type="datetime" Mode="In" />
+  </Function>
+  <EntityContainer Name="FlujoDeInventarioStoreContainer">
+    <EntitySet Name="monitor_de_ventas" EntityType="Self.monitor_de_ventas" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [monitor_de_ventas].[ticket] AS [ticket], 
+    [monitor_de_ventas].[cod_estab] AS [cod_estab], 
+    [monitor_de_ventas].[establecimiento] AS [establecimiento], 
+    [monitor_de_ventas].[cod_prod] AS [cod_prod], 
+    [monitor_de_ventas].[descripcion] AS [descripcion], 
+    [monitor_de_ventas].[venta_piezas_actual] AS [venta_piezas_actual], 
+    [monitor_de_ventas].[importe_actual] AS [importe_actual], 
+    [monitor_de_ventas].[importe_sin_IVA_actual] AS [importe_sin_IVA_actual], 
+    [monitor_de_ventas].[costo_actual] AS [costo_actual], 
+    [monitor_de_ventas].[utilidad_bruta_actual] AS [utilidad_bruta_actual], 
+    [monitor_de_ventas].[margen_actual] AS [margen_actual], 
+    [monitor_de_ventas].[importe_descuento_actual] AS [importe_descuento_actual], 
+    [monitor_de_ventas].[fecha_de_venta_actual] AS [fecha_de_venta_actual], 
+    [monitor_de_ventas].[semana_actual] AS [semana_actual], 
+    [monitor_de_ventas].[dia_semana_actual] AS [dia_semana_actual], 
+    [monitor_de_ventas].[asignacion_actual] AS [asignacion_actual], 
+    [monitor_de_ventas].[venta_piezas_anio_pasado] AS [venta_piezas_anio_pasado], 
+    [monitor_de_ventas].[importe_anio_pasado] AS [importe_anio_pasado], 
+    [monitor_de_ventas].[importe_sin_IVA_anio_pasado] AS [importe_sin_IVA_anio_pasado], 
+    [monitor_de_ventas].[costo_anio_pasado] AS [costo_anio_pasado], 
+    [monitor_de_ventas].[utilidad_bruta_anio_pasado] AS [utilidad_bruta_anio_pasado], 
+    [monitor_de_ventas].[margen_anio_pasado] AS [margen_anio_pasado], 
+    [monitor_de_ventas].[importe_descuento_anio_pasado] AS [importe_descuento_anio_pasado], 
+    [monitor_de_ventas].[fecha_de_venta_anio_pasado] AS [fecha_de_venta_anio_pasado], 
+    [monitor_de_ventas].[semana_anio_pasado] AS [semana_anio_pasado], 
+    [monitor_de_ventas].[dia_semana_anio_pasado] AS [dia_semana_anio_pasado], 
+    [monitor_de_ventas].[asignacion_anio_pasado] AS [asignacion_anio_pasado], 
+    [monitor_de_ventas].[tipo_de_venta] AS [tipo_de_venta], 
+    [monitor_de_ventas].[cliente] AS [cliente], 
+    [monitor_de_ventas].[clase] AS [clase], 
+    [monitor_de_ventas].[categoria] AS [categoria], 
+    [monitor_de_ventas].[familia] AS [familia], 
+    [monitor_de_ventas].[linea] AS [linea], 
+    [monitor_de_ventas].[marca] AS [marca], 
+    [monitor_de_ventas].[modelo] AS [modelo], 
+    [monitor_de_ventas].[talla] AS [talla], 
+    [monitor_de_ventas].[color] AS [color], 
+    [monitor_de_ventas].[tipo_movimiento] AS [tipo_movimiento]
+    FROM [dbo].[monitor_de_ventas] AS [monitor_de_ventas]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="monitor_indicadores" EntityType="Self.monitor_indicadores" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [monitor_indicadores].[Indicador] AS [Indicador], 
+    [monitor_indicadores].[valor_optimo_indicador] AS [valor_optimo_indicador], 
+    [monitor_indicadores].[operador] AS [operador]
+    FROM [dbo].[monitor_indicadores] AS [monitor_indicadores]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
 </Schema>

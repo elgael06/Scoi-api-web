@@ -25,6 +25,7 @@ namespace WebApplication.Manager.PropuestaCombioPrecios
         public List<string> Color = new List<string>();
         public List<string> Marca = new List<string>();
         public List<string> Clasificacion8020 = new List<string>();
+        public List<string> zona = new List<string>();
 
         public List<ModeloProductoCambioPrecios> Productos = new List<ModeloProductoCambioPrecios>();
 
@@ -39,6 +40,7 @@ namespace WebApplication.Manager.PropuestaCombioPrecios
             Color.Add("Todos");
             Marca.Add("Todos");
             Clasificacion8020.Add("Todos");
+            zona.Add("Todos");
 
             Consultar(mes:mes,filtro:filtro,anio:anio);
             Indicadores();
@@ -46,7 +48,7 @@ namespace WebApplication.Manager.PropuestaCombioPrecios
 
         private void Consultar(string mes, string filtro, string anio)
         {
-            string query = string.Format("exec sp_analisis_precios_de_competencia_propuesta_cambio_precios '{0}','{1}','{2}'  ;", mes, filtro, anio);
+            string query = string.Format("exec sp_monitor_analisis_precios_de_competencia_propuesta_cambio_precios '{0}','{1}','{2}'  ;", mes, filtro, anio);
             SqlCommand comando = new SqlCommand(cmdText: query, connection:CONEXION_BMS);
 
             CONEXION_BMS.Open();
@@ -85,6 +87,7 @@ namespace WebApplication.Manager.PropuestaCombioPrecios
                         Marca = LECTOR["marca"].ToString(),
                         Precios_volumen =  JsonConvert.DeserializeObject(LECTOR["precios_volumen"].ToString()),
                         Clasificacion8020 = LECTOR["clasificacion_8020"].ToString(),
+                        zona = LECTOR["zona"].ToString(),
 
                         Competencias = new ModeloCompetenciaCambioPrecios {
                             Bodart = new precios {
@@ -146,6 +149,8 @@ namespace WebApplication.Manager.PropuestaCombioPrecios
                 EstaEnLista(lista: Marca, parametro: producto.Marca);
                 //
                 EstaEnLista(lista: Clasificacion8020, parametro: producto.Clasificacion8020);
+                //
+                EstaEnLista(lista: zona, parametro: producto.zona);
             }
         }
 

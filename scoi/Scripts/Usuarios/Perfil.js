@@ -32,8 +32,7 @@ var enviar_cambio_contrasenia = function (id) {
                 'Content-Type': 'application/json'
             }
         })
-            .then(function (r) { return r.json().then(function (res) { return res == "OK" ? location.href = "/login" : alert("Error en Password!!!"); }); })
-            .catch(function (err) { return alert("Error Cambio!!!"); });
+            .then(function (r) { return r.json().then(function (res) { return res == "OK" ? location.href = "/login" : alert("Error en Password!!!"); }); })["catch"](function (err) { return alert("Error Cambio!!!"); });
 };
 var cancelar = function () {
     password_actual.value = "";
@@ -55,4 +54,3 @@ password_nuevo.addEventListener("change", function () {
     var pass = password_nuevo.value;
     cambiar_password_nuevo_confirmar(!(pass.length > 0));
 });
-//# sourceMappingURL=Perfil.js.map

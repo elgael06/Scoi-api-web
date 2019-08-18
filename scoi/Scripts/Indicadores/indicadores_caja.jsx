@@ -359,7 +359,8 @@ class App extends React.Component {
     }
     /*coneciones*/
     Obtener_indicadores(){
-        fetch("servicios/indicadores/indicadores_cajas_conexion.asmx/lista_indicadores", {
+        //fetch("servicios/indicadores/indicadores_cajas_conexion.asmx/lista_indicadores", {
+        fetch(`api/monitor_indicadores_cajeros?fecha=${this.state.fecha}`, {
             method: 'post',
             credentials: 'same-origin',
             headers: {

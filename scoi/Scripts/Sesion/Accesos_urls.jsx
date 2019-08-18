@@ -49,6 +49,7 @@ function ObtenerAccesos(llenar) {
             respuesta = this.responseText;
             respuesta = JSON.parse(respuesta);
             respuesta.length > 0 ? llenar(respuesta) : setTimeout(() => mostrar_mensaje("Sin Acceso A Aplicaciones...", "alert-warning"), 2000);
+            console.log("respuesta=>", respuesta);
         }
         else if (this.status > 200) {
             mostrar_mensaje(`Error: ${this.status}`, "alert-danger");

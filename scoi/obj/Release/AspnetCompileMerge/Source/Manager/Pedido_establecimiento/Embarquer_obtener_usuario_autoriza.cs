@@ -127,7 +127,7 @@ namespace WebApplication.Manager.Pedido_establecimiento
                     consecutivo = short.Parse(lector["orden"].ToString());
                 }
             }
-            catch (Exception e)
+            catch
             {
                 consecutivo = 0;
             }
@@ -180,7 +180,7 @@ namespace WebApplication.Manager.Pedido_establecimiento
                 lector.Read();
                 res = (double)lector["existencia_actual"];
             }
-            catch(Exception e){ }
+            catch { }
             conexion_scoi.Close();
             return res;
         }

@@ -20,7 +20,14 @@ const Obtener_producto_por_codigo_de_barras = (codigo) =>{
 
 //metodos 
 const cambio_barcode = (codigo) => {
-    JsBarcode("#barcode",codigo, {format: "codabar", height: 23, fontSize: 12, font: "Arial Black",width: 3.59}).render();
+    JsBarcode("#barcode", codigo,
+        {
+            format: "codabar",
+            height: 23,
+            fontSize: 12,
+            font: "Arial Black",
+            width: 3.59
+        }).render();
 }
 const agregar_campos_a_etiqueta = (value) =>{
     //alert(value.Codigo);

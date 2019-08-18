@@ -55,6 +55,7 @@
                     Color: "Todos",
                     Marca: "Todos",
                     Clasificacion8020: "Todos",
+                    zona:"Todos"
                 },
                 Analisis: {
                     Localizacion: [],
@@ -66,6 +67,7 @@
                     Color: [],
                     Marca: [],
                     Clasificacion8020: [],
+                    zona:[],
                     Productos:[]
                 }
             }
@@ -85,6 +87,7 @@
                     Color: [],
                     Marca: [],
                     Clasificacion8020: [],
+                    zona:[],
                     Productos:[]
                 }
             },
@@ -136,9 +139,9 @@
                     }))
             },
             filtro_froducto(producto) {
-                let { Localizacion, Pasillo, Clase, Categoria, Familia, CanastaBasica, Color, Marca } = this.Seleccion;
+                let { zona, Pasillo, Clase, Categoria, Familia, CanastaBasica, Color, Marca } = this.Seleccion;
 
-                return (Localizacion == "Todos" || producto.Localizacion.search( Localizacion)>-1) && (Pasillo == "Todos" || Pasillo == producto.Pasillo) &&
+                return (zona == "Todos" || producto.zona.search(zona)>-1) && (Pasillo == "Todos" || Pasillo == producto.Pasillo) &&
                     (Clase == "Todos" || producto.Clase.search( Clase )>-1) && (Categoria == "Todos" || producto.Categoria.search(Categoria)>-1) &&
                     (Familia == "Todos" || producto.Familia.search( Familia )>-1) && (CanastaBasica == "Todos" || CanastaBasica == producto.CanastaBasica) &&
                     (Color == "Todos" || Color == producto.Color) && (Marca == "Todos" || Marca == producto.Marca) && this.filtro_folio(producto.Codigo);

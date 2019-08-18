@@ -26,7 +26,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <TypeScriptToolsVersion>3.3</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>3.4</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -268,8 +268,12 @@
     <Compile Include="Controllers\Monitor_auditoria_venta\monitor_auditoria_ventasController.cs" />
     <Compile Include="Controllers\Monitor_auditoria_venta\Monitor_auditoria__venta_detalle_corteController.cs" />
     <Compile Include="Controllers\Monitor_flujo_de_inventario\MonitorFlujoInventarioController.cs" />
+    <Compile Include="Controllers\Monitor_indicadores\monitor_indicadores_cajerosController.cs" />
     <Compile Include="Controllers\Monitor_precio_competencia\CambioPreciosController.cs" />
     <Compile Include="Controllers\Monitor_precio_competencia\monitor_precio_competenciaController.cs" />
+    <Compile Include="Controllers\Monitor_ventas\MonitorDetalleProductoEstablecimientoController.cs" />
+    <Compile Include="Controllers\Monitor_ventas\MonitorVentasController.cs" />
+    <Compile Include="Controllers\Monitor_ventas\SemanasMesFechaController.cs" />
     <Compile Include="Manager\Accesos\usuarios.cs" />
     <Compile Include="Manager\Globales\Manejos_fechas.cs" />
     <Compile Include="Manager\Monitor_cuadrantes\Obtener_monitor_cuadrantes.cs" />
@@ -367,6 +371,7 @@
     <Compile Include="Models\Estado_de_resultados\Movimientos\MovimientoMes.cs" />
     <Compile Include="Models\Estado_de_resultados\Movimientos\MovimientoSemana.cs" />
     <Compile Include="Models\Estado_de_resultados\Periodo\PeriodoSemanaAnio.cs" />
+    <Compile Include="Models\Globales\Dia.cs" />
     <Compile Include="Models\Globales\Parametros_semana_actual.cs" />
     <Compile Include="Models\Incidencias_apertura_tienda\incidencia.cs" />
     <Compile Include="Models\Incidencias_apertura_tienda\Incidencias_crud_sql.cs" />
@@ -409,7 +414,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelFlujoDato.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Monitor_flujo_de_inventario\monitor_de_ventas.cs">
+      <DependentUpon>ModelFlujoDato.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Monitor_flujo_de_inventario\monitor_de_ventas_consulta_sumarizada_Result.cs">
+      <DependentUpon>ModelFlujoDato.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Monitor_flujo_de_inventario\monitor_de_ventas_detalle_producto_por_establecimiento_Result.cs">
+      <DependentUpon>ModelFlujoDato.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Monitor_flujo_de_inventario\monitor_flujo_de_inventario_Result.cs">
+      <DependentUpon>ModelFlujoDato.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Monitor_flujo_de_inventario\monitor_indicadores.cs">
+      <DependentUpon>ModelFlujoDato.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Monitor_flujo_de_inventario\monitor_indicadores_cajeros_Result.cs">
       <DependentUpon>ModelFlujoDato.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\monitor_orden_compra_interna\ModeloDescripcionCI.cs" />
@@ -425,6 +445,15 @@
     <Compile Include="Models\Monitor_precio_competencia\Model_mueble.cs" />
     <Compile Include="Models\Monitor_precio_competencia\Model_pasillo.cs" />
     <Compile Include="Models\Monitor_precio_competencia\Model_producto.cs" />
+    <Compile Include="Models\Monitor_ventas\ModeloCategoriaVenta.cs" />
+    <Compile Include="Models\Monitor_ventas\ModeloClaseVenta.cs" />
+    <Compile Include="Models\Monitor_ventas\ModeloDetalleEstablecimientoVenta.cs" />
+    <Compile Include="Models\Monitor_ventas\ModeloDiaVenta.cs" />
+    <Compile Include="Models\Monitor_ventas\ModeloEstablecimientoVenta.cs" />
+    <Compile Include="Models\Monitor_ventas\ModeloFamiliaVenta.cs" />
+    <Compile Include="Models\Monitor_ventas\ModeloMesActual.cs" />
+    <Compile Include="Models\Monitor_ventas\ModeloMonitorVenta.cs" />
+    <Compile Include="Models\Monitor_ventas\ModeloProductoVenta.cs" />
     <Compile Include="Models\MovimientosBancoInterno\concepto_compra_gasto.cs" />
     <Compile Include="Models\MovimientosBancoInterno\concepto_orden_de_pago.cs" />
     <Compile Include="Models\MovimientosBancoInterno\concepto_pagos_realizados_en_un_periodo.cs" />
@@ -462,6 +491,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EmbarqueEntitiesFramework.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Monitor_flujo_de_inventario\FlujoDatosInvetario.Context.cs" />
     <Compile Include="Models\Pedido_establecimiento\ModelEmbarquePedidoItem.cs" />
     <Compile Include="Models\Pedido_establecimiento\ModelEmbarquePedidoSolicitud.cs" />
     <Compile Include="Models\Pedido_establecimiento\Monitor_embarques_surtidos.cs" />
@@ -509,14 +539,18 @@
     <Content Include="Content\font-awesome\css\font-awesome.min.css" />
     <Content Include="Content\font-awesome\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\font-awesome\HELP-US-OUT.txt" />
+    <Content Include="dist\Accesos\Menus\menus.js" />
     <Content Include="dist\bundle.js" />
     <Content Include="dist\index.html" />
     <Content Include="dist\indicadores\AnalisisCambioPrecio\app.js" />
     <Content Include="dist\indicadores\app.js" />
     <Content Include="dist\indicadores\EstadosDeResultados\bundle.js" />
     <Content Include="dist\indicadores\MonitorEmbarques\Monitor.js" />
+    <Content Include="dist\indicadores\MonitorFlujoInventario\bundle.js" />
     <Content Include="dist\indicadores\MonitorOrdenCompraInterna\app.js" />
     <Content Include="dist\indicadores\MonitorOrdenCompraInterna\bundle.js" />
+    <Content Include="dist\indicadores\MonitorTDCSucursales\bundle.js" />
+    <Content Include="dist\indicadores\Monitor_cajas\bundle.js" />
     <Content Include="dist\indicadores\PreciosCompetencia\Monitor.js" />
     <Content Include="dist\indicadores\surtido_embarque\bundle.js" />
     <Content Include="dist\indicadores\surtido_embarque\index.html" />
@@ -707,6 +741,7 @@
     <Content Include="Scripts\lib\Chart\test\scale.time.tests.js" />
     <Content Include="Scripts\lib\html2Camvas\html2canvas.js" />
     <Content Include="Scripts\lib\jsbarCode\JsBarcode.all.min.js" />
+    <Content Include="src\scripts\Globales\Ordenamiento\dia_semana.js" />
     <Content Include="src\scripts\Globales\CodigosBarra\codigos_de_barras _g.es5.js" />
     <Content Include="src\scripts\Globales\CodigosBarra\codigos_de_barras _g.es5.min.js" />
     <Content Include="src\scripts\Globales\CodigosBarra\codigos_de_barras _g.js" />
@@ -715,7 +750,14 @@
     <Content Include="src\scripts\Globales\fechas.js" />
     <Content Include="src\scripts\Globales\moneda.js" />
     <Content Include="src\scripts\Indicadores\MovimientosBancoInterno\main.js" />
+    <Content Include="src\scripts\ReactJS\Accesos\Menus\Components\App.jsx" />
+    <Content Include="src\scripts\ReactJS\Accesos\Menus\conexiones\AppMenu.jsx" />
+    <Content Include="src\scripts\ReactJS\Accesos\Menus\conexiones\AppSubMenuAcceso.jsx" />
+    <Content Include="src\scripts\ReactJS\Accesos\Menus\conexiones\obtenerMenus.js" />
+    <Content Include="src\scripts\ReactJS\Accesos\Menus\Index.jsx" />
+    <Content Include="src\scripts\ReactJS\ComponentesGlobales\Margen.jsx" />
     <Content Include="src\scripts\ReactJS\ComponentesGlobales\Moneda.jsx" />
+    <Content Include="src\scripts\ReactJS\ComponentesGlobales\MsgAlerta.jsx" />
     <Content Include="src\scripts\ReactJS\indicadores\EstadosDeResultados\components\App.jsx" />
     <Content Include="src\scripts\ReactJS\indicadores\EstadosDeResultados\components\Cavecera.jsx" />
     <Content Include="src\scripts\ReactJS\indicadores\EstadosDeResultados\components\ModalConceptos - Copia.jsx" />
@@ -730,6 +772,10 @@
     <Content Include="src\scripts\ReactJS\indicadores\EstadosDeResultados\manager\OrdenDatosTabla.js" />
     <Content Include="src\scripts\ReactJS\indicadores\EstadosDeResultados\manager\PeriodosFecha.js" />
     <Content Include="src\scripts\ReactJS\indicadores\EstadosDeResultados\models\mConcepto.js" />
+    <Content Include="src\scripts\ReactJS\indicadores\MonitorFlujoInventario\components\App.jsx" />
+    <Content Include="src\scripts\ReactJS\indicadores\MonitorFlujoInventario\components\Cavecera.jsx" />
+    <Content Include="src\scripts\ReactJS\indicadores\MonitorFlujoInventario\components\TablaDinamica.jsx" />
+    <Content Include="src\scripts\ReactJS\indicadores\MonitorFlujoInventario\index.jsx" />
     <Content Include="src\scripts\ReactJS\indicadores\MonitorOrdenCompraInterna\components\App.jsx" />
     <Content Include="src\scripts\ReactJS\indicadores\MonitorOrdenCompraInterna\components\Cavecera.jsx" />
     <Content Include="src\scripts\ReactJS\indicadores\MonitorOrdenCompraInterna\components\CaveceraTabla.jsx" />
@@ -739,6 +785,17 @@
     <Content Include="src\scripts\ReactJS\indicadores\MonitorOrdenCompraInterna\components\VistaDetalleOrden.jsx" />
     <Content Include="src\scripts\ReactJS\indicadores\MonitorOrdenCompraInterna\index.jsx" />
     <Content Include="src\scripts\ReactJS\indicadores\MonitorOrdenCompraInterna\metodos\manejoSemanas.js" />
+    <Content Include="src\scripts\ReactJS\indicadores\MonitorTDCSucursales\components\App.jsx" />
+    <Content Include="src\scripts\ReactJS\indicadores\MonitorTDCSucursales\components\CaveceraConsulta.jsx" />
+    <Content Include="src\scripts\ReactJS\indicadores\MonitorTDCSucursales\components\DetalleProductoEstablecimiento.jsx" />
+    <Content Include="src\scripts\ReactJS\indicadores\MonitorTDCSucursales\components\TablaVentas - Copia.jsx" />
+    <Content Include="src\scripts\ReactJS\indicadores\MonitorTDCSucursales\components\TablaVentas.jsx" />
+    <Content Include="src\scripts\ReactJS\indicadores\MonitorTDCSucursales\conexion\consultar_detalle_producto_establecimiento.js" />
+    <Content Include="src\scripts\ReactJS\indicadores\MonitorTDCSucursales\Index.jsx" />
+    <Content Include="src\scripts\ReactJS\indicadores\Monitor_cajas\components\App.jsx" />
+    <Content Include="src\scripts\ReactJS\indicadores\Monitor_cajas\components\Header.jsx" />
+    <Content Include="src\scripts\ReactJS\indicadores\Monitor_cajas\components\TableBodyEstablecimientos.jsx" />
+    <Content Include="src\scripts\ReactJS\indicadores\Monitor_cajas\Index.jsx" />
     <Content Include="src\scripts\ReactJS\models\mEstiloModal.js" />
     <Content Include="src\scripts\VueJS\indicadores\AnalisisCambioPrecios\app.js" />
     <Content Include="src\scripts\VueJS\indicadores\MonitorEmbarques\app.js" />
@@ -830,6 +887,9 @@
     <Content Include="Views\Indicadores\AnalisisCamiboPrecios.cshtml" />
     <Content Include="Views\Indicadores\MonitorOrdenCompraInterna - Copia.cshtml" />
     <Content Include="Views\Indicadores\EstadosDeResultados_sin_alimentos.cshtml" />
+    <Content Include="Views\Indicadores\MonitorFlujoInventario.cshtml" />
+    <Content Include="Views\Indicadores\MonitorTDCSucursales.cshtml" />
+    <Content Include="tsconfig.json" />
     <None Include="vue_src\components\BuscarProducto.vue" />
     <Content Include="src\styles\CodigosBarra\main.css" />
     <Content Include="src\styles\CodigosBarra\main_g.css" />
@@ -1045,6 +1105,15 @@
     <TypeScriptCompile Include="Scripts\Usuarios\Perfil.ts" />
     <Content Include="src\scripts\Indicadores\OrdenesDePagoEnEfectivo\OrdenesPago.jsx" />
     <TypeScriptCompile Include="src\scripts\Indicadores\MovimientosBancoInterno\main.ts" />
+    <Content Include="src\scripts\ReactJS\indicadores\MonitorTDCSucursales\components\Filtros.jsx" />
+    <TypeScriptCompile Include="src\scripts\ReactJS\indicadores\MonitorTDCSucursales\Interfaces\IdataVentas.ts" />
+    <TypeScriptCompile Include="src\scripts\ReactJS\indicadores\MonitorTDCSucursales\Interfaces\IestablecimientoVenta.ts" />
+    <TypeScriptCompile Include="src\scripts\ReactJS\indicadores\MonitorTDCSucursales\Interfaces\ImodeloCategoriaVenta.ts" />
+    <TypeScriptCompile Include="src\scripts\ReactJS\indicadores\MonitorTDCSucursales\Interfaces\ImodeloClaseVenta.ts" />
+    <TypeScriptCompile Include="src\scripts\ReactJS\indicadores\MonitorTDCSucursales\Interfaces\ImodeloDiaVenta.ts" />
+    <TypeScriptCompile Include="src\scripts\ReactJS\indicadores\MonitorTDCSucursales\Interfaces\ImodeloFamiliaVenta.ts" />
+    <TypeScriptCompile Include="src\scripts\ReactJS\indicadores\MonitorTDCSucursales\Interfaces\ImodeloProductoVenta.ts" />
+    <TypeScriptCompile Include="src\scripts\ReactJS\indicadores\MonitorTDCSucursales\Interfaces\ImonitorVenta.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

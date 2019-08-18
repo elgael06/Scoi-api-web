@@ -18,7 +18,7 @@ namespace WebApplication.Models.Monitor_flujo_de_inventario
     public partial class Entities : DbContext
     {
         public Entities()
-            : base("name=FlujoInventario")
+            : base("name=Entities")
         {
             SetCommandTimeOut(6000);
         }
@@ -27,12 +27,13 @@ namespace WebApplication.Models.Monitor_flujo_de_inventario
             var objectContext = (this as IObjectContextAdapter).ObjectContext;
             objectContext.CommandTimeout = Timeout;
         }
-
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<monitor_de_ventas> monitor_de_ventas { get; set; }
+        public virtual DbSet<monitor_indicadores> monitor_indicadores { get; set; }
     
         public virtual ObjectResult<monitor_flujo_de_inventario_Result> monitor_flujo_de_inventario(Nullable<System.DateTime> fi, Nullable<byte> meses)
         {
@@ -45,6 +46,33 @@ namespace WebApplication.Models.Monitor_flujo_de_inventario
                 new ObjectParameter("meses", typeof(byte));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<monitor_flujo_de_inventario_Result>("monitor_flujo_de_inventario", fiParameter, mesesParameter);
+        }
+    
+        public virtual ObjectResult<monitor_de_ventas_consulta_sumarizada_Result> monitor_de_ventas_consulta_sumarizada()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<monitor_de_ventas_consulta_sumarizada_Result>("monitor_de_ventas_consulta_sumarizada");
+        }
+    
+        public virtual ObjectResult<monitor_indicadores_cajeros_Result> monitor_indicadores_cajeros(Nullable<System.DateTime> fecha_Incial)
+        {
+            var fecha_IncialParameter = fecha_Incial.HasValue ?
+                new ObjectParameter("Fecha_Incial", fecha_Incial) :
+                new ObjectParameter("Fecha_Incial", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<monitor_indicadores_cajeros_Result>("monitor_indicadores_cajeros", fecha_IncialParameter);
+        }
+    
+        public virtual ObjectResult<monitor_de_ventas_detalle_producto_por_establecimiento_Result> monitor_de_ventas_detalle_producto_por_establecimiento(string cod_prod, Nullable<int> cod_estab)
+        {
+            var cod_prodParameter = cod_prod != null ?
+                new ObjectParameter("cod_prod", cod_prod) :
+                new ObjectParameter("cod_prod", typeof(string));
+    
+            var cod_estabParameter = cod_estab.HasValue ?
+                new ObjectParameter("cod_estab", cod_estab) :
+                new ObjectParameter("cod_estab", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<monitor_de_ventas_detalle_producto_por_establecimiento_Result>("monitor_de_ventas_detalle_producto_por_establecimiento", cod_prodParameter, cod_estabParameter);
         }
     }
 }
