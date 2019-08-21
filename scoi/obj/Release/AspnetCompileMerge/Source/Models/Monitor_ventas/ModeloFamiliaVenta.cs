@@ -14,9 +14,11 @@ namespace WebApplication.Models.Monitor_ventas
             foreach (var filtro in from producto in datos
                                    let codigo = producto.cod_prod
                                    where Productos.FindIndex(e => e.codigo_producto == codigo) == -1
-                                   select new ModeloProductoVenta(datos.Where(e => e.cod_prod == codigo).ToList()))
+                                   select datos.Where(e => e.cod_prod == codigo).ToList())
             {
-                Productos.Add(filtro);
+
+                if (filtro.Count > 0)
+                    Productos.Add(new ModeloProductoVenta(filtro));
             }
         }
         public List<ModeloProductoVenta> Productos = new List<ModeloProductoVenta>();

@@ -6,6 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="2bb4bf3c7f894e3bafbeb50fd47fa1b4" Name="Diagram1" >
         <EntityTypeShape EntityType="FlujoDeInventario.monitor_de_ventas" Width="2.25" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="FlujoDeInventario.monitor_indicadores" Width="1.5" PointX="4.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -7,6 +7,14 @@
     </FunctionImport>
     <EntitySet Name="monitor_de_ventas" EntityType="FlujoDeInventario.monitor_de_ventas" />
     <FunctionImport Name="monitor_de_ventas_consulta_sumarizada" ReturnType="Collection(FlujoDeInventario.monitor_de_ventas_consulta_sumarizada_Result)" />
+    <EntitySet Name="monitor_indicadores" EntityType="FlujoDeInventario.monitor_indicadores" />
+    <FunctionImport Name="monitor_indicadores_cajeros" ReturnType="Collection(FlujoDeInventario.monitor_indicadores_cajeros_Result)">
+      <Parameter Name="Fecha_Incial" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="monitor_de_ventas_detalle_producto_por_establecimiento" ReturnType="Collection(FlujoDeInventario.monitor_de_ventas_detalle_producto_por_establecimiento_Result)">
+      <Parameter Name="cod_prod" Mode="In" Type="String" />
+      <Parameter Name="cod_estab" Mode="In" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="monitor_flujo_de_inventario_Result">
     <Property Type="String" Name="establecimimiento" Nullable="true" MaxLength="101" />
@@ -134,5 +142,57 @@
     <Property Type="String" Name="talla" Nullable="false" MaxLength="50" />
     <Property Type="String" Name="color" Nullable="false" MaxLength="50" />
     <Property Type="String" Name="tipo_movimiento" Nullable="false" MaxLength="1" />
+  </ComplexType>
+  <EntityType Name="monitor_indicadores">
+    <Key>
+      <PropertyRef Name="Indicador" />
+      <PropertyRef Name="valor_optimo_indicador" />
+      <PropertyRef Name="operador" />
+    </Key>
+    <Property Name="Indicador" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="valor_optimo_indicador" Type="Decimal" Nullable="false" Precision="15" Scale="2" />
+    <Property Name="operador" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <ComplexType Name="monitor_indicadores_cajeros_Result">
+    <Property Type="Byte" Name="cod_estab_venta" Nullable="true" />
+    <Property Type="String" Name="establecimiento" Nullable="true" MaxLength="40" />
+    <Property Type="Int32" Name="folio_empleado" Nullable="true" />
+    <Property Type="String" Name="nombre_colaborador" Nullable="true" MaxLength="302" />
+    <Property Type="String" Name="establecimiento_cajero_scoi" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="departamento" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="puesto" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="estatus_colaborador" Nullable="true" MaxLength="20" />
+    <Property Type="DateTime" Name="fecha_ingreso" Nullable="true" Precision="16" />
+    <Property Type="String" Name="antiguedad" Nullable="true" MaxLength="11" />
+    <Property Type="String" Name="foto" Nullable="false" MaxLength="1" />
+    <Property Type="Decimal" Name="Indicador_Venta_x100" Nullable="true" Precision="10" Scale="2" />
+    <Property Type="Decimal" Name="Indicador_Diferencias_x1000" Nullable="true" Precision="10" Scale="2" />
+    <Property Type="Decimal" Name="indicador_de_cancelaciones_x100" Nullable="true" Precision="10" Scale="2" />
+    <Property Type="Decimal" Name="total_diferiencia_de_corte" Nullable="true" Precision="12" Scale="2" />
+    <Property Type="Decimal" Name="venta_por_semana_cajero" Nullable="true" Precision="12" Scale="2" />
+    <Property Type="Decimal" Name="venta_por_semana_estab" Nullable="true" Precision="12" Scale="2" />
+    <Property Type="Byte" Name="semana_anio" Nullable="true" />
+    <Property Type="String" Name="mes" Nullable="true" MaxLength="15" />
+    <Property Type="Decimal" Name="cantidad_autorizaciones_por_supervisor" Nullable="true" Precision="12" Scale="2" />
+    <Property Type="Decimal" Name="cantidad_de_tickets" Nullable="true" Precision="12" Scale="2" />
+    <Property Type="Decimal" Name="indicador_de_tiempo_promedio_de_atencion_por_cliente" Nullable="false" Precision="1" Scale="1" />
+  </ComplexType>
+  <ComplexType Name="monitor_de_ventas_detalle_producto_por_establecimiento_Result">
+    <Property Type="String" Name="establecimiento" Nullable="false" MaxLength="40" />
+    <Property Type="String" Name="cod_prod" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="descripcion" Nullable="false" MaxLength="500" />
+    <Property Type="String" Name="asignacion_actual" Nullable="false" MaxLength="20" />
+    <Property Type="Int32" Name="folio" Nullable="true" />
+    <Property Type="String" Name="nombre_cajero" Nullable="true" MaxLength="302" />
+    <Property Type="String" Name="ticket" Nullable="false" MaxLength="12" />
+    <Property Type="Decimal" Name="venta_piezas_actual" Nullable="false" Precision="12" Scale="2" />
+    <Property Type="Decimal" Name="costo_actual" Nullable="false" Precision="12" Scale="2" />
+    <Property Type="Decimal" Name="importe_sin_IVA_actual" Nullable="false" Precision="12" Scale="2" />
+    <Property Type="Decimal" Name="utilidad_bruta_actual" Nullable="false" Precision="12" Scale="2" />
+    <Property Type="Decimal" Name="margen_actual" Nullable="false" Precision="12" Scale="2" />
+    <Property Type="String" Name="tipo_de_venta" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="cliente" Nullable="false" MaxLength="125" />
+    <Property Type="DateTime" Name="fecha_de_venta_actual" Nullable="true" Precision="23" />
+    <Property Type="String" Name="dia_semana_actual" Nullable="false" MaxLength="15" />
   </ComplexType>
 </Schema>

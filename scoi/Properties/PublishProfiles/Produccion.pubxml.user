@@ -10,10 +10,10 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
   </PropertyGroup>
   <ItemGroup>
     <File Include=".babelrc">
-      <publishTime>08/08/2019 15:46:41</publishTime>
+      <publishTime>08/16/2019 10:19:01</publishTime>
     </File>
     <File Include=".gitignore">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/28/2019 19:23:29</publishTime>
     </File>
     <File Include="App_Start/BundleConfig.cs">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -31,145 +31,145 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Areas/HelpPage/HelpPage.css">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/20/2019 15:57:18</publishTime>
     </File>
     <File Include="Areas/HelpPage/Views/Help/Api.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/20/2019 15:57:17</publishTime>
     </File>
     <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/ApiGroup.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/20/2019 15:57:17</publishTime>
     </File>
     <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/CollectionModelDescription.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/20/2019 15:57:17</publishTime>
     </File>
     <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/ComplexTypeModelDescription.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/20/2019 15:57:17</publishTime>
     </File>
     <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/DictionaryModelDescription.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/20/2019 15:57:17</publishTime>
     </File>
     <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/EnumTypeModelDescription.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/20/2019 15:57:17</publishTime>
     </File>
     <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/HelpPageApiModel.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/20/2019 15:57:17</publishTime>
     </File>
     <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/ImageSample.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/20/2019 15:57:17</publishTime>
     </File>
     <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/InvalidSample.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/20/2019 15:57:17</publishTime>
     </File>
     <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/KeyValuePairModelDescription.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/20/2019 15:57:17</publishTime>
     </File>
     <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/ModelDescriptionLink.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/20/2019 15:57:17</publishTime>
     </File>
     <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/Parameters.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/20/2019 15:57:17</publishTime>
     </File>
     <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/Samples.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/20/2019 15:57:17</publishTime>
     </File>
     <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/SimpleTypeModelDescription.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/20/2019 15:57:17</publishTime>
     </File>
     <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/TextSample.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/20/2019 15:57:17</publishTime>
     </File>
     <File Include="Areas/HelpPage/Views/Help/Index.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/20/2019 15:57:17</publishTime>
     </File>
     <File Include="Areas/HelpPage/Views/Help/ResourceModel.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/20/2019 15:57:17</publishTime>
     </File>
     <File Include="Areas/HelpPage/Views/Shared/_Layout.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/20/2019 15:57:17</publishTime>
     </File>
     <File Include="Areas/HelpPage/Views/Web.config">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/20/2019 15:57:17</publishTime>
     </File>
     <File Include="Areas/HelpPage/Views/_ViewStart.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/20/2019 15:57:07</publishTime>
     </File>
     <File Include="bin/AdvancedStringBuilder.dll">
-      <publishTime>03/12/2018 15:07:32</publishTime>
+      <publishTime>12/03/2018 15:07:32</publishTime>
     </File>
     <File Include="bin/Aether.dll">
-      <publishTime>03/04/2017 13:33:10</publishTime>
+      <publishTime>04/03/2017 13:33:10</publishTime>
     </File>
     <File Include="bin/Anat.dll">
-      <publishTime>03/04/2017 12:23:50</publishTime>
+      <publishTime>04/03/2017 12:23:50</publishTime>
     </File>
     <File Include="bin/Antlr3.Runtime.dll">
-      <publishTime>10/09/2013 17:29:20</publishTime>
+      <publishTime>09/10/2013 17:29:20</publishTime>
     </File>
     <File Include="bin/Antlr3.Runtime.pdb">
-      <publishTime>10/09/2013 17:29:20</publishTime>
+      <publishTime>09/10/2013 17:29:20</publishTime>
     </File>
     <File Include="bin/App_global.asax.compiled">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/21/2019 13:04:50</publishTime>
     </File>
     <File Include="bin/App_global.asax.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/21/2019 13:04:49</publishTime>
     </File>
     <File Include="bin/cs/FSharp.Core.resources.dll">
-      <publishTime>09/02/2018 01:34:56</publishTime>
+      <publishTime>02/09/2018 01:34:56</publishTime>
     </File>
     <File Include="bin/de/FSharp.Core.resources.dll">
-      <publishTime>09/02/2018 01:34:56</publishTime>
+      <publishTime>02/09/2018 01:34:56</publishTime>
     </File>
     <File Include="bin/en/FSharp.Core.resources.dll">
-      <publishTime>09/02/2018 01:34:56</publishTime>
+      <publishTime>02/09/2018 01:34:56</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>04/13/2019 12:35:24</publishTime>
     </File>
     <File Include="bin/EntityFramework.SqlServer.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>04/13/2019 12:35:24</publishTime>
     </File>
     <File Include="bin/es/FSharp.Core.resources.dll">
-      <publishTime>09/02/2018 01:34:56</publishTime>
+      <publishTime>02/09/2018 01:34:56</publishTime>
     </File>
     <File Include="bin/es/System.Net.Http.Formatting.resources.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/28/2018 13:00:46</publishTime>
     </File>
     <File Include="bin/es/System.Web.Helpers.resources.dll">
-      <publishTime>01/02/2018 12:21:06</publishTime>
+      <publishTime>02/01/2018 12:21:06</publishTime>
     </File>
     <File Include="bin/es/System.Web.Http.resources.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/28/2018 13:01:14</publishTime>
     </File>
     <File Include="bin/es/System.Web.Http.WebHost.resources.dll">
-      <publishTime>01/02/2018 12:19:34</publishTime>
+      <publishTime>02/01/2018 12:19:34</publishTime>
     </File>
     <File Include="bin/es/System.Web.Mvc.resources.dll">
-      <publishTime>01/02/2018 12:16:42</publishTime>
+      <publishTime>02/01/2018 12:16:42</publishTime>
     </File>
     <File Include="bin/es/System.Web.Optimization.resources.dll">
-      <publishTime>11/02/2014 15:28:40</publishTime>
+      <publishTime>02/11/2014 15:28:40</publishTime>
     </File>
     <File Include="bin/es/System.Web.Razor.resources.dll">
-      <publishTime>01/02/2018 12:17:04</publishTime>
+      <publishTime>02/01/2018 12:17:04</publishTime>
     </File>
     <File Include="bin/es/System.Web.WebPages.Deployment.resources.dll">
-      <publishTime>01/02/2018 12:21:06</publishTime>
+      <publishTime>02/01/2018 12:21:06</publishTime>
     </File>
     <File Include="bin/es/System.Web.WebPages.Razor.resources.dll">
-      <publishTime>01/02/2018 12:21:06</publishTime>
+      <publishTime>02/01/2018 12:21:06</publishTime>
     </File>
     <File Include="bin/es/System.Web.WebPages.resources.dll">
-      <publishTime>01/02/2018 12:21:06</publishTime>
+      <publishTime>02/01/2018 12:21:06</publishTime>
     </File>
     <File Include="bin/FParsec.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/20/2017 22:44:10</publishTime>
     </File>
     <File Include="bin/FParsecCS.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/20/2017 22:44:12</publishTime>
     </File>
     <File Include="bin/fr/FSharp.Core.resources.dll">
-      <publishTime>09/02/2018 01:34:56</publishTime>
+      <publishTime>02/09/2018 01:34:56</publishTime>
     </File>
     <File Include="bin/Freya.Core.dll">
       <publishTime>10/10/2018 03:28:44</publishTime>
@@ -226,10 +226,10 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>10/10/2018 03:31:38</publishTime>
     </File>
     <File Include="bin/FSharp.Core.dll">
-      <publishTime>09/02/2018 01:34:56</publishTime>
+      <publishTime>02/09/2018 01:34:56</publishTime>
     </File>
     <File Include="bin/Hekate.dll">
-      <publishTime>03/04/2017 13:54:20</publishTime>
+      <publishTime>04/03/2017 13:54:20</publishTime>
     </File>
     <File Include="bin/Hephaestus.dll">
       <publishTime>10/10/2018 00:39:40</publishTime>
@@ -238,391 +238,391 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>10/10/2018 00:39:40</publishTime>
     </File>
     <File Include="bin/it/FSharp.Core.resources.dll">
-      <publishTime>09/02/2018 01:34:56</publishTime>
+      <publishTime>02/09/2018 01:34:56</publishTime>
     </File>
     <File Include="bin/ja/FSharp.Core.resources.dll">
-      <publishTime>09/02/2018 01:34:56</publishTime>
+      <publishTime>02/09/2018 01:34:56</publishTime>
     </File>
     <File Include="bin/JavaScriptEngineSwitcher.Core.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>12/25/2018 20:09:56</publishTime>
     </File>
     <File Include="bin/JSPool.dll">
-      <publishTime>04/01/2019 22:57:54</publishTime>
+      <publishTime>01/04/2019 22:57:54</publishTime>
     </File>
     <File Include="bin/ko/FSharp.Core.resources.dll">
-      <publishTime>09/02/2018 01:34:56</publishTime>
+      <publishTime>02/09/2018 01:34:56</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.TelemetryCorrelation.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/28/2017 16:05:26</publishTime>
     </File>
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/24/2018 13:38:22</publishTime>
     </File>
     <File Include="bin/Microsoft.Web.Infrastructure.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/25/2012 11:48:56</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>02/18/2018 09:44:54</publishTime>
     </File>
     <File Include="bin/pl/FSharp.Core.resources.dll">
-      <publishTime>09/02/2018 01:34:56</publishTime>
+      <publishTime>02/09/2018 01:34:56</publishTime>
     </File>
     <File Include="bin/pt-BR/FSharp.Core.resources.dll">
-      <publishTime>09/02/2018 01:34:56</publishTime>
+      <publishTime>02/09/2018 01:34:56</publishTime>
     </File>
     <File Include="bin/React.Core.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/15/2019 04:28:02</publishTime>
     </File>
     <File Include="bin/React.Web.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/15/2019 04:28:02</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/24/2018 13:38:22</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe.config">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/24/2018 13:38:22</publishTime>
     </File>
     <File Include="bin/roslyn/csc.rsp">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/24/2018 13:38:22</publishTime>
     </File>
     <File Include="bin/roslyn/csi.exe">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/24/2018 13:38:22</publishTime>
     </File>
     <File Include="bin/roslyn/csi.rsp">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/24/2018 13:38:22</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/24/2018 13:38:22</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/24/2018 13:38:22</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.Scripting.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/24/2018 13:38:22</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/24/2018 13:38:22</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.CodeAnalysis.Scripting.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/24/2018 13:38:22</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/24/2018 13:38:22</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/24/2018 13:38:22</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.DiaSymReader.Native.amd64.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/24/2018 13:38:22</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.DiaSymReader.Native.x86.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/24/2018 13:38:22</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/24/2018 13:38:22</publishTime>
     </File>
     <File Include="bin/roslyn/System.AppContext.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/24/2018 13:38:22</publishTime>
     </File>
     <File Include="bin/roslyn/System.Collections.Immutable.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/24/2018 13:38:22</publishTime>
     </File>
     <File Include="bin/roslyn/System.Diagnostics.StackTrace.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/24/2018 13:38:22</publishTime>
     </File>
     <File Include="bin/roslyn/System.IO.FileSystem.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/24/2018 13:38:22</publishTime>
     </File>
     <File Include="bin/roslyn/System.IO.FileSystem.Primitives.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/24/2018 13:38:22</publishTime>
     </File>
     <File Include="bin/roslyn/System.Reflection.Metadata.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/24/2018 13:38:22</publishTime>
     </File>
     <File Include="bin/roslyn/vbc.exe">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/24/2018 13:38:22</publishTime>
     </File>
     <File Include="bin/roslyn/vbc.exe.config">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/24/2018 13:38:22</publishTime>
     </File>
     <File Include="bin/roslyn/vbc.rsp">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/24/2018 13:38:22</publishTime>
     </File>
     <File Include="bin/roslyn/VBCSCompiler.exe">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/24/2018 13:38:22</publishTime>
     </File>
     <File Include="bin/roslyn/VBCSCompiler.exe.config">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/24/2018 13:38:22</publishTime>
     </File>
     <File Include="bin/ru-ru/JavaScriptEngineSwitcher.Core.resources.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>12/25/2018 20:09:58</publishTime>
     </File>
     <File Include="bin/ru/FSharp.Core.resources.dll">
-      <publishTime>09/02/2018 01:34:56</publishTime>
+      <publishTime>02/09/2018 01:34:56</publishTime>
     </File>
     <File Include="bin/System.Diagnostics.DiagnosticSource.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/19/2017 11:01:30</publishTime>
     </File>
     <File Include="bin/System.Net.Http.Formatting.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/28/2018 13:00:36</publishTime>
     </File>
     <File Include="bin/System.ValueTuple.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/19/2017 10:01:32</publishTime>
     </File>
     <File Include="bin/System.Web.Cors.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/28/2018 12:58:44</publishTime>
     </File>
     <File Include="bin/System.Web.Helpers.dll">
-      <publishTime>01/02/2018 12:20:56</publishTime>
+      <publishTime>02/01/2018 12:20:56</publishTime>
     </File>
     <File Include="bin/System.Web.Http.Cors.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>11/28/2018 13:01:26</publishTime>
     </File>
     <File Include="bin/System.Web.Http.dll">
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="bin/System.Web.Http.WebHost.dll">
-      <publishTime>01/02/2018 12:19:26</publishTime>
+      <publishTime>02/01/2018 12:19:26</publishTime>
     </File>
     <File Include="bin/System.Web.Mvc.dll">
-      <publishTime>01/02/2018 12:16:32</publishTime>
+      <publishTime>02/01/2018 12:16:32</publishTime>
     </File>
     <File Include="bin/System.Web.Optimization.dll">
-      <publishTime>11/02/2014 15:26:04</publishTime>
+      <publishTime>02/11/2014 15:26:04</publishTime>
     </File>
     <File Include="bin/System.Web.Razor.dll">
-      <publishTime>01/02/2018 12:16:56</publishTime>
+      <publishTime>02/01/2018 12:16:56</publishTime>
     </File>
     <File Include="bin/System.Web.WebPages.Deployment.dll">
-      <publishTime>01/02/2018 12:20:56</publishTime>
+      <publishTime>02/01/2018 12:20:56</publishTime>
     </File>
     <File Include="bin/System.Web.WebPages.dll">
-      <publishTime>01/02/2018 12:20:56</publishTime>
+      <publishTime>02/01/2018 12:20:56</publishTime>
     </File>
     <File Include="bin/System.Web.WebPages.Razor.dll">
-      <publishTime>01/02/2018 12:20:56</publishTime>
+      <publishTime>02/01/2018 12:20:56</publishTime>
     </File>
     <File Include="bin/tr/FSharp.Core.resources.dll">
-      <publishTime>09/02/2018 01:34:56</publishTime>
+      <publishTime>02/09/2018 01:34:56</publishTime>
     </File>
     <File Include="bin/Vse.Web.Serialization.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>04/20/2017 14:24:52</publishTime>
     </File>
     <File Include="bin/Vse.Web.Serialization.pdb">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>04/20/2017 14:24:52</publishTime>
     </File>
     <File Include="bin/WebActivatorEx.dll">
-      <publishTime>05/10/2016 13:11:52</publishTime>
+      <publishTime>10/05/2016 13:11:52</publishTime>
     </File>
     <File Include="bin/WebApplication.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/21/2019 13:04:41</publishTime>
     </File>
     <File Include="bin/WebApplication.pdb">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/21/2019 13:04:41</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>01/23/2014 13:57:34</publishTime>
     </File>
     <File Include="bin/Webpack.NET.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>09/13/2017 15:58:22</publishTime>
     </File>
     <File Include="bin/Z.EntityFramework.Extensions.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/17/2019 03:37:44</publishTime>
     </File>
     <File Include="bin/zh-Hans/FSharp.Core.resources.dll">
-      <publishTime>09/02/2018 01:34:56</publishTime>
+      <publishTime>02/09/2018 01:34:56</publishTime>
     </File>
     <File Include="bin/zh-Hant/FSharp.Core.resources.dll">
-      <publishTime>09/02/2018 01:34:56</publishTime>
+      <publishTime>02/09/2018 01:34:56</publishTime>
     </File>
     <File Include="compilerconfig.json">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>04/24/2019 17:02:09</publishTime>
     </File>
     <File Include="compilerconfig.json.defaults">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/28/2019 18:44:40</publishTime>
     </File>
     <File Include="Content/bootstrap-theme.css">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/20/2019 15:57:10</publishTime>
     </File>
     <File Include="Content/bootstrap-theme.css.map">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/20/2019 15:57:10</publishTime>
     </File>
     <File Include="Content/bootstrap-theme.min.css">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/20/2019 15:57:10</publishTime>
     </File>
     <File Include="Content/bootstrap-theme.min.css.map">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/20/2019 15:57:10</publishTime>
     </File>
     <File Include="Content/bootstrap.css">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/20/2019 15:57:10</publishTime>
     </File>
     <File Include="Content/bootstrap.css.map">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/20/2019 15:57:10</publishTime>
     </File>
     <File Include="Content/bootstrap.min.css">
-      <publishTime>10/06/2019 19:00:24</publishTime>
+      <publishTime>06/10/2019 19:00:24</publishTime>
     </File>
     <File Include="Content/bootstrap.min.css.map">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/20/2019 15:57:10</publishTime>
     </File>
     <File Include="Content/css/base.css">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/28/2019 10:51:58</publishTime>
     </File>
     <File Include="Content/css/custom.css">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/24/2019 15:17:20</publishTime>
     </File>
     <File Include="Content/css/custom.min.css">
-      <publishTime>03/06/2019 10:34:30</publishTime>
+      <publishTime>06/03/2019 10:34:30</publishTime>
     </File>
     <File Include="Content/css/Indicadores/Indicadores.css">
-      <publishTime>02/04/2019 15:08:49</publishTime>
+      <publishTime>04/02/2019 15:08:49</publishTime>
     </File>
     <File Include="Content/css/Indicadores/Monitor_auditorio_ventas/main.css">
-      <publishTime>03/04/2019 09:02:43</publishTime>
+      <publishTime>04/03/2019 09:02:43</publishTime>
     </File>
     <File Include="Content/css/Surtilr_pedido_embarque/main - Copia %282%29.css">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/30/2019 13:15:35</publishTime>
     </File>
     <File Include="Content/css/Surtilr_pedido_embarque/main.css">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 17:49:49</publishTime>
     </File>
     <File Include="Content/css/Usuarios/Acccesos.css">
-      <publishTime>08/04/2019 11:13:30</publishTime>
+      <publishTime>04/08/2019 11:13:30</publishTime>
     </File>
     <File Include="Content/css/Usuarios/Perfil.css">
-      <publishTime>10/04/2019 10:04:45</publishTime>
+      <publishTime>04/10/2019 10:04:45</publishTime>
     </File>
     <File Include="Content/font-awesome/.bower.json">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/29/2019 14:39:17</publishTime>
     </File>
     <File Include="Content/font-awesome/.gitignore">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/29/2019 14:39:17</publishTime>
     </File>
     <File Include="Content/font-awesome/.npmignore">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/29/2019 14:39:17</publishTime>
     </File>
     <File Include="Content/font-awesome/bower.json">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/29/2019 14:39:17</publishTime>
     </File>
     <File Include="Content/font-awesome/css/font-awesome.css">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/29/2019 14:39:17</publishTime>
     </File>
     <File Include="Content/font-awesome/css/font-awesome.css.map">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/29/2019 14:39:17</publishTime>
     </File>
     <File Include="Content/font-awesome/css/font-awesome.min.css">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/29/2019 14:39:17</publishTime>
     </File>
     <File Include="Content/font-awesome/fonts/fontawesome-webfont.eot">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/29/2019 14:39:17</publishTime>
     </File>
     <File Include="Content/font-awesome/fonts/fontawesome-webfont.svg">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/29/2019 14:39:17</publishTime>
     </File>
     <File Include="Content/font-awesome/fonts/fontawesome-webfont.ttf">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/29/2019 14:39:17</publishTime>
     </File>
     <File Include="Content/font-awesome/fonts/fontawesome-webfont.woff">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/29/2019 14:39:17</publishTime>
     </File>
     <File Include="Content/font-awesome/fonts/fontawesome-webfont.woff2">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/29/2019 14:39:17</publishTime>
     </File>
     <File Include="Content/font-awesome/fonts/FontAwesome.otf">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/29/2019 14:39:17</publishTime>
     </File>
     <File Include="Content/font-awesome/HELP-US-OUT.txt">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/29/2019 14:39:17</publishTime>
     </File>
     <File Include="Content/font-awesome/less/animated.less">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/29/2019 14:39:17</publishTime>
     </File>
     <File Include="Content/font-awesome/less/bordered-pulled.less">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/29/2019 14:39:17</publishTime>
     </File>
     <File Include="Content/font-awesome/less/core.less">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/29/2019 14:39:17</publishTime>
     </File>
     <File Include="Content/font-awesome/less/fixed-width.less">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/29/2019 14:39:17</publishTime>
     </File>
     <File Include="Content/font-awesome/less/font-awesome.less">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/29/2019 14:39:17</publishTime>
     </File>
     <File Include="Content/font-awesome/less/icons.less">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/29/2019 14:39:17</publishTime>
     </File>
     <File Include="Content/font-awesome/less/larger.less">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/29/2019 14:39:17</publishTime>
     </File>
     <File Include="Content/font-awesome/less/list.less">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/29/2019 14:39:17</publishTime>
     </File>
     <File Include="Content/font-awesome/less/mixins.less">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/29/2019 14:39:17</publishTime>
     </File>
     <File Include="Content/font-awesome/less/path.less">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/29/2019 14:39:17</publishTime>
     </File>
     <File Include="Content/font-awesome/less/rotated-flipped.less">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/29/2019 14:39:17</publishTime>
     </File>
     <File Include="Content/font-awesome/less/screen-reader.less">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/29/2019 14:39:17</publishTime>
     </File>
     <File Include="Content/font-awesome/less/stacked.less">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/29/2019 14:39:17</publishTime>
     </File>
     <File Include="Content/font-awesome/less/variables.less">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/29/2019 14:39:17</publishTime>
     </File>
     <File Include="Content/font-awesome/scss/font-awesome.scss">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/29/2019 14:39:17</publishTime>
     </File>
     <File Include="Content/font-awesome/scss/_animated.scss">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/29/2019 14:39:17</publishTime>
     </File>
     <File Include="Content/font-awesome/scss/_bordered-pulled.scss">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/29/2019 14:39:17</publishTime>
     </File>
     <File Include="Content/font-awesome/scss/_core.scss">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/29/2019 14:39:17</publishTime>
     </File>
     <File Include="Content/font-awesome/scss/_fixed-width.scss">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/29/2019 14:39:17</publishTime>
     </File>
     <File Include="Content/font-awesome/scss/_icons.scss">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/29/2019 14:39:17</publishTime>
     </File>
     <File Include="Content/font-awesome/scss/_larger.scss">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/29/2019 14:39:17</publishTime>
     </File>
     <File Include="Content/font-awesome/scss/_list.scss">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/29/2019 14:39:17</publishTime>
     </File>
     <File Include="Content/font-awesome/scss/_mixins.scss">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/29/2019 14:39:17</publishTime>
     </File>
     <File Include="Content/font-awesome/scss/_path.scss">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/29/2019 14:39:17</publishTime>
     </File>
     <File Include="Content/font-awesome/scss/_rotated-flipped.scss">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/29/2019 14:39:17</publishTime>
     </File>
     <File Include="Content/font-awesome/scss/_screen-reader.scss">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/29/2019 14:39:17</publishTime>
     </File>
     <File Include="Content/font-awesome/scss/_stacked.scss">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/29/2019 14:39:17</publishTime>
     </File>
     <File Include="Content/font-awesome/scss/_variables.scss">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/29/2019 14:39:17</publishTime>
     </File>
     <File Include="Content/Site.css">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/20/2019 15:57:07</publishTime>
     </File>
     <File Include="DeploymentSettings.xml">
-      <publishTime>10/04/2019 11:08:54</publishTime>
+      <publishTime>04/10/2019 11:08:54</publishTime>
     </File>
     <File Include="dist/Accesos/Menus/menus.js">
       <publishTime>08/15/2019 10:04:07</publishTime>
@@ -658,10 +658,10 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>08/08/2019 15:30:31</publishTime>
     </File>
     <File Include="dist/indicadores/MonitorTDCSucursales/bundle.js">
-      <publishTime>08/14/2019 18:34:04</publishTime>
+      <publishTime>08/21/2019 13:04:23</publishTime>
     </File>
     <File Include="dist/indicadores/Monitor_cajas/bundle.js">
-      <publishTime>08/15/2019 14:59:32</publishTime>
+      <publishTime>08/15/2019 17:13:34</publishTime>
     </File>
     <File Include="dist/indicadores/PreciosCompetencia/Monitor.js">
       <publishTime>08/08/2019 15:30:29</publishTime>
@@ -679,43 +679,43 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>08/08/2019 15:30:27</publishTime>
     </File>
     <File Include="favicon.ico">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/20/2019 18:25:41</publishTime>
     </File>
     <File Include="fonts/glyphicons-halflings-regular.eot">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/20/2019 15:57:10</publishTime>
     </File>
     <File Include="fonts/glyphicons-halflings-regular.svg">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/20/2019 15:57:10</publishTime>
     </File>
     <File Include="fonts/glyphicons-halflings-regular.ttf">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/20/2019 15:57:09</publishTime>
     </File>
     <File Include="fonts/glyphicons-halflings-regular.woff">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/20/2019 15:57:09</publishTime>
     </File>
     <File Include="fonts/glyphicons-halflings-regular.woff2">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/20/2019 15:57:09</publishTime>
     </File>
     <File Include="Global.asax">
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Models/Monitor_flujo_de_inventario/ModelFlujoDato.Context.tt">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/26/2019 18:02:07</publishTime>
     </File>
     <File Include="Models/Monitor_flujo_de_inventario/ModelFlujoDato.edmx.diagram">
-      <publishTime>08/04/2019 14:22:39</publishTime>
+      <publishTime>08/15/2019 10:25:33</publishTime>
     </File>
     <File Include="Models/Monitor_flujo_de_inventario/ModelFlujoDato.tt">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/26/2019 18:02:07</publishTime>
     </File>
     <File Include="Models/Pedido_establecimiento/EmbarqueEntitiesFramework.Context.tt">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/18/2019 13:21:28</publishTime>
     </File>
     <File Include="Models/Pedido_establecimiento/EmbarqueEntitiesFramework.edmx.diagram">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/25/2019 16:24:51</publishTime>
     </File>
     <File Include="Models/Pedido_establecimiento/EmbarqueEntitiesFramework.tt">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/18/2019 13:21:28</publishTime>
     </File>
     <File Include="node_modules/%40mrmlnc/readdir-enhanced/CHANGELOG.md">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -51982,25 +51982,25 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>08/07/2019 15:43:08</publishTime>
     </File>
     <File Include="package.json">
-      <publishTime>10/08/2019 13:24:13</publishTime>
+      <publishTime>08/16/2019 10:16:25</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/18/2019 19:21:18</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/21/2019 13:04:44</publishTime>
     </File>
     <File Include="Properties/PublishProfiles/Produccion.pubxml">
-      <publishTime>03/06/2019 09:20:23</publishTime>
+      <publishTime>06/03/2019 09:20:23</publishTime>
     </File>
     <File Include="README.md">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/28/2019 19:23:29</publishTime>
     </File>
     <File Include="Scripts/bootstrap.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/20/2019 15:57:09</publishTime>
     </File>
     <File Include="Scripts/bootstrap.min.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/20/2019 15:57:09</publishTime>
     </File>
     <File Include="Scripts/Chart.js/.bower.json">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -52378,58 +52378,58 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Scripts/Componentes/Estaticos/BotonToggle.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/30/2019 13:04:49</publishTime>
     </File>
     <File Include="Scripts/Componentes/Estaticos/BotonToggle.jsx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/23/2019 17:31:09</publishTime>
     </File>
     <File Include="Scripts/Componentes/Estaticos/BotonToggle.min.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/30/2019 13:04:49</publishTime>
     </File>
     <File Include="Scripts/Componentes/Estaticos/contraer_expandir.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/23/2019 17:57:52</publishTime>
     </File>
     <File Include="Scripts/Componentes/Estaticos/efecto_carga.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/30/2019 13:04:49</publishTime>
     </File>
     <File Include="Scripts/Componentes/Estaticos/efecto_carga.jsx">
-      <publishTime>12/04/2019 18:35:45</publishTime>
+      <publishTime>04/12/2019 18:35:45</publishTime>
     </File>
     <File Include="Scripts/Componentes/Estaticos/efecto_carga.min.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/30/2019 13:04:49</publishTime>
     </File>
     <File Include="Scripts/generales/alertas.js">
-      <publishTime>10/04/2019 11:03:13</publishTime>
+      <publishTime>04/10/2019 11:03:13</publishTime>
     </File>
     <File Include="Scripts/generales/componente_moneda_vue.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/23/2019 10:47:21</publishTime>
     </File>
     <File Include="Scripts/Indicadores/comparativo_resultados/tabla_main.js">
-      <publishTime>06/05/2019 10:52:50</publishTime>
+      <publishTime>05/06/2019 10:52:50</publishTime>
     </File>
     <File Include="Scripts/Indicadores/comparativo_resultados/tabla_main.jsx">
-      <publishTime>04/07/2019 11:28:35</publishTime>
+      <publishTime>07/04/2019 11:28:35</publishTime>
     </File>
     <File Include="Scripts/Indicadores/comparativo_resultados/tabla_main.min.js">
-      <publishTime>06/05/2019 10:52:50</publishTime>
+      <publishTime>05/06/2019 10:52:50</publishTime>
     </File>
     <File Include="Scripts/Indicadores/indicadores_caja.js">
-      <publishTime>02/04/2019 15:07:26</publishTime>
+      <publishTime>04/02/2019 15:07:26</publishTime>
     </File>
     <File Include="Scripts/Indicadores/indicadores_caja.jsx">
-      <publishTime>02/04/2019 15:07:14</publishTime>
+      <publishTime>08/15/2019 11:35:38</publishTime>
     </File>
     <File Include="Scripts/Indicadores/indicadores_caja.min.js">
-      <publishTime>02/04/2019 15:07:26</publishTime>
+      <publishTime>04/02/2019 15:07:26</publishTime>
     </File>
     <File Include="Scripts/Indicadores/Monitor_auditorio_ventas/Monitor.js">
-      <publishTime>11/05/2019 08:49:38</publishTime>
+      <publishTime>05/11/2019 08:49:38</publishTime>
     </File>
     <File Include="Scripts/Indicadores/Monitor_auditorio_ventas/Monitor.jsx">
-      <publishTime>11/05/2019 08:49:22</publishTime>
+      <publishTime>05/11/2019 08:49:22</publishTime>
     </File>
     <File Include="Scripts/Indicadores/Monitor_auditorio_ventas/Monitor.min.js">
-      <publishTime>11/05/2019 08:49:38</publishTime>
+      <publishTime>05/11/2019 08:49:38</publishTime>
     </File>
     <File Include="Scripts/Indicadores/MovimientosBancoInterno/main.js">
       <publishTime>06/12/2019 17:39:38</publishTime>
@@ -52441,43 +52441,43 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>04/06/2019 12:53:16</publishTime>
     </File>
     <File Include="Scripts/Inicio/main.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/30/2019 10:30:04</publishTime>
     </File>
     <File Include="Scripts/Inicio/main.jsx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/30/2019 10:30:40</publishTime>
     </File>
     <File Include="Scripts/Inicio/main.min.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/30/2019 10:30:04</publishTime>
     </File>
     <File Include="Scripts/jquery-3.3.1.intellisense.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/20/2019 15:57:15</publishTime>
     </File>
     <File Include="Scripts/jquery-3.3.1.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/20/2019 15:57:11</publishTime>
     </File>
     <File Include="Scripts/jquery-3.3.1.min.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/20/2019 15:57:11</publishTime>
     </File>
     <File Include="Scripts/jquery-3.3.1.min.map">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/20/2019 15:57:11</publishTime>
     </File>
     <File Include="Scripts/jquery-3.3.1.slim.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/20/2019 15:57:11</publishTime>
     </File>
     <File Include="Scripts/jquery-3.3.1.slim.min.js">
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Scripts/jquery-3.3.1.slim.min.map">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/20/2019 15:57:11</publishTime>
     </File>
     <File Include="Scripts/jquery-3_slim_min.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/20/2019 15:57:11</publishTime>
     </File>
     <File Include="Scripts/js/custom.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/30/2019 11:14:30</publishTime>
     </File>
     <File Include="Scripts/js/custom.min.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/30/2019 11:14:31</publishTime>
     </File>
     <File Include="Scripts/lib/Chart.js/.bower.json">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -52855,466 +52855,466 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/.bower.json">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/.codeclimate.yml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/.editorconfig">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/.eslintignore">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/.eslintrc">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/.github/ISSUE_TEMPLATE.md">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/.github/PULL_REQUEST_TEMPLATE.md">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/.gitignore">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/.travis.yml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/bower.json">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/composer.json">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/config.jshintrc">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/CONTRIBUTING.md">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/dist/Chart.bundle.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/dist/Chart.bundle.min.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/dist/Chart.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/dist/Chart.min.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/docs/00-Getting-Started.md">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/docs/01-Chart-Configuration.md">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/docs/02-Scales.md">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/docs/03-Line-Chart.md">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/docs/04-Bar-Chart.md">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/docs/05-Radar-Chart.md">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/docs/06-Polar-Area-Chart.md">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/docs/07-Pie-Doughnut-Chart.md">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/docs/08-Bubble-Chart.md">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/docs/09-Advanced.md">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/docs/10-Notes.md">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/gulpfile.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/karma.conf.ci.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/karma.conf.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/karma.coverage.conf.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/LICENSE.md">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/package.json">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/README.md">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/samples/AnimationCallbacks/progress-bar.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/samples/bar-horizontal.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/samples/bar-multi-axis.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/samples/bar-stacked.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/samples/bar.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/samples/bubble.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/samples/combo-bar-line.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/samples/data_label_combo-bar-line.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/samples/different-point-sizes.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/samples/doughnut.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/samples/line-customTooltips.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/samples/line-legend.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/samples/line-logarithmic.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/samples/line-multi-axis.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/samples/line-skip-points.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/samples/line-stacked-area.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/samples/line-x-axis-filter.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/samples/line.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/samples/pie-customTooltips.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/samples/pie.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/samples/polar-area.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/samples/radar-skip-points.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/samples/radar.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/samples/scatter-logX.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/samples/scatter-multi-axis.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/samples/scatter.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/samples/timeScale/combo-time-scale.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/samples/timeScale/line-time-point-data.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/samples/timeScale/line-time-scale.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/samples/tooltip-hooks.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/src/chart.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/src/charts/Chart.Bar.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/src/charts/Chart.Bubble.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/src/charts/Chart.Doughnut.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/src/charts/Chart.Line.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/src/charts/Chart.PolarArea.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/src/charts/Chart.Radar.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/src/charts/Chart.Scatter.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/src/controllers/controller.bar.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/src/controllers/controller.bubble.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/src/controllers/controller.doughnut.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/src/controllers/controller.line.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/src/controllers/controller.polarArea.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/src/controllers/controller.radar.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/src/core/core.animation.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/src/core/core.controller.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/src/core/core.datasetController.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/src/core/core.element.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/src/core/core.helpers.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/src/core/core.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/src/core/core.layoutService.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/src/core/core.legend.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/src/core/core.plugin.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/src/core/core.scale.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/src/core/core.scaleService.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/src/core/core.title.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/src/core/core.tooltip.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/src/elements/element.arc.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/src/elements/element.line.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/src/elements/element.point.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/src/elements/element.rectangle.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/src/scales/scale.category.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/src/scales/scale.linear.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/src/scales/scale.logarithmic.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/src/scales/scale.radialLinear.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/src/scales/scale.time.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/test/controller.bar.tests.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/test/controller.bubble.tests.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/test/controller.doughnut.tests.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/test/controller.line.tests.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/test/controller.polarArea.tests.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/test/controller.radar.tests.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/test/core.element.tests.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/test/core.helpers.tests.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/test/core.layoutService.tests.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/test/core.legend.tests.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/test/core.plugin.tests.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:17</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/test/core.scaleService.tests.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:18</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/test/core.title.tests.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:18</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/test/defaultConfig.tests.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:18</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/test/element.arc.tests.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:18</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/test/element.line.tests.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:18</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/test/element.point.tests.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:18</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/test/element.rectangle.tests.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:18</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/test/mockContext.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:18</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/test/scale.category.tests.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:18</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/test/scale.linear.tests.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:18</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/test/scale.logarithmic.tests.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:18</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/test/scale.radialLinear.tests.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:18</publishTime>
     </File>
     <File Include="Scripts/lib/Chart/test/scale.time.tests.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:18</publishTime>
     </File>
     <File Include="Scripts/lib/chart_1.js">
       <publishTime>05/11/2019 08:53:18</publishTime>
     </File>
     <File Include="Scripts/lib/html2Camvas/html2canvas.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:57:53</publishTime>
     </File>
     <File Include="Scripts/lib/jsbarCode/JsBarcode.all.min.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:58:05</publishTime>
     </File>
     <File Include="Scripts/lib/React/JSXTransformer.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:56:40</publishTime>
     </File>
     <File Include="Scripts/lib/React/react-dom.production.min.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:56:40</publishTime>
     </File>
     <File Include="Scripts/lib/React/react.development-16.4.2.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:56:40</publishTime>
     </File>
     <File Include="Scripts/lib/React/react.production.min-16.4.2.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:56:40</publishTime>
     </File>
     <File Include="Scripts/lib/React/react.production.min.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:56:40</publishTime>
     </File>
     <File Include="Scripts/lib/vue/vue.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:56:40</publishTime>
     </File>
     <File Include="Scripts/lib/vue/vue_.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:56:40</publishTime>
     </File>
     <File Include="Scripts/modernizr-2.8.3.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/20/2019 15:57:18</publishTime>
     </File>
     <File Include="Scripts/Sesion/Accesos_urls.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>04/26/2019 16:20:09</publishTime>
     </File>
     <File Include="Scripts/Sesion/Accesos_urls.jsx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/15/2019 09:50:06</publishTime>
     </File>
     <File Include="Scripts/Sesion/Accesos_urls.min.js">
-      <publishTime>08/04/2019 19:00:29</publishTime>
+      <publishTime>04/08/2019 19:00:29</publishTime>
     </File>
     <File Include="Scripts/Sesion/login.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/21/2019 16:04:04</publishTime>
     </File>
     <File Include="Scripts/Sesion/menu_accesos.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>04/27/2019 10:32:32</publishTime>
     </File>
     <File Include="Scripts/SurtidoEmbarque/Embarque_pedido.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 11:39:27</publishTime>
     </File>
     <File Include="Scripts/SurtidoEmbarque/Seleccion_embarque.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/17/2019 09:22:57</publishTime>
     </File>
     <File Include="Scripts/SurtidoEmbarque/view_surtido.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/23/2019 09:43:06</publishTime>
     </File>
     <File Include="Scripts/SurtidoEmbarque/vista_embarque.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/17/2019 08:39:53</publishTime>
     </File>
     <File Include="Scripts/SurtidoEmbarque/vista_embarque.jsx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/20/2019 10:52:02</publishTime>
     </File>
     <File Include="Scripts/SurtidoEmbarque/vista_embarque.min.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/17/2019 08:39:53</publishTime>
     </File>
     <File Include="Scripts/Usuarios/Acceso.js">
-      <publishTime>10/04/2019 09:20:09</publishTime>
+      <publishTime>04/10/2019 09:20:09</publishTime>
     </File>
     <File Include="Scripts/Usuarios/Acceso.jsx">
-      <publishTime>10/04/2019 13:33:44</publishTime>
+      <publishTime>04/10/2019 13:33:44</publishTime>
     </File>
     <File Include="Scripts/Usuarios/Acceso.min.js">
-      <publishTime>10/04/2019 09:20:09</publishTime>
+      <publishTime>04/10/2019 09:20:09</publishTime>
     </File>
     <File Include="Scripts/Usuarios/main.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/30/2019 10:34:26</publishTime>
     </File>
     <File Include="Scripts/Usuarios/main.jsx">
-      <publishTime>10/04/2019 09:22:25</publishTime>
+      <publishTime>04/10/2019 09:22:25</publishTime>
     </File>
     <File Include="Scripts/Usuarios/main.min.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/30/2019 10:34:26</publishTime>
     </File>
     <File Include="Scripts/Usuarios/Perfil.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/14/2019 09:25:27</publishTime>
     </File>
     <File Include="Scripts/Usuarios/Perfil.js.map">
       <publishTime>09/07/2019 10:38:16</publishTime>
@@ -53323,55 +53323,58 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>05/11/2019 15:00:16</publishTime>
     </File>
     <File Include="Scripts/vue.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/28/2019 17:23:32</publishTime>
     </File>
     <File Include="Scripts/vue.min.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/28/2019 17:23:32</publishTime>
     </File>
     <File Include="src/Globales/CodigosBarra/codigos_de_barras _g.es5.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/20/2019 16:03:25</publishTime>
     </File>
     <File Include="src/Globales/CodigosBarra/codigos_de_barras _g.es5.min.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/20/2019 16:03:25</publishTime>
     </File>
     <File Include="src/Globales/CodigosBarra/codigos_de_barras _g.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/20/2019 16:03:25</publishTime>
     </File>
     <File Include="src/Globales/CodigosBarra/codigos_de_barras.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/20/2019 16:03:25</publishTime>
+    </File>
+    <File Include="src/Globales/obtener_foto_empleado.js">
+      <publishTime>08/20/2019 12:04:38</publishTime>
     </File>
     <File Include="src/scripts/Globales/CodigosBarra/codigos_de_barras _g.es5.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:55:31</publishTime>
     </File>
     <File Include="src/scripts/Globales/CodigosBarra/codigos_de_barras _g.es5.min.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:55:31</publishTime>
     </File>
     <File Include="src/scripts/Globales/CodigosBarra/codigos_de_barras _g.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:55:32</publishTime>
     </File>
     <File Include="src/scripts/Globales/CodigosBarra/codigos_de_barras.js">
-      <publishTime>08/04/2019 15:39:22</publishTime>
+      <publishTime>04/08/2019 15:39:22</publishTime>
     </File>
     <File Include="src/scripts/Globales/ExportarExcel.js">
-      <publishTime>09/07/2019 10:31:37</publishTime>
+      <publishTime>07/09/2019 10:31:37</publishTime>
     </File>
     <File Include="src/scripts/Globales/fechas.js">
-      <publishTime>10/07/2019 08:19:40</publishTime>
+      <publishTime>07/10/2019 08:19:40</publishTime>
     </File>
     <File Include="src/scripts/Globales/moneda.js">
-      <publishTime>08/07/2019 08:48:23</publishTime>
+      <publishTime>07/08/2019 08:48:23</publishTime>
     </File>
     <File Include="src/scripts/Globales/Ordenamiento/dia_semana.js">
-      <publishTime>12/08/2019 12:27:58</publishTime>
+      <publishTime>08/12/2019 12:27:58</publishTime>
     </File>
     <File Include="src/scripts/Indicadores/Cuadrantes/monitor - Copia.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>04/30/2019 17:43:25</publishTime>
     </File>
     <File Include="src/scripts/Indicadores/Cuadrantes/monitor.js">
-      <publishTime>02/05/2019 08:17:20</publishTime>
+      <publishTime>05/02/2019 08:17:20</publishTime>
     </File>
     <File Include="src/scripts/Indicadores/MonitorOrdenCompraInterna/MonitorOrdenCompraInterna.js">
-      <publishTime>02/05/2019 14:39:47</publishTime>
+      <publishTime>05/02/2019 14:39:47</publishTime>
     </File>
     <File Include="src/scripts/Indicadores/MovimientosBancoInterno/main.js">
       <publishTime>08/08/2019 10:48:54</publishTime>
@@ -53380,22 +53383,22 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>08/08/2019 10:48:54</publishTime>
     </File>
     <File Include="src/scripts/Indicadores/OrdenesDePagoEnEfectivo/Detallaes_pagos.js">
-      <publishTime>11/05/2019 10:37:25</publishTime>
+      <publishTime>05/11/2019 10:37:25</publishTime>
     </File>
     <File Include="src/scripts/Indicadores/OrdenesDePagoEnEfectivo/Obtener_beneficioarios.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>04/24/2019 16:35:29</publishTime>
     </File>
     <File Include="src/scripts/Indicadores/OrdenesDePagoEnEfectivo/Obtener_selectores.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>04/24/2019 10:20:03</publishTime>
     </File>
     <File Include="src/scripts/Indicadores/OrdenesDePagoEnEfectivo/OrdenesPago.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>04/26/2019 12:33:36</publishTime>
     </File>
     <File Include="src/scripts/Indicadores/OrdenesDePagoEnEfectivo/OrdenesPago.jsx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/28/2019 11:39:34</publishTime>
     </File>
     <File Include="src/scripts/Indicadores/OrdenesDePagoEnEfectivo/OrdenesPago.min.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>04/26/2019 12:33:36</publishTime>
     </File>
     <File Include="src/scripts/Indicadores/OrdenesDePagoEnEfectivo/Parametros_consulta.es5.js">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -53404,118 +53407,172 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="src/scripts/Indicadores/OrdenesDePagoEnEfectivo/Parametros_consulta.js">
-      <publishTime>11/05/2019 10:35:36</publishTime>
+      <publishTime>05/11/2019 10:35:36</publishTime>
     </File>
     <File Include="src/scripts/Indicadores/OrdenesDePagoEnEfectivo/Realizar_consulta.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>04/24/2019 16:35:28</publishTime>
     </File>
     <File Include="src/scripts/Indicadores/PreciosCompetencia/monitor.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/29/2019 12:14:15</publishTime>
     </File>
     <File Include="src/scripts/Indicadores/PreciosCompetencia/template/controlMonitor.vue">
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="src/scripts/Indicadores/ReporteIncidenciasFecha/main.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>04/25/2019 16:48:17</publishTime>
+    </File>
+    <File Include="src/scripts/ReactJS/Accesos/Menus/Components/App.jsx">
+      <publishTime>08/15/2019 10:04:07</publishTime>
+    </File>
+    <File Include="src/scripts/ReactJS/Accesos/Menus/conexiones/AppMenu.jsx">
+      <publishTime>08/15/2019 09:53:27</publishTime>
+    </File>
+    <File Include="src/scripts/ReactJS/Accesos/Menus/conexiones/AppSubMenuAcceso.jsx">
+      <publishTime>08/15/2019 09:53:49</publishTime>
+    </File>
+    <File Include="src/scripts/ReactJS/Accesos/Menus/conexiones/obtenerMenus.js">
+      <publishTime>08/15/2019 09:17:40</publishTime>
+    </File>
+    <File Include="src/scripts/ReactJS/Accesos/Menus/Index.jsx">
+      <publishTime>08/15/2019 09:11:20</publishTime>
     </File>
     <File Include="src/scripts/ReactJS/ComponentesGlobales/Margen.jsx">
-      <publishTime>12/08/2019 12:52:44</publishTime>
+      <publishTime>08/12/2019 12:52:44</publishTime>
     </File>
     <File Include="src/scripts/ReactJS/ComponentesGlobales/Moneda.jsx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/28/2019 17:24:51</publishTime>
     </File>
     <File Include="src/scripts/ReactJS/ComponentesGlobales/MsgAlerta.jsx">
-      <publishTime>08/07/2019 13:40:30</publishTime>
+      <publishTime>07/08/2019 13:40:30</publishTime>
     </File>
     <File Include="src/scripts/ReactJS/indicadores/EstadosDeResultados/components/App.jsx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/19/2019 09:01:39</publishTime>
     </File>
     <File Include="src/scripts/ReactJS/indicadores/EstadosDeResultados/components/Cavecera.jsx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/19/2019 09:17:26</publishTime>
     </File>
     <File Include="src/scripts/ReactJS/indicadores/EstadosDeResultados/components/ModalConceptos - Copia.jsx">
-      <publishTime>08/07/2019 11:15:05</publishTime>
+      <publishTime>07/08/2019 11:15:05</publishTime>
     </File>
     <File Include="src/scripts/ReactJS/indicadores/EstadosDeResultados/components/ModalConceptos.jsx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/13/2019 09:03:30</publishTime>
     </File>
     <File Include="src/scripts/ReactJS/indicadores/EstadosDeResultados/components/ModalMivimientosPorEstablecimiento - Copia.jsx">
-      <publishTime>09/07/2019 15:55:23</publishTime>
+      <publishTime>07/09/2019 15:55:23</publishTime>
     </File>
     <File Include="src/scripts/ReactJS/indicadores/EstadosDeResultados/components/ModalMivimientosPorEstablecimiento.jsx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/20/2019 10:09:23</publishTime>
     </File>
     <File Include="src/scripts/ReactJS/indicadores/EstadosDeResultados/components/VistaTablaPrincipal - Copia.jsx">
-      <publishTime>05/07/2019 18:38:37</publishTime>
+      <publishTime>07/05/2019 18:38:37</publishTime>
     </File>
     <File Include="src/scripts/ReactJS/indicadores/EstadosDeResultados/components/VistaTablaPrincipal.jsx">
-      <publishTime>11/07/2019 17:42:03</publishTime>
+      <publishTime>07/11/2019 17:42:03</publishTime>
     </File>
     <File Include="src/scripts/ReactJS/indicadores/EstadosDeResultados/Index.jsx">
-      <publishTime>04/07/2019 10:14:08</publishTime>
+      <publishTime>07/04/2019 10:14:08</publishTime>
     </File>
     <File Include="src/scripts/ReactJS/indicadores/EstadosDeResultados/manager/graficaConceptos.js">
-      <publishTime>08/07/2019 09:55:14</publishTime>
+      <publishTime>07/08/2019 09:55:14</publishTime>
     </File>
     <File Include="src/scripts/ReactJS/indicadores/EstadosDeResultados/manager/lista_conceptos.js">
-      <publishTime>12/07/2019 12:41:11</publishTime>
+      <publishTime>07/12/2019 12:41:11</publishTime>
     </File>
     <File Include="src/scripts/ReactJS/indicadores/EstadosDeResultados/manager/OrdenDatosTabla.js">
-      <publishTime>12/07/2019 12:40:35</publishTime>
+      <publishTime>07/12/2019 12:40:35</publishTime>
     </File>
     <File Include="src/scripts/ReactJS/indicadores/EstadosDeResultados/manager/PeriodosFecha.js">
-      <publishTime>09/07/2019 16:01:16</publishTime>
+      <publishTime>07/09/2019 16:01:16</publishTime>
     </File>
     <File Include="src/scripts/ReactJS/indicadores/EstadosDeResultados/models/mConcepto.js">
-      <publishTime>08/07/2019 08:33:33</publishTime>
+      <publishTime>07/08/2019 08:33:33</publishTime>
     </File>
     <File Include="src/scripts/ReactJS/indicadores/MonitorFlujoInventario/components/App.jsx">
-      <publishTime>01/08/2019 10:51:46</publishTime>
+      <publishTime>08/01/2019 10:51:46</publishTime>
     </File>
     <File Include="src/scripts/ReactJS/indicadores/MonitorFlujoInventario/components/Cavecera.jsx">
-      <publishTime>08/02/2019 18:56:48</publishTime>
+      <publishTime>02/08/2019 18:56:48</publishTime>
     </File>
     <File Include="src/scripts/ReactJS/indicadores/MonitorFlujoInventario/components/TablaDinamica.jsx">
-      <publishTime>01/08/2019 10:50:38</publishTime>
+      <publishTime>08/01/2019 10:50:38</publishTime>
     </File>
     <File Include="src/scripts/ReactJS/indicadores/MonitorFlujoInventario/index.jsx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/31/2019 10:11:08</publishTime>
     </File>
     <File Include="src/scripts/ReactJS/indicadores/MonitorOrdenCompraInterna/components/App.jsx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/16/2019 14:29:50</publishTime>
     </File>
     <File Include="src/scripts/ReactJS/indicadores/MonitorOrdenCompraInterna/components/Cavecera.jsx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/16/2019 14:08:40</publishTime>
     </File>
     <File Include="src/scripts/ReactJS/indicadores/MonitorOrdenCompraInterna/components/CaveceraTabla.jsx">
-      <publishTime>02/07/2019 12:17:11</publishTime>
+      <publishTime>07/02/2019 12:17:11</publishTime>
     </File>
     <File Include="src/scripts/ReactJS/indicadores/MonitorOrdenCompraInterna/components/EstablecimientoTabla.jsx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/16/2019 14:18:33</publishTime>
     </File>
     <File Include="src/scripts/ReactJS/indicadores/MonitorOrdenCompraInterna/components/SeleccionRecibe.jsx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/24/2019 19:23:44</publishTime>
     </File>
     <File Include="src/scripts/ReactJS/indicadores/MonitorOrdenCompraInterna/components/TablaOrdenes.jsx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/16/2019 13:25:51</publishTime>
     </File>
     <File Include="src/scripts/ReactJS/indicadores/MonitorOrdenCompraInterna/components/VistaDetalleOrden.jsx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/16/2019 12:55:08</publishTime>
     </File>
     <File Include="src/scripts/ReactJS/indicadores/MonitorOrdenCompraInterna/index.jsx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/24/2019 09:40:44</publishTime>
     </File>
     <File Include="src/scripts/ReactJS/indicadores/MonitorOrdenCompraInterna/metodos/manejoSemanas.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/16/2019 14:30:52</publishTime>
     </File>
     <File Include="src/scripts/ReactJS/indicadores/MonitorTDCSucursales/components/App.jsx">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/21/2019 13:04:22</publishTime>
+    </File>
+    <File Include="src/scripts/ReactJS/indicadores/MonitorTDCSucursales/components/AsignacionEmpleado/DetallesColaborador.jsx">
+      <publishTime>08/21/2019 12:38:59</publishTime>
+    </File>
+    <File Include="src/scripts/ReactJS/indicadores/MonitorTDCSucursales/components/AsignacionEmpleado/FilaProductos.jsx">
+      <publishTime>08/21/2019 12:43:42</publishTime>
+    </File>
+    <File Include="src/scripts/ReactJS/indicadores/MonitorTDCSucursales/components/AsignacionEmpleado/FilaTicket.jsx">
+      <publishTime>08/21/2019 12:43:44</publishTime>
+    </File>
+    <File Include="src/scripts/ReactJS/indicadores/MonitorTDCSucursales/components/AsignacionEmpleado/index.jsx">
+      <publishTime>08/21/2019 12:44:48</publishTime>
+    </File>
+    <File Include="src/scripts/ReactJS/indicadores/MonitorTDCSucursales/components/AsignacionEmpleado/TablaAsignacion.jsx">
+      <publishTime>08/21/2019 12:42:20</publishTime>
     </File>
     <File Include="src/scripts/ReactJS/indicadores/MonitorTDCSucursales/components/CaveceraConsulta.jsx">
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
+    <File Include="src/scripts/ReactJS/indicadores/MonitorTDCSucursales/components/CaveceraConsulta/BtnSemanas.jsx">
+      <publishTime>08/21/2019 12:50:56</publishTime>
+    </File>
+    <File Include="src/scripts/ReactJS/indicadores/MonitorTDCSucursales/components/CaveceraConsulta/index.jsx">
+      <publishTime>08/21/2019 13:02:15</publishTime>
+    </File>
+    <File Include="src/scripts/ReactJS/indicadores/MonitorTDCSucursales/components/CaveceraConsulta/ProgressBar.jsx">
+      <publishTime>08/21/2019 12:50:32</publishTime>
+    </File>
+    <File Include="src/scripts/ReactJS/indicadores/MonitorTDCSucursales/components/DetalleProductoEstablecimiento/Detalle.jsx">
+      <publishTime>08/21/2019 12:08:08</publishTime>
+    </File>
+    <File Include="src/scripts/ReactJS/indicadores/MonitorTDCSucursales/components/DetalleProductoEstablecimiento/index.jsx">
+      <publishTime>08/21/2019 13:02:35</publishTime>
+    </File>
+    <File Include="src/scripts/ReactJS/indicadores/MonitorTDCSucursales/components/DetalleProductoEstablecimiento/TablaAsignaciones.jsx">
+      <publishTime>08/21/2019 12:09:53</publishTime>
+    </File>
     <File Include="src/scripts/ReactJS/indicadores/MonitorTDCSucursales/components/Filtros.jsx">
       <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="src/scripts/ReactJS/indicadores/MonitorTDCSucursales/components/Filtros/index.jsx">
+      <publishTime>08/21/2019 13:03:56</publishTime>
+    </File>
+    <File Include="src/scripts/ReactJS/indicadores/MonitorTDCSucursales/components/Filtros/Seleccion.jsx">
+      <publishTime>08/21/2019 12:54:26</publishTime>
     </File>
     <File Include="src/scripts/ReactJS/indicadores/MonitorTDCSucursales/components/TablaVentas - Copia.jsx">
       <publishTime>12/08/2019 09:57:28</publishTime>
@@ -53523,158 +53580,200 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
     <File Include="src/scripts/ReactJS/indicadores/MonitorTDCSucursales/components/TablaVentas.jsx">
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
+    <File Include="src/scripts/ReactJS/indicadores/MonitorTDCSucursales/components/TablaVentas/Categoria.jsx">
+      <publishTime>08/21/2019 12:34:35</publishTime>
+    </File>
+    <File Include="src/scripts/ReactJS/indicadores/MonitorTDCSucursales/components/TablaVentas/Clases.jsx">
+      <publishTime>08/21/2019 12:27:43</publishTime>
+    </File>
+    <File Include="src/scripts/ReactJS/indicadores/MonitorTDCSucursales/components/TablaVentas/Dia.jsx">
+      <publishTime>08/21/2019 12:26:49</publishTime>
+    </File>
+    <File Include="src/scripts/ReactJS/indicadores/MonitorTDCSucursales/components/TablaVentas/Establecimiento.jsx">
+      <publishTime>08/21/2019 12:32:16</publishTime>
+    </File>
+    <File Include="src/scripts/ReactJS/indicadores/MonitorTDCSucursales/components/TablaVentas/Familia.jsx">
+      <publishTime>08/21/2019 12:33:20</publishTime>
+    </File>
+    <File Include="src/scripts/ReactJS/indicadores/MonitorTDCSucursales/components/TablaVentas/Fila.jsx">
+      <publishTime>08/21/2019 12:31:34</publishTime>
+    </File>
+    <File Include="src/scripts/ReactJS/indicadores/MonitorTDCSucursales/components/TablaVentas/FilaConcepto.jsx">
+      <publishTime>08/21/2019 12:19:15</publishTime>
+    </File>
+    <File Include="src/scripts/ReactJS/indicadores/MonitorTDCSucursales/components/TablaVentas/FilaProductos.jsx">
+      <publishTime>08/21/2019 12:21:29</publishTime>
+    </File>
+    <File Include="src/scripts/ReactJS/indicadores/MonitorTDCSucursales/components/TablaVentas/index.jsx">
+      <publishTime>08/21/2019 12:37:10</publishTime>
+    </File>
+    <File Include="src/scripts/ReactJS/indicadores/MonitorTDCSucursales/conexion/consultar_detalle_producto_establecimiento.js">
+      <publishTime>08/20/2019 18:15:21</publishTime>
+    </File>
     <File Include="src/scripts/ReactJS/indicadores/MonitorTDCSucursales/Index.jsx">
       <publishTime>08/08/2019 17:25:00</publishTime>
     </File>
+    <File Include="src/scripts/ReactJS/indicadores/Monitor_cajas/components/App.jsx">
+      <publishTime>08/15/2019 16:22:20</publishTime>
+    </File>
+    <File Include="src/scripts/ReactJS/indicadores/Monitor_cajas/components/Header.jsx">
+      <publishTime>08/15/2019 11:58:51</publishTime>
+    </File>
+    <File Include="src/scripts/ReactJS/indicadores/Monitor_cajas/components/TableBodyEstablecimientos.jsx">
+      <publishTime>08/15/2019 17:13:46</publishTime>
+    </File>
+    <File Include="src/scripts/ReactJS/indicadores/Monitor_cajas/Index.jsx">
+      <publishTime>08/15/2019 11:44:57</publishTime>
+    </File>
     <File Include="src/scripts/ReactJS/models/mEstiloModal.js">
-      <publishTime>09/07/2019 17:12:06</publishTime>
+      <publishTime>07/09/2019 17:12:06</publishTime>
     </File>
     <File Include="src/scripts/VueJS/ComponentesGlobales/Moneda.vue">
-      <publishTime>04/06/2019 10:38:19</publishTime>
+      <publishTime>06/04/2019 10:38:19</publishTime>
     </File>
     <File Include="src/scripts/VueJS/indicadores/AnalisisCambioPrecios/app.js">
-      <publishTime>07/06/2019 10:14:09</publishTime>
+      <publishTime>06/07/2019 10:14:09</publishTime>
     </File>
     <File Include="src/scripts/VueJS/indicadores/AnalisisCambioPrecios/Components/App.vue">
-      <publishTime>02/08/2019 09:49:43</publishTime>
+      <publishTime>08/02/2019 09:49:43</publishTime>
     </File>
     <File Include="src/scripts/VueJS/indicadores/AnalisisCambioPrecios/Components/FiltrosAnalisis.vue">
-      <publishTime>02/08/2019 09:40:50</publishTime>
+      <publishTime>08/02/2019 09:40:50</publishTime>
     </File>
     <File Include="src/scripts/VueJS/indicadores/AnalisisCambioPrecios/Components/Producto.vue">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/19/2019 10:31:35</publishTime>
     </File>
     <File Include="src/scripts/VueJS/indicadores/AnalisisCambioPrecios/Components/ProductoGuardado.vue">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/21/2019 11:13:40</publishTime>
     </File>
     <File Include="src/scripts/VueJS/indicadores/AnalisisCambioPrecios/Components/TablaProductos.vue">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/19/2019 17:38:14</publishTime>
     </File>
     <File Include="src/scripts/VueJS/indicadores/AnalisisCambioPrecios/Components/VistaGuardados.vue">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/20/2019 15:25:07</publishTime>
     </File>
     <File Include="src/scripts/VueJS/indicadores/MonitorEmbarques/app.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/31/2019 18:24:18</publishTime>
     </File>
     <File Include="src/scripts/VueJS/indicadores/MonitorEmbarques/components/App.vue">
-      <publishTime>11/06/2019 11:34:54</publishTime>
+      <publishTime>06/11/2019 11:34:54</publishTime>
     </File>
     <File Include="src/scripts/VueJS/indicadores/MonitorEmbarques/components/ModalDetalle.vue">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/20/2019 10:56:44</publishTime>
     </File>
     <File Include="src/scripts/VueJS/indicadores/MonitorEmbarques/components/TablaPedidos.vue">
-      <publishTime>01/06/2019 14:05:04</publishTime>
+      <publishTime>06/01/2019 14:05:04</publishTime>
     </File>
     <File Include="src/scripts/VueJS/indicadores/MonitorOrdenCompraInterna/app.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/20/2019 16:31:36</publishTime>
     </File>
     <File Include="src/scripts/VueJS/indicadores/MonitorOrdenCompraInterna/components/App.vue">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/21/2019 13:03:59</publishTime>
     </File>
     <File Include="src/scripts/VueJS/indicadores/MonitorOrdenCompraInterna/components/CaveceraParametros.vue">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/24/2019 17:50:08</publishTime>
     </File>
     <File Include="src/scripts/VueJS/indicadores/MonitorOrdenCompraInterna/components/CaveceraTabla.vue">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/21/2019 17:28:11</publishTime>
     </File>
     <File Include="src/scripts/VueJS/indicadores/MonitorOrdenCompraInterna/components/OrdenCompra.vue">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/21/2019 12:28:12</publishTime>
     </File>
     <File Include="src/scripts/VueJS/indicadores/MonitorOrdenCompraInterna/components/TablaOrdenes.vue">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/21/2019 17:25:13</publishTime>
     </File>
     <File Include="src/scripts/VueJS/indicadores/MonitorOrdenCompraInterna/components/VistaDetalleOrden.vue">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/16/2019 09:39:18</publishTime>
     </File>
     <File Include="src/scripts/VueJS/indicadores/PreciosCompetencia/App.js">
-      <publishTime>06/03/2019 11:04:01</publishTime>
+      <publishTime>03/06/2019 11:04:01</publishTime>
     </File>
     <File Include="src/scripts/VueJS/indicadores/PreciosCompetencia/Components/App.vue">
-      <publishTime>07/06/2019 12:21:14</publishTime>
+      <publishTime>06/07/2019 12:21:14</publishTime>
     </File>
     <File Include="src/scripts/VueJS/indicadores/PreciosCompetencia/Components/AreaFiltroMueble.vue">
-      <publishTime>04/06/2019 09:38:22</publishTime>
+      <publishTime>06/04/2019 09:38:22</publishTime>
     </File>
     <File Include="src/scripts/VueJS/indicadores/PreciosCompetencia/Components/Controles.vue">
-      <publishTime>07/06/2019 12:19:03</publishTime>
+      <publishTime>06/07/2019 12:19:03</publishTime>
     </File>
     <File Include="src/scripts/VueJS/indicadores/PreciosCompetencia/Components/DetallesProducto.vue">
-      <publishTime>06/05/2019 17:03:07</publishTime>
+      <publishTime>05/06/2019 17:03:07</publishTime>
     </File>
     <File Include="src/scripts/VueJS/indicadores/PreciosCompetencia/Components/HistoricoProducto.vue">
-      <publishTime>06/05/2019 17:21:29</publishTime>
+      <publishTime>05/06/2019 17:21:29</publishTime>
     </File>
     <File Include="src/scripts/VueJS/indicadores/PreciosCompetencia/Components/ModaDetalleProducto.vue">
       <publishTime>06/06/2019 10:21:17</publishTime>
     </File>
     <File Include="src/scripts/VueJS/indicadores/PreciosCompetencia/Components/ModalMueble.vue">
-      <publishTime>04/06/2019 10:33:20</publishTime>
+      <publishTime>06/04/2019 10:33:20</publishTime>
     </File>
     <File Include="src/scripts/VueJS/indicadores/PreciosCompetencia/Components/MuebleTabla.vue">
-      <publishTime>06/05/2019 11:26:01</publishTime>
+      <publishTime>05/06/2019 11:26:01</publishTime>
     </File>
     <File Include="src/scripts/VueJS/indicadores/PreciosCompetencia/Components/PasillosTabla.vue">
-      <publishTime>05/06/2019 19:14:58</publishTime>
+      <publishTime>06/05/2019 19:14:58</publishTime>
     </File>
     <File Include="src/scripts/VueJS/indicadores/PreciosCompetencia/Components/PosicionMueble.vue">
-      <publishTime>05/06/2019 19:15:20</publishTime>
+      <publishTime>06/05/2019 19:15:20</publishTime>
     </File>
     <File Include="src/scripts/VueJS/indicadores/PreciosCompetencia/Components/Productos8020.vue">
-      <publishTime>05/06/2019 19:15:43</publishTime>
+      <publishTime>06/05/2019 19:15:43</publishTime>
     </File>
     <File Include="src/scripts/VueJS/indicadores/PreciosCompetencia/Components/TablaMonitor.vue">
-      <publishTime>05/06/2019 11:56:10</publishTime>
+      <publishTime>06/05/2019 11:56:10</publishTime>
     </File>
     <File Include="src/scripts/VueJS/indicadores/PreciosCompetencia/Components/TablaProducto.vue">
-      <publishTime>04/06/2019 17:12:24</publishTime>
+      <publishTime>06/04/2019 17:12:24</publishTime>
     </File>
     <File Include="src/scripts/VueJS/surtido_embarque/app.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/29/2019 10:53:25</publishTime>
     </File>
     <File Include="src/scripts/VueJS/surtido_embarque/components/App.vue">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/31/2019 16:56:22</publishTime>
     </File>
     <File Include="src/scripts/VueJS/surtido_embarque/components/BuscarProducto.vue">
-      <publishTime>05/06/2019 09:34:01</publishTime>
+      <publishTime>06/05/2019 09:34:01</publishTime>
     </File>
     <File Include="src/scripts/VueJS/surtido_embarque/components/CapturarSurtido.vue">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 14:05:59</publishTime>
     </File>
     <File Include="src/scripts/VueJS/surtido_embarque/components/Guardar.vue">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/20/2019 09:40:23</publishTime>
     </File>
     <File Include="src/scripts/VueJS/surtido_embarque/components/ModalFiltroEmbarque.vue">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 11:31:12</publishTime>
     </File>
     <File Include="src/scripts/VueJS/surtido_embarque/components/SeleccionarPedido.vue">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 12:15:38</publishTime>
     </File>
     <File Include="src/scripts/VueJS/surtido_embarque/components/SeleccionModal.vue">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 18:01:44</publishTime>
     </File>
     <File Include="src/scripts/VueJS/surtido_embarque/components/SeleccionSurtido.vue">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/29/2019 10:17:38</publishTime>
     </File>
     <File Include="src/scripts/VueJS/surtido_embarque/models/ModelEmbarque.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 18:37:33</publishTime>
     </File>
     <File Include="src/styles/CodigosBarra/main.css">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:51:44</publishTime>
     </File>
     <File Include="src/styles/CodigosBarra/main_g.css">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:51:45</publishTime>
     </File>
     <File Include="src/styles/Indicadores/Cuadrantes/main.css">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>04/30/2019 13:01:39</publishTime>
     </File>
     <File Include="src/styles/Indicadores/MonitorOrdenCompraInterna/main.css">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/24/2019 13:07:03</publishTime>
     </File>
     <File Include="src/styles/Indicadores/OrdenesDePagoEnEfectivo/main.css">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>04/29/2019 10:13:53</publishTime>
     </File>
     <File Include="src/styles/login/main.css">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:51:47</publishTime>
     </File>
     <File Include="src/Vue/template/btnToggle.vue">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -53683,121 +53782,121 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>08/08/2019 17:37:56</publishTime>
     </File>
     <File Include="Views/Error/_ErrorPage.cshtml">
-      <publishTime>09/04/2019 18:27:34</publishTime>
+      <publishTime>04/09/2019 18:27:34</publishTime>
     </File>
     <File Include="Views/Gastos/OrdenCompraInterna.cshtml">
-      <publishTime>02/04/2019 16:12:23</publishTime>
+      <publishTime>04/02/2019 16:12:23</publishTime>
     </File>
     <File Include="Views/Gastos/OrdenGastos.cshtml">
-      <publishTime>02/04/2019 16:12:13</publishTime>
+      <publishTime>04/02/2019 16:12:13</publishTime>
     </File>
     <File Include="Views/Globales/CodigoBarrasGrande.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/30/2019 16:53:03</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>08/04/2019 18:21:20</publishTime>
+      <publishTime>04/08/2019 18:21:20</publishTime>
     </File>
     <File Include="Views/Indicadores/AnalisisCamiboPrecios.cshtml">
-      <publishTime>02/08/2019 09:52:52</publishTime>
+      <publishTime>08/02/2019 09:52:52</publishTime>
     </File>
     <File Include="Views/Indicadores/AuditoriaVenta.cshtml">
-      <publishTime>11/05/2019 08:50:00</publishTime>
+      <publishTime>05/11/2019 08:50:00</publishTime>
     </File>
     <File Include="Views/Indicadores/Cuadrantes.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>04/30/2019 19:06:33</publishTime>
     </File>
     <File Include="Views/Indicadores/CuadrantesPorEstablecimiento.cshtml">
-      <publishTime>02/04/2019 10:46:15</publishTime>
+      <publishTime>04/02/2019 10:46:15</publishTime>
     </File>
     <File Include="Views/Indicadores/CuestionariosApertura.cshtml">
-      <publishTime>02/04/2019 10:32:55</publishTime>
+      <publishTime>04/02/2019 10:32:55</publishTime>
     </File>
     <File Include="Views/Indicadores/CuestionariosServicios.cshtml">
-      <publishTime>02/04/2019 10:36:05</publishTime>
+      <publishTime>04/02/2019 10:36:05</publishTime>
     </File>
     <File Include="Views/Indicadores/EstadosDeResultados.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/20/2019 10:49:10</publishTime>
     </File>
     <File Include="Views/Indicadores/EstadosDeResultados_sin_alimentos.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/20/2019 10:49:17</publishTime>
     </File>
     <File Include="Views/Indicadores/Index.cshtml">
-      <publishTime>08/04/2019 11:13:26</publishTime>
+      <publishTime>08/15/2019 11:57:06</publishTime>
     </File>
     <File Include="Views/Indicadores/Matrices.cshtml">
-      <publishTime>02/04/2019 10:35:22</publishTime>
+      <publishTime>04/02/2019 10:35:22</publishTime>
     </File>
     <File Include="Views/Indicadores/MonitorEmbarques.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/31/2019 18:28:47</publishTime>
     </File>
     <File Include="Views/Indicadores/MonitorFlujoInventario.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/31/2019 10:46:19</publishTime>
     </File>
     <File Include="Views/Indicadores/MonitorOrdenCompraInterna - Copia.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/20/2019 16:28:28</publishTime>
     </File>
     <File Include="Views/Indicadores/MonitorOrdenCompraInterna.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/16/2019 14:26:44</publishTime>
     </File>
     <File Include="Views/Indicadores/MonitorTDCSucursales.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/14/2019 19:03:09</publishTime>
     </File>
     <File Include="Views/Indicadores/MovimientosBancoInterno.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/20/2019 16:10:59</publishTime>
     </File>
     <File Include="Views/Indicadores/OrdenesDePagoEnEfectivo.cshtml">
-      <publishTime>02/05/2019 12:18:13</publishTime>
+      <publishTime>05/02/2019 12:18:13</publishTime>
     </File>
     <File Include="Views/Indicadores/PreciosCompetencia - Copia.cshtml">
       <publishTime>06/03/2019 11:04:36</publishTime>
     </File>
     <File Include="Views/Indicadores/PreciosCompetencia _bk.cshtml">
-      <publishTime>03/06/2019 11:04:36</publishTime>
+      <publishTime>06/03/2019 11:04:36</publishTime>
     </File>
     <File Include="Views/Indicadores/PreciosCompetencia.cshtml">
-      <publishTime>07/06/2019 10:12:06</publishTime>
+      <publishTime>06/07/2019 10:12:06</publishTime>
     </File>
     <File Include="Views/Indicadores/ReporteIncidenciasFecha.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>04/26/2019 10:48:34</publishTime>
     </File>
     <File Include="Views/Login/index.cshtml">
-      <publishTime>03/06/2019 09:23:46</publishTime>
+      <publishTime>06/03/2019 09:23:46</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
-      <publishTime>02/04/2019 10:45:02</publishTime>
+      <publishTime>04/02/2019 10:45:02</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
       <publishTime>08/15/2019 11:58:44</publishTime>
     </File>
     <File Include="Views/SurtidoEmbarque/index.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/19/2019 09:05:18</publishTime>
     </File>
     <File Include="Views/SurtidoEmbarque/index_.cshtml">
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Views/SurtidoEmbarque/index_bk.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/29/2019 11:20:03</publishTime>
     </File>
     <File Include="Views/Usuarios/Acceso.cshtml">
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Views/Usuarios/Accesos.cshtml">
-      <publishTime>12/04/2019 11:41:44</publishTime>
+      <publishTime>04/12/2019 11:41:44</publishTime>
     </File>
     <File Include="Views/Usuarios/index.cshtml">
-      <publishTime>02/04/2019 15:05:41</publishTime>
+      <publishTime>04/02/2019 15:05:41</publishTime>
     </File>
     <File Include="Views/Web.config">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/28/2019 18:35:34</publishTime>
     </File>
     <File Include="Views/_ViewStart.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/25/2019 12:23:13</publishTime>
     </File>
     <File Include="vue_src/components/App.vue">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/29/2019 09:12:46</publishTime>
     </File>
     <File Include="vue_src/components/BuscarProducto.vue">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/29/2019 11:16:17</publishTime>
     </File>
     <File Include="vue_src/components/SeleccionModal.vue">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -53806,34 +53905,34 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="vue_src/index.html">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/28/2019 19:23:29</publishTime>
     </File>
     <File Include="vue_src/index.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/29/2019 11:27:59</publishTime>
     </File>
     <File Include="vue_src/style/main.css">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/29/2019 10:27:45</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>02/08/2019 09:58:39</publishTime>
+      <publishTime>08/02/2019 09:58:39</publishTime>
     </File>
     <File Include="Web.Debug.config">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/20/2019 15:57:07</publishTime>
     </File>
     <File Include="Web.Release.config">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/20/2019 15:57:07</publishTime>
     </File>
     <File Include="WebApplication.csproj">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/21/2019 13:04:36</publishTime>
     </File>
     <File Include="WebApplication.csproj.user">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/21/2019 13:04:36</publishTime>
     </File>
     <File Include="webpack.config.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/21/2019 12:56:37</publishTime>
     </File>
     <File Include="webpack.config_.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/29/2019 10:01:29</publishTime>
     </File>
   </ItemGroup>
 </Project>

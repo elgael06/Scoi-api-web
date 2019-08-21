@@ -12,12 +12,13 @@ namespace WebApplication.Models.Monitor_ventas
         {
             clasificador = datos.First().categoria;
 
-            foreach (var filto in from familia in datos
+            foreach (var filtro in from familia in datos
                                   let nombre = familia.familia
                                   where Familias.FindIndex(e => e.clasificador == nombre) == -1
-                                  select new ModeloFamiliaVenta(datos.Where(e => e.familia == nombre).ToList()))
+                                  select datos.Where(e => e.familia == nombre).ToList())
             {
-                Familias.Add(filto);
+                if (filtro.Count > 0)
+                    Familias.Add(new ModeloFamiliaVenta(filtro));
             }
         }
 

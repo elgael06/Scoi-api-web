@@ -81,7 +81,7 @@ namespace WebApplication.Controllers.Monitor_ventas
                 respuesta = new List<ModeloEstablecimientoVenta>();
                 foreach (var item in from establecimiento in lista
                                      let nombre = establecimiento.establecimiento
-                                     where respuesta.FindIndex(e => e.clasificador == nombre) == -1
+                                     where respuesta.FindIndex(e => e.clasificador == nombre) == -1 && nombre != ""
                                      select lista.Where(e => e.establecimiento == nombre &&
                                      new Dia(e.dia_semana_actual != "" ?
                                         e.fecha_de_venta_actual :

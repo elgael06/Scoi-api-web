@@ -299,7 +299,7 @@ module.exports = [
             path: __dirname + "/dist/indicadores/MonitorTDCSucursales",
             filename: "bundle.js"
         },
-        mode: "development",
+        mode: "production",
         module: {
             rules: [
                 {

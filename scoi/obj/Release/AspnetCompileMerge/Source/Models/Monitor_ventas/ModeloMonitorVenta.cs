@@ -31,10 +31,19 @@ namespace WebApplication.Models.Monitor_ventas
             Semana_actual = datos.Where(e => e.semana_actual == semana_mayor).ToList();
             Semana_pasada = datos.Where(e => e.semana_actual == semana_menor).ToList();
             Semana_anio_pasada = datos.Where(e => e.semana_actual == 0).ToList();
-
-            anio_actual     = DateTime.Parse(Semana_actual.First().fecha_de_venta_actual).Year != 1900 ? DateTime.Parse(Semana_actual.First().fecha_de_venta_actual).Year : DateTime.Parse(Semana_pasada.First().fecha_de_venta_actual).Year;
-            anio_anterior   = Semana_anio_pasada.Count > 0 ? DateTime.Parse(Semana_anio_pasada.First().fecha_de_venta_anio_pasado).Year : anio_actual - 1;
-
+            try
+            {
+                anio_actual = DateTime.Parse(Semana_actual.First().fecha_de_venta_actual).Year != 1900 ?
+                    DateTime.Parse(Semana_actual.First().fecha_de_venta_actual).Year :
+                    DateTime.Parse(Semana_pasada.First().fecha_de_venta_actual).Year;
+                anio_anterior = Semana_anio_pasada.Count > 0 ?
+                    DateTime.Parse(Semana_anio_pasada.First().fecha_de_venta_anio_pasado).Year :
+                    anio_actual - 1;
+            }
+            catch {
+                anio_actual = DateTime.Now.Year;
+                anio_anterior = anio_actual - 1;
+            }
             piezas_actual        = Semana_actual.Select(e => e.venta_piezas_actual).Sum();
             piezas_anterior      = Semana_anio_pasada.Select(e => e.venta_piezas_anio_pasado).Sum();
             piezas_semana_pasado = Semana_pasada.Select(e => e.venta_piezas_actual).Sum();

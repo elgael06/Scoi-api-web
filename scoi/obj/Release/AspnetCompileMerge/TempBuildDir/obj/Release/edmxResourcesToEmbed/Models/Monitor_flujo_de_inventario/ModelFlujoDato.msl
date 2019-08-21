@@ -102,5 +102,64 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <EntitySetMapping Name="monitor_indicadores">
+      <EntityTypeMapping TypeName="FlujoDeInventario.monitor_indicadores">
+        <MappingFragment StoreEntitySet="monitor_indicadores">
+          <ScalarProperty Name="operador" ColumnName="operador" />
+          <ScalarProperty Name="valor_optimo_indicador" ColumnName="valor_optimo_indicador" />
+          <ScalarProperty Name="Indicador" ColumnName="Indicador" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="monitor_indicadores_cajeros" FunctionName="FlujoDeInventario.Store.monitor_indicadores_cajeros">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FlujoDeInventario.monitor_indicadores_cajeros_Result">
+          <ScalarProperty Name="cod_estab_venta" ColumnName="cod_estab_venta" />
+          <ScalarProperty Name="establecimiento" ColumnName="establecimiento" />
+          <ScalarProperty Name="folio_empleado" ColumnName="folio_empleado" />
+          <ScalarProperty Name="nombre_colaborador" ColumnName="nombre_colaborador" />
+          <ScalarProperty Name="establecimiento_cajero_scoi" ColumnName="establecimiento_cajero_scoi" />
+          <ScalarProperty Name="departamento" ColumnName="departamento" />
+          <ScalarProperty Name="puesto" ColumnName="puesto" />
+          <ScalarProperty Name="estatus_colaborador" ColumnName="estatus_colaborador" />
+          <ScalarProperty Name="fecha_ingreso" ColumnName="fecha_ingreso" />
+          <ScalarProperty Name="antiguedad" ColumnName="antiguedad" />
+          <ScalarProperty Name="foto" ColumnName="foto" />
+          <ScalarProperty Name="Indicador_Venta_x100" ColumnName="Indicador_Venta_x100" />
+          <ScalarProperty Name="Indicador_Diferencias_x1000" ColumnName="Indicador_Diferencias_x1000" />
+          <ScalarProperty Name="indicador_de_cancelaciones_x100" ColumnName="indicador_de_cancelaciones_x100" />
+          <ScalarProperty Name="total_diferiencia_de_corte" ColumnName="total_diferiencia_de_corte" />
+          <ScalarProperty Name="venta_por_semana_cajero" ColumnName="venta_por_semana_cajero" />
+          <ScalarProperty Name="venta_por_semana_estab" ColumnName="venta_por_semana_estab" />
+          <ScalarProperty Name="semana_anio" ColumnName="semana_anio" />
+          <ScalarProperty Name="mes" ColumnName="mes" />
+          <ScalarProperty Name="cantidad_autorizaciones_por_supervisor" ColumnName="cantidad_autorizaciones_por_supervisor" />
+          <ScalarProperty Name="cantidad_de_tickets" ColumnName="cantidad_de_tickets" />
+          <ScalarProperty Name="indicador_de_tiempo_promedio_de_atencion_por_cliente" ColumnName="indicador_de_tiempo_promedio_de_atencion_por_cliente" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="monitor_de_ventas_detalle_producto_por_establecimiento" FunctionName="FlujoDeInventario.Store.monitor_de_ventas_detalle_producto_por_establecimiento">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FlujoDeInventario.monitor_de_ventas_detalle_producto_por_establecimiento_Result">
+          <ScalarProperty Name="establecimiento" ColumnName="establecimiento" />
+          <ScalarProperty Name="cod_prod" ColumnName="cod_prod" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="asignacion_actual" ColumnName="asignacion_actual" />
+          <ScalarProperty Name="folio" ColumnName="folio" />
+          <ScalarProperty Name="nombre_cajero" ColumnName="nombre_cajero" />
+          <ScalarProperty Name="ticket" ColumnName="ticket" />
+          <ScalarProperty Name="venta_piezas_actual" ColumnName="venta_piezas_actual" />
+          <ScalarProperty Name="costo_actual" ColumnName="costo_actual" />
+          <ScalarProperty Name="importe_sin_IVA_actual" ColumnName="importe_sin_IVA_actual" />
+          <ScalarProperty Name="utilidad_bruta_actual" ColumnName="utilidad_bruta_actual" />
+          <ScalarProperty Name="margen_actual" ColumnName="margen_actual" />
+          <ScalarProperty Name="tipo_de_venta" ColumnName="tipo_de_venta" />
+          <ScalarProperty Name="cliente" ColumnName="cliente" />
+          <ScalarProperty Name="fecha_de_venta_actual" ColumnName="fecha_de_venta_actual" />
+          <ScalarProperty Name="dia_semana_actual" ColumnName="dia_semana_actual" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

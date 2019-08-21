@@ -80,10 +80,29 @@ advertencia 6002: La tabla o vista 'Grupo_Izagar.dbo.monitor_de_ventas' no tiene
     <Property Name="color" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="tipo_movimiento" Type="char" MaxLength="1" Nullable="false" />
   </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Grupo_Izagar.dbo.monitor_indicadores' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="monitor_indicadores">
+    <Key>
+      <PropertyRef Name="Indicador" />
+      <PropertyRef Name="valor_optimo_indicador" />
+      <PropertyRef Name="operador" />
+    </Key>
+    <Property Name="Indicador" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="valor_optimo_indicador" Type="numeric" Precision="15" Scale="2" Nullable="false" />
+    <Property Name="operador" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
   <Function Name="monitor_de_ventas_consulta_sumarizada" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="monitor_de_ventas_detalle_producto_por_establecimiento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="cod_prod" Type="varchar" Mode="In" />
+    <Parameter Name="cod_estab" Type="int" Mode="In" />
+  </Function>
   <Function Name="monitor_flujo_de_inventario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="fi" Type="datetime" Mode="In" />
     <Parameter Name="meses" Type="tinyint" Mode="In" />
+  </Function>
+  <Function Name="monitor_indicadores_cajeros" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Fecha_Incial" Type="datetime" Mode="In" />
   </Function>
   <EntityContainer Name="FlujoDeInventarioStoreContainer">
     <EntitySet Name="monitor_de_ventas" EntityType="Self.monitor_de_ventas" store:Type="Tables" store:Schema="dbo">
@@ -127,6 +146,13 @@ advertencia 6002: La tabla o vista 'Grupo_Izagar.dbo.monitor_de_ventas' no tiene
     [monitor_de_ventas].[color] AS [color], 
     [monitor_de_ventas].[tipo_movimiento] AS [tipo_movimiento]
     FROM [dbo].[monitor_de_ventas] AS [monitor_de_ventas]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="monitor_indicadores" EntityType="Self.monitor_indicadores" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [monitor_indicadores].[Indicador] AS [Indicador], 
+    [monitor_indicadores].[valor_optimo_indicador] AS [valor_optimo_indicador], 
+    [monitor_indicadores].[operador] AS [operador]
+    FROM [dbo].[monitor_indicadores] AS [monitor_indicadores]</DefiningQuery>
     </EntitySet>
   </EntityContainer>
 </Schema>

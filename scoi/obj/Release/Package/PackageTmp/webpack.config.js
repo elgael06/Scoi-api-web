@@ -294,13 +294,12 @@ module.exports = [
   //  },
     {
         // Monitor TDC Sucursales
-        entry:
-            "./src/scripts/ReactJS/indicadores/MonitorTDCSucursales/Index.jsx",
+        entry: ['babel-polyfill',"./src/scripts/ReactJS/indicadores/MonitorTDCSucursales/Index.jsx"],
         output: {
             path: __dirname + "/dist/indicadores/MonitorTDCSucursales",
             filename: "bundle.js"
         },
-        mode: "development",
+        mode: "production",
         module: {
             rules: [
                 {
@@ -317,4 +316,54 @@ module.exports = [
             extensions: ["*", ".js", ".jsx", ".json","ts","tsx"]
         }
     }
+    //{
+    //    // Menus de Accesos
+    //    entry:
+    //        "./src/scripts/ReactJS/Accesos/Menus/Index.jsx",
+    //    output: {
+    //        path: __dirname + "/dist/Accesos/Menus",
+    //        filename: "bundle.js"
+    //    },
+    //    mode: "production",//development
+    //    module: {
+    //        rules: [
+    //            {
+    //                test: /\.(js|jsx|ts|tsx)?$/,
+    //                exclude: /node_modules/,
+    //                use: {
+    //                    loader: 'babel-loader',
+
+    //                },
+    //            }
+    //        ]
+    //    },
+    //    resolve: {
+    //        extensions: ["*", ".js", ".jsx", ".json", "ts", "tsx"]
+    //    }
+    //}
+    //{
+    //    // Monitor Cajas
+    //    entry:
+    //        "./src/scripts/ReactJS/indicadores/Monitor_cajas/Index.jsx",
+    //    output: {
+    //        path: __dirname + "/dist/indicadores/Monitor_cajas",
+    //        filename: "bundle.js"
+    //    },
+    //    mode: "development",//development production
+    //    module: {
+    //        rules: [
+    //            {
+    //                test: /\.(js|jsx|ts|tsx)?$/,
+    //                exclude: /node_modules/,
+    //                use: {
+    //                    loader: 'babel-loader',
+
+    //                },
+    //            }
+    //        ]
+    //    },
+    //    resolve: {
+    //        extensions: ["*", ".js", ".jsx", ".json", "ts", "tsx"]
+    //    }
+    //}
 ];

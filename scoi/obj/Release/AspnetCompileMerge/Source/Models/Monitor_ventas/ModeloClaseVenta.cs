@@ -15,9 +15,10 @@ namespace WebApplication.Models.Monitor_ventas
             foreach (var filtro in from categoria in datos
                                    let nombre = categoria.categoria
                                    where Categorias.FindIndex(e => e.clasificador == nombre) == -1
-                                   select new ModeloCategoriaVenta(datos.Where(e => nombre == e.categoria).ToList()))
+                                   select datos.Where(e => nombre == e.categoria).ToList())
             {
-                Categorias.Add(filtro);
+                if(filtro.Count>0)
+                    Categorias.Add(new ModeloCategoriaVenta(filtro));
             }
         }
 
